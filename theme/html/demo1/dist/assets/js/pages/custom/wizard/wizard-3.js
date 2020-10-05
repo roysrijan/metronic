@@ -5,31 +5,28 @@ var KTWizard3 = function () {
 	// Base elements
 	var _wizardEl;
 	var _formEl;
-	var _wizardObj;
+	var _wizard;
 	var _validations = [];
 
 	// Private functions
-	var _initWizard = function () {
+	var initWizard = function () {
 		// Initialize form wizard
-		_wizardObj = new KTWizard(_wizardEl, {
+		_wizard = new KTWizard(_wizardEl, {
 			startStep: 1, // initial active step number
 			clickableSteps: true  // allow step clicking
 		});
 
 		// Validation before going to next page
-		_wizardObj.on('change', function (wizard) {
-			if (wizard.getStep() > wizard.getNewStep()) {
-				return; // Skip if stepped back
-			}
+		_wizard.on('beforeChange', function (wizard) {
+			// Don't go to the next step yet
+			_wizard.stop();
 
-			// Validate form before change wizard step
+			// Validate form
 			var validator = _validations[wizard.getStep() - 1]; // get validator for currnt step
-
 			if (validator) {
 				validator.validate().then(function (status) {
 					if (status == 'Valid') {
-						wizard.goTo(wizard.getNewStep());
-
+						_wizard.goNext();
 						KTUtil.scrollTop();
 					} else {
 						Swal.fire({
@@ -46,43 +43,15 @@ var KTWizard3 = function () {
 					}
 				});
 			}
-
-			return false;  // Do not change wizard step, further action will be handled by he validator
 		});
 
-		// Changed event
-		_wizardObj.on('changed', function (wizard) {
+		// Change event
+		_wizard.on('change', function (wizard) {
 			KTUtil.scrollTop();
-		});
-
-		// Submit event
-		_wizardObj.on('submit', function (wizard) {
-			// Validate form before submit
-			var validator = _validations[wizard.getStep() - 1]; // get validator for currnt step
-
-			if (validator) {
-				validator.validate().then(function (status) {
-					if (status == 'Valid') {
-						_formEl.submit(); // submit form
-					} else {
-						Swal.fire({
-							text: "Sorry, looks like there are some errors detected, please try again.",
-							icon: "error",
-							buttonsStyling: false,
-							confirmButtonText: "Ok, got it!",
-							customClass: {
-								confirmButton: "btn font-weight-bold btn-light"
-							}
-						}).then(function () {
-							KTUtil.scrollTop();
-						});
-					}
-				});
-			}
 		});
 	}
 
-	var _initValidation = function () {
+	var initValidation = function () {
 		// Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
 		// Step 1
 		_validations.push(FormValidation.formValidation(
@@ -127,11 +96,7 @@ var KTWizard3 = function () {
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),
-					// Bootstrap Framework Integration
-					bootstrap: new FormValidation.plugins.Bootstrap({
-						//eleInvalidClass: '',
-						eleValidClass: '',
-					})
+					bootstrap: new FormValidation.plugins.Bootstrap()
 				}
 			}
 		));
@@ -191,11 +156,7 @@ var KTWizard3 = function () {
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),
-					// Bootstrap Framework Integration
-					bootstrap: new FormValidation.plugins.Bootstrap({
-						//eleInvalidClass: '',
-						eleValidClass: '',
-					})
+					bootstrap: new FormValidation.plugins.Bootstrap()
 				}
 			}
 		));
@@ -229,11 +190,7 @@ var KTWizard3 = function () {
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),
-					// Bootstrap Framework Integration
-					bootstrap: new FormValidation.plugins.Bootstrap({
-						//eleInvalidClass: '',
-						eleValidClass: '',
-					})
+					bootstrap: new FormValidation.plugins.Bootstrap()
 				}
 			}
 		));
@@ -281,12 +238,7 @@ var KTWizard3 = function () {
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),
-					// Validate fields when clicking the Submit button
-					// Bootstrap Framework Integration
-					bootstrap: new FormValidation.plugins.Bootstrap({
-						//eleInvalidClass: '',
-						eleValidClass: '',
-					})
+					bootstrap: new FormValidation.plugins.Bootstrap()
 				}
 			}
 		));
@@ -298,8 +250,8 @@ var KTWizard3 = function () {
 			_wizardEl = KTUtil.getById('kt_wizard_v3');
 			_formEl = KTUtil.getById('kt_form');
 
-			_initWizard();
-			_initValidation();
+			initWizard();
+			initValidation();
 		}
 	};
 }();

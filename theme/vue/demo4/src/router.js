@@ -191,9 +191,19 @@ export default new Router({
                 import("@/view/pages/vue-bootstrap/PaginationNav.vue")
             },
             {
-              path: "popover",
+              path: "notify-popover",
               name: "vue-bootstrap-popover",
               component: () => import("@/view/pages/vue-bootstrap/Popover.vue")
+            },
+            {
+              path: "notify-toasts",
+              name: "vue-bootstrap-toasts",
+              component: () => import("@/view/pages/vue-bootstrap/Toasts.vue")
+            },
+            {
+              path: "notify-tooltip",
+              name: "vue-bootstrap-tooltip",
+              component: () => import("@/view/pages/vue-bootstrap/Tooltip.vue")
             },
             {
               path: "progress",
@@ -201,7 +211,7 @@ export default new Router({
               component: () => import("@/view/pages/vue-bootstrap/Progress.vue")
             },
             {
-              path: "spinner",
+              path: "progress-spinner",
               name: "vue-bootstrap-spinner",
               component: () => import("@/view/pages/vue-bootstrap/Spinner.vue")
             },
@@ -214,16 +224,6 @@ export default new Router({
               path: "tabs",
               name: "vue-bootstrap-tabs",
               component: () => import("@/view/pages/vue-bootstrap/Tabs.vue")
-            },
-            {
-              path: "toasts",
-              name: "vue-bootstrap-toasts",
-              component: () => import("@/view/pages/vue-bootstrap/Toasts.vue")
-            },
-            {
-              path: "tooltip",
-              name: "vue-bootstrap-tooltip",
-              component: () => import("@/view/pages/vue-bootstrap/Tooltip.vue")
             }
           ]
         },
@@ -273,13 +273,13 @@ export default new Router({
               component: () => import("@/view/pages/vuetify/Dialog.vue")
             },
             {
-              path: "autocompletes",
+              path: "forms-autocompletes",
               name: "vuetify-autocompletes",
               component: () =>
                 import("@/view/pages/vuetify/forms/Autocompletes.vue")
             },
             {
-              path: "file-inputs",
+              path: "forms-file-inputs",
               name: "vuetify-file-inputs",
               component: () =>
                 import("@/view/pages/vuetify/forms/FileInputs.vue")
@@ -290,36 +290,36 @@ export default new Router({
               component: () => import("@/view/pages/vuetify/forms/Forms.vue")
             },
             {
-              path: "selection-controls",
+              path: "forms-selection-controls",
               name: "vuetify-selection-controls",
               component: () =>
                 import("@/view/pages/vuetify/forms/SelectionControls.vue")
             },
             {
-              path: "selects",
+              path: "forms-selects",
               name: "vuetify-selects",
               component: () => import("@/view/pages/vuetify/forms/Selects.vue")
             },
             {
-              path: "textareas",
+              path: "forms-textareas",
               name: "vuetify-textareas",
               component: () =>
                 import("@/view/pages/vuetify/forms/Textareas.vue")
             },
             {
-              path: "text-fields",
+              path: "forms-text-fields",
               name: "vuetify-text-fields",
               component: () =>
                 import("@/view/pages/vuetify/forms/TextFields.vue")
             },
             {
-              path: "simple-tables",
+              path: "tables-simple-tables",
               name: "vuetify-simple-tables",
               component: () =>
                 import("@/view/pages/vuetify/tables/SimpleTables.vue")
             },
             {
-              path: "data-tables",
+              path: "tables-data-tables",
               name: "vuetify-data-tables",
               component: () =>
                 import("@/view/pages/vuetify/tables/DataTables.vue")
@@ -347,7 +347,7 @@ export default new Router({
           ]
         },
         {
-          path: "/wizard",
+          path: "/custom-wizard",
           name: "wizard",
           component: () => import("@/view/pages/wizard/Wizard.vue"),
           children: [
@@ -370,25 +370,42 @@ export default new Router({
               path: "wizard-4",
               name: "wizard-4",
               component: () => import("@/view/pages/wizard/Wizard-4.vue")
+            }
+          ]
+        },
+        {
+          path: "/custom-plugins",
+          name: "plugins",
+          component: () => import("@/view/pages/plugins/Plugins.vue"),
+          children: [
+            {
+              path: "cropper",
+              name: "cropper",
+              component: () => import("@/view/pages/plugins/Cropper.vue")
             },
             {
-              path: "/plugins",
-              name: "plugins",
-              component: () => import("@/view/pages/plugins/Plugins.vue"),
-              children: [
-                {
-                  path: "cropper",
-                  name: "cropper",
-                  component: () => import("@/view/pages/plugins/Cropper.vue")
-                }
-              ]
+              path: "treeselect",
+              name: "treeselect",
+              component: () => import("@/view/pages/plugins/Treeselect.vue")
+            }
+          ]
+        },
+        {
+          path: "/custom-pages",
+          name: "custom-pages",
+          component: () => import("@/view/pages/custom_pages/CustomPages.vue"),
+          children: [
+            {
+              path: "profile",
+              name: "profile",
+              component: () => import("@/view/pages/custom_pages/Profile.vue")
             }
           ]
         }
       ]
     },
     {
-      path: "/error",
+      path: "/custom-error",
       name: "error",
       component: () => import("@/view/pages/error/Error.vue"),
       children: [
@@ -426,17 +443,17 @@ export default new Router({
     },
     {
       path: "/",
-      component: () => import("@/view/pages/auth/Auth"),
+      component: () => import("@/view/pages/auth/login_pages/Login-1"),
       children: [
         {
           name: "login",
           path: "/login",
-          component: () => import("@/view/pages/auth/Login")
+          component: () => import("@/view/pages/auth/login_pages/Login-1")
         },
         {
           name: "register",
           path: "/register",
-          component: () => import("@/view/pages/auth/Register")
+          component: () => import("@/view/pages/auth/login_pages/Login-1")
         }
       ]
     },

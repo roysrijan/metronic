@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 117);
+/******/ 	return __webpack_require__(__webpack_require__.s = 118);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -98,7 +98,7 @@ eval(" // Class Definition\n\nvar KTAddUser = function () {\n  // Private Variab
 
 /***/ }),
 
-/***/ 117:
+/***/ 118:
 /*!*******************************************************************!*\
   !*** multi ./resources/metronic/js/pages/custom/user/add-user.js ***!
   \*******************************************************************/

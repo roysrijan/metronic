@@ -17,9 +17,9 @@ const QuickActionsDropdownToggle = forwardRef((props, ref) => {
         props.onClick(e);
       }}
       id="kt_subheader_quick_actions"
-      className={`btn btn-fixed-height btn-white btn-hover-primary font-weight-bold px-2 px-lg-5 mr-2`}
+      className={`btn btn-primary btn-fixed-height font-weight-bold px-2 px-lg-5 mr-2`}
     >
-      <span className="svg-icon svg-icon-success svg-icon-lg">
+      <span className="svg-icon svg-icon-lg">
         <SVG src={toAbsoluteUrl("/media/svg/icons/Files/File.svg")} />
       </span>
       {` `}New Report

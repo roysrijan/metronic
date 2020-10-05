@@ -1,5 +1,5 @@
 <template>
-  <!--begin::Tiles Widget 8-->
+  <!--begin::Tiles Widget 1-->
   <div class="card card-custom gutter-b card-stretch">
     <!--begin::Header-->
     <div class="card-header border-0 pt-5">
@@ -10,32 +10,31 @@
         </div>
       </div>
       <div class="card-toolbar">
-        <Dropdown3></Dropdown3>
+        <Dropdown2></Dropdown2>
       </div>
     </div>
     <!--end::Header-->
     <!--begin::Body-->
-    <div class="card-body d-flex flex-column p-0">
+    <div class="card-body d-flex flex-column px-0">
+      <!--begin::Chart-->
+      <apexchart
+        class="card-rounded-bottom"
+        :options="chartOptions"
+        :series="series"
+        type="area"
+      ></apexchart>
+      <!--end::Chart-->
       <!--begin::Items-->
-      <div class="flex-grow-1 card-spacer">
-        <!--begin::Item-->
+      <div class="flex-grow-1 card-spacer-x">
         <template v-for="(item, i) in list">
           <div
             class="d-flex align-items-center justify-content-between mb-10"
             v-bind:key="i"
           >
             <div class="d-flex align-items-center mr-2">
-              <div
-                class="symbol symbol-40 mr-3 flex-shrink-0"
-                v-bind:class="`symbol-light-${item.class}`"
-              >
+              <div class="symbol symbol-50 symbol-light mr-3 flex-shrink-0">
                 <div class="symbol-label">
-                  <span
-                    class="svg-icon svg-icon-lg"
-                    v-bind:class="`svg-icon-${item.class}`"
-                  >
-                    <inline-svg :src="`${item.svg}`"></inline-svg>
-                  </span>
+                  <img :src="`${item.svg}`" alt="" class="h-50" />
                 </div>
               </div>
               <div>
@@ -56,69 +55,51 @@
             </div>
           </div>
         </template>
-        <!--end::Item-->
       </div>
       <!--end::Items-->
-      <!--begin::Chart-->
-      <div
-        id="kt_tiles_widget_8_chart"
-        class="card-rounded-bottom"
-        data-color="warning"
-        style="height: 150px; padding-rigth:0"
-      >
-        <apexchart
-          class="card-rounded-bottom"
-          :options="chartOptions"
-          :series="series"
-          type="area"
-        ></apexchart>
-      </div>
-      <!--end::Chart-->
     </div>
     <!--end::Body-->
   </div>
-  <!--end::Tiles Widget 8-->
+  <!--end::Tiles Widget 1-->
 </template>
 
 <script>
-import Dropdown3 from "@/view/content/dropdown/Dropdown3.vue";
+import Dropdown2 from "@/view/content/dropdown/Dropdown2.vue";
 import { mapGetters } from "vuex";
 
 export default {
-  name: "widget-4",
+  name: "widget-1",
   components: {
-    Dropdown3
+    Dropdown2
   },
   data() {
     return {
-      list: [
-        {
-          title: "Top Authors",
-          desc: "Ricky Hunt, Sandra Trepp",
-          svg: "media/svg/icons/Home/Library.svg",
-          profit: "+90$",
-          class: "primary"
-        },
-        {
-          title: "Top Sales",
-          desc: "PitStop Emails",
-          svg: "media/svg/icons/Devices/Mic.svg",
-          profit: "+4500$",
-          class: "warning"
-        },
-        {
-          title: "Bestsellers",
-          desc: "Pitstop Email Marketing",
-          svg: "media/svg/icons/Communication/Group-chat.svg",
-          profit: "+75$",
-          class: "success"
-        }
-      ],
+      strokeColor: "#f86573",
       chartOptions: {},
       series: [
         {
           name: "Net Profit",
-          data: [20, 20, 30, 15, 40, 30]
+          data: [20, 22, 30, 28, 25, 26, 30, 28, 22, 24, 25, 35]
+        }
+      ],
+      list: [
+        {
+          title: "Top Authors",
+          desc: "Ricky Hunt, Sandra Trepp",
+          svg: "/media/svg/misc/006-plurk.svg",
+          profit: "+105$"
+        },
+        {
+          title: "Bestsellers",
+          desc: "Pitstop Email Marketing",
+          svg: "/media/svg/misc/015-telegram.svg",
+          profit: "+60$"
+        },
+        {
+          title: "Top Engagement",
+          desc: "KT.com solution provider\n",
+          svg: "/media/svg/misc/003-puzzle.svg",
+          profit: "+75$"
         }
       ]
     };
@@ -127,10 +108,11 @@ export default {
     ...mapGetters(["layoutConfig"])
   },
   mounted() {
+    // reference; kt_mixed_widget_1_chart
     this.chartOptions = {
       chart: {
         type: "area",
-        height: 150,
+        height: 125,
         toolbar: {
           show: false
         },
@@ -149,17 +131,27 @@ export default {
         enabled: false
       },
       fill: {
-        type: "solid",
-        opacity: 1
+        type: "gradient",
+        opacity: 1,
+        gradient: {
+          type: "vertical",
+          shadeIntensity: 0.55,
+          gradientToColors: undefined,
+          inverseColors: true,
+          opacityFrom: 1,
+          opacityTo: 0.2,
+          stops: [25, 50, 100],
+          colorStops: []
+        }
       },
       stroke: {
         curve: "smooth",
         show: true,
         width: 3,
-        colors: [this.layoutConfig("colors.theme.base.primary")]
+        colors: [this.strokeColor]
       },
       xaxis: {
-        categories: ["Feb", "Mar", "Apr", "May", "Jun", "Aug", "Sep"],
+        categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
         axisBorder: {
           show: false
         },
@@ -196,7 +188,7 @@ export default {
       yaxis: {
         show: false,
         min: 0,
-        max: 45,
+        max: 37,
         labels: {
           show: false,
           style: {
@@ -236,12 +228,15 @@ export default {
           formatter: function(val) {
             return "$" + val + " thousands";
           }
+        },
+        marker: {
+          show: false
         }
       },
-      colors: [this.layoutConfig("colors.theme.light.secondary")],
+      colors: [this.layoutConfig("colors.theme.light.danger")],
       markers: {
-        colors: [this.layoutConfig("colors.theme.light.primary")],
-        strokeColor: [this.layoutConfig("colors.theme.base.white")],
+        colors: [this.layoutConfig("colors.theme.light.danger")],
+        strokeColor: [this.strokeColor],
         strokeWidth: 3
       },
       grid: {

@@ -36,10 +36,17 @@ export function SubHeader() {
   useLayoutEffect(() => {
     const aside = getBreadcrumbsAndTitle("kt_aside_menu", location.pathname);
     const header = getBreadcrumbsAndTitle("kt_header_menu", location.pathname);
-    const breadcrumbs = (aside && aside.breadcrumbs.length > 0) ? aside.breadcrumbs : header.breadcrumbs;
+    const breadcrumbs =
+      aside && aside.breadcrumbs.length > 0
+        ? aside.breadcrumbs
+        : header.breadcrumbs;
     subheader.setBreadcrumbs(breadcrumbs);
-    subheader.setTitle((aside && aside.title && aside.title.length > 0) ? aside.title : header.title);
-     // eslint-disable-next-line
+    subheader.setTitle(
+      aside && aside.title && aside.title.length > 0
+        ? aside.title
+        : header.title
+    );
+    // eslint-disable-next-line
   }, [location.pathname]);
 
   // Do not remove this useEffect, need from update title/breadcrumbs outside (from the page)
@@ -81,14 +88,12 @@ export function SubHeader() {
         {/* Info */}
 
         {/* Toolbar */}
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center flex-wrap">
           <button
             type="button"
-            className={`btn btn-fixed-height ${
-              layoutProps.subheaderFixed ? "btn-default" : "btn-white"
-            } btn-hover-primary font-weight-bold px-2 px-lg-5 mr-2`}
+            className={`btn btn-primary btn-fixed-height font-weight-bold px-2 px-lg-5 mr-2`}
           >
-            <span className="svg-icon svg-icon-success svg-icon-lg">
+            <span className="svg-icon svg-icon-lg">
               <SVG
                 src={toAbsoluteUrl(
                   "/media/svg/icons/Communication/Add-user.svg"
@@ -102,7 +107,7 @@ export function SubHeader() {
 
           {/* Button */}
           <button
-            className="btn btn-success btn-icon font-weight-bold"
+            className="btn btn-primary btn-icon font-weight-bolds   "
             data-toggle="modal"
             data-target="#kt_chat_modal"
           >

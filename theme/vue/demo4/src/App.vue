@@ -7,6 +7,7 @@
 @import "~bootstrap-vue/dist/bootstrap-vue.css";
 @import "~perfect-scrollbar/css/perfect-scrollbar.css";
 @import "~socicon/css/socicon.css";
+@import "~animate.css";
 @import "~@fortawesome/fontawesome-free/css/all.css";
 @import "~line-awesome/dist/line-awesome/css/line-awesome.css";
 @import "assets/plugins/flaticon/flaticon.css";

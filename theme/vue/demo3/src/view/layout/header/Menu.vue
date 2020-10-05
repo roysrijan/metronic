@@ -471,15 +471,24 @@
                     </a>
                   </li>
                 </router-link>
-                <li aria-haspopup="true" class="menu-item">
-                  <a
-                    href="#/vue-bootstrap/layout-grid-system"
-                    class="menu-link"
+                <router-link
+                  to="layout-grid-system"
+                  v-slot="{ href, navigate, isActive, isExactActive }"
+                >
+                  <li
+                    aria-haspopup="true"
+                    class="menu-item"
+                    :class="[
+                      isActive && 'menu-item-active',
+                      isExactActive && 'menu-item-active'
+                    ]"
                   >
-                    <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                    <span class="menu-text"> Layout Grid System </span>
-                  </a>
-                </li>
+                    <a :href="href" class="menu-link" @click="navigate">
+                      <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                      <span class="menu-text"> Layout Grid System </span>
+                    </a>
+                  </li>
+                </router-link>
               </ul>
             </li>
             <li class="menu-item">
@@ -650,7 +659,7 @@
               </h3>
               <ul class="menu-inner">
                 <router-link
-                  to="/vue-bootstrap/popover"
+                  to="/vue-bootstrap/notify-popover"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -688,7 +697,7 @@
                 </router-link>
 
                 <router-link
-                  to="/vue-bootstrap/spinner"
+                  to="/vue-bootstrap/progress-spinner"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -745,7 +754,7 @@
                 </router-link>
 
                 <router-link
-                  to="/vue-bootstrap/toasts"
+                  to="/vue-bootstrap/notify-toasts"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -764,7 +773,7 @@
                 </router-link>
 
                 <router-link
-                  to="/vue-bootstrap/tooltip"
+                  to="/vue-bootstrap/notify-tooltip"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -967,7 +976,7 @@
                 </router-link>
 
                 <router-link
-                  to="/vuetify/autocompletes"
+                  to="/vuetify/forms-autocompletes"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -986,7 +995,7 @@
                 </router-link>
 
                 <router-link
-                  to="/vuetify/file-inputs"
+                  to="/vuetify/forms-file-inputs"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1032,7 +1041,7 @@
                 </router-link>
 
                 <router-link
-                  to="/vuetify/selection-controls"
+                  to="/vuetify/forms-selection-controls"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1051,7 +1060,7 @@
                 </router-link>
 
                 <router-link
-                  to="/vuetify/selects"
+                  to="/vuetify/forms-selects"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1070,7 +1079,7 @@
                 </router-link>
 
                 <router-link
-                  to="/vuetify/textareas"
+                  to="/vuetify/forms-textareas"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1089,7 +1098,7 @@
                 </router-link>
 
                 <router-link
-                  to="/vuetify/text-fields"
+                  to="/vuetify/forms-text-fields"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1116,7 +1125,7 @@
               </h3>
               <ul class="menu-inner">
                 <router-link
-                  to="/vuetify/simple-tables"
+                  to="/vuetify/tables-simple-tables"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1135,7 +1144,7 @@
                 </router-link>
 
                 <router-link
-                  to="/vuetify/data-tables"
+                  to="/vuetify/tables-data-tables"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1238,7 +1247,7 @@
       aria-haspopup="true"
       data-menu-toggle="click"
       class="menu-item menu-item-submenu menu-item-open-dropdown"
-      v-bind:class="{ 'menu-item-active': hasActiveChildren('/error/error') }"
+      v-bind:class="{ 'menu-item-active': hasActiveChildren('/custom') }"
     >
       <a href="#" class="menu-link menu-toggle">
         <span class="menu-text"> Custom </span>
@@ -1258,7 +1267,7 @@
             <div class="menu-submenu menu-submenu-classic menu-submenu-right">
               <ul class="menu-subnav">
                 <router-link
-                  to="/error/error-1"
+                  to="/custom-error/error-1"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1278,7 +1287,7 @@
                 </router-link>
 
                 <router-link
-                  to="/error/error-2"
+                  to="/custom-error/error-2"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1298,7 +1307,7 @@
                 </router-link>
 
                 <router-link
-                  to="/error/error-3"
+                  to="/custom-error/error-3"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1318,7 +1327,7 @@
                 </router-link>
 
                 <router-link
-                  to="/error/error-4"
+                  to="/custom-error/error-4"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1338,7 +1347,7 @@
                 </router-link>
 
                 <router-link
-                  to="/error/error-5"
+                  to="/custom-error/error-5"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1358,7 +1367,7 @@
                 </router-link>
 
                 <router-link
-                  to="/error/error-6"
+                  to="/custom-error/error-6"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1384,7 +1393,7 @@
             data-menu-toggle="hover"
             class="menu-item menu-item-submenu"
             v-bind:class="{
-              'menu-item-active': hasActiveChildren('/wizard/wizard')
+              'menu-item-active': hasActiveChildren('/custom-wizard/wizard')
             }"
           >
             <a href="#" class="menu-link menu-toggle">
@@ -1395,7 +1404,7 @@
             <div class="menu-submenu menu-submenu-classic menu-submenu-right">
               <ul class="menu-subnav">
                 <router-link
-                  to="/wizard/wizard-1"
+                  to="/custom-wizard/wizard-1"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1415,7 +1424,7 @@
                 </router-link>
 
                 <router-link
-                  to="/wizard/wizard-2"
+                  to="/custom-wizard/wizard-2"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1435,7 +1444,7 @@
                 </router-link>
 
                 <router-link
-                  to="/wizard/wizard-3"
+                  to="/custom-wizard/wizard-3"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1455,15 +1464,19 @@
                 </router-link>
 
                 <router-link
-                  to="/wizard/wizard-4"
+                  to="/custom-wizard/wizard-4"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
                     aria-haspopup="true"
                     data-menu-toggle="hover"
                     class="menu-item"
+                    :class="[
+                      isActive && 'menu-item-active',
+                      isExactActive && 'menu-item-active'
+                    ]"
                   >
-                    <a href="#/wizard/wizard-4" class="menu-link">
+                    <a :href="href" class="menu-link" @click="navigate">
                       <i class="menu-bullet menu-bullet-dot"><span></span></i>
                       <span class="menu-text"> Wizard 4 </span>
                     </a>
@@ -1472,12 +1485,13 @@
               </ul>
             </div>
           </li>
+
           <li
             aria-haspopup="true"
             data-menu-toggle="hover"
             class="menu-item menu-item-submenu"
             v-bind:class="{
-              'menu-item-active': hasActiveChildren('/plugins/plugins')
+              'menu-item-active': hasActiveChildren('/custom-plugins')
             }"
           >
             <a href="#" class="menu-link menu-toggle">
@@ -1488,7 +1502,7 @@
             <div class="menu-submenu menu-submenu-classic menu-submenu-right">
               <ul class="menu-subnav">
                 <router-link
-                  to="/plugins/cropper"
+                  to="/custom-plugins/cropper"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1503,6 +1517,63 @@
                     <a :href="href" class="menu-link" @click="navigate">
                       <i class="menu-bullet menu-bullet-dot"><span></span></i>
                       <span class="menu-text"> Cropper </span>
+                    </a>
+                  </li>
+                </router-link>
+                <router-link
+                  to="/custom-plugins/treeselect"
+                  v-slot="{ href, navigate, isActive, isExactActive }"
+                >
+                  <li
+                    aria-haspopup="true"
+                    data-menu-toggle="hover"
+                    class="menu-item"
+                    :class="[
+                      isActive && 'menu-item-active',
+                      isExactActive && 'menu-item-active'
+                    ]"
+                  >
+                    <a :href="href" class="menu-link" @click="navigate">
+                      <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                      <span class="menu-text"> Treeselect </span>
+                    </a>
+                  </li>
+                </router-link>
+              </ul>
+            </div>
+          </li>
+
+          <li
+            aria-haspopup="true"
+            data-menu-toggle="hover"
+            class="menu-item menu-item-submenu"
+            v-bind:class="{
+              'menu-item-active': hasActiveChildren('/custom-pages')
+            }"
+          >
+            <a href="#" class="menu-link menu-toggle">
+              <i class="menu-icon far fa-user"></i>
+              <span class="menu-text"> Pages </span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="menu-submenu menu-submenu-classic menu-submenu-right">
+              <ul class="menu-subnav">
+                <router-link
+                  to="/custom-pages/profile"
+                  v-slot="{ href, navigate, isActive, isExactActive }"
+                >
+                  <li
+                    aria-haspopup="true"
+                    data-menu-toggle="hover"
+                    class="menu-item"
+                    :class="[
+                      isActive && 'menu-item-active',
+                      isExactActive && 'menu-item-active'
+                    ]"
+                  >
+                    <a :href="href" class="menu-link" @click="navigate">
+                      <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                      <span class="menu-text"> Profile </span>
                     </a>
                   </li>
                 </router-link>

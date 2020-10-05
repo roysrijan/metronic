@@ -12,7 +12,6 @@ var sourcemaps = require('gulp-sourcemaps');
 var build = require('./build');
 var path = require('path');
 var fs = require('fs');
-var filter = require('gulp-filter');
 var autoprefixer = require('gulp-autoprefixer');
 var rtlcss = require('gulp-rtlcss');
 var cleancss = require('gulp-clean-css');

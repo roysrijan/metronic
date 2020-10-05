@@ -1,5 +1,4 @@
 <template>
-  <!--begin::Mixed Widget 5-->
   <div
     class="card card-custom bg-radial-gradient-primary gutter-b card-stretch"
   >
@@ -60,7 +59,6 @@
     </div>
     <!--end::Body-->
   </div>
-  <!--end::Mixed Widget 5-->
 </template>
 
 <script>
@@ -118,7 +116,7 @@ export default {
       },
       stroke: {
         show: true,
-        width: 1,
+        width: 2,
         colors: ["transparent"]
       },
       xaxis: {
@@ -191,10 +189,7 @@ export default {
           }
         }
       },
-      colors: [
-        this.layoutConfig("colors.theme.base.success"),
-        this.layoutConfig("colors.theme.base.white")
-      ],
+      colors: [this.layoutConfig("colors.theme.base.success"), "#ffffff"],
       grid: {
         borderColor: this.layoutConfig("colors.gray.gray-200"),
         strokeDashArray: 4,

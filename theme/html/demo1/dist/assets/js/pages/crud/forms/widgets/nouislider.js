@@ -2,6 +2,8 @@
 var KTnoUiSliderDemos = function() {
 
     // Private functions
+
+     
     var demo1 = function() {
         // init slider
         var slider = document.getElementById('kt_nouislider_1');
@@ -14,7 +16,7 @@ var KTnoUiSliderDemos = function() {
                 'max': [ 10 ]
             },
             format: wNumb({
-                decimals: 0
+                decimals: 0 
             })
         });
 
@@ -78,12 +80,12 @@ var KTnoUiSliderDemos = function() {
                 'max': 200
             }
         });
-
+       
 
         // init slider input
         var sliderInput0 = document.getElementById('kt_nouislider_3_input');
         var sliderInput1 = document.getElementById('kt_nouislider_3.1_input');
-        var sliderInputs = [sliderInput1, sliderInput0];
+        var sliderInputs = [sliderInput1, sliderInput0];        
 
         slider.noUiSlider.on('update', function( values, handle ) {
             sliderInputs[handle].value = values[handle];
@@ -91,6 +93,7 @@ var KTnoUiSliderDemos = function() {
     }
 
     var demo4 = function() {
+
        var slider = document.getElementById('kt_nouislider_input_select');
 
         // Append the option elements
@@ -137,7 +140,7 @@ var KTnoUiSliderDemos = function() {
             html5Slider.noUiSlider.set([null, this.value]);
         });
     }
-
+ 
     var demo5 = function() {
         // init slider
         var slider = document.getElementById('kt_nouislider_5');
@@ -175,7 +178,7 @@ var KTnoUiSliderDemos = function() {
     }
 
     var demo6 = function() {
-        // init slider
+        // init slider             
 
         var verticalSlider = document.getElementById('kt_nouislider_6');
 
@@ -186,7 +189,7 @@ var KTnoUiSliderDemos = function() {
                 'min': 0,
                 'max': 100
             }
-        });
+        }); 
 
         // init slider input
         var sliderInput = document.getElementById('kt_nouislider_6_input');
@@ -197,12 +200,40 @@ var KTnoUiSliderDemos = function() {
 
         sliderInput.addEventListener('change', function(){
             verticalSlider.noUiSlider.set(this.value);
+        });      
+    }    
+
+    var demo7 = function() {
+        // init slider
+        var slider = document.getElementById('kt_nouislider_7');
+
+        noUiSlider.create(slider, {
+            start: [ 40, 60 ],
+            connect: true,
+            range: {
+                'min': 0 ,
+                'max': 100
+            },
+            format: wNumb({
+                decimals: 2,
+                postfix: ' ($)',
+            })
         });
-    }
+       
+
+        // init slider input
+        var sliderInput0 = document.getElementById('kt_nouislider_7_input');
+        var sliderInput1 = document.getElementById('kt_nouislider_7.1_input');
+        var sliderInputs = [sliderInput0, sliderInput1];        
+
+        slider.noUiSlider.on('update', function( values, handle ) {
+            sliderInputs[handle].value = values[handle];
+        });     
+    }    
 
     // Modal demo
 
-    var modalDemo1 = function() {
+    var modaldemo1 = function() {
         var slider = document.getElementById('kt_nouislider_modal1');
 
         noUiSlider.create(slider, {
@@ -213,7 +244,7 @@ var KTnoUiSliderDemos = function() {
                 'max': [ 10 ]
             },
             format: wNumb({
-                decimals: 0
+                decimals: 0 
             })
         });
 
@@ -229,7 +260,7 @@ var KTnoUiSliderDemos = function() {
         });
     }
 
-    var modalDemo2 = function() {
+    var modaldemo2 = function() {
         var slider = document.getElementById('kt_nouislider_modal2');
 
         noUiSlider.create(slider, {
@@ -259,7 +290,7 @@ var KTnoUiSliderDemos = function() {
         });
     }
 
-    var modalDemo3 = function() {
+    var modaldemo3 = function() {
         var slider = document.getElementById('kt_nouislider_modal3');
 
         noUiSlider.create(slider, {
@@ -275,31 +306,30 @@ var KTnoUiSliderDemos = function() {
                 'max': 200
             }
         });
-
+       
 
         // init slider input
         var sliderInput0 = document.getElementById('kt_nouislider_modal1.1_input');
         var sliderInput1 = document.getElementById('kt_nouislider_modal1.2_input');
-        var sliderInputs = [sliderInput1, sliderInput0];
+        var sliderInputs = [sliderInput1, sliderInput0];        
 
         slider.noUiSlider.on('update', function( values, handle ) {
             sliderInputs[handle].value = values[handle];
         });
     }
-
     return {
         // public functions
         init: function() {
             demo1();
             demo2();
-            demo3();
-            demo4();
-            demo5();
-            demo6();
-
-            modalDemo1();
-            modalDemo2();
-            modalDemo3();
+            demo3();  
+            demo4(); 
+            demo5();  
+            demo6(); 
+            demo7();
+            modaldemo1();
+            modaldemo2();
+            modaldemo3();                           
         }
     };
 }();
@@ -307,3 +337,5 @@ var KTnoUiSliderDemos = function() {
 jQuery(document).ready(function() {
     KTnoUiSliderDemos.init();
 });
+
+

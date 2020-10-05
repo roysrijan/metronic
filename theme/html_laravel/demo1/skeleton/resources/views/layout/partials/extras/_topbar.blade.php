@@ -57,7 +57,7 @@
 
     {{-- Quick Actions --}}
     @if (config('layout.extras.quick-actions.display'))
-        @if (config('layout.extras.quick-actions.layout') == 'offcanvas'))
+        @if (config('layout.extras.quick-actions.layout') == 'offcanvas')
             <div class="topbar-item">
                 <div class="btn btn-icon btn-clean btn-dropdown btn-lg mr-1" id="kt_quick_actions_toggle">
                     {{ Metronic::getSVG("media/svg/icons/Media/Equalizer.svg", "svg-icon-xl svg-icon-primary") }}

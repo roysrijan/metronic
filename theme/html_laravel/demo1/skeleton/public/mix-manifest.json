@@ -122,6 +122,7 @@
     "/js/pages/custom/contacts/edit-contact.js": "/js/pages/custom/contacts/edit-contact.js",
     "/js/pages/custom/contacts/list-columns.js": "/js/pages/custom/contacts/list-columns.js",
     "/js/pages/custom/contacts/list-datatable.js": "/js/pages/custom/contacts/list-datatable.js",
+    "/js/pages/custom/ecommerce/checkout.js": "/js/pages/custom/ecommerce/checkout.js",
     "/js/pages/custom/ecommerce/my-orders.js": "/js/pages/custom/ecommerce/my-orders.js",
     "/js/pages/custom/education/school/calendar.js": "/js/pages/custom/education/school/calendar.js",
     "/js/pages/custom/education/school/library.js": "/js/pages/custom/education/school/library.js",

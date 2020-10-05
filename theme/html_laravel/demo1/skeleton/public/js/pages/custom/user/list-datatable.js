@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 119);
+/******/ 	return __webpack_require__(__webpack_require__.s = 120);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -98,7 +98,7 @@ eval(" // Class definition\n\nvar KTAppsUsersListDatatable = function () {\n  //
 
 /***/ }),
 
-/***/ 119:
+/***/ 120:
 /*!*************************************************************************!*\
   !*** multi ./resources/metronic/js/pages/custom/user/list-datatable.js ***!
   \*************************************************************************/
