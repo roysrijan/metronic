@@ -49,7 +49,7 @@ export const customersSlice = createSlice({
     },
     // createCustomer
     customerCreated: (state, action) => {
-      state.actionsLoading = false;
+      state.ewactionsLoading = false;
       state.error = null;
       state.entities.push(action.payload.customer);
     },

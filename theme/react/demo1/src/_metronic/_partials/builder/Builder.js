@@ -504,7 +504,7 @@ export function Builder() {
                                                 onClick={handleSubmit}
                                                 className={`btn btn-primary font-weight-bold mr-2`}
                                             >
-                                                <i className="la la-eye"/> Preview
+                                                <i className="fa fa-eye"/> Preview
                                             </button>
                                             {" "}
                                             <button
@@ -512,7 +512,7 @@ export function Builder() {
                                                 onClick={handleReset}
                                                 className={`btn btn-clean font-weight-bold mr-2`}
                                             >
-                                                <i className="la la-recycle"/> Reset
+                                                <i className="fa fa-recycle"/> Reset
                                             </button>
                                             {" "}
                                             <span

@@ -31,6 +31,7 @@ export { BaseTablesWidget6 } from "./base-tables/BaseTablesWidget6";
 export { AdvanceTablesWidget1 } from "./advance-tables/AdvanceTablesWidget1";
 export { AdvanceTablesWidget2 } from "./advance-tables/AdvanceTablesWidget2";
 export { AdvanceTablesWidget4 } from "./advance-tables/AdvanceTablesWidget4";
+export { AdvanceTablesWidget7 } from "./advance-tables/AdvanceTablesWidget7";
 export { AdvanceTablesWidget9 } from "./advance-tables/AdvanceTablesWidget9";
 
 // Tiles

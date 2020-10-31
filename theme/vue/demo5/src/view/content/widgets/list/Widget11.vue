@@ -4,7 +4,12 @@
     <div class="card-header border-0">
       <h3 class="card-title font-weight-bolder text-dark">Authors</h3>
       <div class="card-toolbar">
-        <Dropdown4></Dropdown4>
+        <Dropdown4
+          :btnClass="
+            'btn btn-light-primary btn-sm font-weight-bolder dropdown-toggle'
+          "
+          :btnText="'August'"
+        ></Dropdown4>
       </div>
     </div>
     <!--end::Header-->
@@ -29,7 +34,7 @@
             <span class="text-muted">{{ item.desc }}</span>
           </div>
           <!--end::Text-->
-          <Dropdown2></Dropdown2>
+          <Dropdown2><i class="ki ki-bold-more-hor"></i></Dropdown2>
         </div>
       </template>
     </div>

@@ -15,24 +15,30 @@
           <li class="nav-item">
             <a
               class="nav-link py-2 px-4"
+              :class="{ active: this.show === 'month' }"
               data-toggle="tab"
               href="#kt_tab_pane_3_1"
+              @click="show = 'month'"
               >Month</a
             >
           </li>
           <li class="nav-item">
             <a
               class="nav-link py-2 px-4"
+              :class="{ active: this.show === 'week' }"
               data-toggle="tab"
               href="#kt_tab_pane_3_2"
+              @click="show = 'week'"
               >Week</a
             >
           </li>
           <li class="nav-item">
             <a
-              class="nav-link py-2 px-4 active"
+              class="nav-link py-2 px-4"
+              :class="{ active: this.show === 'day' }"
               data-toggle="tab"
               href="#kt_tab_pane_3_3"
+              @click="show = 'day'"
               >Day</a
             >
           </li>
@@ -56,7 +62,7 @@
             </tr>
           </thead>
           <tbody>
-            <template v-for="(item, i) in list">
+            <template v-for="(item, i) in dataToShow">
               <tr v-bind:key="i">
                 <td class="pl-0">
                   <div class="symbol symbol-50 symbol-light mr-2 mt-2">
@@ -119,7 +125,92 @@ export default {
   name: "widget-9",
   data() {
     return {
-      list: [
+      show: "day",
+      month: [
+        {
+          img: "media/svg/avatars/018-girl-9.svg",
+          name: "Jessie Clarcson",
+          desc: "HTML, CSS Coding",
+          paid: "$1,200,000",
+          percentage: "+52%",
+          class: "warning"
+        },
+        {
+          img: "media/svg/avatars/001-boy.svg",
+          name: "Brad Simmons",
+          desc: "Successful Fellas",
+          paid: "$2,000,000",
+          percentage: "+28%",
+          class: "primary"
+        },
+        {
+          img: "media/svg/avatars/047-girl-25.svg",
+          name: "Lebron Wayde",
+          desc: "ReactJS Developer",
+          paid: "$3,400,000",
+          percentage: "-34%",
+          class: "danger"
+        },
+        {
+          img: "media/svg/avatars/043-boy-18.svg",
+          name: "Kevin Leonard",
+          desc: "Art Director",
+          paid: "$35,600,000",
+          percentage: "+230%",
+          class: "success"
+        },
+        {
+          img: "media/svg/avatars/014-girl-7.svg",
+          name: "Natali Trump",
+          desc: "UI/UX Designer",
+          paid: "$4,500,000",
+          percentage: "+48%",
+          class: "success"
+        }
+      ],
+      week: [
+        {
+          img: "media/svg/avatars/018-girl-9.svg",
+          name: "Jessie Clarcson",
+          desc: "HTML, CSS Coding",
+          paid: "$1,200,000",
+          percentage: "+52%",
+          class: "warning"
+        },
+        {
+          img: "media/svg/avatars/014-girl-7.svg",
+          name: "Natali Trump",
+          desc: "UI/UX Designer",
+          paid: "$4,500,000",
+          percentage: "+48%",
+          class: "success"
+        },
+        {
+          img: "media/svg/avatars/047-girl-25.svg",
+          name: "Lebron Wayde",
+          desc: "ReactJS Developer",
+          paid: "$3,400,000",
+          percentage: "-34%",
+          class: "danger"
+        },
+        {
+          img: "media/svg/avatars/043-boy-18.svg",
+          name: "Kevin Leonard",
+          desc: "Art Director",
+          paid: "$35,600,000",
+          percentage: "+230%",
+          class: "success"
+        },
+        {
+          img: "media/svg/avatars/001-boy.svg",
+          name: "Brad Simmons",
+          desc: "Successful Fellas",
+          paid: "$2,000,000",
+          percentage: "+28%",
+          class: "primary"
+        }
+      ],
+      day: [
         {
           img: "media/svg/avatars/001-boy.svg",
           name: "Brad Simmons",
@@ -162,6 +253,14 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    dataToShow() {
+      if (this.show === "month") return this.month;
+      if (this.show === "week") return this.week;
+      if (this.show === "day") return this.day;
+      return this.day;
+    }
   }
 };
 </script>

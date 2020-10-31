@@ -114,7 +114,7 @@ module.exports = {
         }).pipe(function () {
             return sass({
                 errLogToConsole: true,
-                includePaths: includePaths,
+                includePaths: ['node_modules'].concat(includePaths),
                 // outputStyle: config.cssMinify ? 'compressed' : '',
             }).on('error', sass.logError);
         }).pipe(function () {
@@ -166,6 +166,17 @@ module.exports = {
         }
 
         var piping = lazypipe();
+
+        if (type === 'styles') {
+            piping = piping.pipe(function () {
+                return gulpif(build.config.compile.cssMinify, rename({suffix: '.min'}));
+            });
+        }
+        if (type === 'scripts') {
+            piping = piping.pipe(function () {
+                return gulpif(build.config.compile.jsMinify, rename({suffix: '.min'}));
+            });
+        }
 
         var regex = new RegExp(/\{\$.*?\}/);
         var matched = path.match(regex);

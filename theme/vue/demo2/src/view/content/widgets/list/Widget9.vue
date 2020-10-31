@@ -5,7 +5,10 @@
         <!--begin::Tiles Widget 3-->
         <div
           class="card card-custom bgi-no-repeat bgi-no-repeat bgi-size-cover gutter-b"
-          style="height: 150px; background-image: url(/media/bg/bg-9.jpg)"
+          style="height: 150px;"
+          :style="{
+            backgroundImage: `url(${backgroundImage('media/bg/bg-9.jpg')})`
+          }"
         >
           <!--begin::Body-->
           <div class="card-body d-flex flex-column">
@@ -48,7 +51,12 @@
         <!--begin::Tiles Widget 13-->
         <div
           class="card card-custom bgi-no-repeat gutter-b"
-          style="height: 175px; background-color: #663259; background-position: calc(100% + 0.5rem) 100%; background-size: 100% auto; background-image: url(/media/svg/patterns/taieri.svg)"
+          style="height: 175px; background-color: #663259; background-position: calc(100% + 0.5rem) 100%; background-size: 100% auto;"
+          :style="{
+            backgroundImage: `url(${backgroundImage(
+              'media/svg/patterns/taieri.svg'
+            )})`
+          }"
         >
           <!--begin::Body-->
           <div class="card-body d-flex align-items-center">
@@ -98,9 +106,7 @@
             <div class="card card-custom gutter-b" style="height: 150px">
               <div class="card-body">
                 <span class="svg-icon svg-icon-3x svg-icon-success">
-                  <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Group.svg-->
-                  <inline-svg src="/media/svg/icons/Communication/Group.svg" />
-                  <!--end::Svg Icon-->
+                  <inline-svg src="media/svg/icons/Communication/Group.svg" />
                 </span>
                 <div class="text-dark font-weight-bolder font-size-h2 mt-3">
                   8,600
@@ -120,7 +126,11 @@
         <!--begin::Mixed Widget 14-->
         <div
           class="card card-custom bgi-no-repeat bgi-size-cover gutter-b card-stretch"
-          style="background-image: url(/media/stock-600x600/img-16.jpg)"
+          :style="{
+            backgroundImage: `url(${backgroundImage(
+              'media/stock-600x600/img-16.jpg'
+            )})`
+          }"
         >
           <!--begin::Body-->
           <div
@@ -153,57 +163,12 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "widget-9",
-  data() {
-    return {
-      list: [
-        {
-          time: "08:42",
-          desc: "Outlines of the recent activities that happened last weekend",
-          badge: "fa fa-genderless text-success"
-        },
-        {
-          time: "3 hr",
-          desc: "AEOL meeting",
-          bold: true,
-          badge: "fa fa-genderless text-danger"
-        },
-        {
-          time: "14:37",
-          desc: `Submit initial budget - <a href="#" class="text-primary">USD 700</a>.`,
-          badge: "fa fa-genderless text-info",
-          bold: true
-        },
-        {
-          time: "16:50",
-          desc: "Stakeholder meeting scheduling.",
-          badge: "fa fa-genderless text-danger"
-        },
-        {
-          time: "17:30",
-          desc: "Project scoping & estimations with stakeholders.",
-          badge: "fa fa-genderless text-success"
-        },
-        {
-          time: "21:03",
-          desc: `New order placed <a href="#" class="text-primary">#XF-2356</a>.`,
-          badge: "fa fa-genderless text-warning",
-          bold: true
-        },
-        {
-          time: "21:07",
-          desc:
-            "Company BBQ to celebrate the last quater achievements and goals.",
-          badge: "fa fa-genderless text-danger"
-        },
-        {
-          time: "20:30",
-          desc: "Marketing campaign planning with customer.",
-          badge: "fa fa-genderless text-info"
-        }
-      ]
-    };
-  },
   components: {},
+  methods: {
+    backgroundImage(path) {
+      return process.env.BASE_URL + path;
+    }
+  },
   computed: {
     ...mapGetters(["layoutConfig"])
   }

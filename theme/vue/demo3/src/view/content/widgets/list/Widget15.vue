@@ -16,7 +16,9 @@
             <a
               class="nav-link py-2 px-4"
               data-toggle="tab"
+              :class="{ active: this.show === 'month' }"
               href="#kt_tab_pane_1_1"
+              @click="show = 'month'"
               >Month</a
             >
           </li>
@@ -24,15 +26,19 @@
             <a
               class="nav-link py-2 px-4"
               data-toggle="tab"
+              :class="{ active: this.show === 'week' }"
               href="#kt_tab_pane_1_2"
+              @click="show = 'week'"
               >Week</a
             >
           </li>
           <li class="nav-item">
             <a
-              class="nav-link py-2 px-4 active"
+              class="nav-link py-2 px-4"
               data-toggle="tab"
+              :class="{ active: this.show === 'day' }"
               href="#kt_tab_pane_1_3"
+              @click="show = 'day'"
               >Day</a
             >
           </li>
@@ -54,7 +60,7 @@
             </tr>
           </thead>
           <tbody>
-            <template v-for="(item, i) in list">
+            <template v-for="(item, i) in dataToShow">
               <tr v-bind:key="i">
                 <td class="pl-0 py-5">
                   <div class="symbol symbol-50 symbol-light mr-2">
@@ -129,7 +135,82 @@ export default {
   name: "Widget13",
   data() {
     return {
-      list: [
+      show: "day",
+      month: [
+        {
+          img: "media/svg/misc/014-kickstarter.svg",
+          title: "Bestseller Theme",
+          desc: "Amazing Templates",
+          class: "info",
+          percentage: "50%"
+        },
+        {
+          img: "media/svg/misc/006-plurk.svg",
+          title: "Top Authors",
+          desc: "Successful Fellas",
+          class: "danger",
+          percentage: "65%"
+        },
+        {
+          img: "media/svg/misc/003-puzzle.svg",
+          title: "New Users",
+          desc: "Awesome Users",
+          class: "primary",
+          percentage: "47%"
+        },
+        {
+          img: "media/svg/misc/005-bebo.svg",
+          title: "Active Customers",
+          desc: "Best Customers",
+          class: "danger",
+          percentage: "71%"
+        },
+        {
+          img: "media/svg/misc/015-telegram.svg",
+          title: "Popular Authors",
+          desc: "Most Successful",
+          class: "success",
+          percentage: "83%"
+        }
+      ],
+      week: [
+        {
+          img: "media/svg/misc/005-bebo.svg",
+          title: "Active Customers",
+          desc: "Best Customers",
+          class: "danger",
+          percentage: "71%"
+        },
+        {
+          img: "media/svg/misc/015-telegram.svg",
+          title: "Popular Authors",
+          desc: "Most Successful",
+          class: "success",
+          percentage: "83%"
+        },
+        {
+          img: "media/svg/misc/003-puzzle.svg",
+          title: "New Users",
+          desc: "Awesome Users",
+          class: "primary",
+          percentage: "47%"
+        },
+        {
+          img: "media/svg/misc/006-plurk.svg",
+          title: "Top Authors",
+          desc: "Successful Fellas",
+          class: "danger",
+          percentage: "65%"
+        },
+        {
+          img: "media/svg/misc/014-kickstarter.svg",
+          title: "Bestseller Theme",
+          desc: "Amazing Templates",
+          class: "info",
+          percentage: "50%"
+        }
+      ],
+      day: [
         {
           img: "media/svg/misc/006-plurk.svg",
           title: "Top Authors",
@@ -167,6 +248,14 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    dataToShow() {
+      if (this.show === "month") return this.month;
+      if (this.show === "week") return this.week;
+      if (this.show === "day") return this.day;
+      return this.day;
+    }
   }
 };
 </script>

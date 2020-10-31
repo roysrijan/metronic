@@ -1,4 +1,7 @@
+/* eslint-disable */
 "use strict";
+
+import { KTUtil } from "./util";
 
 // Component Definition
 var KTCard = function(elementId, options) {
@@ -427,5 +430,7 @@ var KTCard = function(elementId, options) {
 
 // webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    module.exports = KTCard;
+    // module.exports = KTCard;
 }
+
+export default KTCard;

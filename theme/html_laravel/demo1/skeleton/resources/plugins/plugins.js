@@ -53,6 +53,9 @@ require('block-ui/jquery.blockUI.js');
 //Tempus Dominus - The Tempus Dominus provides a flexible datetimepicker widget in the Bootstrap style: https://tempusdominus.github.io/bootstrap-4/
 require('tempusdominus-bootstrap-4');
 
+// JQuery Mask Plugin - is a jQuery plugin which create an input mask. An input mask helps the user with the input by ensuring a predefined format: https://igorescobar.github.io/jQuery-Mask-Plugin/
+require('jquery-mask-plugin');
+
 // Bootstrap Datepicker - Bootstrap-datepicker provides a flexible datepicker widget in the Bootstrap style: https://bootstrap-datepicker.readthedocs.io/en/latest/
 require('bootstrap-datepicker/dist/js/bootstrap-datepicker.js');
 require('../metronic/js/vendors/plugins/bootstrap-datepicker.init.js');

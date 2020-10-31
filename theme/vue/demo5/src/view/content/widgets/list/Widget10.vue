@@ -34,7 +34,7 @@
             >
           </div>
           <!--end::Text-->
-          <Dropdown2></Dropdown2>
+          <Dropdown2><i class="ki ki-bold-more-hor"></i></Dropdown2>
         </div>
       </template>
     </div>

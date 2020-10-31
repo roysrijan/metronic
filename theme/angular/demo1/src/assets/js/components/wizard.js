@@ -1,4 +1,7 @@
+/* eslint-disable */
 "use strict";
+
+import { KTUtil } from "./util";
 
 // Component Definition
 var KTWizard = function(elementId, options) {
@@ -442,5 +445,7 @@ var KTWizard = function(elementId, options) {
 
 // webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    module.exports = KTWizard;
+    // module.exports = KTWizard;
 }
+
+export default KTWizard;

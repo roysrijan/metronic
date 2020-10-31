@@ -45,6 +45,15 @@ class PagesController extends Controller
         return view('pages.select2', compact('page_title', 'page_description'));
     }
 
+    // jQuery-mask
+    public function jQueryMask()
+    {
+        $page_title = 'jquery-mask';
+        $page_description = 'This is jquery masks test page';
+
+        return view('pages.jquery-mask', compact('page_title', 'page_description'));
+    }
+
     // custom-icons
     public function customIcons()
     {

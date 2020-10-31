@@ -62,7 +62,7 @@ KTUtil.ready(function() {
 
     // Init Code Highlighter & Preview Blocks(used to demonstrate the theme features)
     if (typeof KTLayoutExamples !== 'undefined') {
-        KTLayoutExamples.init('kt_page_stretched_card');
+        KTLayoutExamples.init();
     }
 
     // Init Demo Selection Panel

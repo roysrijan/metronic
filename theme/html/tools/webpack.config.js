@@ -30,7 +30,6 @@ const srcPath = demoPath + '/src';
 
 const extraPlugins = [];
 const exclude = [];
-const extraConfig = [];
 
 const js = args.indexOf('js') !== -1;
 const css = args.indexOf('css') !== -1 || args.indexOf('scss') !== -1;
@@ -127,7 +126,7 @@ function getEntryFiles() {
     // 3rd party plugins css/js
     'plugins/global/plugins.bundle': ['./webpack/plugins/plugins.js', './webpack/plugins/plugins.scss'],
     // Metronic css/js
-    'css/style.bundle': path.relative('./', srcPath) + '/sass/style.scss',
+    'css/style.bundle': './' + path.relative('./', srcPath) + '/sass/style.scss',
     'js/scripts.bundle': './webpack/scripts.' + demo + '.js',
   };
 
@@ -145,15 +144,15 @@ function getEntryFiles() {
 
   // Metronic css pages (single page use)
   (glob.sync(path.relative('./', srcPath) + '/sass/pages/**/!(_)*.scss') || []).forEach(file => {
-    entries[file.replace(/.*sass\/(.*?)\.scss$/ig, 'css/$1')] = file;
+    entries[file.replace(/.*sass\/(.*?)\.scss$/ig, 'css/$1')] = './' + file;
   });
   (glob.sync(path.relative('./', srcPath) + '/js/pages/**/!(_)*.js') || []).forEach(file => {
-    entries[file.replace(/.*js\/(.*?)\.js$/ig, 'js/$1')] = file;
+    entries[file.replace(/.*js\/(.*?)\.js$/ig, 'js/$1')] = './' + file;
   });
 
   // Metronic theme
   (glob.sync(path.relative('./', srcPath) + '/sass/themes/**/!(_)*.scss') || []).forEach(file => {
-    entries[file.replace(/.*sass\/(.*?)\.scss$/ig, 'css/$1')] = file;
+    entries[file.replace(/.*sass\/(.*?)\.scss$/ig, 'css/$1')] = './' + file;
   });
 
   return entries;
@@ -252,7 +251,10 @@ function mainConfig() {
               loader: 'sass-loader',
               options: {
                 sourceMap: false,
-                includePaths: [demoPath],
+                includePaths: [
+                  demoPath,
+                  path.resolve(__dirname, 'node_modules')
+                ],
               },
             },
           ],

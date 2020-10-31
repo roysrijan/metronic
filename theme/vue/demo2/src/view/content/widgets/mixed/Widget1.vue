@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="card-toolbar">
-        <Dropdown2></Dropdown2>
+        <Dropdown2><i class="ki ki-bold-more-hor"></i></Dropdown2>
       </div>
     </div>
     <!--end::Header-->
@@ -34,7 +34,7 @@
             <div class="d-flex align-items-center mr-2">
               <div class="symbol symbol-50 symbol-light mr-3 flex-shrink-0">
                 <div class="symbol-label">
-                  <img :src="`${item.svg}`" alt="" class="h-50" />
+                  <inline-svg :src="`${item.svg}`" alt="" class="h-50" />
                 </div>
               </div>
               <div>
@@ -86,19 +86,19 @@ export default {
         {
           title: "Top Authors",
           desc: "Ricky Hunt, Sandra Trepp",
-          svg: "/media/svg/misc/006-plurk.svg",
+          svg: "media/svg/misc/006-plurk.svg",
           profit: "+105$"
         },
         {
           title: "Bestsellers",
           desc: "Pitstop Email Marketing",
-          svg: "/media/svg/misc/015-telegram.svg",
+          svg: "media/svg/misc/015-telegram.svg",
           profit: "+60$"
         },
         {
           title: "Top Engagement",
           desc: "KT.com solution provider\n",
-          svg: "/media/svg/misc/003-puzzle.svg",
+          svg: "media/svg/misc/003-puzzle.svg",
           profit: "+75$"
         }
       ]

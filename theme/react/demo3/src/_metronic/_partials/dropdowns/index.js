@@ -5,4 +5,5 @@ export {DropdownMenu3} from "./DropdownMenu3";
 export {DropdownMenu4} from "./DropdownMenu4";
 
 export {DropdownCustomToggler} from "./DropdownCustomToggler";
+export {DropdownTopbarItemToggler} from "./DropdownTopbarItemToggler";
 export {DropdownItemToggler} from "./DropdownItemToggler";

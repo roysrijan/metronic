@@ -9,6 +9,7 @@ export const actionTypes = {
   Register: "[Register] Action",
   UserRequested: "[Request User] Action",
   UserLoaded: "[Load User] Auth API",
+  SetUser: "[Set User] Action",
 };
 
 const initialAuthState = {
@@ -17,7 +18,7 @@ const initialAuthState = {
 };
 
 export const reducer = persistReducer(
-  { storage, key: "v711-demo3-auth", whitelist: ["user", "authToken"] },
+  { storage, key: "v713-demo1-auth", whitelist: ["user", "authToken"] },
   (state = initialAuthState, action) => {
     switch (action.type) {
       case actionTypes.Login: {
@@ -42,6 +43,11 @@ export const reducer = persistReducer(
         return { ...state, user };
       }
 
+      case actionTypes.SetUser: {
+        const { user } = action.payload;
+        return { ...state, user };
+      }
+
       default:
         return state;
     }
@@ -60,6 +66,7 @@ export const actions = {
     payload: { user },
   }),
   fulfillUser: (user) => ({ type: actionTypes.UserLoaded, payload: { user } }),
+  setUser: (user) => ({ type: actionTypes.SetUser, payload: { user } }),
 };
 
 export function* saga() {

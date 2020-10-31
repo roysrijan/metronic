@@ -1,4 +1,7 @@
+/* eslint-disable */
 "use strict";
+
+import { KTUtil } from "./util";
 
 // Component Definition
 var KTToggle = function(toggleElement, targetElement, options) {
@@ -239,5 +242,7 @@ var KTToggle = function(toggleElement, targetElement, options) {
 
 // webpack support
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    module.exports = KTToggle;
+    // module.exports = KTToggle;
 }
+
+export default KTToggle;

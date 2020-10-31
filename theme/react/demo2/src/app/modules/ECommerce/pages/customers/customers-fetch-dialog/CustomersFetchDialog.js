@@ -1,7 +1,10 @@
 import React, { useEffect, useMemo } from "react";
 import { Modal } from "react-bootstrap";
 import { shallowEqual, useSelector } from "react-redux";
-import { CustomerStatusCssClasses } from "../CustomersUIHelpers";
+import {
+  CustomerStatusCssClasses,
+  CustomerStatusTitles,
+} from "../CustomersUIHelpers";
 import { useCustomersUIContext } from "../CustomersUIContext";
 
 const selectedCustomers = (entities, ids) => {
@@ -55,30 +58,37 @@ export function CustomersFetchDialog({ show, onHide }) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <div className="timeline timeline-5 mt-3">
-          {customers.map((customer) => (
-            <div className="timeline-item align-items-start" key={`id${customer.id}`}>
-              <div className="timeline-label font-weight-bolder text-dark-75 font-size-lg text-right pr-3" />
-              <div className="timeline-badge">
-                <i
-                  className={`fa fa-genderless text-${
-                    CustomerStatusCssClasses[customer.status]
-                  } icon-xxl`}
-                />
-              </div>
-              <div className="timeline-content text-dark-50 mr-5">
-                <span
+        <table className="table table table-head-custom table-vertical-center overflow-hidden">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>STATUS</th>
+              <th>CUSTOMER</th>
+            </tr>
+          </thead>
+          <tbody>
+            {customers.map((customer) => (
+              <tr key={`id${customer.id}`}>
+                <td>{customer.id}</td>
+                <td>
+                  <span
                     className={`label label-lg label-light-${
                       CustomerStatusCssClasses[customer.status]
                     } label-inline`}
                   >
-                    ID: {customer.id}
-                </span>
-                <span className="ml-3">{customer.lastName}, {customer.firstName}</span>                
-              </div>
-            </div>
-          ))}
-        </div>
+                    {" "}
+                    {CustomerStatusTitles[customer.status]}
+                  </span>
+                </td>
+                <td>
+                  <span className="ml-3">
+                    {customer.lastName}, {customer.firstName}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </Modal.Body>
       <Modal.Footer>
         <div>

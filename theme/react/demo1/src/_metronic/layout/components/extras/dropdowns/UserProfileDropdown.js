@@ -11,7 +11,6 @@ import { DropdownTopbarItemToggler } from "../../../../_partials/dropdowns";
 
 export function UserProfileDropdown() {
   const { user } = useSelector((state) => state.auth);
-
   const uiService = useHtmlClassService();
   const layoutProps = useMemo(() => {
     return {
@@ -36,11 +35,11 @@ export function UserProfileDropdown() {
             Hi,
           </span>{" "}
           <span className="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">
-            {user.fullname}
+            {user.firstname} {user.lastname}
           </span>
           <span className="symbol symbol-35 symbol-light-success">
             <span className="symbol-label font-size-h5 font-weight-bold">
-              {user.fullname[0]}
+              {user.firstname[0]}
             </span>
           </span>
         </div>
@@ -55,7 +54,7 @@ export function UserProfileDropdown() {
                   <img src={toAbsoluteUrl("/media/users/300_21.jpg")} alt="" />
                 </div>
                 <div className="text-dark m-0 flex-grow-1 mr-3 font-size-h5">
-                  Sean Stone
+                  {user.firstname} {user.lastname}
                 </div>
                 <span className="label label-light-success label-lg font-weight-bold label-inline">
                   3 messages
@@ -76,12 +75,12 @@ export function UserProfileDropdown() {
             >
               <div className="symbol bg-white-o-15 mr-3">
                 <span className="symbol-label text-success font-weight-bold font-size-h4">
-                  S
+                  {user.firstname[0]}
                 </span>
                 {/*<img alt="Pic" className="hidden" src={user.pic} />*/}
               </div>
               <div className="text-white m-0 flex-grow-1 mr-3 font-size-h5">
-                Sean Stone
+                {user.firstname} {user.lastname}
               </div>
               <span className="label label-success label-lg font-weight-bold label-inline">
                 3 messages
@@ -91,13 +90,15 @@ export function UserProfileDropdown() {
         </>
 
         <div className="navi navi-spacer-x-0 pt-5">
-          <a className="navi-item px-8">
+          <Link to="/user-profile" className="navi-item px-8 cursor-pointer">
             <div className="navi-link">
               <div className="navi-icon mr-2">
                 <i className="flaticon2-calendar-3 text-success" />
               </div>
               <div className="navi-text">
-                <div className="font-weight-bold">My Profile</div>
+                <div className="font-weight-bold cursor-pointer">
+                  My Profile
+                </div>
                 <div className="text-muted">
                   Account settings and more
                   <span className="label label-light-danger label-inline font-weight-bold">
@@ -106,7 +107,7 @@ export function UserProfileDropdown() {
                 </div>
               </div>
             </div>
-          </a>
+          </Link>
 
           <a className="navi-item px-8">
             <div className="navi-link">

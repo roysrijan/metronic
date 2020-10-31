@@ -1,5 +1,5 @@
 <template>
-  <div v-b-tooltip.hover.right="'Quick panel'">
+  <div>
     <a
       href="#"
       class="btn btn-icon btn-clean btn-lg mb-1 position-relative"

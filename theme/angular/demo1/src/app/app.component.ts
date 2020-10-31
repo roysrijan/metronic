@@ -1,60 +1,48 @@
-import { Subscription } from 'rxjs';
-// Angular
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-// Layout
-import { LayoutConfigService, SplashScreenService, TranslationService } from './core/_base/layout';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
+import { TranslationService } from './modules/i18n/translation.service';
 // language list
-import { locale as enLang } from './core/_config/i18n/en';
-import { locale as chLang } from './core/_config/i18n/ch';
-import { locale as esLang } from './core/_config/i18n/es';
-import { locale as jpLang } from './core/_config/i18n/jp';
-import { locale as deLang } from './core/_config/i18n/de';
-import { locale as frLang } from './core/_config/i18n/fr';
-
+import { locale as enLang } from './modules/i18n/vocabs/en';
+import { locale as chLang } from './modules/i18n/vocabs/ch';
+import { locale as esLang } from './modules/i18n/vocabs/es';
+import { locale as jpLang } from './modules/i18n/vocabs/jp';
+import { locale as deLang } from './modules/i18n/vocabs/de';
+import { locale as frLang } from './modules/i18n/vocabs/fr';
+import { SplashScreenService } from './_metronic/partials/layout/splash-screen/splash-screen.service';
+import { Router, NavigationEnd } from '@angular/router';
+import { Subscription } from 'rxjs';
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'body[kt-root]',
+  selector: 'body[root]',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit, OnDestroy {
-  // Public properties
-  title = 'Metronic';
-  loader: boolean;
   private unsubscribe: Subscription[] = []; // Read more: => https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
 
-  /**
-   * Component constructor
-   *
-   * @param translationService: TranslationService
-   * @param router: Router
-   * @param layoutConfigService: LayoutConfigService
-   * @param splashScreenService: SplashScreenService
-   */
   constructor(
     private translationService: TranslationService,
-    private router: Router,
-    private layoutConfigService: LayoutConfigService,
-    private splashScreenService: SplashScreenService) {
-
+    private splashScreenService: SplashScreenService,
+    private router: Router
+  ) {
     // register translations
-    this.translationService.loadTranslations(enLang, chLang, esLang, jpLang, deLang, frLang);
+    this.translationService.loadTranslations(
+      enLang,
+      chLang,
+      esLang,
+      jpLang,
+      deLang,
+      frLang
+    );
   }
 
-  /**
-   * @ Lifecycle sequences => https://angular.io/guide/lifecycle-hooks
-   */
-
-  /**
-   * On init
-   */
-  ngOnInit(): void {
-    // enable/disable loader
-    this.loader = this.layoutConfigService.getConfig('page-loader.type');
-
-    const routerSubscription = this.router.events.subscribe(event => {
+  ngOnInit() {
+    const routerSubscription = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         // hide splash screen
         this.splashScreenService.hide();
@@ -71,10 +59,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.unsubscribe.push(routerSubscription);
   }
 
-  /**
-   * On Destroy
-   */
   ngOnDestroy() {
-    this.unsubscribe.forEach(sb => sb.unsubscribe());
+    this.unsubscribe.forEach((sb) => sb.unsubscribe());
   }
 }

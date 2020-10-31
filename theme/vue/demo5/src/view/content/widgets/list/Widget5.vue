@@ -23,7 +23,9 @@
             <a
               class="nav-link py-2 px-4"
               data-toggle="tab"
+              :class="{ active: this.show === 'month' }"
               href="#kt_charts_widget_2_chart_tab_1"
+              @click="show = 'month'"
             >
               <span class="nav-text font-size-sm">Month</span>
             </a>
@@ -32,16 +34,20 @@
             <a
               class="nav-link py-2 px-4"
               data-toggle="tab"
+              :class="{ active: this.show === 'week' }"
               href="#kt_charts_widget_2_chart_tab_2"
+              @click="show = 'week'"
             >
               <span class="nav-text font-size-sm">Week</span>
             </a>
           </li>
           <li class="nav-item">
             <a
-              class="nav-link py-2 px-4 active"
+              class="nav-link py-2 px-4"
               data-toggle="tab"
+              :class="{ active: this.show === 'day' }"
               href="#kt_charts_widget_2_chart_tab_3"
+              @click="show = 'day'"
             >
               <span class="nav-text font-size-sm">Day</span>
             </a>
@@ -57,7 +63,7 @@
       <apexchart
         class="card-rounded-bottom"
         :options="chartOptions"
-        :series="series"
+        :series="dataToShow"
         type="bar"
       ></apexchart>
       <!--end::Chart-->
@@ -74,21 +80,48 @@ export default {
   components: {},
   data() {
     return {
+      show: "day",
       chartOptions: {},
-      series: [
+      month: [
         {
           name: "Net Profit",
-          data: [44, 55, 57, 56, 61, 58]
+          data: [44, 55, 57, 34, 61, 101]
         },
         {
           name: "Revenue",
-          data: [76, 85, 101, 98, 87, 105]
+          data: [76, 34, 56, 15, 87, 105]
+        }
+      ],
+      day: [
+        {
+          name: "Net Profit",
+          data: [44, 34, 57, 21, 61, 58]
+        },
+        {
+          name: "Revenue",
+          data: [20, 85, 30, 34, 87, 105]
+        }
+      ],
+      week: [
+        {
+          name: "Net Profit",
+          data: [44, 34, 57, 56, 61, 44]
+        },
+        {
+          name: "Revenue",
+          data: [76, 55, 101, 98, 34, 105]
         }
       ]
     };
   },
   computed: {
-    ...mapGetters(["layoutConfig"])
+    ...mapGetters(["layoutConfig"]),
+    dataToShow() {
+      if (this.show === "month") return this.month;
+      if (this.show === "week") return this.week;
+      if (this.show === "day") return this.day;
+      return this.day;
+    }
   },
   mounted() {
     // reference; kt_mixed_widget_1_chart

@@ -4,7 +4,7 @@
       class="flex-row-auto offcanvas-mobile w-300px w-xl-350px"
       id="kt_profile_aside"
     >
-      <div class="card card-custom card-stretch">
+      <div class="card card-custom card-stretch bg-light">
         <div class="card-body pt-4">
           <div class="d-flex justify-content-end">
             <KTDropdown2></KTDropdown2>
@@ -71,6 +71,7 @@
               <a
                 class="navi-link py-4 active"
                 @click="setActiveTab"
+                href="#"
                 data-tab="0"
                 data-toggle="tab"
                 role="tab"
@@ -88,6 +89,7 @@
               <a
                 class="navi-link py-4"
                 @click="setActiveTab"
+                href="#"
                 data-tab="1"
                 data-toggle="tab"
                 role="tab"
@@ -105,6 +107,7 @@
               <a
                 class="navi-link py-4"
                 @click="setActiveTab"
+                href="#"
                 data-tab="2"
                 data-toggle="tab"
                 role="tab"
@@ -122,6 +125,7 @@
               <a
                 class="navi-link py-4"
                 @click="setActiveTab"
+                href="#"
                 data-tab="3"
                 data-toggle="tab"
                 role="tab"
@@ -147,6 +151,7 @@
               <a
                 class="navi-link py-4"
                 @click="setActiveTab"
+                href="#"
                 data-tab="4"
                 data-toggle="tab"
                 role="tab"

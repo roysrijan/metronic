@@ -14,9 +14,11 @@
         <ul class="nav nav-pills nav-pills-sm nav-dark-75">
           <li class="nav-item">
             <a
-              class="nav-link py-2 px-4 active"
+              class="nav-link py-2 px-4"
               data-toggle="tab"
+              :class="{ active: this.show === 'month' }"
               href="#kt_tab_pane_1_1"
+              @click="show = 'month'"
             >
               Month
             </a>
@@ -25,7 +27,9 @@
             <a
               class="nav-link py-2 px-4"
               data-toggle="tab"
+              :class="{ active: this.show === 'week' }"
               href="#kt_tab_pane_1_2"
+              @click="show = 'week'"
             >
               Week
             </a>
@@ -34,7 +38,9 @@
             <a
               class="nav-link py-2 px-4"
               data-toggle="tab"
+              :class="{ active: this.show === 'day' }"
               href="#kt_tab_pane_1_3"
+              @click="show = 'day'"
             >
               Day
             </a>
@@ -59,7 +65,7 @@
             </tr>
           </thead>
           <tbody>
-            <template v-for="(item, i) in list">
+            <template v-for="(item, i) in dataToShow">
               <tr v-bind:key="i">
                 <td class="pl-0 py-4">
                   <div class="symbol symbol-50 symbol-light mr-1">
@@ -157,7 +163,102 @@ export default {
   name: "widget-3",
   data() {
     return {
-      list: [
+      show: "day",
+      month: [
+        {
+          text0: "media/svg/misc/015-telegram.svg",
+          text1: "Application Development",
+          text2: "app@dev.com",
+          text3: "$4,600,000",
+          text4: "Python, MySQL",
+          text5: "In Progress",
+          text6: "warning"
+        },
+        {
+          text0: "media/svg/misc/006-plurk.svg",
+          text1: "Sant Outstanding",
+          text2: "bprow@bnc.cc",
+          text3: "$2,000,000",
+          text4: "ReactJs, HTML",
+          text5: "Approved",
+          text6: "primary"
+        },
+        {
+          text0: "media/svg/misc/005-bebo.svg",
+          text1: "HR Management System",
+          text2: "hr@demo.com",
+          text3: "$57,000",
+          text4: "AngularJS, C#",
+          text5: "Rejected",
+          text6: "danger"
+        },
+        {
+          text0: "media/svg/misc/014-kickstarter.svg",
+          text1: "KTR Mobile Application",
+          text2: "ktr@demo.com",
+          text3: "$45,200,000",
+          text4: "ReactJS, Ruby",
+          text5: "In Progress",
+          text6: "warning"
+        },
+        {
+          text0: "media/svg/misc/003-puzzle.svg",
+          text1: "Payrol Application",
+          text2: "company@dev.com",
+          text3: "$560,000",
+          text4: "Laravel, Metronic",
+          text5: "Success",
+          text6: "success"
+        }
+      ],
+      week: [
+        {
+          text0: "media/svg/misc/015-telegram.svg",
+          text1: "Application Development",
+          text2: "app@dev.com",
+          text3: "$4,600,000",
+          text4: "Python, MySQL",
+          text5: "In Progress",
+          text6: "warning"
+        },
+        {
+          text0: "media/svg/misc/005-bebo.svg",
+          text1: "HR Management System",
+          text2: "hr@demo.com",
+          text3: "$57,000",
+          text4: "AngularJS, C#",
+          text5: "Rejected",
+          text6: "danger"
+        },
+        {
+          text0: "media/svg/misc/003-puzzle.svg",
+          text1: "Payrol Application",
+          text2: "company@dev.com",
+          text3: "$560,000",
+          text4: "Laravel, Metronic",
+          text5: "Success",
+          text6: "success"
+        },
+        {
+          text0: "media/svg/misc/014-kickstarter.svg",
+          text1: "KTR Mobile Application",
+          text2: "ktr@demo.com",
+          text3: "$45,200,000",
+          text4: "ReactJS, Ruby",
+          text5: "In Progress",
+          text6: "warning"
+        },
+        {
+          text0: "media/svg/misc/006-plurk.svg",
+          text1: "Sant Outstanding",
+          text2: "bprow@bnc.cc",
+          text3: "$2,000,000",
+          text4: "ReactJs, HTML",
+          text5: "Approved",
+          text6: "primary"
+        }
+      ],
+      day: [
         {
           text0: "media/svg/misc/006-plurk.svg",
           text1: "Sant Outstanding",
@@ -208,7 +309,13 @@ export default {
   },
   components: {},
   computed: {
-    ...mapGetters(["layoutConfig"])
+    ...mapGetters(["layoutConfig"]),
+    dataToShow() {
+      if (this.show === "month") return this.month;
+      if (this.show === "week") return this.week;
+      if (this.show === "day") return this.day;
+      return this.day;
+    }
   }
 };
 </script>

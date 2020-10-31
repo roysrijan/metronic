@@ -28,7 +28,7 @@
 
 	<link rel="shortcut icon" href="./assets/favicon.ico"/>
 
-	<link href="./assets/style/flaticon.css?v=7.1.2" rel="stylesheet" type="text/css"><link href="./assets/plugins/tiny-slider/dist/tiny-slider.css?v=7.1.2" rel="stylesheet" type="text/css"><link href="./assets/style/style.css?v=7.1.2" rel="stylesheet" type="text/css">	<script src="./assets/plugins/jquery/dist/jquery.min.js?v=7.1.2" type="application/javascript"></script><script src="./assets/plugins/tether/dist/js/tether.min.js?v=7.1.2" type="application/javascript"></script><script src="./assets/plugins/popper.js/dist/umd/popper.min.js?v=7.1.2" type="application/javascript"></script><script src="./assets/plugins/bootstrap/dist/js/bootstrap.min.js?v=7.1.2" type="application/javascript"></script><script src="./assets/plugins/perfect-scrollbar/dist/perfect-scrollbar.js?v=7.1.2" type="application/javascript"></script><script src="./assets/plugins/tiny-slider/dist/tiny-slider.js?v=7.1.2" type="application/javascript"></script><script src="./assets/js/custom.js?v=7.1.2" type="application/javascript"></script>
+	<link href="./assets/style/flaticon.css?v=7.1.4" rel="stylesheet" type="text/css"><link href="./assets/plugins/tiny-slider/dist/tiny-slider.css?v=7.1.4" rel="stylesheet" type="text/css"><link href="./assets/style/style.css?v=7.1.4" rel="stylesheet" type="text/css">	<script src="./assets/plugins/jquery/dist/jquery.min.js?v=7.1.4" type="application/javascript"></script><script src="./assets/plugins/tether/dist/js/tether.min.js?v=7.1.4" type="application/javascript"></script><script src="./assets/plugins/popper.js/dist/umd/popper.min.js?v=7.1.4" type="application/javascript"></script><script src="./assets/plugins/bootstrap/dist/js/bootstrap.min.js?v=7.1.4" type="application/javascript"></script><script src="./assets/plugins/perfect-scrollbar/dist/perfect-scrollbar.js?v=7.1.4" type="application/javascript"></script><script src="./assets/plugins/tiny-slider/dist/tiny-slider.js?v=7.1.4" type="application/javascript"></script><script src="./assets/js/custom.js?v=7.1.4" type="application/javascript"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700">
 </head>
 <body>
@@ -71,7 +71,7 @@
 	<div class="content">
 		<!-- intro -->
 		<div class="intro">
-			<img src="./assets/img/logo_metronic_1.png" alt="logo">
+			<img src="./assets/img/metronic_logo.svg" alt="logo">
 
 			<span class="intro__subtitle">
 				The World’s #1 Bootstrap 4 HTML, Angular 10, React, VueJS & Laravel<br/>Admin Dashboard Theme			</span>
@@ -114,17 +114,78 @@
 
 			<div class="contents__box contents__box--left"><!-- contents__box -->
                 <ul id="changelog" class="accordion">			<li class="card accordion__item">
+				<a class="collapsed" data-toggle="collapse" data-parent="#changelog" href="#metronic810516954" aria-expanded="false">
+					<div class="accordion__item_top">
+						<h5>Metronic v7.1.4 - 31 October, 2020</h5>
+						<i class="accordion__item_top_icon"></i>
+					</div>
+				</a>
+				<div id="metronic810516954" class="collapse show" role="tabpanel">
+					<p>Updates &amp; Improvements</p>
+<ul>
+    <li><span class="badge badge-html">HTML</span> Exclude precompiled assets.</li>
+    <li><span class="badge badge-angular">Angular</span> Exclude old angular demos.</li>
+</ul>
+
+					<div class="space"></div>
+				</div>
+			</li>			<li class="card accordion__item">
+				<a class="collapsed" data-toggle="collapse" data-parent="#changelog" href="#metronic2922058873" aria-expanded="false">
+					<div class="accordion__item_top">
+						<h5>Metronic v7.1.3 - 29 October, 2020</h5>
+						<i class="accordion__item_top_icon"></i>
+					</div>
+				</a>
+				<div id="metronic2922058873" class="collapse " role="tabpanel">
+					<p>New</p>
+<ul>
+    <li><span class="badge badge-html">Laravel</span> Added new page for plugin <code>jquery-mask-plugin</code>. <a href="https://igorescobar.github.io/jQuery-Mask-Plugin/" target="_blank">See documentation</a> You can access this page in <code>/jquerymask</code></li>
+    <li><span class="badge badge-angular">Angular</span> Added <code>CRUD+Tables</code> <a target="_blank" href="https://keenthemes.com/metronic/angular/demo1/ecommerce/customers">examples</a> for Angular 10+. (<code>eCommerce</code> module)</li>
+    <li><span class="badge badge-angular">Angular</span> Added <code>User Profile</code> <a target="_blank" href="https://keenthemes.com/metronic/angular/demo1/user-profile/profile-overview">example</a> for Angular 10+.</li>
+    <li><span class="badge badge-react">React</span> Added <code>User Profile</code> example.</li>
+    <li><span class="badge badge-global">Laravel and Vue</span> Added guide how to make Metronic Vue and Laravel integration.</li><a href="https://keenthemes.com//metronic/?page=docs&section=vue-laravel-integration" target="_blank">See documentation</a>
+    <li><span class="badge badge-vue">Vue</span> Added vue demo6 version.</li>
+</ul>
+
+<div class="space"></div>
+
+<p>Updates &amp; Improvements</p>
+<ul>
+    <li><span class="badge badge-html">HTML</span> Bootstrap v4.5.3 update.</li>
+	<li><span class="badge badge-html">HTML</span> Gulp compile using <code>--prod</code> flag or enable js/css minification setting will append <code>.min</code> to the output filename.</li>
+	<li><span class="badge badge-html">HTML</span> Gulp auto resolve path for 3rd party node modules plugin in SCSS. Eg. <code>@import "../node_modules/bootstrap/</code> to <code>@import "bootstrap/</code></li>
+    <li><span class="badge badge-angular">Angular</span> Upgraded Angular version to <a href="https://github.com/angular/angular/blob/master/CHANGELOG.md#1016-2020-10-14" target="_blank"><code>10.6.1</code></a>.</li>
+</ul>
+
+<div class="space"></div>
+
+<p>Fixes</p>
+<ul>
+    <li><span class="badge badge-html">HTML</span> Fix <code>Demo 5</code> dashboard widget bug on iOS.</li>
+    <li><span class="badge badge-html">HTML</span> Fix buttons issue in <code>KTDatatable</code> event demo page.</li>
+    <li><span class="badge badge-html">HTML</span> Fix <code>KTDatatable</code> function <code>getSelectedId()</code> duplicated id.</li>
+    <li><span class="badge badge-html">HTML</span> Fix <code>KTDatatable</code> border for HTML table.</li>
+    <li><span class="badge badge-html">HTML</span> Fix <code>KTDualListbox</code> duplicating options</li>
+    <li><span class="badge badge-html">HTML</span> Fix webpack file paths import by prepend <code>./</code> at the beginning of the file path.</li>
+    <li><span class="badge badge-react">React</span> Fix <code>Breadcrumbs</code> wrong path issue.</li>
+    <li><span class="badge badge-react">React</span> Fix <code>eCommerce</code> 'ProductEdit' form issues.</li>
+    <li><span class="badge badge-react">React</span> Fix <code>eCommerce</code> 'FetchModel' modal HTML issues.</li>
+</ul>
+
+					<div class="space"></div>
+				</div>
+			</li>			<li class="card accordion__item">
 				<a class="collapsed" data-toggle="collapse" data-parent="#changelog" href="#metronic3643548911" aria-expanded="false">
 					<div class="accordion__item_top">
 						<h5>Metronic v7.1.2 - 30 September, 2020</h5>
 						<i class="accordion__item_top_icon"></i>
 					</div>
 				</a>
-				<div id="metronic3643548911" class="collapse show" role="tabpanel">
+				<div id="metronic3643548911" class="collapse " role="tabpanel">
 					<p>New</p>
 <ul>
 	<li><span class="badge badge-vue">Vue</span> Added User Sign-in, Sign-up and Password Reset Pages.
-		<a href="https://preview.keenthemes.com/metronic/vue/demo1" target="_blank">See preview</a> at the login.
+		<a href="https://preview.keenthemes.com/metronic/vue/demo1/#/login" target="_blank">See preview</a>.
 	</li>
 	<li><span class="badge badge-vue">Vue</span> Added User Profile, Account and Password Change Pages.
 		<a href="https://preview.keenthemes.com/metronic/vue/demo1/#/custom-pages/profile" target="_blank">See preview</a>.

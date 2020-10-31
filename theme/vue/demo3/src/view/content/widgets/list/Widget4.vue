@@ -42,7 +42,7 @@
           </div>
           <!--end::Text-->
           <!--begin::Dropdown-->
-          <Dropdown2></Dropdown2>
+          <Dropdown2><i class="ki ki-bold-more-hor"></i></Dropdown2>
           <!--end::Dropdown-->
         </div>
         <!--end:Item-->

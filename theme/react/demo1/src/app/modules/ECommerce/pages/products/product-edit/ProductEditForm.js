@@ -67,7 +67,7 @@ export function ProductEditForm({
                   />
                 </div>
                 <div className="col-lg-4">
-                  <Select name="manufacture" label="Color">
+                  <Select name="manufacture" label="Manufacture">
                     {AVAILABLE_MANUFACTURES.map((manufacture) => (
                       <option key={manufacture} value={manufacture}>
                         {manufacture}

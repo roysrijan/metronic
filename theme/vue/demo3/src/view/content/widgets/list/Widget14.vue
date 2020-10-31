@@ -4,7 +4,7 @@
     <div class="card-header border-0">
       <h3 class="card-title font-weight-bolder text-dark">Notifications</h3>
       <div class="card-toolbar">
-        <Dropdown2></Dropdown2>
+        <Dropdown2><i class="ki ki-bold-more-hor"></i></Dropdown2>
       </div>
     </div>
     <!--end::Header-->

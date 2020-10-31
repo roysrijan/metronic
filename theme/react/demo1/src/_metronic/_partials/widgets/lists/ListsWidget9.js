@@ -6,7 +6,7 @@ import { DropdownCustomToggler, DropdownMenu1 } from "../../dropdowns";
 export function ListsWidget9({ className }) {
   return (
     <>
-      <div className={`card card-custom ${className}`}>
+      <div className={`card card-custom  ${className}`}>
         {/* Header */}
         <div className="card-header align-items-center border-0 mt-4">
           <h3 className="card-title align-items-start flex-column">
@@ -45,6 +45,7 @@ export function ListsWidget9({ className }) {
                 Outlines keep you honest. And keep structure
               </div>
             </div>
+
             <div className="timeline-item align-items-start">
               <div className="timeline-label font-weight-bolder text-dark-75 font-size-lg">
                 10:00
@@ -71,7 +72,7 @@ export function ListsWidget9({ className }) {
               </div>
 
               <div className="timeline-content font-weight-bolder font-size-lg text-dark-75 pl-3">
-                Make deposit
+                Make deposit{` `}
                 <a href="#" className="text-primary">
                   USD 700
                 </a>
@@ -103,7 +104,7 @@ export function ListsWidget9({ className }) {
               </div>
 
               <div className="timeline-content font-weight-bolder text-dark-75 pl-3 font-size-lg">
-                New order placed{" "}
+                New order placed{` `}
                 <a href="#" className="text-primary">
                   #XF-2356
                 </a>
@@ -149,7 +150,7 @@ export function ListsWidget9({ className }) {
               </div>
 
               <div className="timeline-content font-weight-bolder font-size-lg text-dark-75 pl-3">
-                New order placed{" "}
+                New order placed {` `}
                 <a href="#" className="text-primary">
                   #XF-2356
                 </a>

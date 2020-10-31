@@ -1,5 +1,5 @@
 <template>
-  <div class="card card-custom gutter-b card-stretch">
+  <div class="card card-custom gutter-b card-stretch bg-light">
     <!--begin::Header-->
     <div class="card-header border-0">
       <h3 class="card-title font-weight-bolder text-dark">Market Leaders</h3>

@@ -13,7 +13,6 @@ import { QuickUserToggler } from "../extras/QuiclUserToggler";
 
 export function Topbar() {
   const uiService = useHtmlClassService();
-
   const layoutProps = useMemo(() => {
     return {
       viewSearchDisplay: objectPath.get(

@@ -71,6 +71,7 @@
               <a
                 class="navi-link py-4 active"
                 @click="setActiveTab"
+                href="#"
                 data-tab="0"
                 data-toggle="tab"
                 role="tab"
@@ -88,6 +89,7 @@
               <a
                 class="navi-link py-4"
                 @click="setActiveTab"
+                href="#"
                 data-tab="1"
                 data-toggle="tab"
                 role="tab"
@@ -105,6 +107,7 @@
               <a
                 class="navi-link py-4"
                 @click="setActiveTab"
+                href="#"
                 data-tab="2"
                 data-toggle="tab"
                 role="tab"
@@ -122,6 +125,7 @@
               <a
                 class="navi-link py-4"
                 @click="setActiveTab"
+                href="#"
                 data-tab="3"
                 data-toggle="tab"
                 role="tab"
@@ -147,6 +151,7 @@
               <a
                 class="navi-link py-4"
                 @click="setActiveTab"
+                href="#"
                 data-tab="4"
                 data-toggle="tab"
                 role="tab"

@@ -27,7 +27,7 @@ export function getBreadcrumbsAndTitle(menuId, pathName) {
       );
       if (titleSpan) {
         result.breadcrumbs.push({
-          pathname: link.pathname,
+          pathname: link.pathname.replace(process.env.PUBLIC_URL, ""),
           title: titleSpan.innerHTML,
         });
       }

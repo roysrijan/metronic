@@ -1,5 +1,5 @@
 <template>
-  <div v-b-tooltip.hover.right="'User profile'">
+  <div>
     <a
       href="#"
       class="btn btn-icon btn-clean btn-lg w-40px h-40px"

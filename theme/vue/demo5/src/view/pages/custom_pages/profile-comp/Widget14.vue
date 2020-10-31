@@ -1,5 +1,5 @@
 <template>
-  <div class="card card-custom card-stretch gutter-b">
+  <div class="card card-custom card-stretch gutter-b bg-light">
     <!--begin::Header-->
     <div class="card-header border-0">
       <h3 class="card-title font-weight-bolder text-dark">Notifications</h3>

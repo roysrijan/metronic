@@ -48977,27 +48977,27 @@ a.text-hover-muted:hover .svg-icon svg:hover g [fill],
 }
 
 .line-height-0 {
-  line-height: 0;
+  line-height: 0 !important;
 }
 
 .line-height-xs {
-  line-height: 0.75;
+  line-height: 0.75 !important;
 }
 
 .line-height-sm {
-  line-height: 1;
+  line-height: 1 !important;
 }
 
 .line-height-md {
-  line-height: 1.25;
+  line-height: 1.25 !important;
 }
 
 .line-height-lg {
-  line-height: 1.5;
+  line-height: 1.5 !important;
 }
 
 .line-height-xl {
-  line-height: 1.75;
+  line-height: 1.75 !important;
 }
 
 .text-transparent {
@@ -63780,7 +63780,6 @@ code {
   align-items: center;
   justify-content: center;
   font-weight: 500;
-  line-height: 0;
   color: #3F4254;
   background-color: #F3F6F9;
   background-repeat: no-repeat;
@@ -72837,6 +72836,11 @@ code {
   }
 }
 @media (max-width: 991.98px) {
+  [data-offcanvas-offcanvas=on] {
+    overflow: hidden !important;
+  }
+}
+@media (max-width: 991.98px) {
   .offcanvas-mobile {
     z-index: 1001;
     position: fixed;
@@ -72912,6 +72916,11 @@ code {
 @media (max-width: 425px) {
   .offcanvas-mobile {
     width: 90% !important;
+  }
+}
+@media (max-width: 991.98px) {
+  [data-offcanvas-offcanvas-mobile=on] {
+    overflow: hidden !important;
   }
 }
 .toggle-off .toggle-off-item {
@@ -73831,9 +73840,13 @@ code {
   border: 0;
 }
 .bootstrap-select .dropdown-menu {
+  max-width: 100% !important;
   border-top: none !important;
   border: 0;
   box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.15);
+}
+.bootstrap-select .dropdown-menu.show {
+  width: auto;
 }
 
 .content .bootstrap-select .dropdown-menu {
@@ -79253,6 +79266,11 @@ body {
     width: 90% !important;
   }
 }
+@media (max-width: 991.98px) {
+  [data-offcanvas-header-menu-wrapper=on] {
+    overflow: hidden !important;
+  }
+}
 @media (min-width: 992px) {
   .header-menu-wrapper {
     align-items: stretch;
@@ -80321,6 +80339,11 @@ body {
 @media (max-width: 325px) {
   .aside {
     width: 90% !important;
+  }
+}
+@media (max-width: 991.98px) {
+  [data-offcanvas-aside=on] {
+    overflow: hidden !important;
   }
 }
 .brand {
