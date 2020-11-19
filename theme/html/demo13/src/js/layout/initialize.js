@@ -102,7 +102,7 @@ KTUtil.ready(function() {
     }
 
     // Init Quick Offcanvas Panel
-    if (typeof KTLayoutQuickPanel !== 'undefined') {
+    if (typeof KTLayoutQuickPanel!== 'undefined') {
         KTLayoutQuickPanel.init('kt_quick_panel');
     }
 
@@ -129,5 +129,5 @@ KTUtil.ready(function() {
     // Init Search For Quick Search Offcanvas Panel
     if (typeof KTLayoutSearchOffcanvas !== 'undefined') {
         KTLayoutSearchOffcanvas().init('kt_quick_search_offcanvas');
-    }    
+    }
 });

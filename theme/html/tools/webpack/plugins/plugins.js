@@ -13,7 +13,7 @@
 // Jquery - jQuery is a popular and feature-rich JavaScript library. Learn more: https://jquery.com/
 window.jQuery = window.$ = require('jquery');
 
-// Bootstrap - The most popular framework that Metronic uses as the foundation. Learn more: http://getbootstrap.com
+// Bootstrap - The most popular framework uses as the foundation. Learn more: http://getbootstrap.com
 require('bootstrap');
 
 // Popper.js - Tooltip & Popover Positioning Engine used by Bootstrap. Learn more: https://popper.js.org
@@ -95,9 +95,7 @@ window.Bloodhound = require('typeahead.js/dist/typeahead.bundle.js');
 window.Handlebars = require('handlebars/dist/handlebars.js');
 
 // Inputmask - is a javascript library which creates an input mask: https://github.com/RobinHerbots/Inputmask
-require('inputmask/dist/jquery.inputmask.bundle.js');
-require('inputmask/dist/inputmask/inputmask.date.extensions.js');
-require('inputmask/dist/inputmask/inputmask.numeric.extensions.js');
+require('inputmask/dist/jquery.inputmask.js');
 
 // noUiSlider - is a lightweight range slider with multi-touch support and a ton of features. It supports non-linear ranges, requires no external dependencies: https://refreshless.com/nouislider/
 window.noUiSlider = require('nouislider/distribute/nouislider.js');

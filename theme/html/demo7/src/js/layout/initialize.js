@@ -13,7 +13,7 @@ KTUtil.ready(function() {
 
     // Init Header Menu
     if (typeof KTLayoutHeaderMenu !== 'undefined') {
-        KTLayoutHeaderMenu.init('kt_header_menu', 'kt_header_navs');
+        KTLayoutHeaderMenu.init('kt_header_menu', 'kt_header_menu_wrapper');
     }
 
     // Init Header Topbar For Mobile Mode
@@ -21,9 +21,19 @@ KTUtil.ready(function() {
         KTLayoutHeaderTopbar.init('kt_header_mobile_topbar_toggle');
     }
 
+    // Init Brand Panel For Logo
+    if (typeof KTLayoutBrand !== 'undefined') {
+        KTLayoutBrand.init('kt_brand');
+    }
+
     // Init Aside
     if (typeof KTLayoutAside !== 'undefined') {
         KTLayoutAside.init('kt_aside');
+    }
+
+    // Init Aside Menu Toggle
+    if (typeof KTLayoutAsideToggle !== 'undefined') {
+        KTLayoutAsideToggle.init('kt_aside_toggle');
     }
 
     // Init Aside Menu
@@ -46,10 +56,10 @@ KTUtil.ready(function() {
         KTLayoutFooter.init('kt_footer');
     }
 
+
     //////////////////////////////////////////////
     // Layout Extended Partials(optional to use)//
     //////////////////////////////////////////////
-
 
     // Init Scrolltop
     if (typeof KTLayoutScrolltop !== 'undefined') {
@@ -92,18 +102,23 @@ KTUtil.ready(function() {
     }
 
     // Init Quick Offcanvas Panel
-    if (typeof KTLayoutQuickPanel !== 'undefined') {
+    if (typeof KTLayoutQuickPanel!== 'undefined') {
         KTLayoutQuickPanel.init('kt_quick_panel');
-    }
-
-    // Init Quick Search Panel
-    if (typeof KTLayoutQuickPanel !== 'undefined') {
-        KTLayoutQuickSearch.init('kt_quick_search');
     }
 
     // Init Quick User Panel
     if (typeof KTLayoutQuickUser !== 'undefined') {
         KTLayoutQuickUser.init('kt_quick_user');
+    }
+
+    // Init Quick Search Panel
+    if (typeof KTLayoutQuickSearch !== 'undefined') {
+        KTLayoutQuickSearch.init('kt_quick_search');
+    }
+
+    // Init Quick Cart Panel
+    if (typeof KTLayoutQuickCartPanel !== 'undefined') {
+        KTLayoutQuickCartPanel.init('kt_quick_cart');
     }
 
     // Init Search For Quick Search Dropdown

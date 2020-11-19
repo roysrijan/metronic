@@ -2,7 +2,6 @@ var yargs = require('yargs');
 var fs = require('fs');
 var colors = require('colors');
 var gulp = require('gulp');
-var replace = require('gulp-replace');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 

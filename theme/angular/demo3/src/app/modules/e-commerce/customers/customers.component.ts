@@ -1,3 +1,5 @@
+// tslint:disable:no-string-literal
+
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
@@ -32,19 +34,19 @@ import { EditCustomerModalComponent } from './components/edit-customer-modal/edi
 })
 export class CustomersComponent
   implements
-    OnInit,
-    OnDestroy,
-    ICreateAction,
-    IEditAction,
-    IDeleteAction,
-    IDeleteSelectedAction,
-    IFetchSelectedAction,
-    IUpdateStatusForSelectedAction,
-    ISortView,
-    IFilterView,
-    IGroupingView,
-    ISearchView,
-    IFilterView {
+  OnInit,
+  OnDestroy,
+  ICreateAction,
+  IEditAction,
+  IDeleteAction,
+  IDeleteSelectedAction,
+  IFetchSelectedAction,
+  IUpdateStatusForSelectedAction,
+  ISortView,
+  IFilterView,
+  IGroupingView,
+  ISearchView,
+  IFilterView {
   paginator: PaginatorState;
   sorting: SortState;
   grouping: GroupingState;
@@ -57,7 +59,7 @@ export class CustomersComponent
     private fb: FormBuilder,
     private modalService: NgbModal,
     public customerService: CustomersService
-  ) {}
+  ) { }
 
   // angular lifecircle hooks
   ngOnInit(): void {
@@ -156,31 +158,31 @@ export class CustomersComponent
     modalRef.componentInstance.id = id;
     modalRef.result.then(() =>
       this.customerService.fetch(),
-      () => {}
+      () => { }
     );
   }
 
   delete(id: number) {
     const modalRef = this.modalService.open(DeleteCustomerModalComponent);
     modalRef.componentInstance.id = id;
-    modalRef.result.then(() => this.customerService.fetch(), () => {});
+    modalRef.result.then(() => this.customerService.fetch(), () => { });
   }
 
   deleteSelected() {
     const modalRef = this.modalService.open(DeleteCustomersModalComponent);
     modalRef.componentInstance.ids = this.grouping.getSelectedRows();
-    modalRef.result.then(() => this.customerService.fetch(), () => {});
+    modalRef.result.then(() => this.customerService.fetch(), () => { });
   }
 
   updateStatusForSelected() {
     const modalRef = this.modalService.open(UpdateCustomersStatusModalComponent);
     modalRef.componentInstance.ids = this.grouping.getSelectedRows();
-    modalRef.result.then(() => this.customerService.fetch(), () => {});
+    modalRef.result.then(() => this.customerService.fetch(), () => { });
   }
 
   fetchSelected() {
     const modalRef = this.modalService.open(FetchCustomersModalComponent);
     modalRef.componentInstance.ids = this.grouping.getSelectedRows();
-    modalRef.result.then(() => this.customerService.fetch(), () => {});
+    modalRef.result.then(() => this.customerService.fetch(), () => { });
   }
 }

@@ -24,7 +24,7 @@ var KTLayoutStickyCard = function() {
 
 						if (KTUtil.isBreakpointUp('lg')) {
 							if (typeof KTLayoutHeader !== 'undefined' && KTLayoutHeader.isFixed()) {
-								pos = pos + KTLayoutHeader.getHeight();
+								pos = pos + 70;
 							}
 
 							if (typeof KTLayoutSubheader !== 'undefined' && KTLayoutSubheader.isFixed()) {

@@ -169,12 +169,12 @@ module.exports = {
 
         if (type === 'styles') {
             piping = piping.pipe(function () {
-                return gulpif(build.config.compile.cssMinify, rename({suffix: '.min'}));
+                return gulpif(build.config.compile.cssMinify, rename({suffix: args.suffix ? '.min' : ''}));
             });
         }
         if (type === 'scripts') {
             piping = piping.pipe(function () {
-                return gulpif(build.config.compile.jsMinify, rename({suffix: '.min'}));
+                return gulpif(build.config.compile.jsMinify, rename({suffix: args.suffix ? '.min' : ''}));
             });
         }
 
@@ -399,16 +399,7 @@ module.exports = {
                                 var toRtlFiles = [];
                                 var rtlFiles = [];
                                 bundle.src[type].forEach(function (path) {
-                                    // get rtl css file path
-                                    var cssFile = _self.pathOnly(path) + '/' + _self.baseName(path) + '.rtl.css';
-                                    // check if rtl file is exist
-                                    if (fs.existsSync(cssFile) && build.config.compile.rtl.skip.indexOf(_self.baseName(path)) === -1) {
-                                        rtlFiles = rtlFiles.concat(cssFile);
-                                    } else {
-                                        // rtl css file not exist, use default css file
-                                        cssFile = path;
-                                    }
-                                    toRtlFiles = toRtlFiles.concat(cssFile);
+                                    toRtlFiles = toRtlFiles.concat(path);
                                 });
 
                                 var shouldRtl = false;

@@ -4,6 +4,8 @@ import {
   OnDestroy,
   OnInit,
 } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { TranslationService } from './modules/i18n/translation.service';
 // language list
 import { locale as enLang } from './modules/i18n/vocabs/en';
@@ -13,8 +15,8 @@ import { locale as jpLang } from './modules/i18n/vocabs/jp';
 import { locale as deLang } from './modules/i18n/vocabs/de';
 import { locale as frLang } from './modules/i18n/vocabs/fr';
 import { SplashScreenService } from './_metronic/partials/layout/splash-screen/splash-screen.service';
-import { Router, NavigationEnd } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { TableExtendedService } from './_metronic/shared/crud-table';
+
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'body[root]',
@@ -28,7 +30,8 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(
     private translationService: TranslationService,
     private splashScreenService: SplashScreenService,
-    private router: Router
+    private router: Router,
+    private tableService: TableExtendedService
   ) {
     // register translations
     this.translationService.loadTranslations(
@@ -44,6 +47,8 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit() {
     const routerSubscription = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
+        // clear filtration paginations and others
+        this.tableService.setDefaults();
         // hide splash screen
         this.splashScreenService.hide();
 

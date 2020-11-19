@@ -1,3 +1,5 @@
+// tslint:disable:no-string-literal
+
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -30,17 +32,17 @@ import { FetchProductsModalComponent } from './components/fetch-products-modal/f
 })
 export class ProductsComponent
   implements
-    OnInit,
-    OnDestroy,
-    IDeleteAction,
-    IDeleteSelectedAction,
-    IFetchSelectedAction,
-    IUpdateStatusForSelectedAction,
-    ISortView,
-    IFilterView,
-    IGroupingView,
-    ISearchView,
-    IFilterView {
+  OnInit,
+  OnDestroy,
+  IDeleteAction,
+  IDeleteSelectedAction,
+  IFetchSelectedAction,
+  IUpdateStatusForSelectedAction,
+  ISortView,
+  IFilterView,
+  IGroupingView,
+  ISearchView,
+  IFilterView {
   paginator: PaginatorState;
   sorting: SortState;
   grouping: GroupingState;
@@ -55,7 +57,7 @@ export class ProductsComponent
     public productsService: ProductsService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   // angular lifecircle hooks
   ngOnInit(): void {
@@ -149,7 +151,7 @@ export class ProductsComponent
     modalRef.componentInstance.id = id;
     modalRef.result.then(
       () => this.productsService.fetch(),
-      () => {}
+      () => { }
     );
   }
 
@@ -158,7 +160,7 @@ export class ProductsComponent
     modalRef.componentInstance.ids = this.grouping.getSelectedRows();
     modalRef.result.then(
       () => this.productsService.fetch(),
-      () => {}
+      () => { }
     );
   }
 
@@ -169,7 +171,7 @@ export class ProductsComponent
     modalRef.componentInstance.ids = this.grouping.getSelectedRows();
     modalRef.result.then(
       () => this.productsService.fetch(),
-      () => {}
+      () => { }
     );
   }
 
@@ -178,7 +180,7 @@ export class ProductsComponent
     modalRef.componentInstance.ids = this.grouping.getSelectedRows();
     modalRef.result.then(
       () => this.productsService.fetch(),
-      () => {}
+      () => { }
     );
   }
 }

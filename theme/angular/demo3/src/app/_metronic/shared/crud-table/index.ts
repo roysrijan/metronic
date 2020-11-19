@@ -9,5 +9,6 @@ export { BaseModel } from './models/base.model';
 // Directives
 // Services
 export * from './services/table.service';
+export * from './services/table.extended.service';
 // Module
 export { CRUDTableModule } from './crud-table.module';

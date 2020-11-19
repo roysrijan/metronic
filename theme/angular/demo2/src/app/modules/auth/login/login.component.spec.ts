@@ -1,3 +1,5 @@
+// tslint:disable:no-string-literal
+
 // https://codecraft.tv/courses/angular/unit-testing/model-driven-forms/
 import {
   waitForAsync,

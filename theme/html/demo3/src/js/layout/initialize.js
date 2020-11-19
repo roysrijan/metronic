@@ -6,17 +6,32 @@ KTUtil.ready(function() {
     // Layout Base Partials(mandatory for core layout)//
     ////////////////////////////////////////////////////
 
-    // Init Mobile Header
-    if (typeof KTLayoutHeaderMobile !== 'undefined') {
-        KTLayoutHeaderMobile.init('kt_header_mobile');
+    // Init Desktop & Mobile Headers
+    if (typeof KTLayoutHeader !== 'undefined') {
+        KTLayoutHeader.init('kt_header', 'kt_header_mobile');
     }
 
-    // Init Aside Menu
+    // Init Header Menu
+    if (typeof KTLayoutHeaderMenu !== 'undefined') {
+        KTLayoutHeaderMenu.init('kt_header_menu', 'kt_header_menu_wrapper');
+    }
+
+    // Init Header Topbar For Mobile Mode
+    if (typeof KTLayoutHeaderTopbar !== 'undefined') {
+        KTLayoutHeaderTopbar.init('kt_header_mobile_topbar_toggle');
+    }
+
+    // Init Brand Panel For Logo
+    if (typeof KTLayoutBrand !== 'undefined') {
+        KTLayoutBrand.init('kt_brand');
+    }
+
+    // Init Aside
     if (typeof KTLayoutAside !== 'undefined') {
         KTLayoutAside.init('kt_aside');
     }
 
-    // Init Aside Toggle
+    // Init Aside Menu Toggle
     if (typeof KTLayoutAsideToggle !== 'undefined') {
         KTLayoutAsideToggle.init('kt_aside_toggle');
     }
@@ -26,21 +41,20 @@ KTUtil.ready(function() {
         KTLayoutAsideMenu.init('kt_aside_menu');
     }
 
+    // Init Subheader
+    if (typeof KTLayoutSubheader !== 'undefined') {
+        KTLayoutSubheader.init('kt_subheader');
+    }
+
     // Init Content
     if (typeof KTLayoutContent !== 'undefined') {
         KTLayoutContent.init('kt_content');
     }
 
     // Init Footer
-    if (typeof KTLayoutSubheader !== 'undefined') {
-        KTLayoutSubheader.init('kt_subheader');
-    }
-
-    // Init Footer
     if (typeof KTLayoutFooter !== 'undefined') {
         KTLayoutFooter.init('kt_footer');
     }
-
 
 
     //////////////////////////////////////////////
@@ -88,7 +102,7 @@ KTUtil.ready(function() {
     }
 
     // Init Quick Offcanvas Panel
-    if (typeof KTLayoutQuickPanel !== 'undefined') {
+    if (typeof KTLayoutQuickPanel!== 'undefined') {
         KTLayoutQuickPanel.init('kt_quick_panel');
     }
 
@@ -100,6 +114,11 @@ KTUtil.ready(function() {
     // Init Quick Search Panel
     if (typeof KTLayoutQuickSearch !== 'undefined') {
         KTLayoutQuickSearch.init('kt_quick_search');
+    }
+
+    // Init Quick Cart Panel
+    if (typeof KTLayoutQuickCartPanel !== 'undefined') {
+        KTLayoutQuickCartPanel.init('kt_quick_cart');
     }
 
     // Init Search For Quick Search Dropdown

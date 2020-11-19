@@ -23,6 +23,7 @@ var args = Object.assign({
   angular: false,
   react: false,
   vue: false,
+  suffix: false,
 }, yargs.argv);
 
 var demo = func.getDemo();
@@ -58,6 +59,8 @@ if (args.rtl !== '') {
   build.config.compile.rtl.enabled = (args.rtl === 'true');
 }
 
+var skipRtl = build.config.compile.rtl.skip;
+
 gulp.task('rtl', function(cb) {
   var streams = [];
   var stream = null;
@@ -72,22 +75,22 @@ gulp.task('rtl', function(cb) {
 
         // exclude scss file for now
         if (toRtlFile.indexOf('.scss') === -1 && !(/\*/).test(toRtlFile)) {
-          stream = gulp.src(toRtlFile, {allowEmpty: true}).pipe(rtlcss()).pipe(rename({suffix: '.rtl'})).pipe(gulp.dest(func.pathOnly(toRtlFile)));
+          stream = gulp.src(toRtlFile, {allowEmpty: true}).pipe(rtlcss()).pipe(rename({suffix: args.suffix ? '.min.rtl' : '.rtl'})).pipe(gulp.dest(func.pathOnly(toRtlFile)));
           streams.push(stream);
 
           // convert rtl for minified
           if (!(/\.min\./i).test(toRtlFile)) {
             stream = gulp.src(toRtlFile, {allowEmpty: true}).
                 pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError)).
-                pipe(rename({suffix: '.min.rtl'})).
+                pipe(rename({suffix: args.suffix ? '.min.rtl' : '.rtl'})).
                 pipe(gulp.dest(func.pathOnly(toRtlFile)));
             streams.push(stream);
           }
         }
       }
     }
-  }, build.config.compile.rtl.skip);
-
+  }, skipRtl);
+  cb();
   return merge(streams);
 });
 

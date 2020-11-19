@@ -1,3 +1,4 @@
+// tslint:disable:no-string-literal
 // https://codecraft.tv/courses/angular/unit-testing/model-driven-forms/
 import {
   waitForAsync,
@@ -99,13 +100,14 @@ describe('LoginComponent', () => {
 
   it('email field validity', () => {
     let errors = {};
-    const email = component.loginForm.controls['email'];
+    const email = component.loginForm.controls.email;
     expect(email.valid).toBeTruthy();
 
     // Email field is required
     // Set empty email first
     email.setValue('');
     errors = email.errors || {};
+    // tslint:disable-next-line:no-string-literal
     expect(errors['required']).toBeTruthy();
 
     // Set email to something

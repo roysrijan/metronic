@@ -2,12 +2,12 @@
     "name": "metronic",
     "theme": "metronic",
     "desc": "Metronic build config file for Gulp",
-    "version": "7.1.5",
+    "version": "7.1.6",
     "config": {
         "debug": false,
         "compile": {
             "rtl": {
-                "enabled": true,
+                "enabled": false,
                 "skip": [
                     "select2",
                     "socicon",
@@ -16,8 +16,6 @@
                     "flaticon2",
                     "fontawesome5",
                     "jstree",
-                    "owl.carousel",
-                    "fullcalendar",
                     "bootstrap-datepicker",
                     "bootstrap-switch",
                     "tempusdominus-bootstrap-4",
@@ -28,7 +26,7 @@
                 ]
             },
             "jsMinify": false,
-            "cssMinify": false,
+            "cssMinify": true,
             "jsSourcemaps": false,
             "cssSourcemaps": false
         },
@@ -215,9 +213,7 @@
                         },
                         "inputmask": {
                             "scripts": [
-                                "{$config.path.node_modules}/inputmask/dist/jquery.inputmask.bundle.js",
-                                "{$config.path.node_modules}/inputmask/dist/inputmask/inputmask.date.extensions.js",
-                                "{$config.path.node_modules}/inputmask/dist/inputmask/inputmask.numeric.extensions.js"
+                                "{$config.path.node_modules}/inputmask/dist/jquery.inputmask.js"
                             ]
                         },
                         "nouislider": {

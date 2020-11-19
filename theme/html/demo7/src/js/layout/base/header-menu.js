@@ -70,13 +70,6 @@ var KTLayoutHeaderMenu = function() {
 		                return height;
 		            }
 		        });
-
-				$(_offcanvasElement).find('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-					// Tablet & Mobile Modes Only
-					if (KTUtil.isBreakpointUp('lg')) {
-						KTUtil.scrollUpdate(mobileTabPane);
-					}
-		        });
 			}
 		}
 	}

@@ -318,6 +318,14 @@ export const DynamicAsideMenuConfig = {
         }
       ]
     },
+    {
+      title: 'User Profile',
+      root: true,
+      bullet: 'dot',
+      icon: 'flaticon2-user-outline-symbol',
+      svg: './assets/media/svg/icons/Communication/Add-user.svg',
+      page: '/user-profile',
+    },
     { section: 'Custom' },
     {
       title: 'Wizards',

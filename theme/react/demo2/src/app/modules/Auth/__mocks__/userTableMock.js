@@ -9,7 +9,7 @@ export default [
     accessToken: "access-token-8f3ae836da744329a6f93bf20594b5cc",
     refreshToken: "access-token-f8c137a2c98743f48b643e71161d90aa",
     roles: [1], // Administrator
-    pic: toAbsoluteUrl("/media/users/300_25.jpg"),
+    pic: toAbsoluteUrl("/media/users/300_21.jpg"),
     fullname: "Sean S",
     firstname: "Sean",
     lastname: "Stark",

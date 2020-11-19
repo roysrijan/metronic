@@ -148,16 +148,10 @@ if ( isset( $_REQUEST['array_values'] ) && $_REQUEST['array_values'] ) {
 	}
 }
 
-$secho = 0;
-if ( isset( $_REQUEST['sEcho'] ) ) {
-	$secho = intval( $_REQUEST['sEcho'] );
-}
-
 $result = [
-	'iTotalRecords'        => $totalRecords,
-	'iTotalDisplayRecords' => $totalDisplay,
-	'sEcho'                => $secho,
-	'aaData'               => $data,
+    'recordsTotal'    => $totalRecords,
+    'recordsFiltered' => $totalDisplay,
+    'data'            => $data,
 ];
 
 header('Content-Type: application/json');

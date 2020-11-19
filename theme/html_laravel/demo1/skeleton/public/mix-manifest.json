@@ -1,6 +1,5 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
     "/plugins/global/plugins.bundle.css": "/plugins/global/plugins.bundle.css",
     "/css/style.bundle.css": "/css/style.bundle.css",
     "/plugins/custom/cropper/cropper.bundle.css": "/plugins/custom/cropper/cropper.bundle.css",
@@ -39,6 +38,7 @@
     "/css/themes/layout/header/base/light.css": "/css/themes/layout/header/base/light.css",
     "/css/themes/layout/header/menu/dark.css": "/css/themes/layout/header/menu/dark.css",
     "/css/themes/layout/header/menu/light.css": "/css/themes/layout/header/menu/light.css",
+    "/css/app.css": "/css/app.css",
     "/js/pages/builder.js": "/js/pages/builder.js",
     "/js/pages/crud/datatables/advanced/column-rendering.js": "/js/pages/crud/datatables/advanced/column-rendering.js",
     "/js/pages/crud/datatables/advanced/column-visibility.js": "/js/pages/crud/datatables/advanced/column-visibility.js",
@@ -198,7 +198,6 @@
     "/plugins/custom/tinymce/tinymce.bundle.js": "/plugins/custom/tinymce/tinymce.bundle.js",
     "/plugins/custom/uppy/uppy.bundle.js": "/plugins/custom/uppy/uppy.bundle.js",
     "/plugins/global/plugins.bundle.js": "/plugins/global/plugins.bundle.js",
-    "/js/config.js": "/js/config.js",
     "/plugins/global/fonts/flaticon/Flaticon.eot": "/plugins/global/fonts/flaticon/Flaticon.eot",
     "/plugins/global/fonts/flaticon/Flaticon.ttf": "/plugins/global/fonts/flaticon/Flaticon.ttf",
     "/plugins/global/fonts/flaticon/Flaticon.woff": "/plugins/global/fonts/flaticon/Flaticon.woff",

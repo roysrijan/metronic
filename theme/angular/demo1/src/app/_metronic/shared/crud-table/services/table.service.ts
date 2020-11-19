@@ -76,7 +76,7 @@ export abstract class TableService<T> {
       catchError(err => {
         this._errorMessage.next(err);
         console.error('CREATE ITEM', err);
-        return of({ id: undefined});
+        return of({ id: undefined });
       }),
       finalize(() => this._isLoading$.next(false))
     );
@@ -103,7 +103,7 @@ export abstract class TableService<T> {
       catchError(err => {
         this._errorMessage.next(err);
         console.error('GET ITEM BY IT', id, err);
-        return of({id: undefined});
+        return of({ id: undefined });
       }),
       finalize(() => this._isLoading$.next(false))
     );
@@ -204,6 +204,20 @@ export abstract class TableService<T> {
       )
       .subscribe();
     this._subscriptions.push(request);
+  }
+
+  public setDefaults() {
+    this.patchStateWithoutFetch({ filter: {} });
+    this.patchStateWithoutFetch({ sorting: new SortState() });
+    this.patchStateWithoutFetch({ grouping: new GroupingState() });
+    this.patchStateWithoutFetch({ searchTerm: '' });
+    this.patchStateWithoutFetch({
+      paginator: new PaginatorState()
+    });
+    this._isFirstLoading$.next(true);
+    this._isLoading$.next(true);
+    this._tableState$.next(DEFAULT_STATE);
+    this._errorMessage.next('');
   }
 
   // Base Methods

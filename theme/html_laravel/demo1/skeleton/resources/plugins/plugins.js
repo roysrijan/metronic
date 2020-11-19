@@ -50,8 +50,9 @@ window.FormValidation.plugins.Bootstrap = require("../metronic/plugins/formvalid
 // jQuery BlockUI - The jQuery BlockUI Plugin lets you simulate synchronous behavior when using AJAX: http://malsup.com/jquery/block/
 require('block-ui/jquery.blockUI.js');
 
-//Tempus Dominus - The Tempus Dominus provides a flexible datetimepicker widget in the Bootstrap style: https://tempusdominus.github.io/bootstrap-4/
-require('tempusdominus-bootstrap-4');
+// Tempus Dominus - The Tempus Dominus provides a flexible datetimepicker widget in the Bootstrap style: https://tempusdominus.github.io/bootstrap-4/
+require('tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4');
+require('../metronic/js/vendors/plugins/tempusdominus-bootstrap-4.init.js');
 
 // JQuery Mask Plugin - is a jQuery plugin which create an input mask. An input mask helps the user with the input by ensuring a predefined format: https://igorescobar.github.io/jQuery-Mask-Plugin/
 require('jquery-mask-plugin');
@@ -94,9 +95,9 @@ window.Bloodhound = require('typeahead.js/dist/typeahead.bundle.js');
 window.Handlebars = require('handlebars/dist/handlebars.js');
 
 // Inputmask - is a javascript library which creates an input mask: https://github.com/RobinHerbots/Inputmask
-require('inputmask/dist/jquery.inputmask.bundle.js');
-require('inputmask/dist/inputmask/inputmask.date.extensions.js');
-require('inputmask/dist/inputmask/inputmask.numeric.extensions.js');
+require('inputmask/dist/jquery.inputmask.js');
+require('inputmask/lib/extensions/inputmask.date.extensions.js');
+require('inputmask/lib/extensions/inputmask.numeric.extensions.js');
 
 // noUiSlider - is a lightweight range slider with multi-touch support and a ton of features. It supports non-linear ranges, requires no external dependencies: https://refreshless.com/nouislider/
 window.noUiSlider = require('nouislider/distribute/nouislider.js');

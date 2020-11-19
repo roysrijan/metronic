@@ -923,6 +923,14 @@ export function HeaderMenu({ layoutProps }) {
                         {/*end::3 Level*/}
 
                         {/*begin::2 Level*/}
+                        <li className={`menu-item ${getMenuItemActive('/user-profile')}`}>
+                            <NavLink className="menu-link" to="/user-profile">
+                                <span className="menu-text">User Profile</span>
+                            </NavLink>
+                        </li>
+                        {/*end::3 Level*/}
+
+                        {/*begin::2 Level*/}
                         <li
                             className={`menu-item menu-item-submenu ${getMenuItemActive('/error')}`}
                             data-menu-toggle="hover"
