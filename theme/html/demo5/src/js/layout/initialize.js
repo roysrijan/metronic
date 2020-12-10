@@ -11,29 +11,14 @@ KTUtil.ready(function() {
         KTLayoutHeader.init('kt_header', 'kt_header_mobile');
     }
 
-    // Init Header Menu
-    if (typeof KTLayoutHeaderMenu !== 'undefined') {
-        KTLayoutHeaderMenu.init('kt_header_menu', 'kt_header_menu_wrapper');
-    }
-
     // Init Header Topbar For Mobile Mode
     if (typeof KTLayoutHeaderTopbar !== 'undefined') {
         KTLayoutHeaderTopbar.init('kt_header_mobile_topbar_toggle');
     }
 
-    // Init Brand Panel For Logo
-    if (typeof KTLayoutBrand !== 'undefined') {
-        KTLayoutBrand.init('kt_brand');
-    }
-
     // Init Aside
     if (typeof KTLayoutAside !== 'undefined') {
         KTLayoutAside.init('kt_aside');
-    }
-
-    // Init Aside Menu Toggle
-    if (typeof KTLayoutAsideToggle !== 'undefined') {
-        KTLayoutAsideToggle.init('kt_aside_toggle');
     }
 
     // Init Aside Menu
@@ -55,7 +40,6 @@ KTUtil.ready(function() {
     if (typeof KTLayoutFooter !== 'undefined') {
         KTLayoutFooter.init('kt_footer');
     }
-
 
     //////////////////////////////////////////////
     // Layout Extended Partials(optional to use)//
@@ -102,7 +86,7 @@ KTUtil.ready(function() {
     }
 
     // Init Quick Offcanvas Panel
-    if (typeof KTLayoutQuickPanel!== 'undefined') {
+    if (typeof KTLayoutQuickPanel !== 'undefined') {
         KTLayoutQuickPanel.init('kt_quick_panel');
     }
 
@@ -111,23 +95,13 @@ KTUtil.ready(function() {
         KTLayoutQuickUser.init('kt_quick_user');
     }
 
-    // Init Quick Search Panel
-    if (typeof KTLayoutQuickSearch !== 'undefined') {
-        KTLayoutQuickSearch.init('kt_quick_search');
+    // Init Search Inline Dropdown For Desktop Mode
+    if (typeof KTLayoutSearchInline !== 'undefined') {
+        KTLayoutSearchInline().init('kt_quick_search_inline');
     }
 
-    // Init Quick Cart Panel
-    if (typeof KTLayoutQuickCartPanel !== 'undefined') {
-        KTLayoutQuickCartPanel.init('kt_quick_cart');
-    }
-
-    // Init Search For Quick Search Dropdown
+    // Init Search Dropdown For Tablet & Mobile Mode
     if (typeof KTLayoutSearch !== 'undefined') {
         KTLayoutSearch().init('kt_quick_search_dropdown');
-    }
-
-    // Init Search For Quick Search Offcanvas Panel
-    if (typeof KTLayoutSearchOffcanvas !== 'undefined') {
-        KTLayoutSearchOffcanvas().init('kt_quick_search_offcanvas');
     }
 });

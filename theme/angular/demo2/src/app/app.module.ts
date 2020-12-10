@@ -14,11 +14,6 @@ import { FakeAPIService } from './_fake/fake-api.service';
 import { environment } from 'src/environments/environment';
 // Highlight JS
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
-import highlight from 'highlight.js/lib/highlight';
-import xml from 'highlight.js/lib/languages/xml';
-import json from 'highlight.js/lib/languages/json';
-import scss from 'highlight.js/lib/languages/scss';
-import typescript from 'highlight.js/lib/languages/typescript';
 import { SplashScreenModule } from './_metronic/partials/layout/splash-screen/splash-screen.module';
 
 function appInitializer(authService: AuthService) {
@@ -27,19 +22,6 @@ function appInitializer(authService: AuthService) {
       authService.getUserByToken().subscribe().add(resolve);
     });
   };
-}
-
-/**
- * Import specific languages to avoid importing everything
- * The following will lazy load highlight.js core script (~9.6KB) + the selected languages bundle (each lang. ~1kb)
- */
-export function getHighlightLanguages() {
-  return [
-    { name: 'typescript', func: typescript },
-    { name: 'scss', func: scss },
-    { name: 'xml', func: xml },
-    { name: 'json', func: json },
-  ];
 }
 
 @NgModule({
@@ -72,7 +54,13 @@ export function getHighlightLanguages() {
     {
       provide: HIGHLIGHT_OPTIONS,
       useValue: {
-        languages: getHighlightLanguages,
+        coreLibraryLoader: () => import('highlight.js/lib/core'),
+        languages: {
+          xml: () => import('highlight.js/lib/languages/xml'),
+          typescript: () => import('highlight.js/lib/languages/typescript'),
+          scss: () => import('highlight.js/lib/languages/scss'),
+          json: () => import('highlight.js/lib/languages/json')
+        },
       },
     },
   ],

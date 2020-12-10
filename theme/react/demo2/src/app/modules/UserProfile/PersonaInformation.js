@@ -279,10 +279,12 @@ function PersonaInformation(props) {
                   name="phone"
                   {...formik.getFieldProps("phone")}
                 />
-                {formik.touched.phone && formik.errors.phone ? (
-                  <div className="invalid-feedback">{formik.errors.phone}</div>
-                ) : null}
               </div>
+              {formik.touched.phone && formik.errors.phone ? (
+                <div className="invalid-feedback display-block">
+                  {formik.errors.phone}
+                </div>
+              ) : null}
               <span className="form-text text-muted">
                 We'll never share your phone with anyone else.
               </span>
@@ -308,10 +310,12 @@ function PersonaInformation(props) {
                   name="email"
                   {...formik.getFieldProps("email")}
                 />
-                {formik.touched.email && formik.errors.email ? (
-                  <div className="invalid-feedback">{formik.errors.email}</div>
-                ) : null}
               </div>
+              {formik.touched.email && formik.errors.email ? (
+                <div className="invalid-feedback display-block">
+                  {formik.errors.email}
+                </div>
+              ) : null}
             </div>
           </div>
           <div className="form-group row">
@@ -327,12 +331,12 @@ function PersonaInformation(props) {
                   name="website"
                   {...formik.getFieldProps("website")}
                 />
-                {formik.touched.website && formik.errors.website ? (
-                  <div className="invalid-feedback">
-                    {formik.errors.website}
-                  </div>
-                ) : null}
               </div>
+              {formik.touched.website && formik.errors.website ? (
+                <div className="invalid-feedback display-block">
+                  {formik.errors.website}
+                </div>
+              ) : null}
             </div>
           </div>
         </div>

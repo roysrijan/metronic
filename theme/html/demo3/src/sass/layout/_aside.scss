@@ -128,7 +128,8 @@
 			// Workspace
 			.aside-workspace {
 				width: 100%;
-				flex-shrink: 1;
+				flex-shrink: 0;
+				overflow: auto;
 			}
 		}
 

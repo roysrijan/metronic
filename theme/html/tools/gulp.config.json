@@ -2,7 +2,7 @@
     "name": "metronic",
     "theme": "metronic",
     "desc": "Metronic build config file for Gulp",
-    "version": "7.1.6",
+    "version": "7.1.7",
     "config": {
         "debug": false,
         "compile": {
@@ -297,7 +297,7 @@
                                 "{$config.path.node_modules}/toastr/build/toastr.css"
                             ],
                             "scripts": [
-                                "{$config.path.node_modules}/toastr/build/toastr.min.js"
+                                "{$config.path.node_modules}/toastr/toastr.js"
                             ]
                         },
                         "dual-listbox": {

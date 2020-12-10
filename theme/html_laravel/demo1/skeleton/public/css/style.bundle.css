@@ -60195,6 +60195,7 @@ code {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  box-shadow: none;
 }
 
 .custom-file {
@@ -74076,11 +74077,13 @@ code {
 .dataTables_wrapper {
   padding: 0 !important;
 }
+.dataTables_wrapper .DTFC_LeftWrapper .dataTable, .dataTables_wrapper .DTFC_RightWrapper .dataTable {
+  margin-top: 0 !important;
+}
 .dataTables_wrapper .dataTable {
   width: 100% !important;
   border-collapse: initial !important;
   border-spacing: 0 !important;
-  margin: 1rem 0 !important;
   border-radius: 0.42rem;
 }
 .dataTables_wrapper .dataTable th, .dataTables_wrapper .dataTable td {
@@ -77203,6 +77206,7 @@ body.swal2-height-auto {
   bottom: auto;
   height: auto;
   position: relative;
+  display: none !important;
 }
 
 .tagify__input ~ .tagify.form-control {

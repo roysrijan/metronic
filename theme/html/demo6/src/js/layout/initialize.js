@@ -46,6 +46,11 @@ KTUtil.ready(function() {
         KTLayoutSubheader.init('kt_subheader');
     }
 
+    // Init Sidebar
+    if (typeof KTLayoutSidebar !== 'undefined') {
+        KTLayoutSidebar.init('kt_sidebar');
+    }
+
     // Init Content
     if (typeof KTLayoutContent !== 'undefined') {
         KTLayoutContent.init('kt_content');

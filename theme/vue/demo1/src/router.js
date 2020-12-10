@@ -391,14 +391,29 @@ export default new Router({
           ]
         },
         {
-          path: "/custom-pages",
-          name: "custom-pages",
-          component: () => import("@/view/pages/custom_pages/CustomPages.vue"),
+          path: "/profile",
+          name: "profile",
+          component: () => import("@/view/pages/profile/Profile.vue"),
           children: [
             {
-              path: "profile",
-              name: "profile",
-              component: () => import("@/view/pages/custom_pages/Profile.vue")
+              path: "profile-1",
+              name: "profile-1",
+              component: () => import("@/view/pages/profile/Profile-1.vue")
+            },
+            {
+              path: "profile-2",
+              name: "profile-2",
+              component: () => import("@/view/pages/profile/Profile-2.vue")
+            },
+            {
+              path: "profile-3",
+              name: "profile-3",
+              component: () => import("@/view/pages/profile/Profile-3.vue")
+            },
+            {
+              path: "profile-4",
+              name: "profile-4",
+              component: () => import("@/view/pages/profile/Profile-4.vue")
             }
           ]
         }

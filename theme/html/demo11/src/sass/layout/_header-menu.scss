@@ -10,6 +10,9 @@
 @include menu-ver-build-layout(get($header-menu-config, tablet-and-mobile));
 @include menu-ver-build-theme(get($header-menu-config, tablet-and-mobile), default);
 
+// Header Menu Mobile Offcanvas
+@include offcanvas-build(header-bottom, tablet-and-mobile, get($header-menu-config, offcanvas-mobile));
+
 // Desktop Mode
 @include media-breakpoint-up(lg) {
 	// Header Tabs

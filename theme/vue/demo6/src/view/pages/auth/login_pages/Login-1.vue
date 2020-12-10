@@ -46,7 +46,6 @@
               class="form"
               novalidate="novalidate"
               id="kt_login_signin_form"
-              @submit.stop.prevent="onSubmitLogin()"
             >
               <div class="pb-13 pt-lg-0 pt-5">
                 <h3
@@ -78,7 +77,7 @@
                     type="text"
                     name="email"
                     ref="email"
-                    :value="form.email"
+                    v-model="form.email"
                   />
                 </div>
               </div>
@@ -104,7 +103,7 @@
                     type="password"
                     name="password"
                     ref="password"
-                    :value="form.password"
+                    v-model="form.password"
                     autocomplete="off"
                   />
                 </div>
@@ -136,7 +135,6 @@
               class="form"
               novalidate="novalidate"
               id="kt_login_signup_form"
-              @submit.stop.prevent="onSubmitRegister()"
             >
               <div class="pb-13 pt-lg-0 pt-5">
                 <h3
@@ -430,6 +428,83 @@ export default {
         bootstrap: new Bootstrap()
       }
     });
+
+    this.fv.on("core.form.valid", () => {
+      var email = this.form.email;
+      var password = this.form.password;
+
+      // clear existing errors
+      this.$store.dispatch(LOGOUT);
+
+      // set spinner to submit button
+      const submitButton = this.$refs["kt_login_signin_submit"];
+      submitButton.classList.add("spinner", "spinner-light", "spinner-right");
+
+      // dummy delay
+      setTimeout(() => {
+        // send login request
+        this.$store
+          .dispatch(LOGIN, { email, password })
+          // go to which page after successfully login
+          .then(() => this.$router.push({ name: "dashboard" }))
+          .catch(() => {});
+
+        submitButton.classList.remove(
+          "spinner",
+          "spinner-light",
+          "spinner-right"
+        );
+      }, 2000);
+    });
+
+    this.fv.on("core.form.invalid", () => {
+      Swal.fire({
+        title: "",
+        text: "Please, provide correct data!",
+        icon: "error",
+        confirmButtonClass: "btn btn-secondary",
+        heightAuto: false
+      });
+    });
+
+    this.fv1.on("core.form.valid", () => {
+      const email = this.$refs.remail.value;
+      const password = this.$refs.rpassword.value;
+
+      // clear existing errors
+      this.$store.dispatch(LOGOUT);
+
+      // set spinner to submit button
+      const submitButton = this.$refs["kt_login_signup_submit"];
+      submitButton.classList.add("spinner", "spinner-light", "spinner-right");
+
+      // dummy delay
+      setTimeout(() => {
+        // send register request
+        this.$store
+          .dispatch(REGISTER, {
+            email: email,
+            password: password
+          })
+          .then(() => this.$router.push({ name: "dashboard" }));
+
+        submitButton.classList.remove(
+          "spinner",
+          "spinner-light",
+          "spinner-right"
+        );
+      }, 2000);
+    });
+
+    this.fv1.on("core.form.invalid", () => {
+      Swal.fire({
+        title: "",
+        text: "Please, provide correct data!",
+        icon: "error",
+        confirmButtonClass: "btn btn-secondary",
+        heightAuto: false
+      });
+    });
   },
   methods: {
     showForm(form) {
@@ -439,91 +514,6 @@ export default {
         KTUtil.getById(form_name),
         "animate__animated animate__backInUp"
       );
-    },
-
-    onSubmitLogin() {
-      this.fv.validate();
-
-      this.fv.on("core.form.valid", () => {
-        var email = this.form.email;
-        var password = this.form.password;
-
-        // clear existing errors
-        this.$store.dispatch(LOGOUT);
-
-        // set spinner to submit button
-        const submitButton = this.$refs["kt_login_signin_submit"];
-        submitButton.classList.add("spinner", "spinner-light", "spinner-right");
-
-        // dummy delay
-        setTimeout(() => {
-          // send login request
-          this.$store
-            .dispatch(LOGIN, { email, password })
-            // go to which page after successfully login
-            .then(() => this.$router.push({ name: "dashboard" }))
-            .catch(() => {});
-
-          submitButton.classList.remove(
-            "spinner",
-            "spinner-light",
-            "spinner-right"
-          );
-        }, 2000);
-      });
-
-      this.fv.on("core.form.invalid", () => {
-        Swal.fire({
-          title: "",
-          text: "Please, provide correct data!",
-          icon: "error",
-          confirmButtonClass: "btn btn-secondary",
-          heightAuto: false
-        });
-      });
-    },
-
-    onSubmitRegister() {
-      this.fv1.validate();
-
-      this.fv1.on("core.form.valid", () => {
-        const email = this.$refs.remail.value;
-        const password = this.$refs.rpassword.value;
-
-        // clear existing errors
-        this.$store.dispatch(LOGOUT);
-
-        // set spinner to submit button
-        const submitButton = this.$refs["kt_login_signup_submit"];
-        submitButton.classList.add("spinner", "spinner-light", "spinner-right");
-
-        // dummy delay
-        setTimeout(() => {
-          // send register request
-          this.$store
-            .dispatch(REGISTER, {
-              email: email,
-              password: password
-            })
-            .then(() => this.$router.push({ name: "dashboard" }));
-
-          submitButton.classList.remove(
-            "spinner",
-            "spinner-light",
-            "spinner-right"
-          );
-        }, 2000);
-      });
-
-      this.fv1.on("core.form.invalid", () => {
-        Swal.fire({
-          title: "",
-          text: "Please, provide correct data!",
-          icon: "error",
-          confirmButtonClass: "btn btn-secondary",
-          heightAuto: false
-        });
-      });
     }
   }
 };

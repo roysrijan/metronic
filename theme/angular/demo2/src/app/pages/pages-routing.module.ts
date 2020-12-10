@@ -66,8 +66,7 @@ const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: 'errors/404',
-        pathMatch: 'full',
+        redirectTo: 'error/404',
       },
     ],
   },

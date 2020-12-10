@@ -6,6 +6,10 @@ export const UPDATE_ACCOUNT_INFO = "updateUserAccountInfo";
 export const SET_PERSONAL_INFO = "setPersonalInfo";
 export const SET_ACCOUNT_INFO = "setAccountInfo";
 
+// import ApiService from "@/core/services/api.service";
+
+export const TEST = "TEST";
+
 const state = {
   user_personal_info: {
     photo: "media/users/300_21.jpg",
@@ -38,6 +42,10 @@ const getters = {
 
   currentUserAccountInfo(state) {
     return state.user_account_info;
+  },
+
+  currentUserPhoto(state) {
+    return state.user_personal_info.photo;
   }
 };
 
@@ -47,6 +55,11 @@ const actions = {
   },
   [UPDATE_ACCOUNT_INFO](context, payload) {
     context.commit(SET_ACCOUNT_INFO, payload);
+  },
+  [TEST]() {
+    // ApiService.get("test").then(data => {
+      // console.log(data.data);
+    // });
   }
 };
 

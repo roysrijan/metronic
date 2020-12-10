@@ -13,12 +13,12 @@ KTUtil.ready(function() {
 
     // Init Header Menu
     if (typeof KTLayoutHeaderMenu !== 'undefined') {
-        KTLayoutHeaderMenu.init('kt_header_menu', 'kt_header_menu_wrapper');
+        KTLayoutHeaderMenu.init('kt_header_menu', 'kt_header_bottom');
     }
 
     // Init Header Topbar For Mobile Mode
     if (typeof KTLayoutHeaderTopbar !== 'undefined') {
-        KTLayoutHeaderTopbar.init('kt_header_mobile_topbar_toggle');
+        KTLayoutHeaderTopbar.init('kt_header_topbar');
     }
 
     // Init Brand Panel For Logo
@@ -29,11 +29,6 @@ KTUtil.ready(function() {
     // Init Aside
     if (typeof KTLayoutAside !== 'undefined') {
         KTLayoutAside.init('kt_aside');
-    }
-
-    // Init Aside Menu Toggle
-    if (typeof KTLayoutAsideToggle !== 'undefined') {
-        KTLayoutAsideToggle.init('kt_aside_toggle');
     }
 
     // Init Aside Menu

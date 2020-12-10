@@ -38,6 +38,10 @@ const getters = {
 
   currentUserAccountInfo(state) {
     return state.user_account_info;
+  },
+
+  currentUserPhoto(state) {
+    return state.user_personal_info.photo;
   }
 };
 

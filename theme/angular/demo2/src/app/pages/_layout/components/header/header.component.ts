@@ -28,6 +28,7 @@ import { Subscription, Observable, BehaviorSubject } from 'rxjs';
 export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   headerContainerCSSClasses: string;
   headerMenuSelfDisplay: boolean;
+  headerMenuSelfStatic: boolean;
   asideSelfDisplay: boolean;
   headerLogo: string;
   headerSelfTheme: string;
@@ -79,6 +80,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
       'header.menu.self.display'
     );
     this.asideSelfDisplay = this.layout.getProp('aside.self.display');
+    this.headerMenuSelfStatic = this.layout.getProp('header.menu.self.static');
     this.headerSelfTheme = this.layout.getProp('header.self.theme') || '';
     this.headerLogo = this.getLogoURL();
     this.headerMenuCSSClasses = this.layout.getStringCSSClasses('header_menu');

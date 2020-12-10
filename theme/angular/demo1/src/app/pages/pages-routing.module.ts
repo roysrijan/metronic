@@ -61,13 +61,12 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: '/dashboard',
         pathMatch: 'full',
       },
       {
         path: '**',
-        redirectTo: 'errors/404',
-        pathMatch: 'full',
+        redirectTo: 'error/404',
       },
     ],
   },

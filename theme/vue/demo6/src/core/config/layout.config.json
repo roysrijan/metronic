@@ -22,7 +22,7 @@
     "theme": {
       "base": {
         "white": "#ffffff",
-        "primary": "#8950FC ",
+        "primary": "#8950FC",
         "secondary": "#E5EAEE",
         "success": "#1BC5BD",
         "info": "#8950FC",

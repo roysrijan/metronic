@@ -14,7 +14,7 @@ export function AuthPage() {
       <div className="d-flex flex-column flex-root">
         {/*begin::Login*/}
         <div
-          className="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-row-fluid bg-white"
+          className="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white"
           id="kt_login"
         >
           {/*begin::Aside*/}
@@ -27,7 +27,7 @@ export function AuthPage() {
             {/*begin: Aside Container*/}
             <div className="d-flex flex-row-fluid flex-column justify-content-between">
               {/* start:: Aside header */}
-              <Link to="/" className="flex-column-auto mt-5">
+              <Link to="/" className="flex-column-auto mt-5 pb-lg-0 pb-10">
                 <img
                   alt="Logo"
                   className="max-h-70px"
@@ -72,7 +72,7 @@ export function AuthPage() {
           {/*begin::Aside*/}
 
           {/*begin::Content*/}
-          <div className="flex-row-fluid d-flex flex-column position-relative p-7 overflow-hidden">
+          <div className="d-flex flex-column flex-row-fluid position-relative p-7 overflow-hidden">
             {/*begin::Content header*/}
             <div className="position-absolute top-0 right-0 text-right mt-5 mb-15 mb-lg-0 flex-column-auto justify-content-center py-5 px-10">
               <span className="font-weight-bold text-dark-50">

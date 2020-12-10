@@ -1553,13 +1553,13 @@
           >
             <a href="#" class="menu-link menu-toggle">
               <i class="menu-icon far fa-user"></i>
-              <span class="menu-text"> Pages </span>
+              <span class="menu-text">Profile</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="menu-submenu menu-submenu-classic menu-submenu-right">
               <ul class="menu-subnav">
                 <router-link
-                  to="/custom-pages/profile"
+                  to="/profile/profile-1"
                   v-slot="{ href, navigate, isActive, isExactActive }"
                 >
                   <li
@@ -1573,7 +1573,64 @@
                   >
                     <a :href="href" class="menu-link" @click="navigate">
                       <i class="menu-bullet menu-bullet-dot"><span></span></i>
-                      <span class="menu-text"> Profile </span>
+                      <span class="menu-text">Profile 1</span>
+                    </a>
+                  </li>
+                </router-link>
+                <router-link
+                  to="/profile/profile-2"
+                  v-slot="{ href, navigate, isActive, isExactActive }"
+                >
+                  <li
+                    aria-haspopup="true"
+                    data-menu-toggle="hover"
+                    class="menu-item"
+                    :class="[
+                      isActive && 'menu-item-active',
+                      isExactActive && 'menu-item-active'
+                    ]"
+                  >
+                    <a :href="href" class="menu-link" @click="navigate">
+                      <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                      <span class="menu-text">Profile 2</span>
+                    </a>
+                  </li>
+                </router-link>
+                <router-link
+                  to="/profile/profile-3"
+                  v-slot="{ href, navigate, isActive, isExactActive }"
+                >
+                  <li
+                    aria-haspopup="true"
+                    data-menu-toggle="hover"
+                    class="menu-item"
+                    :class="[
+                      isActive && 'menu-item-active',
+                      isExactActive && 'menu-item-active'
+                    ]"
+                  >
+                    <a :href="href" class="menu-link" @click="navigate">
+                      <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                      <span class="menu-text">Profile 3</span>
+                    </a>
+                  </li>
+                </router-link>
+                <router-link
+                  to="/profile/profile-4"
+                  v-slot="{ href, navigate, isActive, isExactActive }"
+                >
+                  <li
+                    aria-haspopup="true"
+                    data-menu-toggle="hover"
+                    class="menu-item"
+                    :class="[
+                      isActive && 'menu-item-active',
+                      isExactActive && 'menu-item-active'
+                    ]"
+                  >
+                    <a :href="href" class="menu-link" @click="navigate">
+                      <i class="menu-bullet menu-bullet-dot"><span></span></i>
+                      <span class="menu-text">Profile 4</span>
                     </a>
                   </li>
                 </router-link>

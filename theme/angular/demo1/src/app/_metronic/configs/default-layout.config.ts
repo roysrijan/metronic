@@ -85,6 +85,7 @@ export const DefaultLayoutConfig = {
     menu: {
       self: {
         display: true,
+        static: true, // static => true | dynamic => true
         layout: 'default', // tab/default,
         rootArrow: false,
         iconStyle: 'duotone', // duotone, line, bold, solid
@@ -152,6 +153,7 @@ export const DefaultLayoutConfig = {
     },
 
     menu: {
+      static: true, // static => true | dynamic => true
       dropdown: false, // ok
       scroll: true, // ok
       iconStyle: 'duotone', // duotone, line, bold, solid

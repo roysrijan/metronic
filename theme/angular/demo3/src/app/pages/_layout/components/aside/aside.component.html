@@ -198,12 +198,22 @@
           id="kt_aside_tab_2"
           [ngClass]="{ 'show active': activeTabId === TABS[2] }"
         >
-          <app-aside-static
-            class="aside-menu-wrapper flex-column-fluid"
-            id="kt_aside_menu_wrapper"
-          ></app-aside-static>
-          <!-- <app-aside-dynamic class="aside-menu-wrapper flex-column-fluid"
-            id="kt_aside_menu_wrapper"></app-aside-dynamic> -->
+          <ng-container *ngIf="asideMenuStatic">
+            <!--begin::STATIC Aside-->
+            <app-aside-static
+              class="aside-menu-wrapper flex-column-fluid"
+              id="kt_aside_menu_wrapper"
+            ></app-aside-static>
+            <!--end::STATIC Aside-->
+          </ng-container>
+          <ng-container *ngIf="!asideMenuStatic">
+            <!--begin::DYNAMIC Aside-->
+            <app-aside-dynamic
+              class="aside-menu-wrapper flex-column-fluid"
+              id="kt_aside_menu_wrapper"
+            ></app-aside-dynamic>
+            <!--end::DYNAMIC Aside-->
+          </ng-container>
         </div>
         <!--end::Tab Pane-->
       </div>

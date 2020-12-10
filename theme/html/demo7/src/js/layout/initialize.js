@@ -13,7 +13,7 @@ KTUtil.ready(function() {
 
     // Init Header Menu
     if (typeof KTLayoutHeaderMenu !== 'undefined') {
-        KTLayoutHeaderMenu.init('kt_header_menu', 'kt_header_menu_wrapper');
+        KTLayoutHeaderMenu.init('kt_header_menu', 'kt_header_navs');
     }
 
     // Init Header Topbar For Mobile Mode
