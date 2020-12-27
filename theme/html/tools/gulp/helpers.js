@@ -114,7 +114,7 @@ module.exports = {
         }).pipe(function () {
             return sass({
                 errLogToConsole: true,
-                includePaths: ['node_modules'].concat(includePaths),
+                includePaths: [build.config.path.src + '/sass', 'node_modules'].concat(includePaths),
                 // outputStyle: config.cssMinify ? 'compressed' : '',
             }).on('error', sass.logError);
         }).pipe(function () {

@@ -7,7 +7,7 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
-/*!***********************!*
+/*!***********************!*\
   !*** ./gulp/entry.js ***!
   \***********************/
 eval("// dummy entry for webpack\n\n//# sourceURL=webpack://metronic/./gulp/entry.js?");
