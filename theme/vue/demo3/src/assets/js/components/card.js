@@ -199,6 +199,12 @@ var KTCard = function(elementId, options) {
                 return;
             }
 
+            // Remove tooltips
+            var tooltips;
+            if ( tooltips = document.querySelectorAll('.tooltip.show') ) {
+                $(tooltips).tooltip('dispose');
+            }
+
             KTUtil.remove(element);
 
             Plugin.eventTrigger('afterRemove');

@@ -2,7 +2,7 @@
     "name": "metronic",
     "theme": "metronic",
     "desc": "Metronic build config file for Gulp",
-    "version": "7.1.8",
+    "version": "7.1.9",
     "config": {
         "debug": false,
         "compile": {
@@ -26,7 +26,7 @@
                 ]
             },
             "jsMinify": false,
-            "cssMinify": true,
+            "cssMinify": false,
             "jsSourcemaps": false,
             "cssSourcemaps": false
         },
@@ -728,6 +728,16 @@
                     "bundle": {
                         "styles": "{$config.dist}/plugins/custom/cropper/cropper.bundle.css",
                         "scripts": "{$config.dist}/plugins/custom/cropper/cropper.bundle.js"
+                    }
+                },
+                "summernote-sourcemap": {
+                    "src": {
+                        "media": [
+                            "{$config.path.node_modules}/summernote/dist/summernote-bs4.js.map"
+                        ]
+                    },
+                    "output": {
+                        "media": "{$config.dist}/plugins/global"
                     }
                 }
             }

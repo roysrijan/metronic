@@ -1,6 +1,6 @@
 {
     "name": "metronic",
-    "version": "7.1.8",
+    "version": "7.1.9",
     "description": "Packages used by yarn, npm, gulp and webpack",
     "main": "gulpfile.js",
     "dependencies": {
@@ -28,7 +28,7 @@
         "apexcharts": "^3.22.2",
         "autosize": "^4.0.2",
         "block-ui": "^2.70.1",
-        "bootstrap": "4.5.3",
+        "bootstrap": "^4.6.0",
         "bootstrap-datepicker": "^1.9.0",
         "bootstrap-daterangepicker": "^3.1.0",
         "bootstrap-markdown": "^2.10.0",
@@ -135,6 +135,7 @@
         "webpack-cli": "^4.2.0",
         "webpack-dev-server": "^3.11.0",
         "webpack-exclude-assets-plugin": "^0.1.1",
+        "webpack-merge-and-include-globally": "^2.3.3",
         "webpack-messages": "^2.0.4",
         "webpack-rtl-plugin": "^2.0.0",
         "yargs": "^16.1.1",

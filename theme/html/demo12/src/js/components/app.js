@@ -320,3 +320,11 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 $(document).ready(function() {
     KTApp.init(KTAppSettings);
 });
+
+// CSS3 Transitions only after page load(.page-loading class added to body tag and remove with JS on page load)
+window.onload = function() {
+    var result = KTUtil.getByTagName('body');
+    if (result && result[0]) {
+        KTUtil.removeClass(result[0], 'page-loading');
+    }
+}

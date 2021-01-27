@@ -1,6 +1,6 @@
 {
     "name": "demo2",
-    "version": "7.1.8",
+    "version": "7.1.9",
     "private": true,
     "homepage": "/metronic/react/demo2",
     "scripts": {
@@ -45,7 +45,7 @@
         "apexcharts": "3.19.2",
         "axios": "0.19.2",
         "axios-mock-adapter": "1.18.1",
-        "bootstrap": "4.5.0",
+        "bootstrap": "4.6.0",
         "clipboard-copy": "3.1.0",
         "clsx": "1.1.0",
         "cp-cli": "2.0.0",

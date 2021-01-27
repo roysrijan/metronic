@@ -2118,8 +2118,6 @@
 						var scrollWidth = $(this)[0].scrollWidth;
 
 						while (offsetWidth < scrollWidth && (scrollWidth - offsetWidth) > Plugin.cellOffset && recursive < options.columns.length) {
-							offsetWidth = $(this)[0].offsetWidth;
-							scrollWidth = $(this)[0].scrollWidth;
 
 							$(datatable.table).find('.' + pfx + 'datatable-row').each(function(i) {
 								var cell = $(this).find('.' + pfx + 'datatable-cell:not(:hidden):not([data-autohide-disabled])').last();
@@ -2129,6 +2127,9 @@
 									}
 							});
 							recursive++;
+
+							offsetWidth = $(this)[0].offsetWidth;
+							scrollWidth = $(this)[0].scrollWidth;
 						}
 					});
 

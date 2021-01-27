@@ -344,14 +344,14 @@ $dt-page-color-active: $white;
 
     // Responsive mode
     table.dataTable.collapsed > tbody > {
-        tr[role="row"] > td:first-child {
-            padding-left: 25px !important;
+        tr > td:first-child:before {
+            padding-right: 10px !important;
         }
     }
 
     // Responsive mode toggle icon
     table.dataTable.dtr-inline.collapsed > tbody > {
-        tr[role="row"] > td:first-child:before {
+        tr > td:first-child:before {
             box-shadow: none;
             border-radius: 0;
             top: 50%;
