@@ -6,7 +6,7 @@ var rename = require('gulp-rename');
 var rtlcss = require('gulp-rtlcss');
 var glob = require('glob');
 var fs = require('fs');
-var sass = require('gulp-sass');
+var sass = require('gulp-dart-sass');
 var merge = require('merge-stream');
 
 if (Object.keys(build).length === 0) {

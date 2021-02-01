@@ -49,7 +49,7 @@ class Menu
                 }
             }
 
-            if (@$item['redirect'] === true) {
+            if (isset($item['redirect']) && $item['redirect'] === true) {
                 $item_attr .= ' data-menu-redirect="1"';
             }
 
@@ -88,7 +88,7 @@ class Menu
             }
 
             // Menu arrow
-            if (@$item['here'] === true) {
+            if (isset($item['here']) && $item['here'] === true) {
                 echo '<span class="menu-item-here"></span>';
             }
 
@@ -135,7 +135,7 @@ class Menu
                 } elseif (isset($item['root']) == false && config('layout.menu.aside.submenu.arrow') == 'plus-minus-circle') {
                     echo '<i class="menu-arrow menu-arrow-pm-circle"><span><span></span></span></i>';
                 } else {
-                    if (@$item['arrow'] !== false && config('layout.aside.menu.root-arrow') !== false) {
+                    if (isset($item['arrow']) && $item['arrow'] !== false && config('layout.aside.menu.root-arrow') !== false) {
                         echo '<i class="menu-arrow"></i>';
                     }
                 }

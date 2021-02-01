@@ -259,6 +259,8 @@ function mainConfig() {
 						{
 							loader: 'sass-loader',
 							options: {
+								// Prefer `dart-sass`
+								implementation: require("sass"),
 								sourceMap: false,
 								sassOptions: {
 									includePaths: [
