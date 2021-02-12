@@ -50012,6 +50012,9 @@ button {
 .breadcrumb {
   align-items: center;
 }
+.breadcrumb .breadcrumb-item {
+  display: flex;
+}
 .breadcrumb .breadcrumb-item a {
   display: flex;
   align-items: center;

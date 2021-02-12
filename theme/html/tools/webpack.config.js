@@ -346,12 +346,22 @@ function mainConfig() {
 }
 
 function getParameters() {
-	// remove first 2 unused elements from array
-	let argv = JSON.parse(process.env.npm_config_argv).cooked.slice(2);
-	argv = argv.map((arg) => {
-		return arg.replace(/--/i, '');
+	var possibleArgs = [
+		'js', 'css', 'scss',
+		'alldemos', 'rtl', 'prod',
+	];
+	for (var i = 0; i <= 13; i++) {
+		possibleArgs.push('demo' + i);
+	}
+
+	var args = [];
+	possibleArgs.forEach(function(key) {
+		if (process.env['npm_config_' + key]) {
+			args.push(key);
+		}
 	});
-	return argv;
+
+	return args;
 }
 
 function getDemos(pathDemos) {

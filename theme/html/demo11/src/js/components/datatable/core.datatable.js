@@ -263,7 +263,7 @@
 				$('body').on('show.bs.dropdown', '.' + pfx + 'datatable .' + pfx + 'datatable-body', function(e) {
 					dropdownMenu = $(e.target).find('.dropdown-menu');
 					$('body').append(dropdownMenu.detach());
-					// dropdownMenu.css('display', 'block');
+					dropdownMenu.css('display', 'block');
 					dropdownMenu.position({
 						'my': 'right top',
 						'at': 'right bottom',
@@ -277,6 +277,7 @@
 				}).on('hide.bs.dropdown', '.' + pfx + 'datatable .' + pfx + 'datatable-body', function(e) {
 					$(e.target).append(dropdownMenu.detach());
 					dropdownMenu.hide();
+					dropdownMenu.css('display', '');
 				});
 
 				// remove dropdown if window resize
