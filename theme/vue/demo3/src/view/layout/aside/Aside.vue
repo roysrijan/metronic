@@ -1907,8 +1907,16 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
+      const asideRef = this.$refs["kt_aside"];
+
       // Init Aside
-      KTLayoutAside.init(this.$refs["kt_aside"]);
+      KTLayoutAside.init(asideRef);
+
+      asideRef.querySelectorAll("a[class='menu-link']").forEach(item => {
+        item.addEventListener("click", () => {
+          KTLayoutAside.getOffcanvas().hide();
+        });
+      });
 
       // Init Aside Menu
       KTLayoutAsideMenu.init(this.$refs["kt_aside_menu"]);

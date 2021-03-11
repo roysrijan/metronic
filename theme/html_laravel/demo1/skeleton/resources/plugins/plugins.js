@@ -63,7 +63,7 @@ require('../metronic/js/vendors/plugins/bootstrap-datepicker.init.js');
 
 // Bootstrap Timepicker - Easily select a time for a text input using your mouse or keyboards arrow keys: https://jdewit.github.io/bootstrap-timepicker/
 require('bootstrap-timepicker/js/bootstrap-timepicker.js');
-require('../metronic/js/vendors/plugins/bootstrap-timepicker.init.js');
+// require('../metronic/js/vendors/plugins/bootstrap-timepicker.init.js');
 
 // Date Range Picker - A JavaScript component for choosing date ranges, dates and times: https://www.daterangepicker.com/
 require('bootstrap-daterangepicker/daterangepicker.js');
@@ -96,8 +96,6 @@ window.Handlebars = require('handlebars/dist/handlebars.js');
 
 // Inputmask - is a javascript library which creates an input mask: https://github.com/RobinHerbots/Inputmask
 require('inputmask/dist/jquery.inputmask.js');
-require('inputmask/lib/extensions/inputmask.date.extensions.js');
-require('inputmask/lib/extensions/inputmask.numeric.extensions.js');
 
 // noUiSlider - is a lightweight range slider with multi-touch support and a ton of features. It supports non-linear ranges, requires no external dependencies: https://refreshless.com/nouislider/
 window.noUiSlider = require('nouislider/distribute/nouislider.js');
@@ -163,6 +161,3 @@ require('../metronic/js/vendors/plugins/sweetalert2.init.js');
 
 // JQuery Repeater - Create a repeatable group of input elements: https://github.com/DubFriend/jquery.repeater
 require('jquery.repeater');
-
-// jsTree - is jquery plugin, that provides interactive trees: https://www.jstree.com/
-require('jstree');

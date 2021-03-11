@@ -208,6 +208,14 @@ export default {
       this.$refs["kt_header_menu"],
       this.$refs["kt_header_navs"]
     );
+
+    const headerRef = this.$refs["kt_header"];
+
+    headerRef.querySelectorAll("a[class='menu-link']").forEach(item => {
+      item.addEventListener("click", () => {
+        KTLayoutHeaderMenu.getOffcanvas().hide();
+      });
+    });
   },
   computed: {
     ...mapGetters(["layoutConfig", "getClasses"]),

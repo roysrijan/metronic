@@ -1,5 +1,7 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { KTUtil } from '../../../../../assets/js/components/util';
+import { NavigationCancel, NavigationEnd, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import KTLayoutStickyCard from '../../../../../assets/js/layout/base/sticky-card';
 import KTLayoutStretchedCard from '../../../../../assets/js/layout/base/stretched-card';
 import { LayoutService } from '../../../../_metronic/core';
@@ -10,15 +12,17 @@ import KTLayoutAsideMenu from '../../../../../assets/js/layout/base/aside-menu';
   selector: 'app-scripts-init',
   templateUrl: './scripts-init.component.html',
 })
-export class ScriptsInitComponent implements OnInit, AfterViewInit {
+export class ScriptsInitComponent implements OnInit, AfterViewInit, OnDestroy {
   asideSelfMinimizeToggle = false;
+  private unsubscribe: Subscription[] = []; // Read more: => https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
 
-  constructor(private layout: LayoutService) { }
+  constructor(private layout: LayoutService, private router: Router) { }
 
   ngOnInit(): void {
     this.asideSelfMinimizeToggle = this.layout.getProp(
       'aside.self.minimize.toggle'
     );
+    this.routingChanges();
   }
 
   ngAfterViewInit() {
@@ -32,5 +36,21 @@ export class ScriptsInitComponent implements OnInit, AfterViewInit {
       // Init Stretched Card
       KTLayoutStretchedCard.init('kt_page_stretched_card');
     });
+  }
+
+  routingChanges() {
+    const routerSubscription = this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd || event instanceof NavigationCancel) {
+        const offCanvas = KTLayoutAside.getOffcanvas();
+        if (offCanvas) {
+          offCanvas.hide();
+        }
+      }
+    });
+    this.unsubscribe.push(routerSubscription);
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe.forEach((sb) => sb.unsubscribe());
   }
 }

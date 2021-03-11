@@ -20,7 +20,8 @@ var KTWizard = function(elementId, options) {
     // Default options
     var defaultOptions = {
         startStep: 1,
-        clickableSteps: false // to make steps clickable this set value true and add data-wizard-clickable="true" in HTML for class="wizard" element
+        clickableSteps: false, // to make steps clickable this set value true and add data-wizard-clickable="true" in HTML for class="wizard" element
+        navigation: true
     };
 
     ////////////////////////////
@@ -86,31 +87,40 @@ var KTWizard = function(elementId, options) {
          * Build Form Wizard
          */
         build: function() {
-            // Next button event handler
-            KTUtil.addEvent(the.btnNext, 'click', function(e) {
-                e.preventDefault();
+            if (the.options.navigation) {
+                // Next button event handler
+                KTUtil.addEvent(the.btnNext, 'click', function(e) {
+                    e.preventDefault();
 
-                // Set new step number
-                Plugin.setNewStep(Plugin.getNextStep());
+                    // Set new step number
+                    Plugin.setNewStep(Plugin.getNextStep());
 
-                // Trigger change event
-                if (Plugin.eventTrigger('change') !== false) {
-                    Plugin.goTo(Plugin.getNextStep());
-                }
-            });
+                    // Trigger change event
+                    if (Plugin.eventTrigger('change') !== false) {
+                        Plugin.goTo(Plugin.getNextStep());
+                    }
+                });
 
-            // Prev button event handler
-            KTUtil.addEvent(the.btnPrev, 'click', function(e) {
-                e.preventDefault();
+                // Prev button event handler
+                KTUtil.addEvent(the.btnPrev, 'click', function(e) {
+                    e.preventDefault();
 
-                // Set new step number
-                Plugin.setNewStep(Plugin.getPrevStep());
+                    // Set new step number
+                    Plugin.setNewStep(Plugin.getPrevStep());
 
-                // Trigger change event
-                if (Plugin.eventTrigger('change') !== false) {
-                    Plugin.goTo(Plugin.getPrevStep());
-                }
-            });
+                    // Trigger change event
+                    if (Plugin.eventTrigger('change') !== false) {
+                        Plugin.goTo(Plugin.getPrevStep());
+                    }
+                });
+
+                // Submit button event handler
+                KTUtil.addEvent(the.btnSubmit, 'click', function(e) {
+                    e.preventDefault();
+
+                    Plugin.eventTrigger('submit');
+                });
+            }
 
             if (the.options.clickableSteps === true) {
                 KTUtil.on(element, '[data-wizard-type="step"]', 'click', function() {
@@ -126,13 +136,6 @@ var KTWizard = function(elementId, options) {
                     }
                 });
             }
-
-            // Submit button event handler
-            KTUtil.addEvent(the.btnSubmit, 'click', function(e) {
-                e.preventDefault();
-
-                Plugin.eventTrigger('submit');
-            });
         },
 
         /**

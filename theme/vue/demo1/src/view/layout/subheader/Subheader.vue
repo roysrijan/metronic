@@ -1,6 +1,6 @@
 <template>
   <div
-    class="subheader py-2 py-lg-4"
+    class="subheader py-2 py-lg-4 subheader-solid"
     v-bind:class="subheaderClasses"
     id="kt_subheader"
   >

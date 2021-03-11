@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {useRouteMatch} from "react-router-dom";
+import KTLayoutAside from '../../../_assets/js/layout/base/aside';
 
 export function Content({ children }) {
   const match = useRouteMatch() || {};
@@ -18,6 +19,11 @@ export function Content({ children }) {
     const timeOutId = setTimeout(() => {
       setCssClassesState(fullClasses);
     }, 200);
+
+    const offCanvas = KTLayoutAside.getOffcanvas();
+    if (offCanvas) {
+      offCanvas.hide();
+    }
 
     return () => {
       clearTimeout(timeOutId);
