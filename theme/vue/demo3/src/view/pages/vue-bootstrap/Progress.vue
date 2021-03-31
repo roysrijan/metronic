@@ -136,10 +136,12 @@
               <h5>Custom label via default slot</h5>
               <b-progress :max="code3.max" height="2rem">
                 <b-progress-bar :value="code3.value">
-                  Progress:
-                  <strong
-                    >{{ code3.value.toFixed(2) }} / {{ code3.max }}</strong
-                  >
+                  <span>
+                    Progress:
+                    <strong
+                      >{{ code3.value.toFixed(2) }} / {{ code3.max }}</strong
+                    >
+                  </span>
                 </b-progress-bar>
               </b-progress>
 
@@ -218,6 +220,12 @@
     </div>
   </div>
 </template>
+
+<style lang="scss">
+.progress-bar.progress-bar-striped.progress-bar-animated {
+  background-repeat: repeat !important;
+}
+</style>
 
 <script>
 import KTCodePreview from "@/view/content/CodePreview.vue";

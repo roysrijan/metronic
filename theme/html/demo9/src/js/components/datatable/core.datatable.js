@@ -35,7 +35,7 @@
 			 ** PRIVATE METHODS
 			 ********************/
 			isInit: false,
-			cellOffset: 110,
+			cellOffset: 108,
 			iconOffset: 15,
 			stateId: 'meta',
 			ajaxParams: {},
@@ -275,9 +275,11 @@
 						dropdownMenu.css('z-index', '2000');
 					}
 				}).on('hide.bs.dropdown', '.' + pfx + 'datatable .' + pfx + 'datatable-body', function(e) {
-					$(e.target).append(dropdownMenu.detach());
-					dropdownMenu.hide();
-					dropdownMenu.css('display', '');
+					if (typeof dropdownMenu !== 'undefined') {
+						$(e.target).append(dropdownMenu.detach());
+						dropdownMenu.hide();
+						dropdownMenu.css('display', '');
+					}
 				});
 
 				// remove dropdown if window resize

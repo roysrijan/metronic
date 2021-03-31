@@ -39,14 +39,14 @@ $total = count($data); // total items in array
 // sort
 usort($data, function ($a, $b) use ($sort, $field) {
     if (!isset($a->$field) || !isset($b->$field)) {
-        return false;
+        return -1;
     }
 
     if ($sort === 'asc') {
-        return $a->$field > $b->$field ? true : false;
+        return $a->$field > $b->$field ? 1 : -1;
     }
 
-    return $a->$field < $b->$field ? true : false;
+    return $a->$field < $b->$field ? 1 : -1;
 });
 
 // $perpage 0; get all data

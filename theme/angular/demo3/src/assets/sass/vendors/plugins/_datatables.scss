@@ -344,8 +344,12 @@ $dt-page-color-active: $white;
 
     // Responsive mode
     table.dataTable.collapsed > tbody > {
-        tr > td:first-child:before {
-            padding-right: 10px !important;
+        tr > td:first-child {
+            padding-left: 30px !important;
+
+            &:before {
+                padding-right: 10px !important;
+            }
         }
     }
 

@@ -55,11 +55,6 @@ const actions = {
   },
   [UPDATE_ACCOUNT_INFO](context, payload) {
     context.commit(SET_ACCOUNT_INFO, payload);
-  },
-  [TEST]() {
-    // ApiService.get("test").then(data => {
-    // console.log(data.data);
-    // });
   }
 };
 

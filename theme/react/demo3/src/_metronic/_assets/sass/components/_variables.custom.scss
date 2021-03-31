@@ -346,6 +346,19 @@ $checkbox-config: (
 					tick: 12px,
 				)
 			)
+		),
+		accent: (
+			borderWidth: 3px,
+			sizes: (
+				default: (
+					base: 24px,
+					tick: 14px,
+				),
+				lg: (
+					base: 30px,
+					tick:  10px,
+				)
+			)
 		)
 	)
 ) !default;
