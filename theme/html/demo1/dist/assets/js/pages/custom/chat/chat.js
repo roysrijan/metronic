@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!*************************************************!*\
+  !*** ../demo1/src/js/pages/custom/chat/chat.js ***!
+  \*************************************************/
+
 
 // Class definition
 var KTAppChat = function () {
@@ -91,3 +97,7 @@ var KTAppChat = function () {
 jQuery(document).ready(function() {
 	KTAppChat.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=chat.js.map

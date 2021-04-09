@@ -1,3 +1,8 @@
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!***********************************************************!*\
+  !*** ../demo1/src/js/pages/crud/forms/widgets/select2.js ***!
+  \***********************************************************/
 // Class definition
 var KTSelect2 = function() {
     // Private functions
@@ -185,3 +190,7 @@ var KTSelect2 = function() {
 jQuery(document).ready(function() {
     KTSelect2.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=select2.js.map

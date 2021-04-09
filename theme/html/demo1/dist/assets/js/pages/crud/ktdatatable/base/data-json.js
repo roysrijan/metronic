@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!****************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/ktdatatable/base/data-json.js ***!
+  \****************************************************************/
+
 // Class definition
 
 var KTDatatableJsonRemoteDemo = function() {
@@ -226,3 +232,7 @@ var KTDatatableJsonRemoteDemo = function() {
 jQuery(document).ready(function() {
     KTDatatableJsonRemoteDemo.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=data-json.js.map

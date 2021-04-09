@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!**************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/datatables/basic/headers.js ***!
+  \**************************************************************/
+
 var KTDatatablesBasicHeaders = function() {
 
 	var initTable1 = function() {
@@ -88,3 +94,7 @@ var KTDatatablesBasicHeaders = function() {
 jQuery(document).ready(function() {
 	KTDatatablesBasicHeaders.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=headers.js.map

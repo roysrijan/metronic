@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!*****************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/datatables/basic/scrollable.js ***!
+  \*****************************************************************/
+
 var KTDatatablesBasicScrollable = function() {
 
     var initTable1 = function() {
@@ -384,3 +390,7 @@ var KTDatatablesBasicScrollable = function() {
 jQuery(document).ready(function() {
     KTDatatablesBasicScrollable.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=scrollable.js.map

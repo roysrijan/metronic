@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!********************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/forms/editors/ckeditor-classic.js ***!
+  \********************************************************************/
+
 // Class definition
 
 var KTCkeditor = function () {    
@@ -62,3 +68,6 @@ var KTCkeditor = function () {
 jQuery(document).ready(function() {
     KTCkeditor.init();
 });
+/******/ })()
+;
+//# sourceMappingURL=ckeditor-classic.js.map

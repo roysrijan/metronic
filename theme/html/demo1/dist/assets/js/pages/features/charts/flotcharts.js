@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!***********************************************************!*\
+  !*** ../demo1/src/js/pages/features/charts/flotcharts.js ***!
+  \***********************************************************/
+
 
 // Class definition
 var KTFlotchartsDemo = function() {
@@ -716,3 +722,7 @@ var KTFlotchartsDemo = function() {
 jQuery(document).ready(function() {
 	KTFlotchartsDemo.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=flotcharts.js.map

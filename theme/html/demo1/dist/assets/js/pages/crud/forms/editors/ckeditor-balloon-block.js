@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!**************************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/forms/editors/ckeditor-balloon-block.js ***!
+  \**************************************************************************/
+
 // Class definition
 
 var KTCkeditorBalloonBlock = function () {    
@@ -62,3 +68,6 @@ var KTCkeditorBalloonBlock = function () {
 jQuery(document).ready(function() {
     KTCkeditorBalloonBlock.init();
 });
+/******/ })()
+;
+//# sourceMappingURL=ckeditor-balloon-block.js.map

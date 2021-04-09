@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!***********************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/datatables/extensions/fixedheader.js ***!
+  \***********************************************************************/
+
 var KTDatatablesExtensionsFixedheader = function() {
 
 	var initTable1 = function() {
@@ -88,3 +94,7 @@ var KTDatatablesExtensionsFixedheader = function() {
 jQuery(document).ready(function() {
 	KTDatatablesExtensionsFixedheader.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=fixedheader.js.map

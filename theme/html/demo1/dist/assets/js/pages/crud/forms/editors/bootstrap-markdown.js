@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!**********************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/forms/editors/bootstrap-markdown.js ***!
+  \**********************************************************************/
+
 // Class definition
 
 var KTBootstrapMarkdown = function () {    
@@ -19,3 +25,6 @@ var KTBootstrapMarkdown = function () {
 jQuery(document).ready(function() {
     KTBootstrapMarkdown.init();
 });
+/******/ })()
+;
+//# sourceMappingURL=bootstrap-markdown.js.map

@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!******************************************************************!*\
+  !*** ../demo1/src/js/pages/features/miscellaneous/idle-timer.js ***!
+  \******************************************************************/
+
 
 var KTIdleTimerDemo = function() {
     var _initDemo1 = function() {
@@ -252,3 +258,7 @@ var KTIdleTimerDemo = function() {
 jQuery(document).ready(function() {
     KTIdleTimerDemo.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=idle-timer.js.map

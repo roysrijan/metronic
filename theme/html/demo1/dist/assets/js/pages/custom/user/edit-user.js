@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!******************************************************!*\
+  !*** ../demo1/src/js/pages/custom/user/edit-user.js ***!
+  \******************************************************/
+
 
 // Class definition
 var KTUserEdit = function () {
@@ -20,3 +26,7 @@ var KTUserEdit = function () {
 jQuery(document).ready(function() {
 	KTUserEdit.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=edit-user.js.map

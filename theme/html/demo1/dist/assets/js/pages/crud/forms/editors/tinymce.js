@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!***********************************************************!*\
+  !*** ../demo1/src/js/pages/crud/forms/editors/tinymce.js ***!
+  \***********************************************************/
+
 // Class definition
 
 var KTTinymce = function () {    
@@ -43,3 +49,6 @@ var KTTinymce = function () {
 jQuery(document).ready(function() {
     KTTinymce.init();
 });
+/******/ })()
+;
+//# sourceMappingURL=tinymce.js.map

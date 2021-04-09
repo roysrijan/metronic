@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/file-upload/dropzonejs.js ***!
+  \************************************************************/
+
 // Class definition
 
 var KTDropzoneDemo = function () {
@@ -182,3 +188,7 @@ var KTDropzoneDemo = function () {
 KTUtil.ready(function() {
     KTDropzoneDemo.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=dropzonejs.js.map

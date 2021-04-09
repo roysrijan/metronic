@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!*****************************************************************!*\
+  !*** ../demo1/src/js/pages/custom/education/student/profile.js ***!
+  \*****************************************************************/
+
 
 // Class definition
 var KTAppsEducationStudentProfile = function () {
@@ -20,3 +26,7 @@ var KTAppsEducationStudentProfile = function () {
 jQuery(document).ready(function() {
 	KTAppsEducationStudentProfile.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=profile.js.map

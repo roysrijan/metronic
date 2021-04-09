@@ -1,3 +1,8 @@
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!********************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/forms/widgets/bootstrap-select.js ***!
+  \********************************************************************/
 // Class definition
 
 var KTBootstrapSelect = function () {
@@ -19,3 +24,6 @@ var KTBootstrapSelect = function () {
 jQuery(document).ready(function() {
     KTBootstrapSelect.init();
 });
+/******/ })()
+;
+//# sourceMappingURL=bootstrap-select.js.map

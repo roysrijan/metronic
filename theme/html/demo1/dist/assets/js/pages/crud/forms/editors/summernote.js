@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!**************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/forms/editors/summernote.js ***!
+  \**************************************************************/
+
 // Class definition
 
 var KTSummernoteDemo = function () {
@@ -22,3 +28,7 @@ var KTSummernoteDemo = function () {
 jQuery(document).ready(function() {
     KTSummernoteDemo.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=summernote.js.map

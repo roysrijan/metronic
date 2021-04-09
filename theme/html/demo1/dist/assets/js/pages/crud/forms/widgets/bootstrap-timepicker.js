@@ -1,3 +1,8 @@
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!************************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/forms/widgets/bootstrap-timepicker.js ***!
+  \************************************************************************/
 // Class definition
 
 var KTBootstrapTimepicker = function () {
@@ -53,3 +58,6 @@ var KTBootstrapTimepicker = function () {
 jQuery(document).ready(function() {
     KTBootstrapTimepicker.init();
 });
+/******/ })()
+;
+//# sourceMappingURL=bootstrap-timepicker.js.map

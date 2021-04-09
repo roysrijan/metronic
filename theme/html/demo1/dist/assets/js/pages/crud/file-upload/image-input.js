@@ -1,4 +1,10 @@
-'use strict';
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!*************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/file-upload/image-input.js ***!
+  \*************************************************************/
+
 
 // Class definition
 var KTImageInputDemo = function () {
@@ -91,3 +97,7 @@ var KTImageInputDemo = function () {
 KTUtil.ready(function() {
 	KTImageInputDemo.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=image-input.js.map

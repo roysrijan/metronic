@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!********************************************************************!*\
+  !*** ../demo1/src/js/pages/features/calendar/background-events.js ***!
+  \********************************************************************/
+
 
 var KTCalendarBackgroundEvents = function() {
 
@@ -180,3 +186,7 @@ var KTCalendarBackgroundEvents = function() {
 jQuery(document).ready(function() {
     KTCalendarBackgroundEvents.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=background-events.js.map

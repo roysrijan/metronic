@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!**************************************************************!*\
+  !*** ../demo1/src/js/pages/features/miscellaneous/toastr.js ***!
+  \**************************************************************/
+
 
 // Class definition
 var KTToastrDemo = function() {
@@ -163,3 +169,6 @@ var KTToastrDemo = function() {
 jQuery(document).ready(function() {
     KTToastrDemo.init();
 });
+/******/ })()
+;
+//# sourceMappingURL=toastr.js.map

@@ -1,4 +1,10 @@
-'use strict';
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!********************************************************************!*\
+  !*** ../demo1/src/js/pages/features/miscellaneous/dual-listbox.js ***!
+  \********************************************************************/
+
 
 // Class definition
 var KTDualListbox = function () {
@@ -104,3 +110,7 @@ var KTDualListbox = function () {
 window.addEventListener('load', function(){
     KTDualListbox.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=dual-listbox.js.map

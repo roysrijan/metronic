@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!********************************************************************!*\
+  !*** ../demo1/src/js/pages/features/miscellaneous/kanban-board.js ***!
+  \********************************************************************/
+
 
 // Class definition
 
@@ -407,3 +413,7 @@ var KTKanbanBoardDemo = function() {
 jQuery(document).ready(function() {
     KTKanbanBoardDemo.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=kanban-board.js.map

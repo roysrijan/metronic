@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!**************************************************************!*\
+  !*** ../demo1/src/js/pages/features/charts/google-charts.js ***!
+  \**************************************************************/
+
 // Class definition
 var KTGoogleChartsDemo = function() {
 
@@ -168,3 +174,6 @@ var KTGoogleChartsDemo = function() {
 }();
 
 KTGoogleChartsDemo.init();
+/******/ })()
+;
+//# sourceMappingURL=google-charts.js.map

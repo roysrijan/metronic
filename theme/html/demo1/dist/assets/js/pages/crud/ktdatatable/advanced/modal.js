@@ -1,4 +1,10 @@
-'use strict';
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!****************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/ktdatatable/advanced/modal.js ***!
+  \****************************************************************/
+
 // Class definition
 
 var KTDatatableModal = function() {
@@ -847,3 +853,7 @@ var KTDatatableModal = function() {
 jQuery(document).ready(function() {
     KTDatatableModal.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=modal.js.map

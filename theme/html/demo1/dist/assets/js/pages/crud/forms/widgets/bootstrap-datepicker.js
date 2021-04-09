@@ -1,3 +1,8 @@
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!************************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/forms/widgets/bootstrap-datepicker.js ***!
+  \************************************************************************/
 // Class definition
 
 var KTBootstrapDatepicker = function () {
@@ -122,3 +127,6 @@ var KTBootstrapDatepicker = function () {
 jQuery(document).ready(function() {    
     KTBootstrapDatepicker.init();
 });
+/******/ })()
+;
+//# sourceMappingURL=bootstrap-datepicker.js.map

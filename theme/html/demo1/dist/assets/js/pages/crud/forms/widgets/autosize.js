@@ -1,3 +1,8 @@
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/forms/widgets/autosize.js ***!
+  \************************************************************/
 // Class definition
 
 var KTAutosize = function () {
@@ -25,3 +30,7 @@ var KTAutosize = function () {
 jQuery(document).ready(function() {
     KTAutosize.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=autosize.js.map

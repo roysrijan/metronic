@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!************************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/datatables/data-sources/javascript.js ***!
+  \************************************************************************/
+
 var KTDatatablesDataSourceHtml = function() {
 
 	var dataJSONArray = JSON.parse(
@@ -59,3 +65,7 @@ var KTDatatablesDataSourceHtml = function() {
 jQuery(document).ready(function() {
 	KTDatatablesDataSourceHtml.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=javascript.js.map

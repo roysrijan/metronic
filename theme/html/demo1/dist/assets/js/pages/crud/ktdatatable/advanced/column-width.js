@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!***********************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/ktdatatable/advanced/column-width.js ***!
+  \***********************************************************************/
+
 // Class definition
 
 var KTDatatableColumnWidthDemo = function() {
@@ -239,3 +245,7 @@ var KTDatatableColumnWidthDemo = function() {
 jQuery(document).ready(function() {
     KTDatatableColumnWidthDemo.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=column-width.js.map

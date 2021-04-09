@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!***********************************************************!*\
+  !*** ../demo1/src/js/pages/custom/login/login-general.js ***!
+  \***********************************************************/
+
 
 // Class Definition
 var KTLogin = function() {
@@ -270,3 +276,7 @@ var KTLogin = function() {
 jQuery(document).ready(function() {
     KTLogin.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=login-general.js.map

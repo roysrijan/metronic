@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!*********************************************************!*\
+  !*** ../demo1/src/js/pages/features/maps/jvectormap.js ***!
+  \*********************************************************/
+
 
 // Class definition
 var KTjVectorMap = function() {
@@ -20,3 +26,6 @@ var KTjVectorMap = function() {
 jQuery(document).ready(function() {
     KTjVectorMap.init();
 });
+/******/ })()
+;
+//# sourceMappingURL=jvectormap.js.map

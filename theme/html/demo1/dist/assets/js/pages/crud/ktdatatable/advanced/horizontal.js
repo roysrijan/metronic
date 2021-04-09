@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!*********************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/ktdatatable/advanced/horizontal.js ***!
+  \*********************************************************************/
+
 // Class definition
 
 var KTDefaultDatatableDemo = function () {
@@ -215,3 +221,7 @@ var KTDefaultDatatableDemo = function () {
 jQuery(document).ready(function () {
 	KTDefaultDatatableDemo.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=horizontal.js.map

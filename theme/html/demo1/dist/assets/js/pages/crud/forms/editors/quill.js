@@ -1,3 +1,8 @@
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!*********************************************************!*\
+  !*** ../demo1/src/js/pages/crud/forms/editors/quill.js ***!
+  \*********************************************************/
 // Class definition
 var KTQuilDemos = function() {
 
@@ -73,3 +78,7 @@ var KTQuilDemos = function() {
 jQuery(document).ready(function() {
     KTQuilDemos.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=quill.js.map

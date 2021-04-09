@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!********************************************************!*\
+  !*** ../demo1/src/js/pages/features/calendar/basic.js ***!
+  \********************************************************/
+
 
 var KTCalendarBasic = function() {
 
@@ -167,3 +173,7 @@ var KTCalendarBasic = function() {
 jQuery(document).ready(function() {
     KTCalendarBasic.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=basic.js.map

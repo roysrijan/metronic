@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!*******************************************************************!*\
+  !*** ../demo1/src/js/pages/features/miscellaneous/sweetalert2.js ***!
+  \*******************************************************************/
+
 
 // Class definition
 var KTSweetAlert2Demo = function () {
@@ -173,3 +179,7 @@ var KTSweetAlert2Demo = function () {
 jQuery(document).ready(function () {
 	KTSweetAlert2Demo.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=sweetalert2.js.map

@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!*******************************************************!*\
+  !*** ../demo1/src/js/pages/features/base/dropdown.js ***!
+  \*******************************************************/
+
 
 // Class definition
 
@@ -50,3 +56,6 @@ var KTDropdownDemo = function () {
 jQuery(document).ready(function() {    
     KTDropdownDemo.init();
 });
+/******/ })()
+;
+//# sourceMappingURL=dropdown.js.map

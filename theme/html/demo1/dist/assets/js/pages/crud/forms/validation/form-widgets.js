@@ -1,3 +1,8 @@
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!*******************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/forms/validation/form-widgets.js ***!
+  \*******************************************************************/
 // Class definition
 
 var KTFormWidgetsValidation = function () {
@@ -197,3 +202,7 @@ var KTFormWidgetsValidation = function () {
 jQuery(document).ready(function() {
     KTFormWidgetsValidation.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=form-widgets.js.map

@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!**********************************************************!*\
+  !*** ../demo1/src/js/pages/features/maps/google-maps.js ***!
+  \**********************************************************/
+
 
 // Class definition
 var KTGoogleMapsDemo = function() {
@@ -221,3 +227,6 @@ var KTGoogleMapsDemo = function() {
 jQuery(document).ready(function() {
     KTGoogleMapsDemo.init();
 });
+/******/ })()
+;
+//# sourceMappingURL=google-maps.js.map

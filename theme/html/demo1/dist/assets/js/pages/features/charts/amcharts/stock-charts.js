@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!**********************************************************************!*\
+  !*** ../demo1/src/js/pages/features/charts/amcharts/stock-charts.js ***!
+  \**********************************************************************/
+
 
 // Class definition
 var KTamChartsStockChartsDemo = function() {
@@ -782,3 +788,6 @@ var KTamChartsStockChartsDemo = function() {
 jQuery(document).ready(function() {
     KTamChartsStockChartsDemo.init();
 });
+/******/ })()
+;
+//# sourceMappingURL=stock-charts.js.map

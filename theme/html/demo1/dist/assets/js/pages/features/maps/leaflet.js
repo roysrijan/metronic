@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!******************************************************!*\
+  !*** ../demo1/src/js/pages/features/maps/leaflet.js ***!
+  \******************************************************/
+
 
 // Class definition
 var KTLeaflet = function () {
@@ -278,3 +284,7 @@ var KTLeaflet = function () {
 jQuery(document).ready(function () {
 	KTLeaflet.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=leaflet.js.map

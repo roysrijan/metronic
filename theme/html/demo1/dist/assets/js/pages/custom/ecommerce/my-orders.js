@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!***********************************************************!*\
+  !*** ../demo1/src/js/pages/custom/ecommerce/my-orders.js ***!
+  \***********************************************************/
+
 // Class definition
 
 var KTEcommerceMyOrders = function () {
@@ -261,3 +267,7 @@ var KTEcommerceMyOrders = function () {
 jQuery(document).ready(function () {
     KTEcommerceMyOrders.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=my-orders.js.map

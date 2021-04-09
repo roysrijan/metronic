@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!**********************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/datatables/extensions/rowreorder.js ***!
+  \**********************************************************************/
+
 var KTDatatablesExtensionsRowreorder = function() {
 
 	var initTable1 = function() {
@@ -91,3 +97,7 @@ var KTDatatablesExtensionsRowreorder = function() {
 jQuery(document).ready(function() {
 	KTDatatablesExtensionsRowreorder.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=rowreorder.js.map

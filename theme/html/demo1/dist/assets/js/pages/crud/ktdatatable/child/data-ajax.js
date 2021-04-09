@@ -1,4 +1,10 @@
-'use strict';
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!*****************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/ktdatatable/child/data-ajax.js ***!
+  \*****************************************************************/
+
 // Class definition
 
 var KTDatatableChildRemoteDataDemo = function() {
@@ -396,3 +402,7 @@ var KTDatatableChildRemoteDataDemo = function() {
 jQuery(document).ready(function() {
 	KTDatatableChildRemoteDataDemo.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=data-ajax.js.map

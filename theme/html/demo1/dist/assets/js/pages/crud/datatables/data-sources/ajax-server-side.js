@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!******************************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/datatables/data-sources/ajax-server-side.js ***!
+  \******************************************************************************/
+
 var KTDatatablesDataSourceAjaxServer = function() {
 
 	var initTable1 = function() {
@@ -112,3 +118,7 @@ var KTDatatablesDataSourceAjaxServer = function() {
 jQuery(document).ready(function() {
 	KTDatatablesDataSourceAjaxServer.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=ajax-server-side.js.map

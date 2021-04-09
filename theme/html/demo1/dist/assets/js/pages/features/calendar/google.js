@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!*********************************************************!*\
+  !*** ../demo1/src/js/pages/features/calendar/google.js ***!
+  \*********************************************************/
+
 
 var KTCalendarGoogle = function() {
 
@@ -85,3 +91,7 @@ var KTCalendarGoogle = function() {
 jQuery(document).ready(function() {
     KTCalendarGoogle.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=google.js.map

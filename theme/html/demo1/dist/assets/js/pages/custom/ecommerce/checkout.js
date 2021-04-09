@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!**********************************************************!*\
+  !*** ../demo1/src/js/pages/custom/ecommerce/checkout.js ***!
+  \**********************************************************/
+
 
 // Class definition
 var KTEcommerceCheckout = function () {
@@ -214,3 +220,7 @@ var KTEcommerceCheckout = function () {
 jQuery(document).ready(function () {
 	KTEcommerceCheckout.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=checkout.js.map

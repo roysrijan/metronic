@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!***************************************************!*\
+  !*** ../demo1/src/js/pages/custom/inbox/inbox.js ***!
+  \***************************************************/
+
 
 // Class definition
 var KTAppInbox = function() {
@@ -572,3 +578,7 @@ var KTAppInbox = function() {
 jQuery(document).ready(function() {
     KTAppInbox.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=inbox.js.map

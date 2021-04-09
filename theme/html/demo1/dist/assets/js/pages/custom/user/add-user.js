@@ -1,4 +1,10 @@
-"use strict";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+/*!*****************************************************!*\
+  !*** ../demo1/src/js/pages/custom/user/add-user.js ***!
+  \*****************************************************/
+
 
 // Class Definition
 var KTAddUser = function () {
@@ -267,3 +273,7 @@ var KTAddUser = function () {
 jQuery(document).ready(function () {
 	KTAddUser.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=add-user.js.map

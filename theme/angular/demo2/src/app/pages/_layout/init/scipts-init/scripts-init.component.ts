@@ -45,6 +45,10 @@ export class ScriptsInitComponent implements OnInit, AfterViewInit, OnDestroy {
         if (offCanvas) {
           offCanvas.hide();
         }
+        const btnQuickUserClose = document.getElementById('kt_quick_user_close');
+        if (btnQuickUserClose) {
+          btnQuickUserClose.click();
+        }
       }
     });
     this.unsubscribe.push(routerSubscription);

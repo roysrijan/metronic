@@ -1,3 +1,8 @@
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!****************************************************************************!*\
+  !*** ../demo1/src/js/pages/crud/forms/widgets/bootstrap-datetimepicker.js ***!
+  \****************************************************************************/
 // Class definition
 
 var KTBootstrapDatetimepicker = function () {
@@ -89,3 +94,7 @@ var KTBootstrapDatetimepicker = function () {
 jQuery(document).ready(function() {
     KTBootstrapDatetimepicker.init();
 });
+
+/******/ })()
+;
+//# sourceMappingURL=bootstrap-datetimepicker.js.map
