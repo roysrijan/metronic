@@ -2,7 +2,7 @@ import {
   LOGIN_URL,
   ME_URL,
   REGISTER_URL,
-  REQUEST_PASSWORD_URL
+  REQUEST_PASSWORD_URL,
 } from "../_redux/authCrud";
 import userTableMock from "./userTableMock";
 
@@ -12,7 +12,7 @@ export default function mockAuth(mock) {
 
     if (email && password) {
       const user = userTableMock.find(
-        x =>
+        (x) =>
           x.email.toLowerCase() === email.toLowerCase() &&
           x.password === password
       );
@@ -35,10 +35,12 @@ export default function mockAuth(mock) {
         fullname,
         username,
         password,
+        firstname: fullname,
+        lastname: "Stark",
         roles: [2], // Manager
-        accessToken: "access-token-" + Math.random(),
-        refreshToken: "access-token-" + Math.random(),
-        pic: process.env.PUBLIC_URL + "/media/users/default.jpg"
+        authToken: "auth-token-" + Math.random(),
+        refreshToken: "auth-token-" + Math.random(),
+        pic: process.env.PUBLIC_URL + "/media/users/default.jpg",
       };
 
       userTableMock.push(user);
@@ -54,7 +56,7 @@ export default function mockAuth(mock) {
 
     if (email) {
       const user = userTableMock.find(
-        x => x.email.toLowerCase() === email.toLowerCase()
+        (x) => x.email.toLowerCase() === email.toLowerCase()
       );
 
       if (user) {
@@ -68,13 +70,13 @@ export default function mockAuth(mock) {
   });
 
   mock.onGet(ME_URL).reply(({ headers: { Authorization } }) => {
-    const accessToken =
+    const authToken =
       Authorization &&
       Authorization.startsWith("Bearer ") &&
       Authorization.slice("Bearer ".length);
 
-    if (accessToken) {
-      const user = userTableMock.find(x => x.accessToken === accessToken);
+    if (authToken) {
+      const user = userTableMock.find((x) => x.authToken === authToken);
 
       if (user) {
         return [200, { ...user, password: undefined }];
@@ -85,9 +87,8 @@ export default function mockAuth(mock) {
   });
 
   function generateUserId() {
-    const ids = userTableMock.map(el => el.id);
+    const ids = userTableMock.map((el) => el.id);
     const maxId = Math.max(...ids);
     return maxId + 1;
   }
-  
 }

@@ -72,18 +72,21 @@ function Login(props) {
       enableLoading();
       setTimeout(() => {
         login(values.email, values.password)
-          .then(({ data: { accessToken } }) => {
+          .then(({ data: { authToken } }) => {
             disableLoading();
-            props.login(accessToken);
+
+            props.login(authToken);
           })
           .catch(() => {
-            disableLoading();
-            setSubmitting(false);
             setStatus(
               intl.formatMessage({
                 id: "AUTH.VALIDATION.INVALID_LOGIN",
               })
             );
+          })
+          .finally(() => {
+            disableLoading();
+            setSubmitting(false);
           });
       }, 1000);
     },
