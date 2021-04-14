@@ -1,7 +1,7 @@
 {
-    "name": "metronic8",
-    "version": "8.0.0",
-    "description": "Metronic - Bootstrap 4 HTML Multi-purpose Admin Dashboard Theme",
+    "name": "metronic",
+    "version": "8.0.1",
+    "description": "Metronic - Bootstrap 5 HTML Multi-purpose Admin Dashboard Theme",
     "type": "module",
     "main": "gulpfile.js",
     "dependencies": {

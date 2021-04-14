@@ -4,7 +4,7 @@
 var KTIntro = function () {
     // Private functions
     var initIntro1 = function(timeout) {
-        var element = document.querySelector('#kt_explore_toggle');
+        var element = document.querySelector('#kt_explore_toggle_label');
 
         if (!element) {
             return;
@@ -60,7 +60,7 @@ var KTIntro = function () {
     }
 
     var initIntro3 = function(timeout) {
-        var element = document.querySelector('#kt_toolbar_create_button');
+        var element = document.querySelector('#kt_toolbar_primary_button');
 
         if (!element) {
             return;
@@ -157,7 +157,7 @@ var KTIntro = function () {
         if (!KTCookie.get('show_explore_panel')) {
             setTimeout(function() {
                 KTDrawer.getInstance(drawerEl).show();
-            }, 1000 * 4);
+            }, 1000 * 40); //  40 seconds
 
             date = new Date();
             expires = 1000 * 60 * 60 * 24 * 2; // 1 day
@@ -169,7 +169,7 @@ var KTIntro = function () {
     return {
         init: function () {
             handleIntrosDisplay();
-            handleExplorePanelDisplay();            
+            //handleExplorePanelDisplay();            
         }   
     }
 }();

@@ -2366,6 +2366,45 @@ var KTWidgets = function () {
         }                 
     }  
 
+    // Follow button
+    var initUserFollowButton = function() {
+        var follow = document.querySelector('#kt_user_follow_button');
+
+        if (follow) {
+            follow.addEventListener('click', function(e){
+                // Prevent default action 
+                e.preventDefault();
+                
+                // Show indicator
+                follow.setAttribute('data-kt-indicator', 'on');
+                
+                // Disable button to avoid multiple click 
+				follow.disabled = true;
+
+                // Check button state
+                if (follow.classList.contains("btn-success")) {
+                     setTimeout(function() {
+                        follow.removeAttribute('data-kt-indicator');
+                        follow.classList.remove("btn-success");
+                        follow.classList.add("btn-light");
+                        follow.querySelector(".svg-icon").classList.add("d-none");
+                        follow.querySelector(".indicator-label").innerHTML = 'Follow';
+				        follow.disabled = false;
+                    }, 1500);   
+                } else {
+                     setTimeout(function() {
+                        follow.removeAttribute('data-kt-indicator');
+                        follow.classList.add("btn-success");
+                        follow.classList.remove("btn-light");
+                        follow.querySelector(".svg-icon").classList.remove("d-none");
+                        follow.querySelector(".indicator-label").innerHTML = 'Following';
+                        follow.disabled = false;
+                    }, 1000);   
+                }        
+            });
+        }                 
+    }
+
     // Public methods
     return {
         init: function () {
@@ -2395,6 +2434,9 @@ var KTWidgets = function () {
             // Feeds
             initFeedWidget1();
             initFeedsWidget4();
+
+            // Follow button
+            initUserFollowButton();
         }   
     }
 }();

@@ -6,6 +6,11 @@
 .stepper.stepper-pills {
     $pills-size: 40px;
 
+    // Nav
+    .stepper-nav {
+        display: flex;
+    }
+
     // Item
     .stepper-item {
         display: flex;
@@ -18,7 +23,7 @@
             align-items: center;
             justify-content: center;
             transition: $transition-link;
-            min-width: $pills-size;
+            width: $pills-size;
             height: $pills-size;
             border-radius: $border-radius;
             background-color: $primary-light;
@@ -115,6 +120,11 @@
 
     // Column
     &.stepper-column {
+        // Nav
+        .stepper-nav {
+            flex-direction: column;
+        }
+
         // Item
         .stepper-item {
             position: relative;

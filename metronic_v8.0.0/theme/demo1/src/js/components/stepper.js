@@ -14,7 +14,7 @@ var KTStepper = function(element, options) {
 
     // Default Options
     var defaultOptions = {
-        startingStepIndex: 1,
+        startIndex: 1,
         animation: false,
         animationSpeed: '0.3s',
         animationNextClass: 'animate__animated animate__slideInRight animate__fast',
@@ -51,8 +51,8 @@ var KTStepper = function(element, options) {
         the.currentStepIndex = 1;
 
         // Set Current Step
-        if ( the.options.startingStepIndex > 1 ) {
-            _goTo(the.options.startingStepIndex);
+        if ( the.options.startIndex > 1 ) {
+            _goTo(the.options.startIndex);
         }
 
         // Event Handlers
@@ -249,6 +249,10 @@ var KTStepper = function(element, options) {
     ///////////////////////
 
     // Plugin API
+    the.getElement = function(index) {
+        return the.element;
+    }
+
     the.goTo = function(index) {
         return _goTo(index);
     }

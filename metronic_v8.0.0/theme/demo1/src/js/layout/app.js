@@ -2,12 +2,12 @@
 
 // Class definition
 var KTApp = function() {
-    var _initPageLoader =  function() {
+    var initPageLoader =  function() {
         // CSS3 Transitions only after page load(.page-loading class added to body tag and remove with JS on page load)
         KTUtil.removeClass(document.body, 'page-loading');
     }
 
-    var _initBootstrapTooltips = function() {
+    var initBootstrapTooltips = function() {
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
 
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -15,7 +15,7 @@ var KTApp = function() {
         });
     }
 
-    var _initBootstrapPopovers = function() {
+    var initBootstrapPopovers = function() {
         var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
 
         var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
@@ -23,7 +23,7 @@ var KTApp = function() {
         });
     }
 
-    var _initScrollSpy = function() {
+    var initScrollSpy = function() {
         var elements = [].slice.call(document.querySelectorAll('[data-bs-spy="scroll"]'));
 
         elements.map(function (element) {
@@ -46,7 +46,7 @@ var KTApp = function() {
         });
     }
 
-    var _initButtons = function() {
+    var initButtons = function() {
         var buttonsGroup = [].slice.call(document.querySelectorAll('[data-kt-buttons="true"]'));
 
         buttonsGroup.map(function (group) {
@@ -65,7 +65,7 @@ var KTApp = function() {
         });
     }   
 
-    var _initCheck = function() {
+    var initCheck = function() {
         // Toggle Handler
         KTUtil.on(document.body,  '[data-kt-check="true"]', 'change', function(e) {
             var check = this;
@@ -81,7 +81,7 @@ var KTApp = function() {
         });
     }
 
-    var _initSelect2 = function() {
+    var initSelect2 = function() {
         var elements = [].slice.call(document.querySelectorAll('[data-control="select2"], [data-kt-select2="true"]'));
        
         elements.map(function (element) {
@@ -97,7 +97,7 @@ var KTApp = function() {
         });
     }
 
-    var _initAutosize = function() {
+    var initAutosize = function() {
         var inputs = [].slice.call(document.querySelectorAll('[data-kt-autosize="true"]'));
        
         inputs.map(function (input) {
@@ -105,7 +105,7 @@ var KTApp = function() {
         });
     }
 
-    var _countUp = function() {
+    var initCountUp = function() {
         var elements = [].slice.call(document.querySelectorAll('[data-kt-countup="true"]:not(.counted)'));
 
         elements.map(function (element) {
@@ -144,17 +144,17 @@ var KTApp = function() {
         });
     }
 
-    var _initCountUp = function() {
+    var initCountUpTabs = function() {
         // Initial call
-        _countUp();
+        initCountUp();
 
         // Window scroll event handler
-        window.addEventListener('scroll', _countUp);
+        window.addEventListener('scroll', initCountUp);
 
         // Tabs shown event handler
         var tabs = [].slice.call(document.querySelectorAll('[data-kt-countup-tabs="true"][data-bs-toggle="tab"]'));
         tabs.map(function (tab) {
-            tab.addEventListener('shown.bs.tab', _countUp);
+            tab.addEventListener('shown.bs.tab', initCountUp);
         });        
     }
 
@@ -176,47 +176,49 @@ var KTApp = function() {
             
             this.initCountUp();
 
+            this.initCountUpTabs();
+
             this.initAutosize();
         },
 
         initPageLoader: function() {
-            _initPageLoader();
+            initPageLoader();
         },
 
         initBootstrapTooltips: function() {
-            _initBootstrapTooltips();
+            initBootstrapTooltips();
         },
 
         initBootstrapPopovers: function() {
-            _initBootstrapPopovers();
+            initBootstrapPopovers();
         },
 
         initScrollSpy: function() {
-            _initScrollSpy();
+            initScrollSpy();
         },
 
         initButtons: function() {
-            _initButtons();
+            initButtons();
         },
 
         initCheck: function() {
-            _initCheck();
+            initCheck();
         },
 
         initSelect2: function() {
-            _initSelect2();
-        },
-
-        countUp: function() {
-            _countUp();
+            initSelect2();
         },
 
         initCountUp: function() {
-            _initCountUp();
+            initCountUp();
+        },
+
+        initCountUpTabs: function() {
+            initCountUpTabs();
         },
 
         initAutosize: function() {
-            _initAutosize();
+            initAutosize();
         }
     };
 }();

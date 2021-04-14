@@ -1,7 +1,7 @@
 const gulpConfig = {
-  name: "Metronic8",
+  name: "Metronic",
   desc: "Gulp build config file",
-  version: "8.0.0",
+  version: "8.0.1",
   config: {
     debug: false,
     compile: {
@@ -23,7 +23,7 @@ const gulpConfig = {
     },
     path: {
       src: "../demo1/src",
-      common_src: "../src",
+      common_src: "../demo1/src",
       node_modules: "node_modules",
     },
     dist: ["../demo1/dist/assets"],
@@ -33,8 +33,8 @@ const gulpConfig = {
       src: {
         styles: ["{$config.path.src}/sass/style.scss"],
         scripts: [
-          "{$config.path.src}/js/components/**/*.js",
-          "{$config.path.src}/js/layout/**/*.js",
+          "{$config.path.common_src}/js/components/**/*.js",
+          "{$config.path.common_src}/js/layout/**/*.js",
           "{$config.path.src}/js/layout/**/*.js",
         ],
       },
@@ -76,7 +76,7 @@ const gulpConfig = {
               ],
               scripts: [
                 "{$config.path.node_modules}/select2/dist/js/select2.full.js",
-                "{$config.path.src}/js/vendors/plugins/select2.init.js",
+                "{$config.path.common_src}/js/vendors/plugins/select2.init.js",
               ],
             },
             flatpickr: {
@@ -85,17 +85,17 @@ const gulpConfig = {
               ],
               scripts: [
                 "{$config.path.node_modules}/flatpickr/dist/flatpickr.js",
-                "{$config.path.src}/js/vendors/plugins/flatpickr.init.js",
+                "{$config.path.common_src}/js/vendors/plugins/flatpickr.init.js",
               ],
             },
             formvalidation: {
               styles: [
-                "{$config.path.src}/plugins/formvalidation/dist/css/formValidation.css",
+                "{$config.path.common_src}/plugins/formvalidation/dist/css/formValidation.css",
               ],
               scripts: [
                 "{$config.path.node_modules}/es6-shim/es6-shim.js",
-                "{$config.path.src}/plugins/formvalidation/dist/js/FormValidation.full.min.js",
-                "{$config.path.src}/plugins/formvalidation/dist/js/plugins/Bootstrap5.min.js",
+                "{$config.path.common_src}/plugins/formvalidation/dist/js/FormValidation.full.min.js",
+                "{$config.path.common_src}/plugins/formvalidation/dist/js/plugins/Bootstrap5.min.js",
               ],
             },
             daterangepicker: {
@@ -143,7 +143,7 @@ const gulpConfig = {
               ],
               scripts: [
                 "{$config.path.node_modules}/dropzone/dist/dropzone.js",
-                "{$config.path.src}/js/vendors/plugins/dropzone.init.js",
+                "{$config.path.common_src}/js/vendors/plugins/dropzone.init.js",
               ],
             },
             quil: {
@@ -187,7 +187,7 @@ const gulpConfig = {
               scripts: [
                 "{$config.path.node_modules}/es6-promise-polyfill/promise.min.js",
                 "{$config.path.node_modules}/sweetalert2/dist/sweetalert2.min.js",
-                "{$config.path.src}/js/vendors/plugins/sweetalert2.init.js",
+                "{$config.path.common_src}/js/vendors/plugins/sweetalert2.init.js",
               ],
             },
             "line-awesome": {
@@ -260,7 +260,7 @@ const gulpConfig = {
               "{$config.path.node_modules}/prismjs/components/prism-scss.js",
               "{$config.path.node_modules}/prismjs/components/prism-css.js",
               "{$config.path.node_modules}/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js",
-              "{$config.path.src}/js/vendors/plugins/prism.init.js",
+              "{$config.path.common_src}/js/vendors/plugins/prism.init.js",
             ],
           },
           dist: {
@@ -286,7 +286,7 @@ const gulpConfig = {
             ],
             scripts: [
               "{$config.path.node_modules}/datatables.net/js/jquery.dataTables.js",
-              "{$config.path.src}/js/vendors/plugins/datatables.init.js",
+              "{$config.path.common_src}/js/vendors/plugins/datatables.init.js",
               "{$config.path.node_modules}/datatables.net-autofill/js/dataTables.autoFill.min.js",
               "{$config.path.node_modules}/datatables.net-autofill-bs4/js/autoFill.bootstrap4.min.js",
               "{$config.path.node_modules}/jszip/dist/jszip.min.js",
@@ -339,11 +339,11 @@ const gulpConfig = {
     custom: {
       src: {
         styles: [
-          "{$config.path.src}/sass/custom/**/*.scss",
+          "{$config.path.common_src}/sass/custom/**/*.scss",
           "{$config.path.src}/sass/custom/**/*.scss",
         ],
         scripts: [
-          "{$config.path.src}/js/custom/**/*.js",
+          "{$config.path.common_src}/js/custom/**/*.js",
           "{$config.path.src}/js/custom/**/*.js",
         ],
       },
@@ -356,7 +356,7 @@ const gulpConfig = {
       src: {
         media: [
           "{$config.path.src}/media/**/*.*",
-          "{$config.path.src}/media/**/*.*",
+          "{$config.path.common_src}/media/**/*.*",
         ],
       },
       dist: {
@@ -367,7 +367,7 @@ const gulpConfig = {
       src: {
         media: [
           "{$config.path.src}/api/**/*.*",
-          "{$config.path.src}/api/**/*.*",
+          "{$config.path.common_src}/api/**/*.*",
         ],
       },
       dist: {

@@ -24,7 +24,7 @@ let theme = 'metronic';
 let demo = getDemos(rootPath)[0];
 
 // under demo paths
-const demoPath = rootPath + '/' + demo;
+const demoPath = rootPath + (demo ? '/' + demo : '');
 const distPath = demoPath + '/dist';
 const assetDistPath = distPath + '/assets';
 const srcPath = demoPath + '/src';
@@ -37,7 +37,7 @@ const css = args.indexOf('css') !== -1 || args.indexOf('scss') !== -1;
 
 additionalSettings();
 
-// importDatatables();
+importDatatables();
 
 function additionalSettings() {
     if (args.indexOf('rtl') !== -1) {
@@ -71,7 +71,7 @@ function getEntryFiles() {
         'plugins/global/plugins.bundle': ['./webpack/plugins/plugins.js', './webpack/plugins/plugins.scss'],
         // Theme css/js
         'css/style.bundle': ['./' + path.relative('./', srcPath) + '/sass/style.scss', './' + path.relative('./', srcPath) + '/sass/plugins.scss'],
-        'js/scripts.bundle': './webpack/scripts.' + demo + '.js',
+        'js/scripts.bundle': './webpack/scripts' + (demo ? '.' + demo : '') + '.js',
     };
 
     // Custom 3rd party plugins
