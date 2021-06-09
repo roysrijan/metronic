@@ -166,7 +166,6 @@ mix.webpackConfig({
 });
 
 // Optional: Import datatables.net
-/*
 mix.scripts([
     'node_modules/datatables.net/js/jquery.dataTables.js',
     'node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js',
@@ -206,7 +205,6 @@ mix.styles([
     'node_modules/datatables.net-scroller-bs4/css/scroller.bootstrap4.min.css',
     'node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css',
 ], 'public/plugins/custom/datatables/datatables.bundle.css');
-*/
 
 function getDemos(pathDemos) {
     // get possible demo from parameter command

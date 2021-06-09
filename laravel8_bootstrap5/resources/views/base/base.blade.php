@@ -99,9 +99,8 @@ License: {{ theme()->getOption('product', 'license') }}
 @if (theme()->getMode() === 'preview')
     {{ theme()->getView('partials/trackers/_ga-tag-manager-for-body') }}
 @endif
-</body>
-{{-- end::Body --}}
 
 @yield('scripts')
-
+</body>
+{{-- end::Body --}}
 </html>

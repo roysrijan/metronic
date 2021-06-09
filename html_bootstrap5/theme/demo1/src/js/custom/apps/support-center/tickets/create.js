@@ -11,20 +11,22 @@ var KTModalNewTicket = function () {
 
 	// Init form inputs
 	var initForm = function() {
-		// Tags. For more info, please visit the official plugin site: https://yaireo.github.io/tagify/
-		var tags = new Tagify(form.querySelector('[name="tags"]'), {
-			whitelist: ["Important", "Urgent", "High", "Medium", "Low"],
-			maxTags: 5,
-			dropdown: {
-				maxItems: 10,           // <- mixumum allowed rendered suggestions
-				enabled: 0,             // <- show suggestions on focus
-				closeOnSelect: false    // <- do not hide the suggestions dropdown once an item has been selected
-			}
-		});
-		tags.on("change", function(){
-			// Revalidate the field when an option is chosen
-            validator.revalidateField('tags');
-		});
+		// Ticket attachments
+		// For more info about Dropzone plugin visit:  https://www.dropzonejs.com/#usage
+		var myDropzone = new Dropzone("#kt_modal_create_ticket_attachments", { 
+			url: "https://keenthemes.com/scripts/void.php", // Set the url for your upload script location
+            paramName: "file", // The name that will be used to transfer the file
+            maxFiles: 10,
+            maxFilesize: 10, // MB
+            addRemoveLinks: true,
+            accept: function(file, done) {
+                if (file.name == "justinbieber.jpg") {
+                    done("Naha, you don't.");
+                } else {
+                    done();
+                }
+            }
+		});  
 
 		// Due date. For more info, please visit the official plugin site: https://flatpickr.js.org/
 		var dueDate = $(form.querySelector('[name="due_date"]'));
@@ -33,10 +35,16 @@ var KTModalNewTicket = function () {
 			dateFormat: "d, M Y, H:i",
 		});
 
-		// Team assign. For more info, plase visit the official plugin site: https://select2.org/
-        $(form.querySelector('[name="team_assign"]')).on('change', function() {
+		// Ticket user. For more info, plase visit the official plugin site: https://select2.org/
+        $(form.querySelector('[name="user"]')).on('change', function() {
             // Revalidate the field when an option is chosen
-            validator.revalidateField('team_assign');
+            validator.revalidateField('user');
+        });
+
+		// Ticket status. For more info, plase visit the official plugin site: https://select2.org/
+        $(form.querySelector('[name="status"]')).on('change', function() {
+            // Revalidate the field when an option is chosen
+            validator.revalidateField('status');
         });
 	}
 
@@ -49,38 +57,38 @@ var KTModalNewTicket = function () {
 			form,
 			{
 				fields: {
-					target_title: {
+					subject: {
 						validators: {
 							notEmpty: {
-								message: 'Target title is required'
+								message: 'Ticket subject is required'
 							}
 						}
 					},
-					target_assign: {
+					user: {
 						validators: {
 							notEmpty: {
-								message: 'Target assign is required'
+								message: 'Ticket user is required'
 							}
 						}
 					},
-					target_due_date: {
+					due_date: {
 						validators: {
 							notEmpty: {
-								message: 'Target due date is required'
+								message: 'Ticket due date is required'
 							}
 						}
 					},
-					target_tags: {
+					description: {
 						validators: {
 							notEmpty: {
-								message: 'Target tags are required'
+								message: 'Target description is required'
 							}
 						}
 					},
-					'targets_notifications[]': {
+					'notifications[]': {
                         validators: {
                             notEmpty: {
-                                message: 'Please select at least one communication method'
+                                message: 'Please select at least one notifications method'
                             }
                         }
                     },

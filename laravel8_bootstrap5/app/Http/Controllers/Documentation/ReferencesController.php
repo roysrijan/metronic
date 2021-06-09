@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Documentation;
 use App\Core\Adapters\Theme;
 use App\Http\Controllers\Controller;
 
-class References extends Controller
+class ReferencesController extends Controller
 {
     /**
      * Reference page for documentation

@@ -80,4 +80,20 @@ return array(
         ),
     ),
 
+    'log' => array(
+        'system' => array(
+            'title'  => 'System Log',
+            'assets' => array(
+                'custom' => array(
+                    'css' => array(
+                        'plugins/custom/datatables/datatables.bundle.css',
+                    ),
+                    'js'  => array(
+                        'plugins/custom/datatables/datatables.bundle.js',
+                    ),
+                ),
+            ),
+        ),
+    ),
+
 );

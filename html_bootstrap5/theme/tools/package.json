@@ -1,6 +1,6 @@
 {
     "name": "metronic",
-    "version": "8.0.13",
+    "version": "8.0.14",
     "description": "Metronic - #1 Selling Bootstrap 5 HTML Multi-demo Admin Dashboard Theme",
     "main": "gulpfile.js",
     "type": "module",

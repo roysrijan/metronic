@@ -33,7 +33,9 @@
                   @click="navigate"
                   :class="[isActive && 'active', isExactActive && 'active']"
                 >
-                  <span class="menu-title">{{ menuItem.heading }}</span>
+                  <span class="menu-title">{{
+                    translate(menuItem.heading)
+                  }}</span>
                 </a>
               </router-link>
             </div>
@@ -49,7 +51,7 @@
             class="menu-link py-3"
             :class="{ active: hasActiveChildren(item.route) }"
           >
-            <span class="menu-title">{{ item.heading }}</span>
+            <span class="menu-title">{{ translate(item.heading) }}</span>
             <span class="menu-arrow d-lg-none"></span>
           </span>
           <div
@@ -79,7 +81,9 @@
                       <inline-svg :src="menuItem.svgIcon" />
                     </span>
                   </span>
-                  <span class="menu-title">{{ menuItem.sectionTitle }}</span>
+                  <span class="menu-title">{{
+                    translate(menuItem.sectionTitle)
+                  }}</span>
                   <span class="menu-arrow"></span>
                 </span>
                 <div
@@ -100,7 +104,7 @@
                           <span class="bullet bullet-dot"></span>
                         </span>
                         <span class="menu-title">{{
-                          menuItem1.sectionTitle
+                          translate(menuItem1.sectionTitle)
                         }}</span>
                         <span class="menu-arrow"></span>
                       </span>
@@ -121,7 +125,7 @@
                                 <span class="bullet bullet-dot"></span>
                               </span>
                               <span class="menu-title">{{
-                                menuItem2.heading
+                                translate(menuItem2.heading)
                               }}</span>
                             </router-link>
                           </div>
@@ -133,7 +137,9 @@
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
                         </span>
-                        <span class="menu-title">{{ menuItem1.heading }}</span>
+                        <span class="menu-title">{{
+                          translate(menuItem1.heading)
+                        }}</span>
                       </router-link>
                     </div>
                   </template>
@@ -148,7 +154,9 @@
                       />
                     </span>
                   </span>
-                  <span class="menu-title">{{ menuItem.heading }}</span>
+                  <span class="menu-title">{{
+                    translate(menuItem.heading)
+                  }}</span>
                 </router-link>
               </div>
             </template>
@@ -162,7 +170,7 @@
         class="menu-item menu-lg-down-accordion me-lg-1"
       >
         <span class="menu-link py-3">
-          <span class="menu-title">Mega Menu</span>
+          <span class="menu-title">{{ translate("megaMenu") }}</span>
           <span class="menu-arrow d-lg-none"></span>
         </span>
         <div
@@ -179,7 +187,9 @@
                     <span class="menu-bullet">
                       <span class="bullet bullet-dot"></span>
                     </span>
-                    <span class="menu-title">Example link</span>
+                    <span class="menu-title">{{
+                      translate("exampleLink")
+                    }}</span>
                   </a>
                 </div>
                 <div class="menu-item">
@@ -187,7 +197,9 @@
                     <span class="menu-bullet">
                       <span class="bullet bullet-dot"></span>
                     </span>
-                    <span class="menu-title">Example link</span>
+                    <span class="menu-title">{{
+                      translate("exampleLink")
+                    }}</span>
                   </a>
                 </div>
                 <div class="menu-item">
@@ -195,7 +207,9 @@
                     <span class="menu-bullet">
                       <span class="bullet bullet-dot"></span>
                     </span>
-                    <span class="menu-title">Example link</span>
+                    <span class="menu-title">{{
+                      translate("exampleLink")
+                    }}</span>
                   </a>
                 </div>
                 <div class="menu-item">
@@ -203,7 +217,9 @@
                     <span class="menu-bullet">
                       <span class="bullet bullet-dot"></span>
                     </span>
-                    <span class="menu-title">Example link</span>
+                    <span class="menu-title">{{
+                      translate("exampleLink")
+                    }}</span>
                   </a>
                 </div>
                 <div class="menu-item">
@@ -211,53 +227,9 @@
                     <span class="menu-bullet">
                       <span class="bullet bullet-dot"></span>
                     </span>
-                    <span class="menu-title">Example link</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <!--end:Col-->
-            <!--begin:Col-->
-            <div class="col-lg-4 border-left-lg-1">
-              <div class="menu-inline menu-column menu-active-bg">
-                <div class="menu-item">
-                  <a href="#" class="menu-link">
-                    <span class="menu-bullet">
-                      <span class="bullet bullet-dot"></span>
-                    </span>
-                    <span class="menu-title">Example link</span>
-                  </a>
-                </div>
-                <div class="menu-item">
-                  <a href="#" class="menu-link">
-                    <span class="menu-bullet">
-                      <span class="bullet bullet-dot"></span>
-                    </span>
-                    <span class="menu-title">Example link</span>
-                  </a>
-                </div>
-                <div class="menu-item">
-                  <a href="#" class="menu-link">
-                    <span class="menu-bullet">
-                      <span class="bullet bullet-dot"></span>
-                    </span>
-                    <span class="menu-title">Example link</span>
-                  </a>
-                </div>
-                <div class="menu-item">
-                  <a href="#" class="menu-link">
-                    <span class="menu-bullet">
-                      <span class="bullet bullet-dot"></span>
-                    </span>
-                    <span class="menu-title">Example link</span>
-                  </a>
-                </div>
-                <div class="menu-item">
-                  <a href="#" class="menu-link">
-                    <span class="menu-bullet">
-                      <span class="bullet bullet-dot"></span>
-                    </span>
-                    <span class="menu-title">Example link</span>
+                    <span class="menu-title">{{
+                      translate("exampleLink")
+                    }}</span>
                   </a>
                 </div>
               </div>
@@ -271,7 +243,9 @@
                     <span class="menu-bullet">
                       <span class="bullet bullet-dot"></span>
                     </span>
-                    <span class="menu-title">Example link</span>
+                    <span class="menu-title">{{
+                      translate("exampleLink")
+                    }}</span>
                   </a>
                 </div>
                 <div class="menu-item">
@@ -279,7 +253,9 @@
                     <span class="menu-bullet">
                       <span class="bullet bullet-dot"></span>
                     </span>
-                    <span class="menu-title">Example link</span>
+                    <span class="menu-title">{{
+                      translate("exampleLink")
+                    }}</span>
                   </a>
                 </div>
                 <div class="menu-item">
@@ -287,7 +263,9 @@
                     <span class="menu-bullet">
                       <span class="bullet bullet-dot"></span>
                     </span>
-                    <span class="menu-title">Example link</span>
+                    <span class="menu-title">{{
+                      translate("exampleLink")
+                    }}</span>
                   </a>
                 </div>
                 <div class="menu-item">
@@ -295,7 +273,9 @@
                     <span class="menu-bullet">
                       <span class="bullet bullet-dot"></span>
                     </span>
-                    <span class="menu-title">Example link</span>
+                    <span class="menu-title">{{
+                      translate("exampleLink")
+                    }}</span>
                   </a>
                 </div>
                 <div class="menu-item">
@@ -303,7 +283,65 @@
                     <span class="menu-bullet">
                       <span class="bullet bullet-dot"></span>
                     </span>
-                    <span class="menu-title">Example link</span>
+                    <span class="menu-title">{{
+                      translate("exampleLink")
+                    }}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!--end:Col-->
+            <!--begin:Col-->
+            <div class="col-lg-4 border-left-lg-1">
+              <div class="menu-inline menu-column menu-active-bg">
+                <div class="menu-item">
+                  <a href="#" class="menu-link">
+                    <span class="menu-bullet">
+                      <span class="bullet bullet-dot"></span>
+                    </span>
+                    <span class="menu-title">{{
+                      translate("exampleLink")
+                    }}</span>
+                  </a>
+                </div>
+                <div class="menu-item">
+                  <a href="#" class="menu-link">
+                    <span class="menu-bullet">
+                      <span class="bullet bullet-dot"></span>
+                    </span>
+                    <span class="menu-title">{{
+                      translate("exampleLink")
+                    }}</span>
+                  </a>
+                </div>
+                <div class="menu-item">
+                  <a href="#" class="menu-link">
+                    <span class="menu-bullet">
+                      <span class="bullet bullet-dot"></span>
+                    </span>
+                    <span class="menu-title">{{
+                      translate("exampleLink")
+                    }}</span>
+                  </a>
+                </div>
+                <div class="menu-item">
+                  <a href="#" class="menu-link">
+                    <span class="menu-bullet">
+                      <span class="bullet bullet-dot"></span>
+                    </span>
+                    <span class="menu-title">{{
+                      translate("exampleLink")
+                    }}</span>
+                  </a>
+                </div>
+                <div class="menu-item">
+                  <a href="#" class="menu-link">
+                    <span class="menu-bullet">
+                      <span class="bullet bullet-dot"></span>
+                    </span>
+                    <span class="menu-title">{{
+                      translate("exampleLink")
+                    }}</span>
                   </a>
                 </div>
               </div>
@@ -322,6 +360,7 @@
 <script lang="ts">
 import { defineComponent, onMounted } from "vue";
 import { useRoute } from "vue-router";
+import { useI18n } from "vue-i18n";
 import { MenuComponent } from "@/assets/ts/components";
 import MainMenuConfig from "@/core/config/MainMenuConfig";
 import { headerMenuIcons } from "@/core/helpers/config.ts";
@@ -330,10 +369,19 @@ export default defineComponent({
   name: "KTMenu",
   components: {},
   setup() {
+    const { t, te } = useI18n();
     const route = useRoute();
 
     const hasActiveChildren = match => {
       return route.path.indexOf(match) !== -1;
+    };
+
+    const translate = text => {
+      if (te(text)) {
+        return t(text);
+      } else {
+        return text;
+      }
     };
 
     onMounted(() => {
@@ -343,7 +391,8 @@ export default defineComponent({
     return {
       hasActiveChildren,
       headerMenuIcons,
-      MainMenuConfig
+      MainMenuConfig,
+      translate
     };
   }
 });

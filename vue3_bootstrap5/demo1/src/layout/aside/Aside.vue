@@ -73,7 +73,7 @@
         title="Check out the complete documentation with over 100 components"
       >
         <span class="btn-label">
-          Docs & Components
+          {{ t("docsAndComponents") }}
         </span>
         <span class="svg-icon btn-icon svg-icon-2">
           <inline-svg src="media/icons/duotone/General/Clipboard.svg" />
@@ -87,6 +87,7 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, onUpdated } from "vue";
+import { useI18n } from "vue-i18n";
 import { DrawerComponent } from "@/assets/ts/components/_DrawerOptions.ts";
 import { ToggleComponent } from "@/assets/ts/components/_ToggleComponent.ts";
 import KTMenu from "@/layout/aside/Menu.vue";
@@ -103,6 +104,8 @@ export default defineComponent({
     darkLogo: String
   },
   setup() {
+    const { t } = useI18n();
+
     onMounted(() => {
       DrawerComponent.reinitialization();
       ToggleComponent.reinitialization();
@@ -114,7 +117,8 @@ export default defineComponent({
 
     return {
       isDocPage,
-      asideTheme
+      asideTheme,
+      t
     };
   }
 });

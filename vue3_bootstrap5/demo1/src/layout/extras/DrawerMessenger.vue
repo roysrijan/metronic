@@ -144,7 +144,12 @@
           <!--end::Actions-->
 
           <!--begin::Send-->
-          <button class="btn btn-primary" type="button" data-kt-element="send">
+          <button
+            @click="addNewMessage"
+            class="btn btn-primary"
+            type="button"
+            data-kt-element="send"
+          >
             Send
           </button>
           <!--end::Send-->

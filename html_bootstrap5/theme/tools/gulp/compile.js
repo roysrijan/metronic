@@ -80,8 +80,8 @@ if (args.prod !== false) {
 
 if (args.sourcemap !== false) {
   // force assets sourcemap
-  build.config.compile.jsSourcemaps = true;
-  build.config.compile.cssSourcemaps = true;
+  // build.config.compile.jsSourcemaps = true;
+  // build.config.compile.cssSourcemaps = true;
 }
 
 if (args.rtl !== "") {

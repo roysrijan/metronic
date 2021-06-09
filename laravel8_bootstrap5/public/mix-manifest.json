@@ -79,5 +79,7 @@
     "/plugins/global/fonts/line-awesome/la-solid-900.eot": "/plugins/global/fonts/line-awesome/la-solid-900.eot",
     "/plugins/global/fonts/line-awesome/la-solid-900.ttf": "/plugins/global/fonts/line-awesome/la-solid-900.ttf",
     "/plugins/global/fonts/line-awesome/la-solid-900.woff": "/plugins/global/fonts/line-awesome/la-solid-900.woff",
-    "/plugins/global/fonts/line-awesome/la-solid-900.woff2": "/plugins/global/fonts/line-awesome/la-solid-900.woff2"
+    "/plugins/global/fonts/line-awesome/la-solid-900.woff2": "/plugins/global/fonts/line-awesome/la-solid-900.woff2",
+    "/plugins/custom/datatables/datatables.bundle.js": "/plugins/custom/datatables/datatables.bundle.js",
+    "/plugins/custom/datatables/datatables.bundle.css": "/plugins/custom/datatables/datatables.bundle.css"
 }

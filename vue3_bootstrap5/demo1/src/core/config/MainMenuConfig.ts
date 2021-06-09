@@ -2,13 +2,13 @@ const DocMenuConfig: object = [
   {
     pages: [
       {
-        heading: "Dashboard",
+        heading: "dashboard",
         route: "/dashboard",
         svgIcon: "media/icons/duotone/Design/PenAndRuller.svg",
         fontIcon: "bi-app-indicator"
       },
       {
-        heading: "Layout builder",
+        heading: "layoutBuilder",
         route: "/builder",
         svgIcon: "media/icons/duotone/Interface/Settings-02.svg",
         fontIcon: "bi-layers"
@@ -16,51 +16,51 @@ const DocMenuConfig: object = [
     ]
   },
   {
-    heading: "Crafted",
+    heading: "craft",
     route: "/crafted",
     pages: [
       {
-        sectionTitle: "Pages",
+        sectionTitle: "pages",
         route: "/pages",
         svgIcon: "media/icons/duotone/Code/Compiling.svg",
         fontIcon: "bi-archive",
         sub: [
           {
-            sectionTitle: "Profile",
+            sectionTitle: "profile",
             route: "/profile",
             sub: [
               {
-                heading: "Overview",
+                heading: "profileOverview",
                 route: "/crafted/pages/profile/overview"
               },
               {
-                heading: "Projects",
+                heading: "projects",
                 route: "/crafted/pages/profile/projects"
               },
               {
-                heading: "Campaigns",
+                heading: "campaigns",
                 route: "/crafted/pages/profile/campaigns"
               },
               {
-                heading: "Documents",
+                heading: "documents",
                 route: "/crafted/pages/profile/documents"
               },
               {
-                heading: "Connections",
+                heading: "connections",
                 route: "/crafted/pages/profile/connections"
               }
             ]
           },
           {
-            sectionTitle: "Wizards",
+            sectionTitle: "wizards",
             route: "/wizard",
             sub: [
               {
-                heading: "Horizontal",
+                heading: "horizontal",
                 route: "/crafted/pages/wizards/horizontal"
               },
               {
-                heading: "Vertical",
+                heading: "vertical",
                 route: "/crafted/pages/wizards/vertical"
               }
             ]
@@ -68,49 +68,49 @@ const DocMenuConfig: object = [
         ]
       },
       {
-        sectionTitle: "Account",
+        sectionTitle: "account",
         route: "/account",
         svgIcon: "media/icons/duotone/General/User.svg",
         fontIcon: "bi-person",
         sub: [
           {
-            heading: "Overview",
+            heading: "accountOverview",
             route: "/crafted/account/overview"
           },
           {
-            heading: "Settings",
+            heading: "settings",
             route: "/crafted/account/settings"
           }
         ]
       },
       {
-        sectionTitle: "Authentication",
+        sectionTitle: "authentication",
         svgIcon: "media/icons/duotone/Interface/Lock.svg",
         fontIcon: "bi-sticky",
         sub: [
           {
-            sectionTitle: "Basic Flow",
+            sectionTitle: "basicFlow",
             sub: [
               {
-                heading: "Sign-in",
+                heading: "signIn",
                 route: "/sign-in"
               },
               {
-                heading: "Sign-up",
+                heading: "signUp",
                 route: "/sign-up"
               },
               {
-                heading: "Password Reset",
+                heading: "passwordReset",
                 route: "/password-reset"
               }
             ]
           },
           {
-            heading: "Error 404",
+            heading: "error404",
             route: "/404"
           },
           {
-            heading: "Error 500",
+            heading: "error500",
             route: "/500"
           }
         ]
@@ -118,25 +118,25 @@ const DocMenuConfig: object = [
     ]
   },
   {
-    heading: "Apps",
+    heading: "apps",
     route: "/apps",
     pages: [
       {
-        sectionTitle: "Chat",
+        sectionTitle: "chat",
         route: "/chat",
         svgIcon: "media/icons/duotone/Communication/Group-chat.svg",
         fontIcon: "bi-chat-left",
         sub: [
           {
-            heading: "Private Chat",
+            heading: "privateChat",
             route: "/apps/chat/private-chat"
           },
           {
-            heading: "Group Chat",
+            heading: "groupChat",
             route: "/apps/chat/group-chat"
           },
           {
-            heading: "Drawer Chat",
+            heading: "drawerChat",
             route: "/apps/chat/drawer-chat"
           }
         ]

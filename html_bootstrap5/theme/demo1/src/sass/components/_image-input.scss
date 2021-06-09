@@ -81,14 +81,14 @@
 		}
 
 		// Change Control
-		[data-action="change"] {
+		[data-kt-image-input-action="change"] {
 			right: 5px;
 			top: 5px;
 		}
 
 		// Cancel & Remove Buttons
-		[data-action="cancel"],
-		[data-action="remove"] {
+		[data-kt-image-input-action="cancel"],
+		[data-kt-image-input-action="remove"] {
 			right: 5px;
 			bottom: 5px;
 		}

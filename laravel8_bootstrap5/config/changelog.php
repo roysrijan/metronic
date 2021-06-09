@@ -1,5 +1,20 @@
 <?php
 return array(
+    'v8.0.14' => array(
+        'date'      => '8 June, 2021',
+        'changelog' => array(
+            'new' => array(
+                'Added <code>System Error Log</code> demo page.',
+            ),
+
+            'update' => array(
+            ),
+
+            'fix' => array(
+            ),
+        ),
+    ),
+
     'v8.0.13' => array(
         'date'      => '4 June, 2021',
         'changelog' => array(

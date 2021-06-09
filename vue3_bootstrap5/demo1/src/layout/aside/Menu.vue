@@ -21,7 +21,7 @@
         <template v-for="(item, i) in DocMenuConfig" :key="i">
           <div v-if="item.heading" class="menu-item">
             <h4 class="menu-content text-muted mb-0 fs-7 text-uppercase">
-              {{ item.heading }}
+              {{ translate(item.heading) }}
             </h4>
           </div>
           <template v-for="(menuItem, j) in item.pages" :key="j">
@@ -37,7 +37,9 @@
                     class="menu-link py-2"
                     @click="navigate"
                   >
-                    <span class="menu-title">{{ menuItem.heading }}</span>
+                    <span class="menu-title">{{
+                      translate(menuItem.heading)
+                    }}</span>
                   </a>
                 </router-link>
               </div>
@@ -50,7 +52,9 @@
               data-kt-menu-trigger="click"
             >
               <span class="menu-link py-2">
-                <span class="menu-title">{{ menuItem.sectionTitle }}</span>
+                <span class="menu-title">{{
+                  translate(menuItem.sectionTitle)
+                }}</span>
                 <span class="menu-arrow"></span>
               </span>
               <div
@@ -75,7 +79,9 @@
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
                         </span>
-                        <span class="menu-title">{{ item2.heading }}</span>
+                        <span class="menu-title">{{
+                          translate(item2.heading)
+                        }}</span>
                       </a>
                     </router-link>
                   </div>
@@ -93,7 +99,7 @@
           <div v-if="item.heading" class="menu-item">
             <div class="menu-content pt-8 pb-2">
               <span class="menu-section text-muted text-uppercase fs-8 ls-1">
-                {{ item.heading }}
+                {{ translate(item.heading) }}
               </span>
             </div>
           </div>
@@ -126,7 +132,9 @@
                         <inline-svg :src="menuItem.svgIcon" />
                       </span>
                     </span>
-                    <span class="menu-title">{{ menuItem.heading }}</span>
+                    <span class="menu-title">{{
+                      translate(menuItem.heading)
+                    }}</span>
                   </a>
                 </router-link>
               </div>
@@ -155,7 +163,9 @@
                     <inline-svg :src="menuItem.svgIcon" />
                   </span>
                 </span>
-                <span class="menu-title">{{ menuItem.sectionTitle }}</span>
+                <span class="menu-title">{{
+                  translate(menuItem.sectionTitle)
+                }}</span>
                 <span class="menu-arrow"></span>
               </span>
               <div
@@ -180,7 +190,9 @@
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
                         </span>
-                        <span class="menu-title">{{ item2.heading }}</span>
+                        <span class="menu-title">{{
+                          translate(item2.heading)
+                        }}</span>
                       </a>
                     </router-link>
                   </div>
@@ -195,7 +207,9 @@
                       <span class="menu-bullet">
                         <span class="bullet bullet-dot"></span>
                       </span>
-                      <span class="menu-title">{{ item2.sectionTitle }}</span>
+                      <span class="menu-title">{{
+                        translate(item2.sectionTitle)
+                      }}</span>
                       <span class="menu-arrow"></span>
                     </span>
                     <div
@@ -221,7 +235,7 @@
                                 <span class="bullet bullet-dot"></span>
                               </span>
                               <span class="menu-title">{{
-                                item3.heading
+                                translate(item3.heading)
                               }}</span>
                             </a>
                           </router-link>
@@ -253,7 +267,9 @@
                 <inline-svg src="media/icons/duotone/Files/File.svg" />
               </span>
             </span>
-            <span class="menu-title">Changelog v{{ version }}</span>
+            <span class="menu-title"
+              >{{ translate("changelog") }} v{{ version }}</span
+            >
           </router-link>
         </div>
       </template>
@@ -287,6 +303,7 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
+import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
 import { ScrollComponent } from "@/assets/ts/components/_ScrollComponent.ts";
 import { MenuComponent } from "@/assets/ts/components/MenuComponent.ts";
@@ -299,6 +316,7 @@ export default defineComponent({
   name: "kt-menu",
   components: {},
   setup() {
+    const { t, te } = useI18n();
     const route = useRoute();
     const scrollElRef = ref<null | HTMLElement>(null);
 
@@ -310,6 +328,14 @@ export default defineComponent({
       }
     });
 
+    const translate = text => {
+      if (te(text)) {
+        return t(text);
+      } else {
+        return text;
+      }
+    };
+
     const hasActiveChildren = match => {
       return route.path.indexOf(match) !== -1;
     };
@@ -320,7 +346,8 @@ export default defineComponent({
       DocMenuConfig,
       MainMenuConfig,
       asideMenuIcons,
-      version
+      version,
+      translate
     };
   }
 });
