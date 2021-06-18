@@ -43,6 +43,9 @@ var KTDrawer = function(element, options) {
         the.lastWidth;
         the.toggleElement = null;
 
+        // Set initialized
+        the.element.setAttribute('data-kt-drawer', 'true');
+
         // Event Handlers
         _handlers();
 
@@ -140,7 +143,7 @@ var KTDrawer = function(element, options) {
             the.shown = true;
         } else {
             the.shown = false;
-        }       
+        }
 
         // Activate/deactivate
         if ( _getOption('activate') === true ) {
@@ -290,14 +293,14 @@ KTDrawer.createInstances = function(selector) {
 }
 
 // Toggle instances
-KTDrawer.handleToggle = function() {
+KTDrawer.handleShow = function() {
     // External drawer toggle handler
-    KTUtil.on(document.body,  '[data-kt-drawer-toggle="true"][data-kt-drawer-target]', 'click', function(e) {
+    KTUtil.on(document.body,  '[data-kt-drawer-show="true"][data-kt-drawer-target]', 'click', function(e) {
         var element = document.querySelector(this.getAttribute('data-kt-drawer-target'));
 
         if (element) {
             KTDrawer.getInstance(element).show();
-        } 
+        }
     });
 }
 
@@ -312,7 +315,7 @@ KTDrawer.handleDismiss = function() {
             if (drawer.isShown()) {
                 drawer.hide();
             }
-        } 
+        }
     });
 }
 
@@ -336,7 +339,7 @@ window.addEventListener('resize', function() {
 // Global initialization
 KTDrawer.init = function() {
     KTDrawer.createInstances('[data-kt-drawer="true"]');
-    KTDrawer.handleToggle();
+    KTDrawer.handleShow();
     KTDrawer.handleDismiss();
 };
 

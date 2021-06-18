@@ -42,6 +42,9 @@ var KTSticky = function(element, options) {
         the.eventTriggerState = true;
         the.lastScrollTop = 0;
 
+        // Set initialized
+        the.element.setAttribute('data-kt-sticky', 'true');
+
         // Event Handlers
         window.addEventListener('scroll', _scroll);
 

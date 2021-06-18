@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Core\Adapters\Theme;
-
 class PagesController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index(Theme $theme)
+    public function index()
     {
         // Get view file location from menu config
-        $view = $theme->getOption('page', 'view');
+        $view = theme()->getOption('page', 'view');
 
         // Check if the page view file exist
         if (view()->exists('pages.'.$view)) {

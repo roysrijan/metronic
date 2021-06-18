@@ -42,6 +42,9 @@ var KTMenu = function(element, options) {
         the.element = element;
         the.triggerElement;
 
+        // Set initialized
+        the.element.setAttribute('data-kt-menu', 'true');
+
         _setTriggerElement();
         _update();
 

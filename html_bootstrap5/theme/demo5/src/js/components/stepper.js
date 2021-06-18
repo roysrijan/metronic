@@ -39,6 +39,9 @@ var KTStepper = function(element, options) {
 
         the.element = element;
 
+        // Set initialized
+        the.element.setAttribute('data-kt-stepper', 'true');
+
         // Elements
         the.steps = KTUtil.findAll(the.element, '[data-kt-stepper-element="nav"]');
         the.btnNext = KTUtil.find(the.element, '[data-kt-stepper-action="next"]');

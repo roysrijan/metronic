@@ -4,6 +4,9 @@ var KTSubscriptionsList = function () {
     // Define shared variables
     var table;
     var datatable;
+    var toolbarBase;
+    var toolbarSelected;
+    var selectedCount;
 
     // Private functions
     var initDatatable = function () {
@@ -26,6 +29,13 @@ var KTSubscriptionsList = function () {
                 { orderable: false, targets: 0 }, // Disable ordering on column 0 (checkbox)
                 { orderable: false, targets: 6 }, // Disable ordering on column 6 (actions)                
             ]
+        });
+
+        // Re-init functions on every table re-draw -- more info: https://datatables.net/reference/event/draw
+        datatable.on('draw', function () {
+            initToggleToolbar();
+            handleRowDeletion();
+            toggleToolbars();
         });
     }
 
@@ -140,15 +150,15 @@ var KTSubscriptionsList = function () {
     }
 
     // Init toggle toolbar
-    var handleToolbar = function () {
+    var initToggleToolbar = () => {
         // Toggle selected action toolbar
         // Select all checkboxes
         const checkboxes = table.querySelectorAll('[type="checkbox"]');
 
         // Select elements
-        const toolbarBase = document.querySelector('[data-kt-subscription-table-toolbar="base"]');
-        const toolbarSelected = document.querySelector('[data-kt-subscription-table-toolbar="selected"]');
-        const selectedCount = document.querySelector('[data-kt-subscription-table-select="selected_count"]');
+        toolbarBase = document.querySelector('[data-kt-subscription-table-toolbar="base"]');
+        toolbarSelected = document.querySelector('[data-kt-subscription-table-toolbar="selected"]');
+        selectedCount = document.querySelector('[data-kt-subscription-table-select="selected_count"]');
         const deleteSelected = document.querySelector('[data-kt-subscription-table-select="delete_selected"]');
 
         // Toggle delete selected toolbar
@@ -160,34 +170,6 @@ var KTSubscriptionsList = function () {
                 }, 50);
             });
         });
-
-        // Toggle toolbars
-        const toggleToolbars = () => {
-            // Select refreshed checkbox DOM elements 
-            const allCheckboxes = table.querySelectorAll('tbody [type="checkbox"]');
-
-            // Detect checkboxes state & count
-            let checkedState = false;
-            let count = 0;
-
-            // Count checked boxes
-            allCheckboxes.forEach(c => {
-                if (c.checked) {
-                    checkedState = true;
-                    count++;
-                }
-            });
-
-            // Toggle toolbars
-            if (checkedState) {
-                selectedCount.innerHTML = count;
-                toolbarBase.classList.add('d-none');
-                toolbarSelected.classList.remove('d-none');
-            } else {
-                toolbarBase.classList.remove('d-none');
-                toolbarSelected.classList.add('d-none');
-            }
-        }
 
         // Deleted selected rows
         deleteSelected.addEventListener('click', function () {
@@ -220,9 +202,13 @@ var KTSubscriptionsList = function () {
                                 datatable.row($(c.closest('tbody tr'))).remove().draw();
                             }
                         });
+
+                        // Remove header checked box
+                        const headerCheckbox = table.querySelectorAll('[type="checkbox"]')[0];
+                        headerCheckbox.checked = false;
                     }).then(function () {
-                        // Detect checked checkboxes
-                        toggleToolbars();
+                        toggleToolbars(); // Detect checked checkboxes
+                        initToggleToolbar(); // Re-init toolbar to recalculate checkboxes
                     });
                 } else if (result.dismiss === 'cancel') {
                     Swal.fire({
@@ -239,6 +225,34 @@ var KTSubscriptionsList = function () {
         });
     }
 
+    // Toggle toolbars
+    const toggleToolbars = () => {
+        // Select refreshed checkbox DOM elements 
+        const allCheckboxes = table.querySelectorAll('tbody [type="checkbox"]');
+
+        // Detect checkboxes state & count
+        let checkedState = false;
+        let count = 0;
+
+        // Count checked boxes
+        allCheckboxes.forEach(c => {
+            if (c.checked) {
+                checkedState = true;
+                count++;
+            }
+        });
+
+        // Toggle toolbars
+        if (checkedState) {
+            selectedCount.innerHTML = count;
+            toolbarBase.classList.add('d-none');
+            toolbarSelected.classList.remove('d-none');
+        } else {
+            toolbarBase.classList.remove('d-none');
+            toolbarSelected.classList.add('d-none');
+        }
+    }
+
     return {
         // Public functions  
         init: function () {
@@ -249,7 +263,7 @@ var KTSubscriptionsList = function () {
             }
 
             initDatatable();
-            handleToolbar();
+            initToggleToolbar();
             handleSearch();
             handleRowDeletion();
             handleFilter();

@@ -1,7 +1,7 @@
 const gulpConfig = {
   name: 'Metronic',
   desc: "Gulp build config file",
-  version: "8.0.14",
+  version: "8.0.15",
   config: {
     debug: false,
     compile: {

@@ -1,101 +1,124 @@
 <template>
-  <!--begin::Mixed Widget 1-->
-  <div class="card card-xxl-stretch">
-    <!--begin::Header-->
-    <div class="card-header border-0 bg-danger py-5">
-      <h3 class="card-title fw-bolder text-white">
-        Sales Statistics
-      </h3>
-      <div class="card-toolbar">
-        <!--begin::Menu-->
-        <button
-          type="button"
-          class="btn btn-sm btn-icon btn-color-white btn-active-white btn-active-color- border-0 me-n3"
-          data-kt-menu-trigger="click"
-          data-kt-menu-placement="bottom-end"
-          data-kt-menu-flip="top-end"
-        >
-          <span class="svg-icon svg-icon-2">
-            <inline-svg
-              src="media/icons/duotone/Layout/Layout-4-blocks-2.svg"
-            />
-          </span>
-        </button>
-        <Dropdown3></Dropdown3>
-        <!--end::Menu-->
-      </div>
-    </div>
-    <!--end::Header-->
+  <!--begin::List Widget 1-->
+  <div :class="widgetClasses" class="card">
     <!--begin::Body-->
     <div class="card-body p-0">
-      <!--begin::Chart-->
-      <apexchart
-        class="mixed-widget-2-chart card-rounded-bottom bg-danger"
-        :options="chartOptions"
-        :series="series"
-        height="200"
-        type="area"
-      ></apexchart>
-      <!--end::Chart-->
-      <!--begin::Stats-->
-      <div class="card-p mt-n20 position-relative">
-        <!--begin::Row-->
-        <div class="row m-0">
-          <div class="col bg-light-warning px-6 py-8 rounded-2 me-7 mb-7">
-            <span class="svg-icon svg-icon-3x svg-icon-warning d-block my-2">
-              <inline-svg src="media/icons/duotone/Media/Equalizer.svg" />
-            </span>
-            <a href="#" class="text-warning fw-bold fs-6">
-              Weekly Sales
-            </a>
-          </div>
-          <div class="col bg-light-primary px-6 py-8 rounded-2 mb-7">
-            <span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
-              <inline-svg
-                src="media/icons/duotone/Communication/Add-user.svg"
-              />
-            </span>
-            <a href="#" class="text-primary fw-bold fs-6">
-              New Users
-            </a>
+      <!--begin::Header-->
+      <div
+        :class="`bg-${widgetColor}`"
+        class="px-9 pt-7 card-rounded h-275px w-100"
+      >
+        <!--begin::Heading-->
+        <div class="d-flex flex-stack">
+          <h3 class="m-0 text-white fw-bolder fs-3">Sales Summary</h3>
+
+          <div class="ms-1">
+            <!--begin::Menu-->
+            <button
+              type="button"
+              :class="`btn-active-color-${widgetColor}`"
+              class="btn btn-sm btn-icon btn-color-white btn-active-white border-0 me-n3"
+              data-kt-menu-trigger="click"
+              data-kt-menu-placement="bottom-end"
+              data-kt-menu-flip="top-end"
+            >
+              <span class="svg-icon svg-icon-2">
+                <inline-svg
+                  src="media/icons/duotone/Layout/Layout-4-blocks-2.svg"
+                />
+              </span>
+            </button>
+            <Dropdown3></Dropdown3>
+            <!--end::Menu-->
           </div>
         </div>
-        <!--end::Row-->
-        <!--begin::Row-->
-        <div class="row m-0">
-          <div class="col bg-light-danger px-6 py-8 rounded-2 me-7">
-            <span class="svg-icon svg-icon-3x svg-icon-danger d-block my-2">
-              <inline-svg src="media/icons/duotone/Design/Layers.svg" />
-            </span>
-            <a href="#" class="text-danger fw-bold fs-6 mt-2">
-              Item Orders
-            </a>
-          </div>
-          <div class="col bg-light-success px-6 py-8 rounded-2">
-            <span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
-              <inline-svg
-                src="media/icons/duotone/Communication/Urgent-mail.svg"
-              />
-            </span>
-            <a href="#" class="text-success fw-bold fs-6 mt-2">
-              Bug Reports
-            </a>
-          </div>
+        <!--end::Heading-->
+
+        <!--begin::Balance-->
+        <div class="d-flex text-center flex-column text-white pt-8">
+          <span class="fw-bold fs-7">You Balance</span>
+          <span class="fw-bolder fs-2x pt-1">$37,562.00</span>
         </div>
-        <!--end::Row-->
+        <!--end::Balance-->
       </div>
-      <!--end::Stats-->
-      <!--end::Body-->
+      <!--end::Header-->
+
+      <!--begin::Items-->
+      <div
+        class="shadow-xs card-rounded mx-9 mb-9 px-6 py-9 position-relative z-index-1 bg-white"
+        style="margin-top: -100px"
+      >
+        <template v-for="(item, index) in items" :key="index">
+          <!--begin::Item-->
+          <div
+            :class="[index !== item.length && 'mb-7']"
+            class="d-flex align-items-center"
+          >
+            <!--begin::Symbol-->
+            <div class="symbol symbol-45px w-40px me-5">
+              <span class="symbol-label bg-lighten">
+                <span class="svg-icon svg-icon-1">
+                  <inline-svg :src="item.icon" />
+                </span>
+              </span>
+            </div>
+            <!--end::Symbol-->
+
+            <!--begin::Description-->
+            <div class="d-flex align-items-center flex-wrap w-100">
+              <!--begin::Title-->
+              <div class="mb-1 pe-3 flex-grow-1">
+                <a
+                  href="#"
+                  class="fs-5 text-gray-800 text-hover-primary fw-bolder"
+                  >{{ item.title }}</a
+                >
+                <div class="text-gray-400 fw-bold fs-7">
+                  {{ item.description }}
+                </div>
+              </div>
+              <!--end::Title-->
+
+              <!--begin::Label-->
+              <div class="d-flex align-items-center">
+                <div class="fw-bolder fs-5 text-gray-800 pe-1">
+                  {{ item.stats }}
+                </div>
+
+                <span
+                  v-if="item.arrow === 'up'"
+                  class="svg-icon svg-icon-5 svg-icon-success ms-1"
+                >
+                  <inline-svg
+                    src="media/icons/duotone/Navigation/Arrow-up.svg"
+                  />
+                </span>
+                <span
+                  v-else-if="item.arrow === 'down'"
+                  class="svg-icon svg-icon-5 svg-icon-danger ms-1"
+                >
+                  <inline-svg
+                    src="media/icons/duotone/Navigation/Arrow-down.svg"
+                  />
+                </span>
+              </div>
+              <!--end::Label-->
+            </div>
+            <!--end::Description-->
+          </div>
+          <!--end::Item-->
+        </template>
+      </div>
+      <!--end::Items-->
     </div>
-    <!--end::Mixed Widget 1-->
+    <!--end::Body-->
   </div>
+  <!--end::List Widget 1-->
 </template>
 
 <script>
-import { defineComponent, onMounted } from "vue";
+import { defineComponent } from "vue";
 import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
-import { MenuComponent } from "@/assets/ts/components/MenuComponent.ts";
-import { getCSSVariableValue } from "@/assets/ts/_utils";
 
 export default defineComponent({
   name: "widget-1",
@@ -103,146 +126,44 @@ export default defineComponent({
     Dropdown3
   },
   props: {
-    color: String
+    widgetClasses: String,
+    widgetColor: String,
+    chartHeight: Number
   },
   setup() {
-    const labelColor = getCSSVariableValue("--bs-gray-500");
-    const borderColor = getCSSVariableValue("--bs-gray-200");
-
-    const color = getCSSVariableValue("--bs-danger");
-    const strokeColor = "#cb1e46";
-
-    const chartOptions = {
-      chart: {
-        fontFamily: "inherit",
-        type: "area",
-        toolbar: {
-          show: false
-        },
-        zoom: {
-          enabled: false
-        },
-        sparkline: {
-          enabled: true
-        },
-        dropShadow: {
-          enabled: true,
-          enabledOnSeries: undefined,
-          top: 5,
-          left: 0,
-          blur: 3,
-          color: strokeColor,
-          opacity: 0.5
-        }
-      },
-      plotOptions: {},
-      legend: {
-        show: false
-      },
-      dataLabels: {
-        enabled: false
-      },
-      fill: {
-        type: "solid",
-        opacity: 0
-      },
-      stroke: {
-        curve: "smooth",
-        show: true,
-        width: 3,
-        colors: [strokeColor]
-      },
-      xaxis: {
-        categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
-        axisBorder: {
-          show: false
-        },
-        axisTicks: {
-          show: false
-        },
-        labels: {
-          show: false,
-          style: {
-            colors: labelColor,
-            fontSize: "12px"
-          }
-        },
-        crosshairs: {
-          show: false,
-          position: "front",
-          stroke: {
-            color: borderColor,
-            width: 1,
-            dashArray: 3
-          }
-        }
-      },
-      yaxis: {
-        min: 0,
-        max: 80,
-        labels: {
-          show: false,
-          style: {
-            colors: labelColor,
-            fontSize: "12px"
-          }
-        }
-      },
-      states: {
-        normal: {
-          filter: {
-            type: "none",
-            value: 0
-          }
-        },
-        hover: {
-          filter: {
-            type: "none",
-            value: 0
-          }
-        },
-        active: {
-          allowMultipleDataPointsSelection: false,
-          filter: {
-            type: "none",
-            value: 0
-          }
-        }
-      },
-      tooltip: {
-        style: {
-          fontSize: "12px"
-        },
-        y: {
-          formatter: function(val) {
-            return "$" + val + " thousands";
-          }
-        },
-        marker: {
-          show: false
-        }
-      },
-      markers: {
-        colors: [color],
-        strokeColor: [strokeColor],
-        strokeWidth: 3
-      }
-    };
-
-    const series = [
+    const items = [
       {
-        name: "Net Profit",
-        data: [30, 45, 32, 70, 40, 40, 40]
+        icon: "media/icons/duotone/Home/Globe.svg",
+        title: "Sales",
+        description: "100 Regions",
+        stats: "$2,5b",
+        arrow: "up"
+      },
+      {
+        icon: "media/icons/duotone/Layout/Layout-4-blocks-2.svg",
+        title: "Revenue",
+        description: "Quarter 2/3",
+        stats: "$1,7b",
+        arrow: "down"
+      },
+      {
+        icon: "media/icons/duotone/Devices/Watch2.svg",
+        title: "Growth",
+        description: "80% Rate",
+        stats: "$8,8m",
+        arrow: "up"
+      },
+      {
+        icon: "media/icons/duotone/General/Clipboard.svg",
+        title: "Dispute",
+        description: "3090 Refunds",
+        stats: "$270m",
+        arrow: "down"
       }
     ];
 
-    onMounted(() => {
-      MenuComponent.reinitialization();
-    });
-
     return {
-      series,
-      chartOptions
+      items
     };
   }
 });

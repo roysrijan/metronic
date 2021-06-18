@@ -114,6 +114,38 @@ const DocMenuConfig: object = [
             route: "/500"
           }
         ]
+      },
+      {
+        sectionTitle: "widgets",
+        route: "/widgets",
+        svgIcon: "media/icons/duotone/Layout/Layout-4-blocks.svg",
+        fontIcon: "bi-layers",
+        sub: [
+          {
+            heading: "widgetsLists",
+            route: "/crafted/widgets/lists"
+          },
+          {
+            heading: "widgetsStatistics",
+            route: "/crafted/widgets/statistics"
+          },
+          {
+            heading: "widgetsCharts",
+            route: "/crafted/widgets/charts"
+          },
+          {
+            heading: "widgetsMixed",
+            route: "/crafted/widgets/mixed"
+          },
+          {
+            heading: "widgetsTables",
+            route: "/crafted/widgets/tables"
+          },
+          {
+            heading: "widgetsFeeds",
+            route: "/crafted/widgets/feeds"
+          }
+        ]
       }
     ]
   },

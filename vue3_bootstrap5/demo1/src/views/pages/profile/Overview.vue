@@ -28,7 +28,7 @@ import KTWidget4 from "@/components/widgets/feeds/Widget4.vue";
 import KTWidget5 from "@/components/widgets/feeds/Widget5.vue";
 import KTWidget6 from "@/components/widgets/feeds/Widget6.vue";
 import KTChartWidget1 from "@/components/widgets/charts/Widget1.vue";
-import KTListWidget5 from "@/components/widgets/list/Widget5.vue";
+import KTListWidget5 from "@/components/widgets/lists/Widget5.vue";
 import KTEngageWidget1 from "@/components/widgets/engage/Widget1.vue";
 import { setCurrentPageBreadcrumbs } from "@/core/helpers/breadcrumb";
 

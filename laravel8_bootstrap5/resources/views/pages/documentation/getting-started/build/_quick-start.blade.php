@@ -23,8 +23,7 @@
             <div class="py-5">
                 <?php util()->highlight('
                     npm install --global npm@latest
-                    ', 'bash')
-                ?>
+                    ', 'bash') ?>
             </div>
         </li>
 
@@ -37,8 +36,7 @@
             <div class="py-5">
                 <?php util()->highlight('
                     composer --version
-                    ', 'bash')
-                ?>
+                    ', 'bash') ?>
             </div>
         </li>
 
@@ -48,8 +46,7 @@
             <div class="py-5">
                 <?php util()->highlight('
                     composer install
-                    ', 'bash')
-                ?>
+                    ', 'bash') ?>
             </div>
         </li>
 
@@ -59,8 +56,7 @@
             <div class="py-5">
                 <?php util()->highlight('
                     npm install
-                    ', 'bash')
-                ?>
+                    ', 'bash') ?>
             </div>
         </li>
 
@@ -70,19 +66,17 @@
             <div class="py-5">
                 <?php util()->highlight('
                     npm run dev
-                    ', 'bash')
-                ?>
+                    ', 'bash') ?>
             </div>
         </li>
 
         <li class="py-3">
-            Copy <code>.env.example</code> file and create duplicate. Use <code>cp</code> command for Linux or Max user.
+            Copy <code>.env.example</code> file and create duplicate. Use <code>cp</code> command for Linux or Mac user.
 
             <div class="py-5">
                 <?php util()->highlight('
                     cp .env.example .env
-                    ', 'bash')
-                ?>
+                    ', 'bash') ?>
             </div>
 
             If you are using <code>Windows</code>, use <code>copy</code> instead of <code>cp</code>.
@@ -90,8 +84,7 @@
             <div class="py-5">
                 <?php util()->highlight('
                     copy .env.example .env
-                    ', 'bash')
-                ?>
+                    ', 'bash') ?>
             </div>
         </li>
 
@@ -105,8 +98,7 @@
             <div class="py-5">
                 <?php util()->highlight('
                     php artisan migrate:fresh --seed
-                    ', 'bash')
-                ?>
+                    ', 'bash') ?>
             </div>
         </li>
 
@@ -116,8 +108,7 @@
             <div class="py-5">
                 <?php util()->highlight('
                     php artisan key:generate
-                    ', 'bash')
-                ?>
+                    ', 'bash') ?>
             </div>
         </li>
 
@@ -127,15 +118,24 @@
             <div class="py-5">
                 <?php util()->highlight('
                 php artisan serve
-                ', 'bash')
-                ?>
+                ', 'bash') ?>
             </div>
 
             <div class="pt-2 pb-5">
                 <?php echo util()->info('
                 Keep the console open. Open this link to run <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a>. It will take a few seconds for the build to finish. To stop a localhost environment, press <code>Ctrl+C</code>.
-                ', 'danger')
-                ?>
+                ', 'danger') ?>
+            </div>
+        </li>
+
+        <li class="py-3">
+            Optional step. This command is required for the image upload feature. For more information, check the Laravel documentation here.
+            <a href="https://laravel.com/docs/8.x/filesystem">https://laravel.com/docs/8.x/filesystem</a>
+
+            <div class="py-5">
+                <?php util()->highlight('
+                    php artisan storage:link
+                    ', 'bash') ?>
             </div>
         </li>
     </ol>

@@ -43,6 +43,9 @@ var KTDrawer = function(element, options) {
         the.lastWidth;
         the.toggleElement = null;
 
+        // Set initialized
+        the.element.setAttribute('data-kt-drawer', 'true');
+
         // Event Handlers
         _handlers();
 

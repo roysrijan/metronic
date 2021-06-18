@@ -123,8 +123,8 @@ class SystemLogsDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            Column::make('id')->title('Log ID'),
-            Column::make('message')->width(200),
+            Column::make('id')->title('Log ID')->width(50),
+            Column::make('message'),
             Column::make('level'),
             Column::make('date')->width(130),
             Column::computed('action')

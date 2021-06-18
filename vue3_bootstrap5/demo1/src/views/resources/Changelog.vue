@@ -14,6 +14,46 @@
           <div
             class="accordion-header py-3 d-flex"
             data-bs-toggle="collapse"
+            data-bs-target="#kt_accordion_2_item_6"
+          >
+            <span class="accordion-icon">
+              <span class="svg-icon svg-icon-3">
+                <inline-svg src="media/icons/duotone/Navigation/Right-2.svg" />
+              </span>
+            </span>
+            <h3 class="fs-4 text-gray-800 fw-bold mb-0 ms-4">
+              {{ themeName }} v8.0.15 - 17 June, 2021
+            </h3>
+          </div>
+          <!--end::Header-->
+
+          <!--begin::Body-->
+          <div
+            id="kt_accordion_2_item_6"
+            class="fs-6 collapse show ps-10"
+            data-bs-parent="#kt_accordion_2"
+          >
+            <h3 class="fs-6 fw-bolder mb-1">New:</h3>
+            <ul class="py-2">
+              <li class="py-2">
+                Added widgets pages
+                <a
+                  href="https://preview.keenthemes.com/metronic8/vue/demo1/#/crafted/widgets/lists"
+                  >Preview</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!--end::Body-->
+        </div>
+        <!--end::Item-->
+
+        <!--begin::Item-->
+        <div class="mb-5">
+          <!--begin::Header-->
+          <div
+            class="accordion-header py-3 d-flex collapsed"
+            data-bs-toggle="collapse"
             data-bs-target="#kt_accordion_2_item_5"
           >
             <span class="accordion-icon">
@@ -30,7 +70,7 @@
           <!--begin::Body-->
           <div
             id="kt_accordion_2_item_5"
-            class="fs-6 collapse show ps-10"
+            class="fs-6 collapse ps-10"
             data-bs-parent="#kt_accordion_2"
           >
             <h3 class="fs-6 fw-bolder mb-1">New:</h3>

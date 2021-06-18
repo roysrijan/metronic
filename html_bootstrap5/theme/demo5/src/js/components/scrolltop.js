@@ -36,6 +36,9 @@ var KTScrolltop = function(element, options) {
         the.uid = KTUtil.getUniqueId('scrolltop');
         the.element = element;
 
+        // Set initialized
+        the.element.setAttribute('data-kt-scrolltop', 'true');
+
         // Event Handlers
         _handlers();
 

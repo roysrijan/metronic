@@ -53,7 +53,7 @@
         <div class="d-flex align-items-center {{ $toolbarButtonMarginClass }}" id="kt_header_user_menu_toggle">
             {{--begin::Menu--}}
             <div class="cursor-pointer symbol {{ $toolbarUserAvatarHeightClass }}" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
-                <img src="{{ asset('media/avatars/150-2.jpg') }}" alt="metronic"/>
+                <img src="{{ auth()->user()->avatar_url }}" alt="metronic"/>
             </div>
             {{ theme()->getView('layout/topbar/partials/_user-menu') }}
             {{--end::Menu--}}

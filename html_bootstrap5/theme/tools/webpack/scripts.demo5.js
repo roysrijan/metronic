@@ -8,12 +8,12 @@ window.KTFeedback = require('@/src/js/components/feedback.js');
 window.KTImage = require('@/src/js/components/image-input.js');
 window.KTMenu = require('@/src/js/components/menu.js');
 window.KTPasswordMeter = require('@/src/js/components/password-meter.js');
-window.KTPlace = require('@/src/js/components/place.js');
 window.KTScroll = require('@/src/js/components/scroll.js');
 window.KTScrolltop = require('@/src/js/components/scrolltop.js');
 window.KTSearch = require('@/src/js/components/search.js');
 window.KTStepper = require('@/src/js/components/stepper.js');
 window.KTSticky = require('@/src/js/components/sticky.js');
+window.KTSwapper = require('@/src/js/components/swaper.js');
 window.KTToggle = require('@/src/js/components/toggle.js');
 
 // Layout base js

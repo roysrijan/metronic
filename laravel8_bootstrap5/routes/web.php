@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Account\SettingsController;
 use App\Http\Controllers\Documentation\ReferencesController;
 use App\Http\Controllers\Logs\SystemLogsController;
 use App\Http\Controllers\PagesController;
@@ -36,6 +37,12 @@ array_walk($menu, function ($val) {
 Route::prefix('documentation')->group(function () {
     Route::get('getting-started/references', [ReferencesController::class, 'index']);
     Route::get('getting-started/changelog', [PagesController::class, 'index']);
+});
+
+// Account pages
+Route::prefix('account')->middleware('auth')->group(function () {
+    Route::get('settings', [SettingsController::class, 'index'])->name('settings.index');
+    Route::put('settings', [SettingsController::class, 'update'])->name('settings.update');
 });
 
 // Logs pages

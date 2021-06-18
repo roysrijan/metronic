@@ -47,18 +47,9 @@ return array(
                         ),
                     ),
                     array(
-                        'title'      => 'Settings',
-                        'path'       => '#',
-                        'bullet'     => '<span class="bullet bullet-dot"></span>',
-                        'attributes' => array(
-                            'link' => array(
-                                "title"             => "Coming soon",
-                                "data-bs-toggle"    => "tooltip",
-                                "data-bs-trigger"   => "hover",
-                                "data-bs-dismiss"   => "click",
-                                "data-bs-placement" => "right",
-                            ),
-                        ),
+                        'title'  => 'Settings',
+                        'path'   => 'account/settings',
+                        'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
                     array(
                         'title'      => 'Security',

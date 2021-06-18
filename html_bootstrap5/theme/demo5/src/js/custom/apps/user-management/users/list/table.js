@@ -59,6 +59,13 @@ var KTUsersList = function () {
                 { orderable: false, targets: 6 }, // Disable ordering on column 6 (actions)                
             ]
         });
+
+        // Re-init functions on every table re-draw -- more info: https://datatables.net/reference/event/draw
+        datatable.on('draw', function () {
+            initToggleToolbar();
+            handleDeleteRows();
+            toggleToolbars();
+        });
     }
 
     // Search Datatable --- official docs reference: https://datatables.net/reference/api/search()
@@ -120,7 +127,7 @@ var KTUsersList = function () {
 
 
     // Delete subscirption
-    var deleteRows = () => {
+    var handleDeleteRows = () => {
         // Select all delete buttons
         const deleteButtons = table.querySelectorAll('[data-kt-users-table-filter="delete_row"]');
 
@@ -233,7 +240,7 @@ var KTUsersList = function () {
                                 datatable.row($(c.closest('tbody tr'))).remove().draw();
                             }
                         });
-                        
+
                         // Remove header checked box
                         const headerCheckbox = table.querySelectorAll('[type="checkbox"]')[0];
                         headerCheckbox.checked = false;
@@ -295,7 +302,7 @@ var KTUsersList = function () {
             initToggleToolbar();
             handleSearchDatatable();
             handleResetForm();
-            deleteRows();
+            handleDeleteRows();
             handleFilterDatatable();
 
         }

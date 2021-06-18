@@ -115,9 +115,17 @@ class Bootstrap {
 	private static function initContent() {
 		if (Theme::getOption('layout', 'content/width') == 'fluid') {
             Theme::addHtmlClass('content-container', 'container-fluid');
-        } else {
+        } else if (Theme::getOption('layout', 'content/width') == 'fixed') {
             Theme::addHtmlClass('content-container', 'container');
         }
+
+		if (Theme::getOption('layout', 'content/class')) {
+			Theme::addHtmlClass('content', Theme::getOption('layout', 'content/class'));
+		}
+
+		if (Theme::getOption('layout', 'content/container-class')) {
+			Theme::addHtmlClass('content-container', Theme::getOption('layout', 'content/container-class'));
+		}
 	}
 
 	private static function initAside() {

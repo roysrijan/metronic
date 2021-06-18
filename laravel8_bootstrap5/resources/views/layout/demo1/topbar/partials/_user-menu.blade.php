@@ -5,17 +5,17 @@
         <div class="menu-content d-flex align-items-center px-3">
             <!--begin::Avatar-->
             <div class="symbol symbol-50px me-5">
-                <img alt="Logo" src="{{ asset('media/avatars/150-2.jpg') }}"/>
+                <img alt="Logo" src="{{ auth()->user()->avatar_url }}"/>
             </div>
             <!--end::Avatar-->
 
             <!--begin::Username-->
             <div class="d-flex flex-column">
                 <div class="fw-bolder d-flex align-items-center fs-5">
-                    Max Smith
+                    {{ auth()->user()->name }}
                     <span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span>
                 </div>
-                <a href="#" class="fw-bold text-muted text-hover-primary fs-7">max@kt.com</a>
+                <a href="#" class="fw-bold text-muted text-hover-primary fs-7">{{ auth()->user()->email }}</a>
             </div>
             <!--end::Username-->
         </div>
@@ -28,16 +28,16 @@
 
     <!--begin::Menu item-->
     <div class="menu-item px-5">
-        <a href="#" class="menu-link px-5" data-bs-toggle="tooltip" data-bs-placement="left" title="Coming soon">
-            My Profile
+        <a href="#" class="menu-link px-5" data-bs-toggle="tooltip" data-bs-placement="left" title="{{ __('Coming soon') }}">
+            {{ __('My Profile') }}
         </a>
     </div>
     <!--end::Menu item-->
 
     <!--begin::Menu item-->
     <div class="menu-item px-5">
-        <a href="#" class="menu-link px-5" data-bs-toggle="tooltip" data-bs-placement="left" title="Coming soon">
-            <span class="menu-text">My Projects</span>
+        <a href="#" class="menu-link px-5" data-bs-toggle="tooltip" data-bs-placement="left" title="{{ __('Coming soon') }}">
+            <span class="menu-text">{{ __('My Projects') }}</span>
             <span class="menu-badge">
                 <span class="badge badge-light-danger badge-circle fw-bolder fs-7">3</span>
             </span>
@@ -48,7 +48,7 @@
     <!--begin::Menu item-->
     <div class="menu-item px-5" data-kt-menu-trigger="hover" data-kt-menu-placement="left-start" data-kt-menu-flip="center, top">
         <a href="#" class="menu-link px-5">
-            <span class="menu-title">My Subscription</span>
+            <span class="menu-title">{{ __('My Subscription') }}</span>
             <span class="menu-arrow"></span>
         </a>
 
@@ -57,7 +57,7 @@
             <!--begin::Menu item-->
             <div class="menu-item px-3">
                 <a href="#" class="menu-link px-5">
-                    Referrals
+                    {{ __('Referrals') }}
                 </a>
             </div>
             <!--end::Menu item-->
@@ -65,7 +65,7 @@
             <!--begin::Menu item-->
             <div class="menu-item px-3">
                 <a href="#" class="menu-link px-5">
-                    Billing
+                    {{ __('Billing') }}
                 </a>
             </div>
             <!--end::Menu item-->
@@ -73,7 +73,7 @@
             <!--begin::Menu item-->
             <div class="menu-item px-3">
                 <a href="#" class="menu-link px-5">
-                    Payments
+                    {{ __('Payments') }}
                 </a>
             </div>
             <!--end::Menu item-->
@@ -81,7 +81,7 @@
             <!--begin::Menu item-->
             <div class="menu-item px-3">
                 <a href="#" class="menu-link d-flex flex-stack px-5">
-                    Statements
+                    {{ __('Statements') }}
 
                     <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="View your statements"></i>
                 </a>
@@ -98,7 +98,7 @@
                     <label class="form-check form-switch form-check-custom form-check-solid">
                         <input class="form-check-input w-30px h-20px" type="checkbox" value="1" checked="checked" name="notifications"/>
                         <span class="form-check-label text-muted fs-7">
-                            Notifications
+                            {{ __('Notifications') }}
                         </span>
                     </label>
                 </div>
@@ -112,7 +112,7 @@
     <!--begin::Menu item-->
     <div class="menu-item px-5">
         <a href="#" class="menu-link px-5">
-            My Statements
+            {{ __('My Statements') }}
         </a>
     </div>
     <!--end::Menu item-->
@@ -125,10 +125,10 @@
     <div class="menu-item px-5" data-kt-menu-trigger="hover" data-kt-menu-placement="left-start" data-kt-menu-flip="center, top">
         <a href="#" class="menu-link px-5">
             <span class="menu-title position-relative">
-                Language
+                {{ __('Language') }}
 
                 <span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">
-                    English <img class="w-15px h-15px rounded-1 ms-2" src="{{ asset('media/flags/united-states.svg') }}" alt="metronic"/>
+                    {{ __('English') }} <img class="w-15px h-15px rounded-1 ms-2" src="{{ asset('media/flags/united-states.svg') }}" alt="metronic"/>
                 </span>
             </span>
         </a>
@@ -141,7 +141,7 @@
                     <span class="symbol symbol-20px me-4">
                         <img class="rounded-1" src="{{ asset('media/flags/united-states.svg') }}" alt="metronic"/>
                     </span>
-                    English
+                    {{ __('English') }}
                 </a>
             </div>
             <!--end::Menu item-->
@@ -152,7 +152,7 @@
                     <span class="symbol symbol-20px me-4">
                         <img class="rounded-1" src="{{ asset('media/flags/spain.svg') }}" alt="metronic"/>
                     </span>
-                    Spanish
+                    {{ __('Spanish') }}
                 </a>
             </div>
             <!--end::Menu item-->
@@ -163,7 +163,7 @@
                     <span class="symbol symbol-20px me-4">
                         <img class="rounded-1" src="{{ asset('media/flags/germany.svg') }}" alt="metronic"/>
                     </span>
-                    German
+                    {{ __('German') }}
                 </a>
             </div>
             <!--end::Menu item-->
@@ -174,7 +174,7 @@
                     <span class="symbol symbol-20px me-4">
                         <img class="rounded-1" src="{{ asset('media/flags/japan.svg') }}" alt="metronic"/>
                     </span>
-                    Japanese
+                    {{ __('Japanese') }}
                 </a>
             </div>
             <!--end::Menu item-->
@@ -185,7 +185,7 @@
                     <span class="symbol symbol-20px me-4">
                         <img class="rounded-1" src="{{ asset('media/flags/france.svg') }}" alt="metronic"/>
                     </span>
-                    French
+                    {{ __('French') }}
                 </a>
             </div>
             <!--end::Menu item-->
@@ -196,8 +196,8 @@
 
     <!--begin::Menu item-->
     <div class="menu-item px-5 my-1">
-        <a href="#" class="menu-link px-5">
-            Account Settings
+        <a href="{{ route('settings.index') }}" class="menu-link px-5">
+            {{ __('Account Settings') }}
         </a>
     </div>
     <!--end::Menu item-->
@@ -205,7 +205,7 @@
     <!--begin::Menu item-->
     <div class="menu-item px-5">
         <a href="#" data-action="{{ route('logout') }}" data-method="post" data-csrf="{{ csrf_token() }}" data-reload="true" class="button-ajax menu-link px-5">
-            Sign Out
+            {{ __('Sign Out') }}
         </a>
     </div>
     <!--end::Menu item-->

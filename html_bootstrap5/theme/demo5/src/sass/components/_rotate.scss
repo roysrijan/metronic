@@ -17,11 +17,13 @@ $rotate-transition: transform 0.3s ease;
 
         .collapsible:not(.collapsed)> & ,
         .active > & {
-            transform: rotateZ(#{$value}deg)#{'/*rtl:ignore*/'};
+
+            transform: rotateZ(#{$value}deg);
             transition: $rotate-transition;
 
             [direction="rtl"] & {
-                transform: rotateZ(-#{$value}deg)#{'/*rtl:ignore*/'};
+
+                transform: rotateZ(-#{$value}deg);
             }
         }
     }
@@ -32,11 +34,13 @@ $rotate-transition: transform 0.3s ease;
 
         .collapsible:not(.collapsed)> &,
         .active > & {
-            transform: rotateZ(-#{$value}deg)#{'/*rtl:ignore*/'};
+
+            transform: rotateZ(-#{$value}deg);
             transition: $rotate-transition;
 
             [direction="rtl"] & {
-                transform: rotateZ(#{$value}deg)#{'/*rtl:ignore*/'};
+
+                transform: rotateZ(#{$value}deg);
             }
         }
     }

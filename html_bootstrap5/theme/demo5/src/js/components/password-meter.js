@@ -46,6 +46,9 @@ var KTPasswordMeter = function(element, options) {
         the.inputElement = the.element.querySelector('input[type]');
         the.visibilityElement = the.element.querySelector('[data-kt-password-meter-control="visibility"]');
         the.highlightElement = the.element.querySelector('[data-kt-password-meter-control="highlight"]'); 
+
+        // Set initialized
+        the.element.setAttribute('data-kt-password-meter', 'true');
         
         // Event Handlers
         _handlers();

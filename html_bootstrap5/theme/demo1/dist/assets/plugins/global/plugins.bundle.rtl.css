@@ -1809,6 +1809,7 @@ span.flatpickr-weekday {
 }
 
 .fv-plugins-bootstrap5 {
+  /* Support floating label */
   /* For horizontal form */
   /* Stacked form */
   /* Inline form */
@@ -1824,13 +1825,23 @@ span.flatpickr-weekday {
 }
 
 .fv-plugins-bootstrap5 .fv-plugins-icon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
   height: 38px;
-  line-height: 38px;
   width: 38px;
 }
 
 .fv-plugins-bootstrap5 .input-group ~ .fv-plugins-icon {
   z-index: 3;
+}
+
+.fv-plugins-bootstrap5 .fv-plugins-icon-input-group {
+  right: -38px;
+}
+
+.fv-plugins-bootstrap5 .form-floating .fv-plugins-icon {
+  height: 58px;
 }
 
 .fv-plugins-bootstrap5 .row .fv-plugins-icon {
@@ -1855,7 +1866,7 @@ span.flatpickr-weekday {
 }
 
 .fv-plugins-bootstrap5.fv-plugins-bootstrap5-form-inline .fv-plugins-icon {
-  right: calc(var(--bs-gutter-x, 1.5rem)/ 2);
+  right: calc(var(--bs-gutter-x, 1.5rem) / 2);
 }
 
 .fv-plugins-bootstrap5 .form-control.fv-plugins-icon-input.is-valid,
@@ -1962,12 +1973,12 @@ span.flatpickr-weekday {
 
 .fv-plugins-materialize .fv-invalid-row .helper-text,
 .fv-plugins-materialize .fv-invalid-row .fv-plugins-icon {
-  color: #F44336;
+  color: #f44336;
 }
 
 .fv-plugins-materialize .fv-valid-row .helper-text,
 .fv-plugins-materialize .fv-valid-row .fv-plugins-icon {
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 .fv-plugins-milligram .fv-plugins-icon {
@@ -2067,12 +2078,12 @@ span.flatpickr-weekday {
 
 .fv-plugins-mui .fv-invalid-row .fv-help-block,
 .fv-plugins-mui .fv-invalid-row .fv-plugins-icon {
-  color: #F44336;
+  color: #f44336;
 }
 
 .fv-plugins-mui .fv-valid-row .fv-help-block,
 .fv-plugins-mui .fv-valid-row .fv-plugins-icon {
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 .fv-plugins-pure {
@@ -2090,14 +2101,14 @@ span.flatpickr-weekday {
 .fv-plugins-pure .fv-has-error label,
 .fv-plugins-pure .fv-has-error .fv-help-block,
 .fv-plugins-pure .fv-has-error .fv-plugins-icon {
-  color: #CA3C3C;
+  color: #ca3c3c;
   /* Same as .button-error */
 }
 
 .fv-plugins-pure .fv-has-success label,
 .fv-plugins-pure .fv-has-success .fv-help-block,
 .fv-plugins-pure .fv-has-success .fv-plugins-icon {
-  color: #1CB841;
+  color: #1cb841;
   /* Same as .button-success */
 }
 
@@ -2853,7 +2864,7 @@ span.flatpickr-weekday {
 }
 
 /*# sourceMappingURL=sourcemaps/tiny-slider.css.map */
-/*! nouislider - 14.6.4 - 3/18/2021 */
+/*! nouislider - 14.7.0 - 4/6/2021 */
 /* Functional styling;
  * These styles are required for noUiSlider to function.
  * You don't need to change these rules to apply your design.
@@ -6383,10 +6394,10 @@ button.toast-close-button {
 }
 
 .swal2-popup.swal2-toast {
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   width: auto;
-  padding: 0.625em;
+  padding: 1.25em;
   overflow-y: hidden;
   background: #fff;
   box-shadow: 0 0 0.625em #d9d9d9;
@@ -6400,7 +6411,21 @@ button.toast-close-button {
 .swal2-popup.swal2-toast .swal2-title {
   flex-grow: 1;
   justify-content: flex-start;
-  margin: 0 0.6em;
+  margin: 0 0.625em;
+  font-size: 1em;
+}
+
+.swal2-popup.swal2-toast .swal2-loading {
+  justify-content: center;
+}
+
+.swal2-popup.swal2-toast .swal2-input {
+  height: 2em;
+  margin: 0.3125em auto;
+  font-size: 1em;
+}
+
+.swal2-popup.swal2-toast .swal2-validation-message {
   font-size: 1em;
 }
 
@@ -6419,15 +6444,25 @@ button.toast-close-button {
 
 .swal2-popup.swal2-toast .swal2-content {
   justify-content: flex-start;
+  margin: 0 0.625em;
   padding: 0;
   font-size: 1em;
+  text-align: initial;
+}
+
+.swal2-popup.swal2-toast .swal2-html-container {
+  padding: 0.625em 0 0;
+}
+
+.swal2-popup.swal2-toast .swal2-html-container:empty {
+  padding: 0;
 }
 
 .swal2-popup.swal2-toast .swal2-icon {
   width: 2em;
   min-width: 2em;
   height: 2em;
-  margin: 0;
+  margin: 0 0.5em 0 0;
 }
 
 .swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {
@@ -6461,10 +6496,14 @@ button.toast-close-button {
 }
 
 .swal2-popup.swal2-toast .swal2-actions {
+  flex: 1;
   flex-basis: auto !important;
+  align-self: stretch;
   width: auto;
+  height: 2.2em;
   height: auto;
   margin: 0 0.3125em;
+  margin-top: 0.3125em;
   padding: 0;
 }
 
@@ -6728,7 +6767,7 @@ button.toast-close-button {
   justify-content: center;
   width: 100%;
   margin: 1.25em auto 0;
-  padding: 0 1.6em;
+  padding: 0;
 }
 
 .swal2-actions:not(.swal2-loading) .swal2-styled[disabled] {
@@ -6775,7 +6814,7 @@ button.toast-close-button {
   background: initial;
   background-color: #2778c4;
   color: #fff;
-  font-size: 1.0625em;
+  font-size: 1em;
 }
 
 .swal2-styled.swal2-deny {
@@ -6784,7 +6823,7 @@ button.toast-close-button {
   background: initial;
   background-color: #d14529;
   color: #fff;
-  font-size: 1.0625em;
+  font-size: 1em;
 }
 
 .swal2-styled.swal2-cancel {
@@ -6793,7 +6832,7 @@ button.toast-close-button {
   background: initial;
   background-color: #757575;
   color: #fff;
-  font-size: 1.0625em;
+  font-size: 1em;
 }
 
 .swal2-styled:focus {
@@ -7006,6 +7045,7 @@ button.toast-close-button {
 
 .swal2-radio input,
 .swal2-checkbox input {
+  flex-shrink: 0;
   margin: 0 0.4em;
 }
 
@@ -7858,32 +7898,6 @@ body.swal2-toast-shown .swal2-container.swal2-bottom-end, body.swal2-toast-shown
   right: 0;
   bottom: 0;
   left: auto;
-}
-
-body.swal2-toast-column .swal2-toast {
-  flex-direction: column;
-  align-items: stretch;
-}
-
-body.swal2-toast-column .swal2-toast .swal2-actions {
-  flex: 1;
-  align-self: stretch;
-  height: 2.2em;
-  margin-top: 0.3125em;
-}
-
-body.swal2-toast-column .swal2-toast .swal2-loading {
-  justify-content: center;
-}
-
-body.swal2-toast-column .swal2-toast .swal2-input {
-  height: 2em;
-  margin: 0.3125em auto;
-  font-size: 1em;
-}
-
-body.swal2-toast-column .swal2-toast .swal2-validation-message {
-  font-size: 1em;
 }
 
 .la,
@@ -16526,7 +16540,7 @@ readers do not read off random characters that represent icons */
 
 @font-face {
   font-family: "bootstrap-icons";
-  src: url("fonts/bootstrap-icons/bootstrap-icons.woff2?231ce25e89ab5804f9a6c427b8d325c9") format("woff2"), url("fonts/bootstrap-icons/bootstrap-icons.woff?231ce25e89ab5804f9a6c427b8d325c9") format("woff");
+  src: url("fonts/bootstrap-icons/bootstrap-icons.woff2?856008caa5eb66df68595e734e59580d") format("woff2"), url("fonts/bootstrap-icons/bootstrap-icons.woff?856008caa5eb66df68595e734e59580d") format("woff");
 }
 [class^=bi-]::before,
 [class*=" bi-"]::before {
@@ -21840,6 +21854,186 @@ readers do not read off random characters that represent icons */
 
 .bi-zoom-out::before {
   content: "";
+}
+
+.bi-bank::before {
+  content: "";
+}
+
+.bi-bank2::before {
+  content: "";
+}
+
+.bi-bell-slash-fill::before {
+  content: "";
+}
+
+.bi-bell-slash::before {
+  content: "";
+}
+
+.bi-cash-coin::before {
+  content: "";
+}
+
+.bi-check-lg::before {
+  content: "";
+}
+
+.bi-coin::before {
+  content: "";
+}
+
+.bi-currency-bitcoin::before {
+  content: "";
+}
+
+.bi-currency-dollar::before {
+  content: "";
+}
+
+.bi-currency-euro::before {
+  content: "";
+}
+
+.bi-currency-exchange::before {
+  content: "";
+}
+
+.bi-currency-pound::before {
+  content: "";
+}
+
+.bi-currency-yen::before {
+  content: "";
+}
+
+.bi-dash-lg::before {
+  content: "";
+}
+
+.bi-exclamation-lg::before {
+  content: "";
+}
+
+.bi-file-earmark-pdf-fill::before {
+  content: "";
+}
+
+.bi-file-earmark-pdf::before {
+  content: "";
+}
+
+.bi-file-pdf-fill::before {
+  content: "";
+}
+
+.bi-file-pdf::before {
+  content: "";
+}
+
+.bi-gender-ambiguous::before {
+  content: "";
+}
+
+.bi-gender-female::before {
+  content: "";
+}
+
+.bi-gender-male::before {
+  content: "";
+}
+
+.bi-gender-trans::before {
+  content: "";
+}
+
+.bi-headset-vr::before {
+  content: "";
+}
+
+.bi-info-lg::before {
+  content: "";
+}
+
+.bi-mastodon::before {
+  content: "";
+}
+
+.bi-messenger::before {
+  content: "";
+}
+
+.bi-piggy-bank-fill::before {
+  content: "";
+}
+
+.bi-piggy-bank::before {
+  content: "";
+}
+
+.bi-pin-map-fill::before {
+  content: "";
+}
+
+.bi-pin-map::before {
+  content: "";
+}
+
+.bi-plus-lg::before {
+  content: "";
+}
+
+.bi-question-lg::before {
+  content: "";
+}
+
+.bi-recycle::before {
+  content: "";
+}
+
+.bi-reddit::before {
+  content: "";
+}
+
+.bi-safe-fill::before {
+  content: "";
+}
+
+.bi-safe2-fill::before {
+  content: "";
+}
+
+.bi-safe2::before {
+  content: "";
+}
+
+.bi-sd-card-fill::before {
+  content: "";
+}
+
+.bi-sd-card::before {
+  content: "";
+}
+
+.bi-skype::before {
+  content: "";
+}
+
+.bi-slash-lg::before {
+  content: "";
+}
+
+.bi-translate::before {
+  content: "";
+}
+
+.bi-x-lg::before {
+  content: "";
+}
+
+.bi-safe::before {
+  content: "";
 }
 
 /*!

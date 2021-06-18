@@ -93,8 +93,11 @@
                 display: block;
                 width: 100%;
                 content: " ";
+                @include svg-bg-icon(arrow-start, $text-muted);
+                /*rtl:begin:remove*/
                 @include svg-bg-icon(arrow-end, $text-muted);
-            }            
+                /*rtl:end:remove*/
+            }
         }
     }
 

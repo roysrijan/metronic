@@ -166,6 +166,7 @@ import Step2 from "@/views/pages/wizards/steps/Step2.vue";
 import Step3 from "@/views/pages/wizards/steps/Step3.vue";
 import Step4 from "@/views/pages/wizards/steps/Step4.vue";
 import Step5 from "@/views/pages/wizards/steps/Step5.vue";
+import { setCurrentPageBreadcrumbs } from "@/core/helpers/breadcrumb";
 
 interface Step1 {
   accountType: string;
@@ -232,6 +233,8 @@ export default defineComponent({
       _stepperObj.value = StepperComponent.createInsance(
         horizontalWizardRef.value as HTMLElement
       );
+
+      setCurrentPageBreadcrumbs("Horizontal", ["Pages", "Wizards"]);
     });
 
     const createAccountSchema = [

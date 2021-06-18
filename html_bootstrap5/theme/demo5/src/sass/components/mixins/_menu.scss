@@ -4,11 +4,13 @@
 
 // Set arrow direction
 @mixin menu-link-arrow-rotate($angle, $angleRtl) {
-	transform: rotateZ($angle)#{'/*rtl:ignore*/'};
+	/*rtl:ignore*/
+	transform: rotateZ($angle);
 	transition: get($menu, accordion, arrow-transition);
 	
 	[direction="rtl"] & {
-		transform: rotateZ($angleRtl)#{'/*rtl:ignore*/'};
+		/*rtl:ignore*/
+		transform: rotateZ($angleRtl);
 	}
 }
 
@@ -155,7 +157,10 @@
 	@if ( $arrow-color != null ) {
 		// Arrow
 		.menu-arrow:after {
+			@include svg-bg-icon(arrow-start, $arrow-color);
+			/*rtl:begin:remove*/
 			@include svg-bg-icon(arrow-end, $arrow-color);
+			/*rtl:end:remove*/
 		}
 	}
 }

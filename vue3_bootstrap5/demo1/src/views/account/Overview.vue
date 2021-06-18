@@ -195,9 +195,9 @@
 
     <!--begin::Col-->
     <div class="col-xl-6">
-      <KTTableWidget3
+      <KTTableWidget5
         widget-classes="card-xxl-stretch mb-5 mb-xl-10"
-      ></KTTableWidget3>
+      ></KTTableWidget5>
     </div>
     <!--end::Col-->
   </div>
@@ -207,9 +207,9 @@
 <script lang="ts">
 import { defineComponent, onMounted } from "vue";
 import KTChartWidget1 from "@/components/widgets/charts/Widget1.vue";
-import KTListWidget5 from "@/components/widgets/list/Widget5.vue";
-import KTTableWidget3 from "@/components/widgets/table/Widget3.vue";
-import KTListWidget1 from "@/components/widgets/list/Widget1.vue";
+import KTListWidget5 from "@/components/widgets/lists/Widget5.vue";
+import KTTableWidget5 from "@/components/widgets/tables/Widget5.vue";
+import KTListWidget1 from "@/components/widgets/lists/Widget1.vue";
 import { setCurrentPageBreadcrumbs } from "@/core/helpers/breadcrumb";
 
 export default defineComponent({
@@ -217,7 +217,7 @@ export default defineComponent({
   components: {
     KTChartWidget1,
     KTListWidget5,
-    KTTableWidget3,
+    KTTableWidget5,
     KTListWidget1
   },
   setup() {

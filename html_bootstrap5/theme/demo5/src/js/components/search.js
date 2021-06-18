@@ -54,6 +54,9 @@ var KTSearch = function(element, options) {
         the.resultsElement = _getElement('results');
         the.suggestionElement = _getElement('suggestion'); 
         the.emptyElement = _getElement('empty'); 
+
+        // Set initialized
+        the.element.setAttribute('data-kt-search', 'true');
         
         // Layout
         the.layout = _getOption('layout');

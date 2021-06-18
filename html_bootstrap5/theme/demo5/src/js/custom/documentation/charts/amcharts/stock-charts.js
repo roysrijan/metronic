@@ -107,12 +107,6 @@ var KTGeneralAmChartsMaps = function () {
             scrollbarX.scrollbarChart.xAxes.getIndex(0).minHeight = undefined;
             chart.scrollbarX = scrollbarX;
 
-
-            // Add range selector
-            var selector = new am4plugins_rangeSelector.DateAxisRangeSelector();
-            selector.container = document.getElementById("controls");
-            selector.axis = dateAxis;
-
         }); // end am4core.ready()
     }
 
@@ -274,11 +268,6 @@ var KTGeneralAmChartsMaps = function () {
             var sbSeries = scrollbarX.scrollbarChart.series.getIndex(0);
             sbSeries.dataFields.valueYShow = undefined;
             chart.scrollbarX = scrollbarX;
-
-            // Add range selector
-            var selector = new am4plugins_rangeSelector.DateAxisRangeSelector();
-            selector.container = document.getElementById("controls");
-            selector.axis = dateAxis;
 
         }); // end am4core.ready()
     }

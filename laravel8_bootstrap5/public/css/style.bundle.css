@@ -47083,7 +47083,7 @@ canvas {
   }
   .print-content-only .wrapper,
 .print-content-only .page,
-.print-content-only .content,
+.print-content-only .page-title .content,
 .print-content-only .container,
 .print-content-only .container-fluid,
 .print-content-only .container-sm,
@@ -47097,16 +47097,19 @@ canvas {
   }
   .print-content-only .aside,
 .print-content-only .sidebar,
-.print-content-only .sticky-toolbar,
 .print-content-only .scrolltop,
 .print-content-only .header,
 .print-content-only .footer,
 .print-content-only .toolbar,
-.print-content-only .offcanvas,
+.print-content-only .drawer,
 .print-content-only .btn {
     display: none !important;
   }
 }
+.content-bg-for-font-color {
+  color: #F5F8FA;
+}
+
 @media (min-width: 992px) {
   .container,
 .container-fluid,

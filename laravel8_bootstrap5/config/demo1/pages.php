@@ -96,4 +96,23 @@ return array(
         ),
     ),
 
+    'account' => array(
+        'overview' => array(
+            'title' => 'Account Overview',
+            'view'  => 'account/overview/overview',
+        ),
+
+        'settings' => array(
+            'title'  => 'Account Settings',
+            'view'   => 'account/settings/settings',
+            'assets' => array(
+                'custom' => array(
+                    'js' => array(
+                        'js/custom/account/settings/profile-details.js',
+                    ),
+                ),
+            ),
+        ),
+    ),
+
 );

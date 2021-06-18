@@ -37,6 +37,9 @@ var KTScroll = function(element, options) {
         the.element = element;        
         the.id = the.element.getAttribute('id');
 
+        // Set initialized
+        the.element.setAttribute('data-kt-scroll', 'true');
+
         // Update
         _update();
 

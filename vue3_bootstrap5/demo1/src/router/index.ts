@@ -93,6 +93,36 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/chat/DrawerChat.vue")
       },
       {
+        path: "/crafted/widgets/lists",
+        name: "widgets-list",
+        component: () => import("@/views/widgets/Lists.vue")
+      },
+      {
+        path: "/crafted/widgets/statistics",
+        name: "widgets-statistics",
+        component: () => import("@/views/widgets/Statistics.vue")
+      },
+      {
+        path: "/crafted/widgets/charts",
+        name: "widgets-charts",
+        component: () => import("@/views/widgets/Charts.vue")
+      },
+      {
+        path: "/crafted/widgets/mixed",
+        name: "widgets-mixed",
+        component: () => import("@/views/widgets/Mixed.vue")
+      },
+      {
+        path: "/crafted/widgets/tables",
+        name: "widgets-tables",
+        component: () => import("@/views/widgets/Tables.vue")
+      },
+      {
+        path: "/crafted/widgets/feeds",
+        name: "widgets-feeds",
+        component: () => import("@/views/widgets/Feeds.vue")
+      },
+      {
         path: "/documentation",
         name: "documentation",
         component: () => import("@/views/resources/Documentation.vue"),

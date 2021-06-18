@@ -1,5 +1,24 @@
 <?php
 return array(
+    'v8.0.15' => array(
+        'date'      => '17 June, 2021',
+        'changelog' => array(
+            'new' => array(
+                'Added <code>Account Settings</code> demo page with ajax form.',
+                'Added <code>avatar</code> image upload and view.',
+            ),
+
+            'update' => array(
+                'Separated <code>name</code> into two fields; <code>first_name</code> and <code>last_name</code>.',
+            ),
+
+            'fix' => array(
+                'Fixed <code>reference</code> page to list all plugins from <code>composer.json</code>.',
+                'Fixed <code>datatable</code> listing demo column width.',
+            ),
+        ),
+    ),
+
     'v8.0.14' => array(
         'date'      => '8 June, 2021',
         'changelog' => array(
@@ -7,11 +26,9 @@ return array(
                 'Added <code>System Error Log</code> demo page.',
             ),
 
-            'update' => array(
-            ),
+            'update' => array(),
 
-            'fix' => array(
-            ),
+            'fix' => array(),
         ),
     ),
 
@@ -37,7 +54,7 @@ return array(
         'date'      => '31 May, 2021',
         'changelog' => array(
             'new' => array(
-                '<code class="ms-0">Demo 1 Laravel 8</code> version - <a href="http://preview.keenthemes.com/metronic8/laravel/" class="fw-bold" target="_blank">Preview</a>.',
+                '<code class="ms-0">Demo 1 Laravel 8</code> version - <a href="https://preview.keenthemes.com/metronic8/laravel/" class="fw-bold" target="_blank">Preview</a>.',
             ),
 
             'update' => array(),

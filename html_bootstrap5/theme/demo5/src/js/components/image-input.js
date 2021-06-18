@@ -42,6 +42,9 @@ var KTImageInput = function(element, options) {
         the.hiddenElement = KTUtil.find(element, 'input[type="hidden"]');
         the.src = KTUtil.css(the.wrapperElement, 'backgroundImage');
 
+        // Set initialized
+        the.element.setAttribute('data-kt-image-input', 'true');
+
         // Event Handlers
         _handlers();
 

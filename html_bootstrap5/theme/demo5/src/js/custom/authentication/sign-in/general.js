@@ -64,6 +64,7 @@ var KTSigninGeneral = function() {
 
                     // Disable button to avoid multiple click 
                     submitButton.disabled = true;
+                    
 
                     // Simulate ajax request
                     setTimeout(function() {
@@ -86,7 +87,7 @@ var KTSigninGeneral = function() {
                             if (result.isConfirmed) { 
                                 form.querySelector('[name="email"]').value= "";
                                 form.querySelector('[name="password"]').value= "";                                
-                                //form.submit();
+                                //form.submit(); // submit form
                             }
                         });
                     }, 2000);   						
