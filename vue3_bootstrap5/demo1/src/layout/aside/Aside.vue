@@ -88,11 +88,11 @@
 <script lang="ts">
 import { defineComponent, onMounted, onUpdated } from "vue";
 import { useI18n } from "vue-i18n";
-import { DrawerComponent } from "@/assets/ts/components/_DrawerOptions.ts";
-import { ToggleComponent } from "@/assets/ts/components/_ToggleComponent.ts";
+import { DrawerComponent } from "@/assets/ts/components/_DrawerOptions";
+import { ToggleComponent } from "@/assets/ts/components/_ToggleComponent";
 import KTMenu from "@/layout/aside/Menu.vue";
 import { isDocPage } from "@/core/helpers/documentation";
-import { asideTheme } from "@/core/helpers/config.ts";
+import { asideTheme } from "@/core/helpers/config";
 
 export default defineComponent({
   name: "KTAside",

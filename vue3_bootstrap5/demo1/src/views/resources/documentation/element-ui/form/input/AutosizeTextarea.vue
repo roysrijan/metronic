@@ -40,10 +40,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref } from "vue";
-import CodeHighlighter from "@/components/highlighters/CodeHighlighter";
-import { code7 } from "./data.ts";
+import CodeHighlighter from "@/components/highlighters/CodeHighlighter.vue";
+import { code7 } from "./data";
 
 export default defineComponent({
   name: "autosize-textarea",

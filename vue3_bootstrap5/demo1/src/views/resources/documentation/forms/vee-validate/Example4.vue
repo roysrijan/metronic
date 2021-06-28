@@ -69,7 +69,7 @@ import {
   example4Js1,
   example4Html,
   example4Js2
-} from "@/views/resources/documentation/forms/vee-validate/codes.ts";
+} from "@/views/resources/documentation/forms/vee-validate/codes";
 
 export default defineComponent({
   name: "example-4",

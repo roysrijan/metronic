@@ -39,8 +39,8 @@
     .dz-error-mark {
         $size: 40px;
 
-        margin-left: -($size/2) !important;
-        margin-top: -($size/2) !important;
+        margin-left: -(divide($size, 2)) !important;
+        margin-top: -(divide($size, 2)) !important;
         
         svg {
             height: $size !important;
@@ -65,8 +65,8 @@
         background-color: $white !important;
         box-shadow: $box-shadow-sm;        
 		border-radius: 100%;
-        top: -($size/2);
-        right: -($size/2);
+        top: -(divide($size,2));
+        right: -(divide($size,2));
 
         @include svg-bg-icon(close, $gray-500);
 

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Account;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Account\SettingsRequest;
+use App\Http\Requests\Account\SettingsEmailRequest;
+use App\Http\Requests\Account\SettingsInfoRequest;
+use App\Http\Requests\Account\SettingsPasswordRequest;
 use App\Models\UserInfo;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
 class SettingsController extends Controller
@@ -18,14 +21,9 @@ class SettingsController extends Controller
     {
         $info = auth()->user()->info;
 
-        if ($info && $info->communication) {
-            $info->communication = unserialize($info->communication);
-        }
-
-        // Get the default inner page
+        // get the default inner page
         return view('pages.account.settings.settings', compact('info'));
     }
-
 
     /**
      * Update the specified resource in storage.
@@ -35,7 +33,7 @@ class SettingsController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(SettingsRequest $request)
+    public function update(SettingsInfoRequest $request)
     {
         // save user name
         $validated = $request->validate([
@@ -78,6 +76,15 @@ class SettingsController extends Controller
         return redirect()->intended('account/settings');
     }
 
+    /**
+     * Function for upload avatar image
+     *
+     * @param  string  $folder
+     * @param  string  $key
+     * @param  string  $validation
+     *
+     * @return false|string|null
+     */
     public function upload($folder = 'images', $key = 'avatar', $validation = 'image|mimes:jpeg,png,jpg,gif,svg|max:2048|sometimes')
     {
         request()->validate([$key => $validation]);
@@ -90,4 +97,35 @@ class SettingsController extends Controller
         return $file;
     }
 
+    /**
+     * Function to accept request for change email
+     *
+     * @param  SettingsEmailRequest  $request
+     */
+    public function changeEmail(SettingsEmailRequest $request)
+    {
+        auth()->user()->update(['email' => $request->input('email')]);
+
+        if ($request->expectsJson()) {
+            return response()->json($request->all());
+        }
+
+        return redirect()->intended('account/settings');
+    }
+
+    /**
+     * Function to accept request for change password
+     *
+     * @param  SettingsPasswordRequest  $request
+     */
+    public function changePassword(SettingsPasswordRequest $request)
+    {
+        auth()->user()->update(['password' => Hash::make($request->input('email'))]);
+
+        if ($request->expectsJson()) {
+            return response()->json($request->all());
+        }
+
+        return redirect()->intended('account/settings');
+    }
 }

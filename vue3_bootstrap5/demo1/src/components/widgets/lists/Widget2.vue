@@ -60,7 +60,7 @@
   <!--end::List Widget 2-->
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref } from "vue";
 import Dropdown2 from "@/components/dropdown/Dropdown2.vue";
 

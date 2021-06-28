@@ -56,16 +56,17 @@ import { useRoute, useRouter } from "vue-router";
 import KTAside from "@/layout/aside/Aside.vue";
 import KTHeader from "@/layout/header/Header.vue";
 import KTFooter from "@/layout/footer/Footer.vue";
-import HtmlClass from "@/core/services/LayoutService.ts";
+import HtmlClass from "@/core/services/LayoutService";
 import KTToolbar from "@/layout/toolbar/Toolbar.vue";
 import KTScrollTop from "@/layout/extras/ScrollTop.vue";
 import KTUserMenu from "@/layout/header/partials/ActivityDrawer.vue";
 import KTLoader from "@/components/Loader.vue";
-import KTCreateApp from "@/components/modals/CreateAppModal.vue";
+import KTCreateApp from "@/components/modals/wizards/CreateAppModal.vue";
 import KTExplore from "@/layout/extras/Explore.vue";
 import KTDrawerMessenger from "@/layout/extras/DrawerMessenger.vue";
 import { Actions } from "@/store/enums/StoreEnums";
-import { MenuComponent } from "@/assets/ts/components/index.ts";
+import { MenuComponent } from "@/assets/ts/components/index";
+import { removeModalBackdrop } from "@/core/helpers/dom";
 import {
   toolbarDisplay,
   loaderEnabled,
@@ -75,8 +76,8 @@ import {
   subheaderDisplay,
   themeLightLogo,
   themeDarkLogo
-} from "@/core/helpers/config.ts";
-import { isDocPage } from "@/core/helpers/documentation.ts";
+} from "@/core/helpers/config";
+import { isDocPage } from "@/core/helpers/documentation";
 
 export default defineComponent({
   name: "Layout",
@@ -133,6 +134,8 @@ export default defineComponent({
         if (store.getters.isAuthenticated) {
           router.push({ name: "sign-in" });
         }
+
+        removeModalBackdrop();
       }
     );
 

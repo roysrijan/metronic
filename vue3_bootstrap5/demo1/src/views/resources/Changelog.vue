@@ -14,6 +14,131 @@
           <div
             class="accordion-header py-3 d-flex"
             data-bs-toggle="collapse"
+            data-bs-target="#kt_accordion_2_item_7"
+          >
+            <span class="accordion-icon">
+              <span class="svg-icon svg-icon-3">
+                <inline-svg src="media/icons/duotone/Navigation/Right-2.svg" />
+              </span>
+            </span>
+            <h3 class="fs-4 text-gray-800 fw-bold mb-0 ms-4">
+              {{ themeName }} v8.0.16 - 28 June, 2021
+            </h3>
+          </div>
+          <!--end::Header-->
+
+          <!--begin::Body-->
+          <div
+            id="kt_accordion_2_item_7"
+            class="fs-6 collapse show ps-10"
+            data-bs-parent="#kt_accordion_2"
+          >
+            <h3 class="fs-6 fw-bolder mb-1">New:</h3>
+            <ul class="py-2">
+              <li class="py-2">
+                Added general modal pages
+                <ul class="py-2">
+                  <li class="py-2">
+                    Invite Friends
+                    <a
+                      href="https://preview.keenthemes.com/metronic8/vue/demo1/#/crafted/modals/general/invite-friends"
+                      >Preview</a
+                    >
+                  </li>
+                  <li class="py-2">
+                    View Users
+                    <a
+                      href="https://preview.keenthemes.com/metronic8/vue/demo1/#/crafted/modals/general/view-user"
+                      >Preview</a
+                    >
+                  </li>
+                  <li class="py-2">
+                    Upgrade Plan
+                    <a
+                      href="https://preview.keenthemes.com/metronic8/vue/demo1/#/crafted/modals/general/upgrade-plan"
+                      >Preview</a
+                    >
+                  </li>
+                  <li class="py-2">
+                    Share & Earn
+                    <a
+                      href="https://preview.keenthemes.com/metronic8/vue/demo1/#/crafted/modals/general/share-and-earn"
+                      >Preview</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="py-2">
+                Added form modal pages
+                <ul class="py-2">
+                  <li class="py-2">
+                    New Targer
+                    <a
+                      href="https://preview.keenthemes.com/metronic8/vue/demo1/#/crafted/modals/forms/new-target"
+                      >Preview</a
+                    >
+                  </li>
+                  <li class="py-2">
+                    New Card
+                    <a
+                      href="https://preview.keenthemes.com/metronic8/vue/demo1/#/crafted/modals/forms/new-card"
+                      >Preview</a
+                    >
+                  </li>
+                  <li class="py-2">
+                    New Address
+                    <a
+                      href="https://preview.keenthemes.com/metronic8/vue/demo1/#/crafted/modals/forms/new-address"
+                      >Preview</a
+                    >
+                  </li>
+                  <li class="py-2">
+                    Create API Key
+                    <a
+                      href="https://preview.keenthemes.com/metronic8/vue/demo1/#/crafted/modals/forms/create-api-key"
+                      >Preview</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="py-2">
+                Added wizard modal pages
+                <ul class="py-2">
+                  <li class="py-2">
+                    Two Factor Auth
+                    <a
+                      href="https://preview.keenthemes.com/metronic8/vue/demo1/#/crafted/modals/wizards/two-factor-auth"
+                      >Preview</a
+                    >
+                  </li>
+                  <li class="py-2">
+                    Create App
+                    <a
+                      href="https://preview.keenthemes.com/metronic8/vue/demo1/#/crafted/modals/wizards/create-app"
+                      >Preview</a
+                    >
+                  </li>
+                  <li class="py-2">
+                    Create Account
+                    <a
+                      href="https://preview.keenthemes.com/metronic8/vue/demo1/#/crafted/modals/wizards/create-account"
+                      >Preview</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!--end::Body-->
+        </div>
+        <!--end::Item-->
+
+        <!--begin::Item-->
+        <div class="mb-5">
+          <!--begin::Header-->
+          <div
+            class="accordion-header py-3 d-flex collapsed"
+            data-bs-toggle="collapse"
             data-bs-target="#kt_accordion_2_item_6"
           >
             <span class="accordion-icon">
@@ -30,7 +155,7 @@
           <!--begin::Body-->
           <div
             id="kt_accordion_2_item_6"
-            class="fs-6 collapse show ps-10"
+            class="fs-6 collapse ps-10"
             data-bs-parent="#kt_accordion_2"
           >
             <h3 class="fs-6 fw-bolder mb-1">New:</h3>

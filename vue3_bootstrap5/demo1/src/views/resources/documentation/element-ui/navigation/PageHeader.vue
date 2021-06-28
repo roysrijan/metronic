@@ -17,7 +17,7 @@
   <EUIBasic></EUIBasic>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import { setCurrentPageTitle } from "@/core/helpers/breadcrumb";
 import EUIBasic from "@/views/resources/documentation/element-ui/navigation/page-header/Basic.vue";

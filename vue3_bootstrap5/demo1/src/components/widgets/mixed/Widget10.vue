@@ -41,7 +41,7 @@
   <!--end::Mixed Widget 10-->
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref } from "vue";
 import { getCSSVariableValue } from "@/assets/ts/_utils";
 

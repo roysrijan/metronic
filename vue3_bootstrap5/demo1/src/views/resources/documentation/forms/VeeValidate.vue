@@ -14,14 +14,14 @@
   <!--end::Card-->
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, onMounted } from "vue";
 import { setCurrentPageTitle } from "@/core/helpers/breadcrumb";
-import Overview from "@/views/resources/documentation/forms/vee-validate/Overview";
-import Example1 from "@/views/resources/documentation/forms/vee-validate/Example1";
-import Example2 from "@/views/resources/documentation/forms/vee-validate/Example2";
-import Example3 from "@/views/resources/documentation/forms/vee-validate/Example3";
-import Example4 from "@/views/resources/documentation/forms/vee-validate/Example4";
+import Overview from "@/views/resources/documentation/forms/vee-validate/Overview.vue";
+import Example1 from "@/views/resources/documentation/forms/vee-validate/Example1.vue";
+import Example2 from "@/views/resources/documentation/forms/vee-validate/Example2.vue";
+import Example3 from "@/views/resources/documentation/forms/vee-validate/Example3.vue";
+import Example4 from "@/views/resources/documentation/forms/vee-validate/Example4.vue";
 
 export default defineComponent({
   name: "vee-validate",

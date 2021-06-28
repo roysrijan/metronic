@@ -29,7 +29,7 @@
 
 <script>
 import { defineComponent } from "vue";
-import CodeHighlighter from "@/components/highlighters/CodeHighlighter";
+import CodeHighlighter from "@/components/highlighters/CodeHighlighter.vue";
 
 export default defineComponent({
   name: "local-import",

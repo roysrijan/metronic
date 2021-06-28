@@ -92,11 +92,11 @@ var KTPasswordResetNewPassword = function () {
                                 }
                             }).then(function (result) {
                                 if (result.isConfirmed) {
+                                    window.location.href = '/login';
                                     form.querySelector('[name="email"]').value = "";
                                     form.querySelector('[name="password"]').value = "";
                                     form.querySelector('[name="confirm-password"]').value = "";
                                     passwordMeter.reset();  // reset password meter
-                                    window.location.href = 'login';
                                 }
                             });
                         })

@@ -1,6 +1,6 @@
 export type State = { classes: object };
 import { Module, VuexModule, Mutation, Action } from "vuex-module-decorators";
-import { Actions, Mutations } from "@/store/enums/StoreEnums.ts";
+import { Actions, Mutations } from "@/store/enums/StoreEnums";
 
 export interface StoreInfo {
   classes: object;

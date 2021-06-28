@@ -83,25 +83,18 @@
             <!--end::Separator-->
 
             <!--begin::Google link-->
-            <a href="#" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
+            <a href="{{ url('/auth/redirect/google') }}?redirect_uri={{ url()->previous() }}" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
                 <img alt="Logo" src="{{ theme()->getMediaUrlPath() . 'svg/brand-logos/google-icon.svg' }}" class="h-20px me-3"/>
                 {{ __('Continue with Google') }}
             </a>
             <!--end::Google link-->
 
-            <!--begin::Google link-->
-            <a href="#" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
+            <!--begin::Facebook link-->
+            <a href="{{ url('/auth/redirect/facebook') }}?redirect_uri={{ url()->previous() }}" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
                 <img alt="Logo" src="{{ theme()->getMediaUrlPath() . 'svg/brand-logos/facebook-4.svg' }}" class="h-20px me-3"/>
                 {{ __('Continue with Facebook') }}
             </a>
-            <!--end::Google link-->
-
-            <!--begin::Google link-->
-            <a href="#" class="btn btn-flex flex-center btn-light btn-lg w-100">
-                <img alt="Logo" src="{{ theme()->getMediaUrlPath() . 'svg/brand-logos/apple-black.svg' }}" class="h-20px me-3"/>
-                {{ __('Continue with Apple') }}
-            </a>
-            <!--end::Google link-->
+            <!--end::Facebook link-->
         </div>
         <!--end::Actions-->
     </form>

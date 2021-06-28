@@ -51,6 +51,10 @@ require('../../core/plugins/bootstrap-multiselectsplitter/bootstrap-multiselects
 // require('select2');
 // require('../../core/js/vendors/plugins/select2.init.js');
 
+// Flatpickr - is a lightweight and powerful datetime picker.
+require('flatpickr/dist/flatpickr.min.js');
+require('../../core/js/vendors/plugins/flatpickr.init.js');
+
 // Inputmask - is a javascript library which creates an input mask: https://github.com/RobinHerbots/Inputmask
 require('inputmask/dist/jquery.inputmask.min.js');
 
@@ -93,11 +97,14 @@ require('../../core/js/vendors/plugins/sweetalert2.init.js');
 // CountUp.js - is a dependency-free, lightweight JavaScript class that can be used to quickly create animations that display numerical data in a more interesting way.
 window.countUp = require('countup.js/dist/countUp.withPolyfill.min.js');
 
-// Flatpickr - is a lightweight and powerful datetime picker
-require('flatpickr/dist/flatpickr.min.js');
-
 // Chart.js - Simple yet flexible JavaScript charting for designers & developers
 window.Chart = require('chart.js/dist/chart.js');
+
+// Tiny slider - for all purposes, inspired by Owl Carousel.
+window.tns = require('tiny-slider/src/tiny-slider.js').tns;
+
+// A lightweight script to animate scrolling to anchor links
+window.SmoothScroll = require('smooth-scroll/dist/smooth-scroll.js');
 
 // Axios - Promise based HTTP client for the browser and node.js
 window.axios = require('axios').default;
@@ -105,6 +112,3 @@ window.axios.defaults.headers.common = {
     'X-Requested-With': 'XMLHttpRequest',
     'X-CSRF-TOKEN' : document.querySelector('meta[name="csrf-token"]').getAttribute('content')
 };
-
-// Smooth Scroll - Animate scrolling to anchor links
-window.SmoothScroll = require('smooth-scroll');

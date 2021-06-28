@@ -21,7 +21,7 @@
   <EUIHideCloseButton></EUIHideCloseButton>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, onMounted } from "vue";
 import { setCurrentPageTitle } from "@/core/helpers/breadcrumb";
 import EUIBasicUsage from "@/views/resources/documentation/element-ui/notice/notification/BasicUsage.vue";

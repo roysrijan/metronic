@@ -165,7 +165,7 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
-import { ScrollComponent } from "@/assets/ts/components/_ScrollComponent.ts";
+import { ScrollComponent } from "@/assets/ts/components/_ScrollComponent";
 import MessageIn from "@/components/messenger-parts/MessageIn.vue";
 import MessageOut from "@/components/messenger-parts/MessageOut.vue";
 import Dropdown4 from "@/components/dropdown/Dropdown4.vue";

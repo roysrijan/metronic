@@ -56,8 +56,8 @@
 
 <script>
 import { defineComponent } from "vue";
-import CodeHighlighter from "@/components/highlighters/CodeHighlighter";
-import { code15 } from "./data.ts";
+import CodeHighlighter from "@/components/highlighters/CodeHighlighter.vue";
+import { code15 } from "./data";
 
 export default defineComponent({
   name: "table-with-custom-header",

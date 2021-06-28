@@ -129,7 +129,7 @@
   <!--end::Tables Widget 8-->
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 
 export default defineComponent({

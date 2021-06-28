@@ -26,8 +26,8 @@
 
 <script>
 import { defineComponent } from "vue";
-import CodeHighlighter from "@/components/highlighters/CodeHighlighter";
-import { code1 } from "./data.ts";
+import CodeHighlighter from "@/components/highlighters/CodeHighlighter.vue";
+import { code1 } from "./data";
 
 export default defineComponent({
   name: "alert",

@@ -1,5 +1,30 @@
 <?php
+
 return array(
+    'v8.0.16' => array(
+        'date'      => '29 June, 2021',
+        'changelog' => array(
+            'new' => array(
+                'Added <code>Account Overview</code> demo page.',
+                'Added <code>Change Password</code> feature on profile page.',
+                'Added <code>Change Email</code> feature on profile page.',
+                'Added <code>Audit Log</code> listing page. The logs are automatically created by the user\'s activity in the user Model. Eg. Registering, reset password, update email, update user information, etc.',
+                'Added <code>Laravel Socialite</code> plugin package and demo Google login integration.',
+            ),
+
+            'update' => array(
+                'Update Laravel <code>Breeze</code> package version.',
+            ),
+
+            'fix' => array(
+                'Fixed page redirect to login page after successfully reset password.',
+                'Fixed <code>Datatables</code> loading spinner.',
+                'Fixed avatar image for internal image path and external image path registered by Google login.',
+                'Fixed sample code formatting in the documentation pages.',
+            ),
+        ),
+    ),
+
     'v8.0.15' => array(
         'date'      => '17 June, 2021',
         'changelog' => array(

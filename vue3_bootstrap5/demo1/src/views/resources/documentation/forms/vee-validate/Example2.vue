@@ -46,7 +46,7 @@ import CodeHighlighter2 from "@/components/highlighters/CodeHighlighter2.vue";
 import {
   example2Html,
   example2Js
-} from "@/views/resources/documentation/forms/vee-validate/codes.ts";
+} from "@/views/resources/documentation/forms/vee-validate/codes";
 
 export default defineComponent({
   name: "example-2",

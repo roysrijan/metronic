@@ -2,7 +2,7 @@
 production: ensure-composer ensure-permissions enable-cache build-assets
 
 ensure-composer:
-	composer install --ignore-platform-req=php --optimize-autoloader
+	composer update --ignore-platform-req=php --optimize-autoloader
 
 ensure-permissions:
 	#chmod -R o+w storage

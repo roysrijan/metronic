@@ -52,14 +52,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, h } from "vue";
 import { ElDivider } from "element-plus";
-import CodeHighlighter from "@/components/highlighters/CodeHighlighter";
+import CodeHighlighter from "@/components/highlighters/CodeHighlighter.vue";
 import {
   literalCode6,
   spacerCode6
-} from "@/views/resources/documentation/element-ui/basic/space/code.ts";
+} from "@/views/resources/documentation/element-ui/basic/space/code";
 
 export default defineComponent({
   name: "spacer",

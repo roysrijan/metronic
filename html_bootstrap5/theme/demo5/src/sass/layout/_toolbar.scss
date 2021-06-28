@@ -75,7 +75,7 @@
         }
 
         // Page title
-		.page-title {
+		.page-title[data-kt-swapper="true"] {
 			display: none !important;
 		}
     }

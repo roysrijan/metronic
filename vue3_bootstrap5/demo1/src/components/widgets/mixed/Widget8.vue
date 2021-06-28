@@ -121,7 +121,7 @@
   <!--end::Mixed Widget 8-->
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import Dropdown2 from "@/components/dropdown/Dropdown2.vue";
 

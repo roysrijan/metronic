@@ -100,6 +100,11 @@ if (!function_exists('get_svg_icon')) {
 }
 
 if (!function_exists('theme')) {
+    /**
+     * Get the instance of Theme class core
+     *
+     * @return \App\Core\Adapters\Theme|\Illuminate\Contracts\Foundation\Application|mixed
+     */
     function theme()
     {
         return app(\App\Core\Adapters\Theme::class);
@@ -107,6 +112,11 @@ if (!function_exists('theme')) {
 }
 
 if (!function_exists('util')) {
+    /**
+     * Get the instance of Util class core
+     *
+     * @return \App\Core\Adapters\Util|\Illuminate\Contracts\Foundation\Application|mixed
+     */
     function util()
     {
         return app(\App\Core\Adapters\Util::class);
@@ -114,6 +124,14 @@ if (!function_exists('util')) {
 }
 
 if (!function_exists('assetIfHasRTL')) {
+    /**
+     * Get the asset path of RTL if this is an RTL request
+     *
+     * @param $path
+     * @param  null  $secure
+     *
+     * @return string
+     */
     function assetIfHasRTL($path, $secure = null)
     {
         if (isRTL()) {
@@ -125,6 +143,11 @@ if (!function_exists('assetIfHasRTL')) {
 }
 
 if (!function_exists('isRTL')) {
+    /**
+     * Check if the request has RTL param
+     *
+     * @return bool
+     */
     function isRTL()
     {
         return (bool) request()->input('rtl');

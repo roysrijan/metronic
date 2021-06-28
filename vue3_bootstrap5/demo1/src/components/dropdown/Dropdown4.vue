@@ -119,15 +119,10 @@
 
 <script lang="ts">
 import { defineComponent, onMounted } from "vue";
-import { MenuComponent } from "@/assets/ts/components/MenuComponent.ts";
+import { MenuComponent } from "@/assets/ts/components/MenuComponent";
 
 export default defineComponent({
   name: "dropdown-5",
-  components: {},
-  setup() {
-    onMounted(() => {
-      MenuComponent.reinitialization();
-    });
-  }
+  components: {}
 });
 </script>

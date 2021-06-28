@@ -408,7 +408,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { themeName } from "@/core/helpers/documentation.ts";
+import { themeName } from "@/core/helpers/documentation";
 
 export default defineComponent({
   name: "kt-explore",

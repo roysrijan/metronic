@@ -55,6 +55,7 @@ import ChartsWidget6 from "@/components/widgets/charts/Widget6.vue";
 import ChartsWidget7 from "@/components/widgets/charts/Widget7.vue";
 import ChartsWidget8 from "@/components/widgets/charts/Widget8.vue";
 import { setCurrentPageBreadcrumbs } from "@/core/helpers/breadcrumb";
+import { MenuComponent } from "@/assets/ts/components";
 
 export default defineComponent({
   name: "widgets-chart",
@@ -71,6 +72,8 @@ export default defineComponent({
   setup() {
     onMounted(() => {
       setCurrentPageBreadcrumbs("Charts", ["Widgets"]);
+
+      MenuComponent.reinitialization();
     });
   }
 });

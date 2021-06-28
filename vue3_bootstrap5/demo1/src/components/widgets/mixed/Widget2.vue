@@ -93,10 +93,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
 import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
-import { MenuComponent } from "@/assets/ts/components/MenuComponent.ts";
+import { MenuComponent } from "@/assets/ts/components/MenuComponent";
 import { getCSSVariableValue } from "@/assets/ts/_utils";
 
 export default defineComponent({

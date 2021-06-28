@@ -1074,7 +1074,7 @@
             <div class="col-lg-8 fv-row">
               <Field
                 as="select"
-                name="currnecy"
+                name="currency"
                 class="form-select form-select-solid form-select-lg"
                 v-model="profileDetails.currency"
               >

@@ -63,10 +63,10 @@
 }
 </style>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
-import CodeHighlighter from "@/components/highlighters/CodeHighlighter";
-import { code3 } from "@/views/resources/documentation/element-ui/basic/space/code.ts";
+import CodeHighlighter from "@/components/highlighters/CodeHighlighter.vue";
+import { code3 } from "@/views/resources/documentation/element-ui/basic/space/code";
 
 export default defineComponent({
   name: "control-the-size-of-space",

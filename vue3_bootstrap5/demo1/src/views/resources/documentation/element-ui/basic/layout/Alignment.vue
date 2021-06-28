@@ -86,10 +86,10 @@
 }
 </style>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import CodeHighlighter from "@/components/highlighters/CodeHighlighter.vue";
-import { code5 } from "@/views/resources/documentation/element-ui/basic/layout/code.ts";
+import { code5 } from "@/views/resources/documentation/element-ui/basic/layout/code";
 
 export default defineComponent({
   name: "alignment",

@@ -101,12 +101,19 @@ class Bootstrap {
 			return;
 		}
 
-		if (Theme::getOption('layout', 'page-title/responsive') === true) {
-			$attr = array();
-			$attr['data-kt-place'] = 'true';
-			$attr['data-kt-place-mode'] = 'prepend';
-			$attr['data-kt-place-parent'] = "{default: '#kt_content_container', '" . Theme::getOption('layout', 'page-title/responsive-breakpoint') . "': '" . Theme::getOption('layout', 'page-title/responsive-target') . "'}";
+		if (Theme::getOption('layout', 'page-title/direction') == 'column') {
+			Theme::addHtmlClass('page-title', 'flex-column align-items-start me-3');
+		} else {
+			Theme::addHtmlClass('page-title', 'align-items-center flex-wrap me-3');
+		}
 
+		if (Theme::getOption('layout', 'page-title/responsive') === true) {
+			Theme::addHtmlClass('page-title', 'mb-5 mb-lg-0');
+
+			$attr = array();
+			$attr['data-kt-swapper'] = 'true';
+			$attr['data-kt-swapper-mode'] = 'prepend';
+			$attr['data-kt-swapper-parent'] = "{default: '#kt_content_container', '" . Theme::getOption('layout', 'page-title/responsive-breakpoint') . "': '" . Theme::getOption('layout', 'page-title/responsive-target') . "'}";
 
 			Theme::addHtmlAttributes('page-title', $attr);
 		}

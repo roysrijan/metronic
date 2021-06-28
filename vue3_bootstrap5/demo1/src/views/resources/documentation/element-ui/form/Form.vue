@@ -25,7 +25,7 @@
   <EUISizeControl></EUISizeControl>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import { setCurrentPageTitle } from "@/core/helpers/breadcrumb";
 import EUIBasicForm from "@/views/resources/documentation/element-ui/form/form/BasicForm.vue";

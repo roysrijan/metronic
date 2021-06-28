@@ -377,6 +377,7 @@ import MixedWidget8 from "@/components/widgets/mixed/Widget8.vue";
 import MixedWidget9 from "@/components/widgets/mixed/Widget9.vue";
 import MixedWidget10 from "@/components/widgets/mixed/Widget10.vue";
 import { setCurrentPageBreadcrumbs } from "@/core/helpers/breadcrumb";
+import { MenuComponent } from "@/assets/ts/components";
 
 export default defineComponent({
   name: "widgets-mixed",
@@ -395,6 +396,8 @@ export default defineComponent({
   setup() {
     onMounted(() => {
       setCurrentPageBreadcrumbs("Mixed", ["Widgets"]);
+
+      MenuComponent.reinitialization();
     });
   }
 });

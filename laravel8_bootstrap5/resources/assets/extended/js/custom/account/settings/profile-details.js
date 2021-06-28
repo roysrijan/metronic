@@ -59,8 +59,6 @@ var KTAccountSettingsProfileDetails = function () {
                 },
                 plugins: {
                     trigger: new FormValidation.plugins.Trigger(),
-                    // submitButton: new FormValidation.plugins.SubmitButton(),
-                    // defaultSubmit: new FormValidation.plugins.DefaultSubmit(), // Uncomment this line to enable normal button submit after form validation
                     bootstrap: new FormValidation.plugins.Bootstrap5({
                         rowSelector: '.fv-row',
                         eleInvalidClass: '',
@@ -100,7 +98,7 @@ var KTAccountSettingsProfileDetails = function () {
                     // Disable button to avoid multiple click
                     submitButton.disabled = true;
 
-                    // Simulate ajax request
+                    // Send ajax request
                     axios.post(submitButton.closest('form').getAttribute('action'), new FormData(form))
                         .then(function (response) {
                             // Show message popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/

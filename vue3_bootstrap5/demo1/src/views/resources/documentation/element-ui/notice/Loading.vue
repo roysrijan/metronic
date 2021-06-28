@@ -19,7 +19,7 @@
   <EUIService></EUIService>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, onMounted } from "vue";
 import { setCurrentPageTitle } from "@/core/helpers/breadcrumb";
 import EUILoadingInsideAContainer from "@/views/resources/documentation/element-ui/notice/loading/LoadingInsideAContainer.vue";

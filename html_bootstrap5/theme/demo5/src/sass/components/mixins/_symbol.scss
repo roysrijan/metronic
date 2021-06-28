@@ -4,8 +4,6 @@
 
 @mixin symbol-size($size) {
     > img {
-        //width: 100%;
-        //max-width: $size;
         width: $size;
         height: $size;
     }
@@ -32,12 +30,12 @@
     &.symbol-2by3 {
         .symbol-label {
             height: $size;
-            width:  $size * 3/2;
+            width:  $size * divide(3, 2);
         }
 
         > img {
             height: $size;
-            width:  $size * 3/2;
+            width:  $size * divide(3, 2);
             max-width: auto;
         }
     }

@@ -1,7 +1,7 @@
 import { computed } from "vue";
 import store from "@/store/index";
 import ClipboardJS from "clipboard";
-import router from "@/router/index.ts";
+import router from "@/router/index";
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 
 /**

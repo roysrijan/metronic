@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Account\SettingsController;
+use App\Http\Controllers\Auth\SocialiteLoginController;
 use App\Http\Controllers\Documentation\ReferencesController;
+use App\Http\Controllers\Logs\AuditLogsController;
 use App\Http\Controllers\Logs\SystemLogsController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
@@ -39,15 +41,27 @@ Route::prefix('documentation')->group(function () {
     Route::get('getting-started/changelog', [PagesController::class, 'index']);
 });
 
-// Account pages
-Route::prefix('account')->middleware('auth')->group(function () {
-    Route::get('settings', [SettingsController::class, 'index'])->name('settings.index');
-    Route::put('settings', [SettingsController::class, 'update'])->name('settings.update');
+Route::middleware('auth')->group(function () {
+    // Account pages
+    Route::prefix('account')->group(function () {
+        Route::get('settings', [SettingsController::class, 'index'])->name('settings.index');
+        Route::put('settings', [SettingsController::class, 'update'])->name('settings.update');
+        Route::put('settings/email', [SettingsController::class, 'changeEmail'])->name('settings.changeEmail');
+        Route::put('settings/password', [SettingsController::class, 'changePassword'])->name('settings.changePassword');
+    });
+
+    // Logs pages
+    Route::prefix('log')->name('log.')->group(function () {
+        Route::resource('system', SystemLogsController::class)->only(['index', 'destroy']);
+        Route::resource('audit', AuditLogsController::class)->only(['index', 'destroy']);
+    });
 });
 
-// Logs pages
-Route::prefix('log')->name('log.')->group(function () {
-    Route::resource('system', SystemLogsController::class);
-});
+
+/**
+ * Socialite login using Google service
+ * https://laravel.com/docs/8.x/socialite
+ */
+Route::get('/auth/redirect/{provider}', [SocialiteLoginController::class, 'redirect']);
 
 require __DIR__.'/auth.php';

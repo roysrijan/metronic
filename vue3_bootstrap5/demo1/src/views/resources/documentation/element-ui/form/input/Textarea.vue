@@ -31,10 +31,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref } from "vue";
-import CodeHighlighter from "@/components/highlighters/CodeHighlighter";
-import { code6 } from "./data.ts";
+import CodeHighlighter from "@/components/highlighters/CodeHighlighter.vue";
+import { code6 } from "./data";
 
 export default defineComponent({
   name: "textarea",

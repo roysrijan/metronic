@@ -113,7 +113,7 @@
   <!--end::Toolbar wrapper-->
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import KTNotificationsMenu from "@/layout/header/partials/NotificationsMenu.vue";
 import KTQuickLinksMenu from "@/layout/header/partials/QuickLinksMenu.vue";

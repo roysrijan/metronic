@@ -305,7 +305,7 @@ import { defineComponent, computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
-import { Actions } from "@/store/enums/StoreEnums.ts";
+import { Actions } from "@/store/enums/StoreEnums";
 
 export default defineComponent({
   name: "kt-user-menu",

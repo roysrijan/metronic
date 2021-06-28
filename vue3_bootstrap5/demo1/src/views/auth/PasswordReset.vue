@@ -109,7 +109,7 @@ import { ErrorMessage, Field, Form } from "vee-validate";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import * as Yup from "yup";
-import { Actions } from "@/store/enums/StoreEnums.ts";
+import { Actions } from "@/store/enums/StoreEnums";
 import Swal from "sweetalert2/dist/sweetalert2.min.js";
 
 export default defineComponent({

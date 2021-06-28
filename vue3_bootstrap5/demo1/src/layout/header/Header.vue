@@ -80,7 +80,7 @@
   <!--end::Header-->
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import KTTopbar from "@/layout/header/Topbar.vue";
 import KTMenu from "@/layout/header/Menu.vue";
@@ -91,7 +91,7 @@ import {
   headerWidthFluid,
   headerLeft,
   asideDisplay
-} from "@/core/helpers/config.ts";
+} from "@/core/helpers/config";
 
 export default defineComponent({
   name: "KTHeader",

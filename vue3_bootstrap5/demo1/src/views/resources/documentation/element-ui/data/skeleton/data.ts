@@ -64,7 +64,7 @@ const code5 = `<template>
   </el-space>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 
 const dayjs = require('dayjs')
@@ -117,7 +117,7 @@ const code6 = `<template>
   </el-space>
 </template>
 
-<script>
+<script lang="ts">
   import { defineComponent } from 'vue'
 
   const dayjs = require('dayjs')
@@ -200,7 +200,7 @@ const code7 = `<template>
   </el-space>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 
 const dayjs = require('dayjs')

@@ -17,10 +17,10 @@
   <!--end::Card-->
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, onMounted } from "vue";
 import { setCurrentPageTitle } from "@/core/helpers/breadcrumb";
-import Overview from "@/views/resources/documentation/forms/vue-select/Overview";
+import Overview from "@/views/resources/documentation/forms/vue-select/Overview.vue";
 import Example1 from "@/views/resources/documentation/forms/vue-select/Example1.vue";
 import Example2 from "@/views/resources/documentation/forms/vue-select/Example2.vue";
 import Example3 from "@/views/resources/documentation/forms/vue-select/Example3.vue";

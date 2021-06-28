@@ -2590,10 +2590,10 @@ bootstrap-multiselectsplitter@^1.0.4:
   resolved "https://registry.yarnpkg.com/bootstrap-multiselectsplitter/-/bootstrap-multiselectsplitter-1.0.4.tgz#7c8c0c706dfc10e99f5f583a96c0b5de23bb720b"
   integrity sha512-G1TyuzRUOdcf9iuSoTcYPKVr1waMm6rwoBbDi8/nXM7GX5eF3qZGZXLMeT8tGoaYwuQIsZXGerMtq5VTFQgcHQ==
 
-bootstrap@5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.0.1.tgz#e7939d599119dc818a90478a2a299bdaff037e09"
-  integrity sha512-Fl79+wsLOZKoiU345KeEaWD0ik8WKRI5zm0YSPj2oF1Qr+BO7z0fco6GbUtqjoG1h4VI89PeKJnMsMMVQdKKTw==
+bootstrap@5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.0.2.tgz#aff23d5e0e03c31255ad437530ee6556e78e728e"
+  integrity sha512-1Ge963tyEQWJJ+8qtXFU6wgmAVj9gweEjibUdbmcCEYsn38tVwRk8107rk2vzt6cfQcRr3SlZ8aQBqaD8aqf+Q==
 
 bootstrap@^4.4.1:
   version "4.6.0"
@@ -5226,6 +5226,11 @@ fslightbox@^3.2.3:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/fslightbox/-/fslightbox-3.2.3.tgz#d91c64ad77121a81a3245b4ab81174779aa3d3d9"
   integrity sha512-SMRYKBQxCVl8FJM7ptFzrInekqJv70pIgb4C+ybOVOlZsbJGfszp77Ls1KII3dMmL2eUsy4IZJCwLPbW6JSCFw==
+
+fullcalendar@^5.8.0:
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/fullcalendar/-/fullcalendar-5.8.0.tgz#5eb27d3721665d95cf897807a68f4193398d07c0"
+  integrity sha512-yXHh9NA/cB3YIYQmD3Gj+rWmzL9lVAc4P6sTqJW/eMIkUZVhB8Qkyz96xArVsn90Jk/nAbZ0Opddl9RcoFN1Tg==
 
 function-bind@^1.1.1, function-bind@~1.1.1:
   version "1.1.1"
@@ -9437,7 +9442,7 @@ sass-loader@^10.1.0:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@1.32.13, sass@^1.26.3:
+sass@^1.26.3:
   version "1.32.13"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.13.tgz#8d29c849e625a415bce71609c7cf95e15f74ed00"
   integrity sha512-dEgI9nShraqP7cXQH+lEXVf73WOPCse0QlFzSD8k+1TcOxCMwVXfQlr0jtoluZysQOyJGnfr21dLvYKDJq8HkA==

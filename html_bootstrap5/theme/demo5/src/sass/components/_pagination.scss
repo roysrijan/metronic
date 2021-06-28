@@ -141,3 +141,15 @@
 		}
 	}
 }
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+	.page-item {
+		margin-right: $pagination-item-space-tablet-and-mobile;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+

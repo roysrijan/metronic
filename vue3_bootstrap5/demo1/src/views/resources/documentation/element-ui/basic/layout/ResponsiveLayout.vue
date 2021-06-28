@@ -56,9 +56,9 @@
 }
 </style>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
-import CodeHighlighter from "@/components/highlighters/CodeHighlighter";
+import CodeHighlighter from "@/components/highlighters/CodeHighlighter.vue";
 import { code6 } from "@/views/resources/documentation/element-ui/basic/layout/code";
 
 export default defineComponent({

@@ -19,4 +19,4 @@ setTimeout(() => {
   DrawerComponent.bootstrap();
   StickyComponent.bootstrap();
   MenuComponent.bootstrap();
-}, 0);
+}, 1);

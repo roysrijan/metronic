@@ -90,7 +90,7 @@
 
 <script>
 import { defineComponent } from "vue";
-import CodeHighlighter from "@/components/highlighters/CodeHighlighter";
+import CodeHighlighter from "@/components/highlighters/CodeHighlighter.vue";
 import { code6 } from "./data.ts";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires

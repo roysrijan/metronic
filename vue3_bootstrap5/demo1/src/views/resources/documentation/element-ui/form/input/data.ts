@@ -1,6 +1,6 @@
 const code1 = `<el-input placeholder="Please input" v-model="input"></el-input>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref } from 'vue'
 export default defineComponent ({
   setup() {
@@ -17,7 +17,7 @@ const code2 = `<el-input
   :disabled="true">
 </el-input>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref } from 'vue'
 export default defineComponent ({
   setup() {
@@ -34,7 +34,7 @@ const code3 = `<el-input
   clearable>
 </el-input>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref } from 'vue'
 export default defineComponent ({
   setup() {
@@ -47,7 +47,7 @@ export default defineComponent ({
 
 const code4 = `<el-input placeholder="Please input password" v-model="input" show-password></el-input>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref } from 'vue'
 export default defineComponent ({
   setup() {
@@ -96,7 +96,7 @@ const code5 = `<div class="demo-input-suffix">
   }
 </style>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref } from 'vue'
 export default defineComponent ({
   setup() {
@@ -117,7 +117,7 @@ const code6 = `<el-input
   v-model="textarea">
 </el-input>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref } from 'vue'
 export default defineComponent ({
   setup() {
@@ -142,7 +142,7 @@ const code7 = `<el-input
   v-model="textarea2">
 </el-input>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref } from 'vue'
 export default defineComponent ({
   setup() {
@@ -187,7 +187,7 @@ const code8 = `<div>
     background-color: #fff;
   }
 </style>
-<script>
+<script lang="ts">
 import { defineComponent, ref } from 'vue'
 export default defineComponent ({
   setup() {
@@ -223,7 +223,7 @@ const code9 = `<div class="demo-input-size">
   </el-input>
 </div>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref } from 'vue'
 export default defineComponent ({
   setup() {
@@ -260,7 +260,7 @@ const code10 = `<el-row class="demo-autocomplete">
     ></el-autocomplete>
   </el-col>
 </el-row>
-<script>
+<script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue'
 export default defineComponent({
   setup() {
@@ -344,7 +344,7 @@ const code11 = `<el-autocomplete
   }
 </style>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue'
 export default defineComponent({
   setup() {
@@ -407,7 +407,7 @@ const code12 = `<el-autocomplete
   placeholder="Please input"
   @select="handleSelect"
 ></el-autocomplete>
-<script>
+<script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue'
 export default defineComponent({
   setup() {
@@ -478,7 +478,7 @@ const code13 = `<el-input
 >
 </el-input>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref } from 'vue'
 export default defineComponent ({
   setup() {

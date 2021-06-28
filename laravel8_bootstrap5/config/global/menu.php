@@ -84,6 +84,22 @@ return array(
             'custom' => '<div class="h-30px"></div>',
         ),
 
+        // Configuration
+        array(
+            'heading' => 'Configuration',
+        ),
+
+        // Menu
+        array(
+            'title' => 'Menu',
+            'path'  => 'documentation/configuration/menu',
+        ),
+
+        // Separator
+        array(
+            'custom' => '<div class="h-30px"></div>',
+        ),
+
         // General
         array(
             'heading' => 'General',

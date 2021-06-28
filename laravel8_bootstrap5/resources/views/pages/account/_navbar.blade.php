@@ -1,8 +1,8 @@
 @php
     $nav = array(
-        array("title" => "Overview", "view" => ""),
-        array("title" => "Settings", "view" => "account/settings"),
-        array("title" => "Security", "view" => ""),
+        array('title' => 'Overview', 'view' => 'account/overview'),
+        array('title' => 'Settings', 'view' => 'account/settings'),
+        array('title' => 'Security', 'view' => ''),
     );
 @endphp
 

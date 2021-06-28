@@ -36,7 +36,7 @@
   <EUICustomIndex></EUICustomIndex>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import { setCurrentPageTitle } from "@/core/helpers/breadcrumb";
 import EUIBasicTable from "@/views/resources/documentation/element-ui/data/table/BasicTable.vue";

@@ -10,14 +10,14 @@ import ElementPlus from "element-plus";
 import i18n from "@/core/plugins/i18n";
 
 //imports for app initialization
-import MockAdapter from "@/core/mock/MockService.ts";
-import ApiService from "@/core/services/ApiService.ts";
+import MockAdapter from "@/core/mock/MockService";
+import ApiService from "@/core/services/ApiService";
 import { initApexCharts } from "@/core/plugins/apexcharts";
 import { initInlineSvg } from "@/core/plugins/inline-svg";
-import { initVeeValidate } from "@/core/plugins/vee-validate.ts";
+import { initVeeValidate } from "@/core/plugins/vee-validate";
 
-import "@/core/plugins/keenthemes.ts";
-import "@/core/plugins/prismjs.ts";
+import "@/core/plugins/keenthemes";
+import "@/core/plugins/prismjs";
 import "bootstrap";
 
 const app = createApp(App);

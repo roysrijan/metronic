@@ -430,7 +430,7 @@ KTUtil.onDOMContentLoaded(function() {
 
 // On window load
 window.addEventListener("load", function() {
-    KTApp.initPageLoader();
+	KTApp.initPageLoader();
 });
 
 // Webpack support

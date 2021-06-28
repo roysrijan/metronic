@@ -15,15 +15,12 @@
 
     <div class="rounded border p-10">
       <el-select v-model="value1" multiple placeholder="Select">
-        <el-option
-          v-for="item in options"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-        >
-        </el-option>
+        <el-option label="1" :value="1"></el-option>
+        <el-option label="2" :value="2"></el-option>
+        <el-option label="3" :value="3"></el-option>
       </el-select>
 
+      {{ value1 }}
       <el-select
         v-model="value2"
         multiple
@@ -31,13 +28,7 @@
         style="margin-left: 20px;"
         placeholder="Select"
       >
-        <el-option
-          v-for="item in options"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-        >
-        </el-option>
+        <el-option v-for="i in 10" :key="i" :label="i" :value="i"> </el-option>
       </el-select>
 
       <CodeHighlighter :field-height="400" lang="html">{{
@@ -47,10 +38,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
-import CodeHighlighter from "@/components/highlighters/CodeHighlighter";
-import { code5 } from "./data.ts";
+import CodeHighlighter from "@/components/highlighters/CodeHighlighter.vue";
+import { code5 } from "./data";
 
 export default defineComponent({
   name: "basic-multiple-select",
@@ -78,8 +69,8 @@ export default defineComponent({
           label: "Option5"
         }
       ],
-      value1: [],
-      value2: []
+      value1: [1, 2],
+      value2: [1, 2]
     };
   },
   components: {

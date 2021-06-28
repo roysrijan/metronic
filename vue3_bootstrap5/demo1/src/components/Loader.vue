@@ -26,7 +26,7 @@
   <!--end::Page Loader-->
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, computed } from "vue";
 import { useStore } from "vuex";
 

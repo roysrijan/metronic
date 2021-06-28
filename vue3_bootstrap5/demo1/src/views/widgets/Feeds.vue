@@ -33,6 +33,7 @@ import FeedsWidget4 from "@/components/widgets/feeds/Widget4.vue";
 import FeedsWidget5 from "@/components/widgets/feeds/Widget5.vue";
 import FeedsWidget6 from "@/components/widgets/feeds/Widget6.vue";
 import { setCurrentPageBreadcrumbs } from "@/core/helpers/breadcrumb";
+import { MenuComponent } from "@/assets/ts/components";
 
 export default defineComponent({
   name: "widgets-feeds",
@@ -47,6 +48,8 @@ export default defineComponent({
   setup() {
     onMounted(() => {
       setCurrentPageBreadcrumbs("Feeds", ["Widgets"]);
+
+      MenuComponent.reinitialization();
     });
   }
 });

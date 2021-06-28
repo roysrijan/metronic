@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
+use App\Core\Traits\SpatieLogsActivity;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable;
-    use HasRoles;
+    use SpatieLogsActivity;
 
     /**
      * The attributes that are mass assignable.
@@ -68,6 +68,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return asset(theme()->getMediaUrlPath().'avatars/blank.png');
     }
 
+    /**
+     * User relation to info model
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function info()
     {
         return $this->hasOne(UserInfo::class);

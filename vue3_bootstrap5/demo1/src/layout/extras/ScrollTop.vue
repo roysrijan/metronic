@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import { defineComponent, onMounted } from "vue";
-import { ScrollTopComponent } from "@/assets/ts/components/_ScrollTopComponent.ts";
+import { ScrollTopComponent } from "@/assets/ts/components/_ScrollTopComponent";
 
 export default defineComponent({
   name: "KTScrollTop",

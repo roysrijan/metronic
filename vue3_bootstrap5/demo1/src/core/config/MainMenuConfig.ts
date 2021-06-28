@@ -116,6 +116,76 @@ const DocMenuConfig: object = [
         ]
       },
       {
+        sectionTitle: "modals",
+        route: "/modals",
+        svgIcon: "media/icons/duotone/Design/Substract.svg",
+        fontIcon: "bi-shield-check",
+        sub: [
+          {
+            sectionTitle: "general",
+            route: "/general",
+            sub: [
+              {
+                heading: "inviteFriends",
+                route: "/crafted/modals/general/invite-friends"
+              },
+              {
+                heading: "viewUsers",
+                route: "/crafted/modals/general/view-user"
+              },
+              {
+                heading: "upgradePlan",
+                route: "/crafted/modals/general/upgrade-plan"
+              },
+              {
+                heading: "shareAndEarn",
+                route: "/crafted/modals/general/share-and-earn"
+              }
+            ]
+          },
+          {
+            sectionTitle: "forms",
+            route: "/forms",
+            sub: [
+              {
+                heading: "newTarget",
+                route: "/crafted/modals/forms/new-target"
+              },
+              {
+                heading: "newCard",
+                route: "/crafted/modals/forms/new-card"
+              },
+              {
+                heading: "newAddress",
+                route: "/crafted/modals/forms/new-address"
+              },
+              {
+                heading: "createAPIKey",
+                route: "/crafted/modals/forms/create-api-key"
+              }
+            ]
+          },
+          {
+            sectionTitle: "wizards",
+            route: "/wizards",
+            sub: [
+              {
+                heading: "twoFactorAuth",
+                route: "/crafted/modals/wizards/two-factor-auth"
+              },
+              {
+                heading: "createApp",
+                route: "/crafted/modals/wizards/create-app"
+              },
+              {
+                heading: "createAccount",
+                route: "/crafted/modals/wizards/create-account"
+              }
+            ]
+          }
+        ]
+      },
+      {
         sectionTitle: "widgets",
         route: "/widgets",
         svgIcon: "media/icons/duotone/Layout/Layout-4-blocks.svg",

@@ -165,46 +165,29 @@ mix.webpackConfig({
     mix.copy(file, `public/plugins/global/fonts/${folder}/${path.basename(file)}`);
 });
 
-// Optional: Import datatables.net
+// Optional: Output datatables.net
 mix.scripts([
     'node_modules/datatables.net/js/jquery.dataTables.js',
     'node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js',
-    'node_modules/datatables.net-autofill/js/dataTables.autoFill.min.js',
-    'node_modules/datatables.net-autofill-bs4/js/autoFill.bootstrap4.min.js',
-    'node_modules/jszip/dist/jszip.min.js',
-    'node_modules/pdfmake/build/pdfmake.min.js',
-    'node_modules/pdfmake/build/vfs_fonts.js',
-    'node_modules/datatables.net-buttons/js/dataTables.buttons.min.js',
-    'node_modules/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js',
-    'node_modules/datatables.net-buttons/js/buttons.colVis.js',
-    'node_modules/datatables.net-buttons/js/buttons.flash.js',
-    'node_modules/datatables.net-buttons/js/buttons.html5.js',
-    'node_modules/datatables.net-buttons/js/buttons.print.js',
-    'node_modules/datatables.net-colreorder/js/dataTables.colReorder.min.js',
-    'node_modules/datatables.net-fixedcolumns/js/dataTables.fixedColumns.min.js',
-    'node_modules/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js',
-    'node_modules/datatables.net-keytable/js/dataTables.keyTable.min.js',
     'node_modules/datatables.net-responsive/js/dataTables.responsive.min.js',
     'node_modules/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js',
-    'node_modules/datatables.net-rowgroup/js/dataTables.rowGroup.min.js',
-    'node_modules/datatables.net-rowreorder/js/dataTables.rowReorder.min.js',
     'node_modules/datatables.net-scroller/js/dataTables.scroller.min.js',
-    'node_modules/datatables.net-select/js/dataTables.select.min.js',
+    'resources/assets/core/js/vendors/plugins/datatables.init.js'
 ], 'public/plugins/custom/datatables/datatables.bundle.js');
 mix.styles([
     'node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css',
-    'node_modules/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css',
-    'node_modules/datatables.net-autofill-bs4/css/autoFill.bootstrap4.min.css',
-    'node_modules/datatables.net-colreorder-bs4/css/colReorder.bootstrap4.min.css',
-    'node_modules/datatables.net-fixedcolumns-bs4/css/fixedColumns.bootstrap4.min.css',
-    'node_modules/datatables.net-fixedheader-bs4/css/fixedHeader.bootstrap4.min.css',
-    'node_modules/datatables.net-keytable-bs4/css/keyTable.bootstrap4.min.css',
     'node_modules/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css',
-    'node_modules/datatables.net-rowgroup-bs4/css/rowGroup.bootstrap4.min.css',
-    'node_modules/datatables.net-rowreorder-bs4/css/rowReorder.bootstrap4.min.css',
     'node_modules/datatables.net-scroller-bs4/css/scroller.bootstrap4.min.css',
-    'node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css',
 ], 'public/plugins/custom/datatables/datatables.bundle.css');
+
+// Optional: Output fullcalendar
+// mix.scripts([
+//     'node_modules/fullcalendar/main.js',
+//     'node_modules/fullcalendar/locales-all.min.js',
+// ], 'public/plugins/custom/fullcalendar/fullcalendar.bundle.js');
+// mix.styles([
+//     'node_modules/fullcalendar/main.min.css',
+// ], 'public/plugins/custom/fullcalendar/fullcalendar.bundle.css');
 
 function getDemos(pathDemos) {
     // get possible demo from parameter command

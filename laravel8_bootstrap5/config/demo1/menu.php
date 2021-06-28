@@ -33,18 +33,9 @@ return array(
                 'class' => 'menu-sub-accordion menu-active-bg',
                 'items' => array(
                     array(
-                        'title'      => 'Overview',
-                        'path'       => '#',
-                        'bullet'     => '<span class="bullet bullet-dot"></span>',
-                        'attributes' => array(
-                            'link' => array(
-                                "title"             => "Coming soon",
-                                "data-bs-toggle"    => "tooltip",
-                                "data-bs-trigger"   => "hover",
-                                "data-bs-dismiss"   => "click",
-                                "data-bs-placement" => "right",
-                            ),
-                        ),
+                        'title'  => 'Overview',
+                        'path'   => 'account/overview',
+                        'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
                     array(
                         'title'  => 'Settings',
@@ -98,18 +89,9 @@ return array(
                         ),
                     ),
                     array(
-                        'title'      => 'Audit Log',
-                        'path'       => '#',
-                        'bullet'     => '<span class="bullet bullet-dot"></span>',
-                        'attributes' => array(
-                            'link' => array(
-                                "title"             => "Coming soon",
-                                "data-bs-toggle"    => "tooltip",
-                                "data-bs-trigger"   => "hover",
-                                "data-bs-dismiss"   => "click",
-                                "data-bs-placement" => "right",
-                            ),
-                        ),
+                        'title'  => 'Audit Log',
+                        'path'   => 'log/audit',
+                        'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
                     array(
                         'title'  => 'System Log',

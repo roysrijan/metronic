@@ -201,10 +201,10 @@
   <!--end: List Widget 5-->
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, onMounted } from "vue";
 import Dropdown1 from "@/components/dropdown/Dropdown1.vue";
-import { MenuComponent } from "@/assets/ts/components/MenuComponent.ts";
+import { MenuComponent } from "@/assets/ts/components/MenuComponent";
 
 export default defineComponent({
   name: "kt-widget-5",

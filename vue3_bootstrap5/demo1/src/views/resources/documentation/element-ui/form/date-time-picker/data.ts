@@ -27,7 +27,7 @@ const code1 = `<template>
   </div>
 </template>
 
-<script>
+<script lang="ts">
   export default {
     data() {
       return {
@@ -83,7 +83,7 @@ const code2 = `<template>
   </div>
 </template>
 
-<script>
+<script lang="ts">
   export default {
     data() {
       return {

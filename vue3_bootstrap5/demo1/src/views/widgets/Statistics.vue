@@ -269,6 +269,7 @@ import StatisticsWidget4 from "@/components/widgets/statsistics/Widget4.vue";
 import StatisticsWidget5 from "@/components/widgets/statsistics/Widget5.vue";
 import StatisticsWidget6 from "@/components/widgets/statsistics/Widget6.vue";
 import { setCurrentPageBreadcrumbs } from "@/core/helpers/breadcrumb";
+import { MenuComponent } from "@/assets/ts/components";
 
 export default defineComponent({
   name: "widgets-statistics",
@@ -283,6 +284,8 @@ export default defineComponent({
   setup() {
     onMounted(() => {
       setCurrentPageBreadcrumbs("Statistics", ["Widgets"]);
+
+      MenuComponent.reinitialization();
     });
   }
 });

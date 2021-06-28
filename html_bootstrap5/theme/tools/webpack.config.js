@@ -48,7 +48,7 @@ removeExistingAssets();
 
 additionalSettings();
 
-importDatatables();
+importExtraPlugins();
 
 function additionalSettings() {
     if (args.indexOf('rtl') !== -1) {
@@ -373,7 +373,7 @@ function getDemos(pathDemos) {
     return demos;
 }
 
-function importDatatables() {
+function importExtraPlugins() {
     // Optional: Import datatables.net
     extraPlugins.push(new MergeIntoSingle({
         files: {
@@ -418,6 +418,13 @@ function importDatatables() {
                 "node_modules/datatables.net-rowreorder-bs4/css/rowReorder.bootstrap4.min.css",
                 "node_modules/datatables.net-scroller-bs4/css/scroller.bootstrap4.min.css",
                 "node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css",
+            ],
+            'plugins/custom/fullcalendar/fullcalendar.bundle.js': [
+                'node_modules/fullcalendar/main.js',
+                'node_modules/fullcalendar/locales-all.min.js',
+            ],
+            'plugins/custom/fullcalendar/fullcalendar.bundle.css': [
+                'node_modules/fullcalendar/main.min.css',
             ],
         },
     }));

@@ -3,7 +3,7 @@
   <EUIPropAliases></EUIPropAliases>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import { setCurrentPageTitle } from "@/core/helpers/breadcrumb";
 import EUICustomizable from "@/views/resources/documentation/element-ui/form/transfer/Customizable.vue";

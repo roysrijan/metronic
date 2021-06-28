@@ -28,7 +28,7 @@
   <EUIDefaultTimeValueForStartDateAndEndDate></EUIDefaultTimeValueForStartDateAndEndDate>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import { setCurrentPageTitle } from "@/core/helpers/breadcrumb";
 import EUIDateAndTime from "@/views/resources/documentation/element-ui/form/date-time-picker/DateAndTime.vue";

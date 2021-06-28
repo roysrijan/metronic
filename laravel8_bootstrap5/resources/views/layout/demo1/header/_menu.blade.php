@@ -13,9 +13,9 @@
 	data-kt-drawer-direction="end"
 	data-kt-drawer-toggle="#kt_header_menu_mobile_toggle"
 
-    data-kt-place="true"
-    data-kt-place-mode="prepend"
-    data-kt-place-parent="{default: '#kt_body', lg: '#kt_header_nav'}"
+    data-kt-swapper="true"
+    data-kt-swapper-mode="prepend"
+    data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}"
 >
     <!--begin::Menu-->
     <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch"

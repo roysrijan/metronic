@@ -64,4 +64,8 @@ class Util extends \App\Core\Util
         echo $html;
     }
 
+    public static function putHtmlAttributes($attributes)
+    {
+        return self::getHtmlAttributes($attributes);
+    }
 }

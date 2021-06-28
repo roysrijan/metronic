@@ -64,7 +64,7 @@ import { useField, useForm } from "vee-validate";
 import {
   example3Html,
   example3Js
-} from "@/views/resources/documentation/forms/vee-validate/codes.ts";
+} from "@/views/resources/documentation/forms/vee-validate/codes";
 import CodeHighlighter2 from "@/components/highlighters/CodeHighlighter2.vue";
 
 export default defineComponent({

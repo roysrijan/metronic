@@ -101,16 +101,15 @@ return array(
                     'title'       => 'Overview',
                     'description' => 'plugin overview',
                     'view'        => 'documentation/general/datatables/overview/overview',
-                    'assets'      => array(
-                        'vendors' => array(
-                            'css' => array(),
-                            'js'  => array(),
-                        ),
-                        'custom'  => array(
-                            'js' => array(),
-                        ),
-                    ),
                 ),
+            ),
+        ),
+
+        'configuration' => array(
+            'menu' => array(
+                'title'       => 'Menu',
+                'description' => '',
+                'view'        => 'documentation/configuration/menu',
             ),
         ),
     ),

@@ -200,7 +200,7 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import { ErrorMessage, Field, Form } from "vee-validate";
-import { Actions } from "@/store/enums/StoreEnums.ts";
+import { Actions } from "@/store/enums/StoreEnums";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import Swal from "sweetalert2/dist/sweetalert2.min.js";

@@ -81,6 +81,19 @@ return array(
     ),
 
     'log' => array(
+        'audit'  => array(
+            'title'  => 'Audit Log',
+            'assets' => array(
+                'custom' => array(
+                    'css' => array(
+                        'plugins/custom/datatables/datatables.bundle.css',
+                    ),
+                    'js'  => array(
+                        'plugins/custom/datatables/datatables.bundle.js',
+                    ),
+                ),
+            ),
+        ),
         'system' => array(
             'title'  => 'System Log',
             'assets' => array(
@@ -98,8 +111,15 @@ return array(
 
     'account' => array(
         'overview' => array(
-            'title' => 'Account Overview',
-            'view'  => 'account/overview/overview',
+            'title'  => 'Account Overview',
+            'view'   => 'account/overview/overview',
+            'assets' => array(
+                'custom' => array(
+                    'js' => array(
+                        'js/custom/widgets.js',
+                    ),
+                ),
+            ),
         ),
 
         'settings' => array(
@@ -109,6 +129,8 @@ return array(
                 'custom' => array(
                     'js' => array(
                         'js/custom/account/settings/profile-details.js',
+                        'js/custom/account/settings/signin-methods.js',
+                        'js/custom/modals/two-factor-authentication.js',
                     ),
                 ),
             ),

@@ -98,6 +98,7 @@ import TablesWidget11 from "@/components/widgets/tables/Widget11.vue";
 import TablesWidget12 from "@/components/widgets/tables/Widget12.vue";
 import TablesWidget13 from "@/components/widgets/tables/Widget13.vue";
 import { setCurrentPageBreadcrumbs } from "@/core/helpers/breadcrumb";
+import { MenuComponent } from "@/assets/ts/components";
 
 export default defineComponent({
   name: "widgets-tables",
@@ -119,6 +120,8 @@ export default defineComponent({
   setup() {
     onMounted(() => {
       setCurrentPageBreadcrumbs("Tables", ["Widgets"]);
+
+      MenuComponent.reinitialization();
     });
   }
 });

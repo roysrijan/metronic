@@ -375,7 +375,7 @@ $grid-gutter-width:                                 1.5rem !default;
 $grid-row-columns:                                  6 !default;
 
 $gutters: (
-    0: 0,
+    0: 0rem,
     1: ($spacer * .25),  	// 3.5px
     2: ($spacer * .5),   	// 7px;
     3: ($spacer * .75),  	// 10.5px
@@ -467,7 +467,7 @@ $font-sizes: (
     5tx: $font-size-base * 5.75     // 74.75px
 ) !default;
 
-$headings-margin-bottom:                            $spacer / 2 !default;
+$headings-margin-bottom:                            $spacer * 0.5 !default;
 $headings-font-family:                              null !default;
 $headings-font-style:                               null !default;
 $headings-font-weight:                              $font-weight-bolder !default;
@@ -753,6 +753,7 @@ $dropdown-border-width:                             0 !default;
 $pagination-item-height:                             2.5rem !default; // Custom variable
 $pagination-item-bg:                                 $white !default; // Custom variable
 $pagination-item-space:                              0.5rem !default; // Custom variable
+$pagination-item-space-tablet-and-mobile:            0.25rem !default; // Custom variable
 $pagination-font-weight:                             $font-weight-bold !default; // Custom variable
 $pagination-font-size:                               $font-size-lg !default; // Custom variable
 $pagination-icon-font-size:                          0.85rem !default; // Custom variable
@@ -818,7 +819,7 @@ $tooltip-font-size:                 				$font-size-sm !default;
 $tooltip-max-width:                 				200px !default;
 $tooltip-color:                     				$gray-800 !default;
 $tooltip-bg:                        				$white !default;
-$tooltip-border-radius:             				3px !default;
+$tooltip-border-radius:             				$btn-border-radius !default;
 $tooltip-opacity:                   				1 !default;
 $tooltip-box-shadow:                				$popover-box-shadow !default; // Custom variable
 $tooltip-padding-y:                 				.75rem !default;

@@ -1,6 +1,6 @@
 {
     "name": "metronic",
-    "version": "8.0.15",
+    "version": "8.0.16",
     "description": "Metronic - #1 Selling Bootstrap 5 HTML Multi-demo Admin Dashboard Theme",
     "main": "gulpfile.js",
     "type": "module",
@@ -20,7 +20,7 @@
         "apexcharts": "3.23.1",
         "autosize": "^4.0.2",
         "axios": "^0.21.1",
-        "bootstrap": "5.0.1",
+        "bootstrap": "5.0.2",
         "bootstrap-daterangepicker": "^3.1.0",
         "bootstrap-icons": "^1.2.1",
         "bootstrap-maxlength": "^1.10.0",
@@ -52,6 +52,7 @@
         "esri-leaflet-geocoder": "^2.3.2",
         "flatpickr": "^4.6.6",
         "fslightbox": "^3.2.3",
+        "fullcalendar": "^5.8.0",
         "inputmask": "^5.0.5",
         "jquery": "3.5.1",
         "jszip": "^3.5.0",
@@ -116,9 +117,6 @@
         "webpack-messages": "^2.0.4",
         "yargs": "^16.2.0",
         "yarn-install": "^1.0.0"
-    },
-    "resolutions": {
-        "gulp-dart-sass/sass": "1.32.13"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",

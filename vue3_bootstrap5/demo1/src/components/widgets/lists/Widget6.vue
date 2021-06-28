@@ -71,7 +71,7 @@
   <!--end::List Widget 6-->
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, ref } from "vue";
 import Dropdown3 from "@/components/dropdown/Dropdown3.vue";
 

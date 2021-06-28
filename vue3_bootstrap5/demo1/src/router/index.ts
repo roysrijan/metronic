@@ -93,6 +93,61 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/chat/DrawerChat.vue")
       },
       {
+        path: "/crafted/modals/general/invite-friends",
+        name: "modals-general-invite-friends",
+        component: () => import("@/views/modals/general/InviteFriends.vue")
+      },
+      {
+        path: "/crafted/modals/general/view-user",
+        name: "modals-general-view-user",
+        component: () => import("@/views/modals/general/ViewUsers.vue")
+      },
+      {
+        path: "/crafted/modals/general/upgrade-plan",
+        name: "modals-general-upgrade-plan",
+        component: () => import("@/views/modals/general/UpgradePlan.vue")
+      },
+      {
+        path: "/crafted/modals/general/share-and-earn",
+        name: "modals-general-share-and-earn",
+        component: () => import("@/views/modals/general/ShareAndEarn.vue")
+      },
+      {
+        path: "/crafted/modals/forms/new-target",
+        name: "modals-forms-new-target",
+        component: () => import("@/views/modals/forms/NewTarget.vue")
+      },
+      {
+        path: "/crafted/modals/forms/new-card",
+        name: "modals-forms-new-card",
+        component: () => import("@/views/modals/forms/NewCard.vue")
+      },
+      {
+        path: "/crafted/modals/forms/new-address",
+        name: "modals-forms-new-address",
+        component: () => import("@/views/modals/forms/NewAddress.vue")
+      },
+      {
+        path: "/crafted/modals/forms/create-api-key",
+        name: "modals-forms-create-api-key",
+        component: () => import("@/views/modals/forms/CreateApiKey.vue")
+      },
+      {
+        path: "/crafted/modals/wizards/two-factor-auth",
+        name: "modals-wizards-two-factor-auth",
+        component: () => import("@/views/modals/wizards/TwoFactorAuth.vue")
+      },
+      {
+        path: "/crafted/modals/wizards/create-app",
+        name: "modals-wizards-create-app",
+        component: () => import("@/views/modals/wizards/CreateApp.vue")
+      },
+      {
+        path: "/crafted/modals/wizards/create-account",
+        name: "modals-wizards-create-account",
+        component: () => import("@/views/modals/wizards/CreateAccount.vue")
+      },
+      {
         path: "/crafted/widgets/lists",
         name: "widgets-list",
         component: () => import("@/views/widgets/Lists.vue")

@@ -123,8 +123,8 @@
 
 <script>
 import { defineComponent } from "vue";
-import CodeHighlighter from "@/components/highlighters/CodeHighlighter";
-import { code3 } from "./data.ts";
+import CodeHighlighter from "@/components/highlighters/CodeHighlighter.vue";
+import { code3 } from "./data";
 
 export default defineComponent({
   name: "how-to-trigger",

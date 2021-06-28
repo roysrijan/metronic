@@ -40,10 +40,10 @@
 }
 </style>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
-import CodeHighlighter from "@/components/highlighters/CodeHighlighter";
-import { code5 } from "@/views/resources/documentation/element-ui/basic/button/code.ts";
+import CodeHighlighter from "@/components/highlighters/CodeHighlighter.vue";
+import { code5 } from "@/views/resources/documentation/element-ui/basic/button/code";
 
 export default defineComponent({
   name: "button-group",

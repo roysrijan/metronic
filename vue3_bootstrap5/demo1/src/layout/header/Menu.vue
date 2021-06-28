@@ -363,7 +363,7 @@ import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 import { MenuComponent } from "@/assets/ts/components";
 import MainMenuConfig from "@/core/config/MainMenuConfig";
-import { headerMenuIcons } from "@/core/helpers/config.ts";
+import { headerMenuIcons } from "@/core/helpers/config";
 
 export default defineComponent({
   name: "KTMenu",

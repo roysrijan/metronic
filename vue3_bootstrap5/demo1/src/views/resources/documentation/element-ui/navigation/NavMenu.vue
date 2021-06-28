@@ -18,7 +18,7 @@
   <EUICollapse></EUICollapse>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import { setCurrentPageTitle } from "@/core/helpers/breadcrumb";
 import EUITopBar from "@/views/resources/documentation/element-ui/navigation/nav-menu/TopBar.vue";

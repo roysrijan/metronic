@@ -19,7 +19,7 @@
   <EUIBottomContent></EUIBottomContent>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import { setCurrentPageTitle } from "@/core/helpers/breadcrumb";
 import EUIBasicUsage from "@/views/resources/documentation/element-ui/data/empty/BasicUsage.vue";

@@ -305,10 +305,10 @@
 import { defineComponent, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { useRoute } from "vue-router";
-import { ScrollComponent } from "@/assets/ts/components/_ScrollComponent.ts";
-import { MenuComponent } from "@/assets/ts/components/MenuComponent.ts";
-import { isDocPage, version } from "@/core/helpers/documentation.ts";
-import { asideMenuIcons } from "@/core/helpers/config.ts";
+import { ScrollComponent } from "@/assets/ts/components/_ScrollComponent";
+import { MenuComponent } from "@/assets/ts/components/MenuComponent";
+import { isDocPage, version } from "@/core/helpers/documentation";
+import { asideMenuIcons } from "@/core/helpers/config";
 import DocMenuConfig from "@/core/config/DocMenuConfig";
 import MainMenuConfig from "@/core/config/MainMenuConfig";
 

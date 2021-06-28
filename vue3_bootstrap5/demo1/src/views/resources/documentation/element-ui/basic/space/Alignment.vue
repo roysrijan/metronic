@@ -71,10 +71,10 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
-import CodeHighlighter from "@/components/highlighters/CodeHighlighter";
-import { code7 } from "@/views/resources/documentation/element-ui/basic/space/code.ts";
+import CodeHighlighter from "@/components/highlighters/CodeHighlighter.vue";
+import { code7 } from "@/views/resources/documentation/element-ui/basic/space/code";
 
 export default defineComponent({
   name: "alignment",

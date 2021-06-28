@@ -21,7 +21,7 @@
   <EUIResponsiveLayout></EUIResponsiveLayout>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import { setCurrentPageTitle } from "@/core/helpers/breadcrumb";
 import EUILayoutBasic from "@/views/resources/documentation/element-ui/basic/layout/BasicLayout.vue";

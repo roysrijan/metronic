@@ -32,7 +32,7 @@
   <EUICenteredContent></EUICenteredContent>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent, onMounted } from "vue";
 import { setCurrentPageTitle } from "@/core/helpers/breadcrumb";
 import EUIAlert from "@/views/resources/documentation/element-ui/notice/message-box/Alert.vue";
