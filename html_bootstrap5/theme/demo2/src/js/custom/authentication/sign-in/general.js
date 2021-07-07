@@ -28,24 +28,14 @@ var KTSigninGeneral = function() {
                         validators: {
                             notEmpty: {
                                 message: 'The password is required'
-                            },
-                            callback: {
-                                message: 'Please enter valid password',
-                                callback: function(input) {
-                                    if (input.value.length > 0) {
-                                        return _validatePassword();
-                                    }
-                                }
-                            } 
+                            }
                         }
                     } 
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),
 					bootstrap: new FormValidation.plugins.Bootstrap5({
-                        rowSelector: '.fv-row',
-                        eleInvalidClass: '',
-                        eleValidClass: ''
+                        rowSelector: '.fv-row'
                     })
 				}
 			}

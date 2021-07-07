@@ -23,7 +23,7 @@
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         {{--begin::Logo--}}
         <a href="{{ theme()->getPageUrl('index') }}">
-            <img alt="Logo" src="{{ asset('media/logos/' . $logoFileName) }}" class="h-15px logo"/>
+            <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . '/logos/' . $logoFileName) }}" class="h-15px logo"/>
         </a>
         {{--end::Logo--}}
 
@@ -51,16 +51,12 @@
 
     {{--begin::Footer--}}
     <div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
-        @if (\App\Core\Bootstrap::isDocumentationMenu())
-            <a href="{{ theme()->getPageUrl('index') }}" class="btn btn-primary w-100">{{ __('Preview Application') }}</a>
-        @else
-            <a href="{{ theme()->getPageUrl('documentation/getting-started/overview') }}" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-delay-show="8000" title="Check out the complete documentation with over 100 components">
-            <span class="btn-label">
-                {{ __('Documentation') }}
-            </span>
-                {!! theme()->getSvgIcon("icons/duotone/General/Clipboard.svg", "btn-icon svg-icon-2") !!}
-            </a>
-        @endif
+        <a href="{{ theme()->getPageUrl('documentation/getting-started/overview') }}" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-delay-show="8000" title="Check out the complete documentation with over 100 components">
+        <span class="btn-label">
+            {{ __('Documentation') }}
+        </span>
+            {!! theme()->getSvgIcon("icons/duotone/General/Clipboard.svg", "btn-icon svg-icon-2") !!}
+        </a>
     </div>
     {{--end::Footer--}}
 </div>

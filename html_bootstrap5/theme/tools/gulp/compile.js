@@ -84,9 +84,8 @@ if (args.sourcemap !== false) {
   // build.config.compile.cssSourcemaps = true;
 }
 
-if (args.rtl !== "") {
-  build.config.compile.rtl = {};
-  build.config.compile.rtl.enabled = args.rtl === "true";
+if (args.rtl) {
+  build.config.compile.rtl.enabled = true;
 }
 
 const rtlTask = (cb) => {
@@ -97,10 +96,7 @@ const rtlTask = (cb) => {
     (val, key, userdata) => {
       if (val.hasOwnProperty("src") && val.hasOwnProperty("dist")) {
         if (["custom", "media", "api"].indexOf(key) !== -1) {
-          if (
-            userdata.indexOf(key) === -1 &&
-            typeof val.styles !== "undefined"
-          ) {
+          if (userdata.indexOf(key) === -1 && typeof val.styles !== "undefined") {
             // rtl conversion in each plugins
             for (let i in val.styles) {
               if (!val.styles.hasOwnProperty(i)) {
@@ -120,10 +116,7 @@ const rtlTask = (cb) => {
                 if (!/\.min\./i.test(toRtlFile)) {
                   stream = gulp.src(toRtlFile, { allowEmpty: true })
                     .pipe(
-                      sass({ outputStyle: "compressed" }).on(
-                        "error",
-                        sass.logError
-                      )
+                      sass({ outputStyle: "compressed" }).on("error", sass.logError)
                     )
                     .pipe(rename({ suffix: args.suffix ? ".min.rtl" : ".rtl" }))
                     .pipe(gulp.dest(pathOnly(toRtlFile)));

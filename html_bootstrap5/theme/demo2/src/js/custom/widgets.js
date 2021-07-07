@@ -1548,6 +1548,141 @@ var KTWidgets = function () {
         });        
     }
 
+    var initMixedWidget12 = function() {
+        var charts = document.querySelectorAll('.mixed-widget-12-chart');
+
+        var color;
+        var strokeColor;
+        var height;
+        var labelColor = KTUtil.getCssVariableValue('--bs-gray-500');
+        var borderColor = KTUtil.getCssVariableValue('--bs-gray-200');
+        var options;
+        var chart;
+
+        [].slice.call(charts).map(function(element) {            
+            height = parseInt(KTUtil.css(element, 'height'));
+
+            var options = {
+                series: [{
+                    name: 'Net Profit',
+                    data: [35, 65, 75, 55, 45, 60, 55]
+                }, {
+                    name: 'Revenue',
+                    data: [40, 70, 80, 60, 50, 65, 60]
+                }],
+                chart: {
+                    fontFamily: 'inherit',
+                    type: 'bar',
+                    height: height,
+                    toolbar: {
+                        show: false
+                    },
+                    sparkline: {
+                        enabled: true
+                    },
+                },
+                plotOptions: {
+                    bar: {
+                        horizontal: false,
+                        columnWidth: ['30%'],
+                        endingShape: 'rounded'
+                    },
+                },
+                legend: {
+                    show: false
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                stroke: {
+                    show: true,
+                    width: 1,
+                    colors: ['transparent']
+                },
+                xaxis: {
+                    categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                    axisBorder: {
+                        show: false,
+                    },
+                    axisTicks: {
+                        show: false
+                    },
+                    labels: {
+                        style: {
+                            colors: labelColor,
+                            fontSize: '12px'
+                        }
+                    }
+                },
+                yaxis: {
+                    min: 0,
+                    max: 100,
+                    labels: {
+                        style: {
+                            colors: labelColor,
+                            fontSize: '12px'
+                        }
+                    }
+                },
+                fill: {
+                    type: ['solid', 'solid'],
+                    opacity: [0.25, 1]
+                },
+                states: {
+                    normal: {
+                        filter: {
+                            type: 'none',
+                            value: 0
+                        }
+                    },
+                    hover: {
+                        filter: {
+                            type: 'none',
+                            value: 0
+                        }
+                    },
+                    active: {
+                        allowMultipleDataPointsSelection: false,
+                        filter: {
+                            type: 'none',
+                            value: 0
+                        }
+                    }
+                },
+                tooltip: {
+                    style: {
+                        fontSize: '12px'
+                    },
+                    y: {
+                        formatter: function (val) {
+                            return "$" + val + " thousands"
+                        }
+                    },
+                    marker: {
+                        show: false
+                    }
+                },
+                colors: ['#ffffff', '#ffffff'],
+                grid: {
+                    borderColor: borderColor,
+                    strokeDashArray: 4,
+                    yaxis: {
+                        lines: {
+                            show: true
+                        }
+                    },
+                    padding: {
+                        left: 20,
+                        right: 20
+                    }
+                }
+            };
+
+            var chart = new ApexCharts(element, options);
+            chart.render()
+        });        
+    }
+
     var initMixedWidget3 = function() {
         var charts = document.querySelectorAll('.mixed-widget-3-chart');
 
@@ -2316,7 +2451,7 @@ var KTWidgets = function () {
             chart = new ApexCharts(element, options);
             chart.render();      
         });        
-    }
+    } 
 
     // Feeds Widgets
     var initFeedWidget1 = function() {
@@ -2405,12 +2540,154 @@ var KTWidgets = function () {
         }                 
     }
 
+    // Calendar
+    var initCalendarWidget1 = function() {
+        if (typeof FullCalendar === 'undefined' || !document.querySelector('#kt_calendar_widget_1')) {
+            return;
+        }
+
+        var todayDate = moment().startOf('day');
+        var YM = todayDate.format('YYYY-MM');
+        var YESTERDAY = todayDate.clone().subtract(1, 'day').format('YYYY-MM-DD');
+        var TODAY = todayDate.format('YYYY-MM-DD');
+        var TOMORROW = todayDate.clone().add(1, 'day').format('YYYY-MM-DD');
+
+        var calendarEl = document.getElementById('kt_calendar_widget_1');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+            },
+
+            height: 800,
+            contentHeight: 780,
+            aspectRatio: 3,  // see: https://fullcalendar.io/docs/aspectRatio
+
+            nowIndicator: true,
+            now: TODAY + 'T09:25:00', // just for demo
+
+            views: {
+                dayGridMonth: { buttonText: 'month' },
+                timeGridWeek: { buttonText: 'week' },
+                timeGridDay: { buttonText: 'day' }
+            },
+
+            initialView: 'dayGridMonth',
+            initialDate: TODAY,
+
+            editable: true,
+            dayMaxEvents: true, // allow "more" link when too many events
+            navLinks: true,
+            events: [
+                {
+                    title: 'All Day Event',
+                    start: YM + '-01',
+                    description: 'Toto lorem ipsum dolor sit incid idunt ut',
+                    className: "fc-event-danger fc-event-solid-warning"
+                },
+                {
+                    title: 'Reporting',
+                    start: YM + '-14T13:30:00',
+                    description: 'Lorem ipsum dolor incid idunt ut labore',
+                    end: YM + '-14',
+                    className: "fc-event-success"
+                },
+                {
+                    title: 'Company Trip',
+                    start: YM + '-02',
+                    description: 'Lorem ipsum dolor sit tempor incid',
+                    end: YM + '-03',
+                    className: "fc-event-primary"
+                },
+                {
+                    title: 'ICT Expo 2017 - Product Release',
+                    start: YM + '-03',
+                    description: 'Lorem ipsum dolor sit tempor inci',
+                    end: YM + '-05',
+                    className: "fc-event-light fc-event-solid-primary"
+                },
+                {
+                    title: 'Dinner',
+                    start: YM + '-12',
+                    description: 'Lorem ipsum dolor sit amet, conse ctetur',
+                    end: YM + '-10'
+                },
+                {
+                    id: 999,
+                    title: 'Repeating Event',
+                    start: YM + '-09T16:00:00',
+                    description: 'Lorem ipsum dolor sit ncididunt ut labore',
+                    className: "fc-event-danger"
+                },
+                {
+                    id: 1000,
+                    title: 'Repeating Event',
+                    description: 'Lorem ipsum dolor sit amet, labore',
+                    start: YM + '-16T16:00:00'
+                },
+                {
+                    title: 'Conference',
+                    start: YESTERDAY,
+                    end: TOMORROW,
+                    description: 'Lorem ipsum dolor eius mod tempor labore',
+                    className: "fc-event-primary"
+                },
+                {
+                    title: 'Meeting',
+                    start: TODAY + 'T10:30:00',
+                    end: TODAY + 'T12:30:00',
+                    description: 'Lorem ipsum dolor eiu idunt ut labore'
+                },
+                {
+                    title: 'Lunch',
+                    start: TODAY + 'T12:00:00',
+                    className: "fc-event-info",
+                    description: 'Lorem ipsum dolor sit amet, ut labore'
+                },
+                {
+                    title: 'Meeting',
+                    start: TODAY + 'T14:30:00',
+                    className: "fc-event-warning",
+                    description: 'Lorem ipsum conse ctetur adipi scing'
+                },
+                {
+                    title: 'Happy Hour',
+                    start: TODAY + 'T17:30:00',
+                    className: "fc-event-info",
+                    description: 'Lorem ipsum dolor sit amet, conse ctetur'
+                },
+                {
+                    title: 'Dinner',
+                    start: TOMORROW + 'T05:00:00',
+                    className: "fc-event-solid-danger fc-event-light",
+                    description: 'Lorem ipsum dolor sit ctetur adipi scing'
+                },
+                {
+                    title: 'Birthday Party',
+                    start: TOMORROW + 'T07:00:00',
+                    className: "fc-event-primary",
+                    description: 'Lorem ipsum dolor sit amet, scing'
+                },
+                {
+                    title: 'Click for Google',
+                    url: 'http://google.com/',
+                    start: YM + '-28',
+                    className: "fc-event-solid-info fc-event-light",
+                    description: 'Lorem ipsum dolor sit amet, labore'
+                }
+            ]
+        });
+
+        calendar.render();
+    }
+
     // Public methods
     return {
         init: function () {
             // Statistics widgets
             initStatisticsWidget3();
-            initStatisticsWidget4();
+            initStatisticsWidget4();            
 
             // Charts widgets
             initChartsWidget1();
@@ -2429,7 +2706,8 @@ var KTWidgets = function () {
             initMixedWidget5();
             initMixedWidget6();
             initMixedWidget7();
-            initMixedWidget10();
+            initMixedWidget10();          
+            initMixedWidget12(); 
 
             // Feeds
             initFeedWidget1();
@@ -2437,6 +2715,9 @@ var KTWidgets = function () {
 
             // Follow button
             initUserFollowButton();
+
+            // Calendar
+            initCalendarWidget1();
         }   
     }
 }();

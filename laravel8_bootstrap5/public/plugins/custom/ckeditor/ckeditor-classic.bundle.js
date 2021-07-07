@@ -19,13 +19,13 @@ eval("/*!\n * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. Al
 
 /***/ }),
 
-/***/ "./resources/assets/demo1/plugins/custom/ckeditor/ckeditor-classic.js":
-/*!****************************************************************************!*\
-  !*** ./resources/assets/demo1/plugins/custom/ckeditor/ckeditor-classic.js ***!
-  \****************************************************************************/
+/***/ "./resources/assets/core/plugins/custom/ckeditor/ckeditor-classic.js":
+/*!***************************************************************************!*\
+  !*** ./resources/assets/core/plugins/custom/ckeditor/ckeditor-classic.js ***!
+  \***************************************************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// CKEditor  - Rock-solid, free WYSIWYG editor with collaborative editing, 200+ features, full documentation and support: https://ckeditor.com/\n// CKEditor Classic\nwindow.ClassicEditor = __webpack_require__(/*! @ckeditor/ckeditor5-build-classic/build/ckeditor.js */ \"./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvYXNzZXRzL2RlbW8xL3BsdWdpbnMvY3VzdG9tL2NrZWRpdG9yL2NrZWRpdG9yLWNsYXNzaWMuanM/OGY1MSJdLCJuYW1lcyI6WyJ3aW5kb3ciLCJDbGFzc2ljRWRpdG9yIiwicmVxdWlyZSJdLCJtYXBwaW5ncyI6IkFBQUE7QUFFQTtBQUNBQSxNQUFNLENBQUNDLGFBQVAsR0FBdUJDLG1CQUFPLENBQUMsK0hBQUQsQ0FBOUIiLCJmaWxlIjoiLi9yZXNvdXJjZXMvYXNzZXRzL2RlbW8xL3BsdWdpbnMvY3VzdG9tL2NrZWRpdG9yL2NrZWRpdG9yLWNsYXNzaWMuanMuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBDS0VkaXRvciAgLSBSb2NrLXNvbGlkLCBmcmVlIFdZU0lXWUcgZWRpdG9yIHdpdGggY29sbGFib3JhdGl2ZSBlZGl0aW5nLCAyMDArIGZlYXR1cmVzLCBmdWxsIGRvY3VtZW50YXRpb24gYW5kIHN1cHBvcnQ6IGh0dHBzOi8vY2tlZGl0b3IuY29tL1xyXG5cclxuLy8gQ0tFZGl0b3IgQ2xhc3NpY1xyXG53aW5kb3cuQ2xhc3NpY0VkaXRvciA9IHJlcXVpcmUoJ0Bja2VkaXRvci9ja2VkaXRvcjUtYnVpbGQtY2xhc3NpYy9idWlsZC9ja2VkaXRvci5qcycpO1xyXG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/assets/demo1/plugins/custom/ckeditor/ckeditor-classic.js\n");
+eval("// CKEditor  - Rock-solid, free WYSIWYG editor with collaborative editing, 200+ features, full documentation and support: https://ckeditor.com/\n// CKEditor Classic\nwindow.ClassicEditor = __webpack_require__(/*! @ckeditor/ckeditor5-build-classic/build/ckeditor.js */ \"./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvYXNzZXRzL2NvcmUvcGx1Z2lucy9jdXN0b20vY2tlZGl0b3IvY2tlZGl0b3ItY2xhc3NpYy5qcz8yOGQyIl0sIm5hbWVzIjpbIndpbmRvdyIsIkNsYXNzaWNFZGl0b3IiLCJyZXF1aXJlIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUVBO0FBQ0FBLE1BQU0sQ0FBQ0MsYUFBUCxHQUF1QkMsbUJBQU8sQ0FBQywrSEFBRCxDQUE5QiIsImZpbGUiOiIuL3Jlc291cmNlcy9hc3NldHMvY29yZS9wbHVnaW5zL2N1c3RvbS9ja2VkaXRvci9ja2VkaXRvci1jbGFzc2ljLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gQ0tFZGl0b3IgIC0gUm9jay1zb2xpZCwgZnJlZSBXWVNJV1lHIGVkaXRvciB3aXRoIGNvbGxhYm9yYXRpdmUgZWRpdGluZywgMjAwKyBmZWF0dXJlcywgZnVsbCBkb2N1bWVudGF0aW9uIGFuZCBzdXBwb3J0OiBodHRwczovL2NrZWRpdG9yLmNvbS9cclxuXHJcbi8vIENLRWRpdG9yIENsYXNzaWNcclxud2luZG93LkNsYXNzaWNFZGl0b3IgPSByZXF1aXJlKCdAY2tlZGl0b3IvY2tlZGl0b3I1LWJ1aWxkLWNsYXNzaWMvYnVpbGQvY2tlZGl0b3IuanMnKTtcclxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/assets/core/plugins/custom/ckeditor/ckeditor-classic.js\n");
 
 /***/ })
 
@@ -60,7 +60,7 @@ eval("// CKEditor  - Rock-solid, free WYSIWYG editor with collaborative editing,
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval-source-map devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./resources/assets/demo1/plugins/custom/ckeditor/ckeditor-classic.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./resources/assets/core/plugins/custom/ckeditor/ckeditor-classic.js");
 /******/ 	
 /******/ })()
 ;

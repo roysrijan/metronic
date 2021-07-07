@@ -330,7 +330,10 @@ window.addEventListener('resize', function() {
 
         if ( elements && elements.length > 0 ) {
             for (var i = 0, len = elements.length; i < len; i++) {
-                KTDrawer.getInstance(elements[i]).update();
+                var drawer = KTDrawer.getInstance(elements[i]);
+                if (drawer) {
+                    drawer.update();
+                }
             }
         }
     }, 200);

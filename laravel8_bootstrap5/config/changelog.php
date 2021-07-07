@@ -1,6 +1,22 @@
 <?php
 
 return array(
+    'v8.0.17' => array(
+        'date'      => '06 July, 2021',
+        'changelog' => array(
+            'new' => array(),
+
+            'update' => array(
+                'New documentation layout integration.',
+                'Update <code>webpack.mix.js</code> to move reusable assets to global.',
+            ),
+
+            'fix' => array(
+                'Fixed page configuration with asterisk (<code>*</code>) path.',
+            ),
+        ),
+    ),
+
     'v8.0.16' => array(
         'date'      => '29 June, 2021',
         'changelog' => array(

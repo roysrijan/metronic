@@ -6,7 +6,7 @@ use App\Core\Adapters\Theme;
 
 class Menu {
     // Menu config
-    private $items;
+    public $items;
 
     // Current page path
     private $path;

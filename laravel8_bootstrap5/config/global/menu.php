@@ -89,10 +89,22 @@ return array(
             'heading' => 'Configuration',
         ),
 
+        // General
+        array(
+            'title' => 'General',
+            'path'  => 'documentation/configuration/general',
+        ),
+
         // Menu
         array(
             'title' => 'Menu',
             'path'  => 'documentation/configuration/menu',
+        ),
+
+        // Page
+        array(
+            'title' => 'Page',
+            'path'  => 'documentation/configuration/page',
         ),
 
         // Separator

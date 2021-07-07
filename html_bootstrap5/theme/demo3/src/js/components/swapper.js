@@ -143,7 +143,10 @@ window.addEventListener('resize', function() {
 
         if ( elements && elements.length > 0 ) {
             for (var i = 0, len = elements.length; i < len; i++) {
-                KTSwapper.getInstance(elements[i]).update();
+                var swapper = KTSwapper.getInstance(elements[i]);
+                if (swapper) {
+                    swapper.update();
+                }                
             }
         }
     }, 200);

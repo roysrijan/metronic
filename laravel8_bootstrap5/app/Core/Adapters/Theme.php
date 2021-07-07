@@ -2,12 +2,9 @@
 
 namespace App\Core\Adapters;
 
-use File;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
-use Symfony\Component\Finder\Exception\DirectoryNotFoundException;
 
 /**
  * Adapter class to make the Metronic core lib compatible with the Laravel functions
@@ -236,6 +233,14 @@ class Theme extends \App\Core\Theme
     }
 
     /**
+     * Get the current page title from config page.php
+     */
+    public static function getPageTitle()
+    {
+        return theme()->getOption('page', 'title');
+    }
+
+    /**
      * Get current route name and replace with a new route name
      *
      * @param $name
@@ -278,18 +283,16 @@ class Theme extends \App\Core\Theme
         $configPath = Theme::$demo.'.pages.'.str_replace('/', '.', Theme::getPagePath());
         $pageConfig = collect(config($configPath));
 
-        if ($pageConfig->isNotEmpty()) {
-            // Merge group config with child config
-            $pageGroupOptions = Theme::getPageGroupOptions(config(Theme::$demo.'.pages'), Theme::getPagePath());
-            if ($pageGroupOptions) {
-                $overridenConfig = $pageConfig->replaceRecursive($pageGroupOptions);
-                config([$configPath => $overridenConfig->all()]);
-            }
-
-            $generalConfig = collect(config(Theme::$demo.'.general'));
-            // Merge general config with page level config
-            config([Theme::$demo.'.general' => $generalConfig->replaceRecursive(config($configPath))->all()]);
+        // Merge group config with child config
+        $pageGroupOptions = Theme::getPageGroupOptions(config(Theme::$demo.'.pages'), Theme::getPagePath());
+        if ($pageGroupOptions) {
+            $overridenConfig = $pageConfig->replaceRecursive($pageGroupOptions);
+            config([$configPath => $overridenConfig->all()]);
         }
+
+        $generalConfig = collect(config(Theme::$demo.'.general'));
+        // Merge general config with page level config
+        config([Theme::$demo.'.general' => $generalConfig->replaceRecursive(config($configPath))->all()]);
     }
 
     /**
@@ -345,6 +348,16 @@ class Theme extends \App\Core\Theme
                 $this->iterateMenu($menu, $output);
             }
         }
+    }
+
+    public static function putProVersionTooltip($attr = array())
+    {
+        ob_start();
+
+        // Call the function from core Theme
+        parent::putProVersionTooltip($attr);
+
+        return ob_get_clean();
     }
 
 }

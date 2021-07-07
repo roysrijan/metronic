@@ -3,9 +3,9 @@
     <!--begin::Section-->
     <div class="pb-10">
         <!--begin::Heading-->
-        <h1 class="anchor fw-bolder mb-2" id="troubleshoot">
-            <a href="#troubleshoot"></a>
-            Troubleshoot
+        <h1 class="anchor fw-bolder mb-5" id="title">
+            <a href="#title"></a>
+            {{ theme()->getPageTitle() }}
         </h1>
         <!--end::Heading-->
 

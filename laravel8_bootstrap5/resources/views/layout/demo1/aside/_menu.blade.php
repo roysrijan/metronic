@@ -1,25 +1,12 @@
 {{--begin::Aside Menu--}}
-<?php
-$menu = \App\Core\Adapters\Bootstrap::getAsideMenu();
-
-if (\App\Core\Adapters\Bootstrap::isDocumentationMenu()) {
-    $menu->setItemLinkClass("py-2");
-
-    $menu->addCallback("heading", function ($heading) {
-        $html = '<h4 class="menu-content text-muted mb-0 fs-7 text-uppercase">';
-        $html .= $heading;
-        $html .= '</h4>';
-
-        return $html;
-    });
-}
-
-$menuClasses = '';
-?>
+@php
+    $menu = \App\Core\Adapters\Bootstrap::getAsideMenu();
+    \App\Core\Adapters\Bootstrap::filterMenuPermissions($menu->items);
+@endphp
 
 <div
     class="hover-scroll-overlay-y my-5 my-lg-5"
-    id="kt_aside_menu_<?php util()->putIf(\App\Core\Adapters\Bootstrap::isDocumentationMenu(), 'docs_')?>wrapper"
+    id="kt_aside_menu_wrapper"
     data-kt-scroll="true"
     data-kt-scroll-activate="{default: false, lg: true}"
     data-kt-scroll-height="auto"
@@ -28,10 +15,8 @@ $menuClasses = '';
     data-kt-scroll-offset="0"
 >
     {{--begin::Menu--}}
-    <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 {{ $menuClasses }}" id="#kt_aside_menu" data-kt-menu="true">
-        <?php
-        $menu->build();
-        ?>
+    <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true">
+        {!! $menu->build() !!}
     </div>
     {{--end::Menu--}}
 </div>

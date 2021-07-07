@@ -1,7 +1,7 @@
 const gulpConfig = {
 	name: 'Metronic',
 	desc: "Gulp build config file",
-	version: "8.0.16",
+	version: "8.0.17",
 	config: {
 		debug: false,
 		compile: {
@@ -410,6 +410,17 @@ const gulpConfig = {
 			dist: {
 				media: "{$config.dist}/media/",
 			},
+		},
+		api: {
+			src: {
+				media: [
+					"{$config.path.src}/api/**/*.*",
+					"{$config.path.common_src}/api/**/*.*",
+				],
+			},
+			dist: {
+				media: "{$config.dist}/api/",
+			}
 		}
 	}
 };

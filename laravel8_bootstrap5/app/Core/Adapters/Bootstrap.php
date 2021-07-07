@@ -23,4 +23,28 @@ class Bootstrap extends \App\Core\Bootstrap
             Theme::addHtmlAttribute('html', 'style', 'direction:rtl;');
         }
     }
+
+    /**
+     * Filter menu item based on the user "can" permission
+     *
+     * @param $array
+     */
+    public static function filterMenuPermissions(&$array)
+    {
+        $user = auth()->user();
+
+        foreach ($array as $key => &$value) {
+            if (isset($value['permission']) && !$user->hasAnyPermission((array) $value['permission'])) {
+                unset($array[$key]);
+            }
+
+            if (isset($value['role']) && !$user->hasAnyRole((array) $value['role'])) {
+                unset($array[$key]);
+            }
+
+            if (is_array($value)) {
+                self::filterMenuPermissions($value);
+            }
+        }
+    }
 }

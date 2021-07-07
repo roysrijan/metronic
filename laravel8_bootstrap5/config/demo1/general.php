@@ -4,7 +4,7 @@ return array(
     'product' => array(
         'name'        => 'Metronic',
         'description' => 'Metronic - #1 Selling Bootstrap 5 HTML Multi-demo Admin Dashboard Theme',
-        'version'     => '8.0.16',
+        'version'     => '8.0.17',
         'preview'     => 'https://preview.keenthemes.com/metronic8',
         'purchase'    => 'https://1.envato.market/EA4JP',
         'demos'       => array(
@@ -90,8 +90,7 @@ return array(
         'title'       => 'Metronic Bootstrap 5 Theme',
         'description' => 'Metronic admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets.',
         'keywords'    => 'Metronic, bootstrap, bootstrap 5, Angular 11, VueJs, React, Laravel, admin themes, web design, figma, web development, ree admin themes, bootstrap admin, bootstrap dashboard',
-        'canonical'   => 'https://preview.keenthemes.com/metronic-laravel',
-        'site-key'    => '6Lf92jMUAAAAANk8wz68r73rA2uPGr4_e0gn96BL',
+        'canonical'   => 'https://preview.keenthemes.com/metronic8',
     ),
 
     // Assets
@@ -104,6 +103,7 @@ return array(
         ),
         'css'     => array(
             'plugins/global/plugins.bundle.css',
+            'plugins/global/extend.bundle.css',
             'css/style.bundle.css',
         ),
         'js'      => array(
@@ -116,8 +116,16 @@ return array(
     'layout'  => array(
         // Main
         'main'       => array(
-            'type'          => 'default', // Set layout type: default|blank|none
-            'primary-color' => '#009EF7',
+            'base'              => 'default', // Set base layout: default|docs
+            'type'              => 'default', // Set layout type: default|blank|none
+            'dark-skin-enabled' => true, // Enable optioanl dark skin mode
+            'primary-color'     => '#009EF7',
+        ),
+
+        // Docs
+        'docs'       => array(
+            'logo-path'  => 'logos/logo-1-dark.svg',
+            'logo-class' => 'h-15px',
         ),
 
         // Loader

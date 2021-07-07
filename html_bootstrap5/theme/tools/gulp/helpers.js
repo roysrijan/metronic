@@ -7,16 +7,15 @@ import lazypipe from "lazypipe";
 import gulpif from "gulp-if";
 import terser from "gulp-terser";
 import sourcemaps from "gulp-sourcemaps";
-import path from "path";
+import path, * as pathDir from "path";
 import fs from "fs";
 import rtlcss from "gulp-rtlcss";
 import cleancss from "gulp-clean-css";
 import yargs from "yargs";
-import { hideBin } from 'yargs/helpers'
+import {hideBin} from 'yargs/helpers'
 import glob from "glob";
-import * as pathDir from 'path';
-import { fileURLToPath } from 'url';
-import { build } from "./build.js";
+import {fileURLToPath} from 'url';
+import {build} from "./build.js";
 
 const argv = yargs(hideBin(process.argv)).argv;
 
@@ -27,6 +26,7 @@ const args = Object.assign(
     sass: false,
     js: false,
     media: false,
+    darkSkin: false,
   },
   argv
 );
@@ -192,7 +192,13 @@ const outputChannel = (path, outputFile, type) => {
         rename({ suffix: args.suffix ? ".min" : "" })
       );
     });
+
+    // modify file name to dark
+    // piping = piping.pipe(() => {
+    //   return rename({suffix: args.darkSkin ? ".dark" : ""});
+    // });
   }
+
   if (type === "scripts") {
     piping = piping.pipe(() => {
       return gulpif(
@@ -300,9 +306,9 @@ const baseFileName = (path) => {
   return "";
 };
 
-const baseName = (str) => {
+const baseName = (str, extension) => {
   let base = new String(str).substring(str.lastIndexOf("/") + 1);
-  if (base.lastIndexOf(".") != -1) {
+  if (!extension && base.lastIndexOf(".") != -1) {
     base = base.substring(0, base.lastIndexOf("."));
   }
   return base;
@@ -324,7 +330,7 @@ const getDemos = () => {
   if (build.build.demos) {
     return [];
   }
-  
+
   let demos = Object.keys(build.build.demos);
   // build by demo, leave demo empty to generate all demos
   if (typeof build.config.demo !== "undefined" && build.config.demo !== "") {
@@ -372,6 +378,25 @@ const getTheme = () => {
   }
   // default theme
   return "start";
+};
+
+/**
+ * Change scss file name with suffix dark
+ *
+ * @param file
+ * @returns {string|*}
+ */
+const changeDarkFileName = (file) => {
+  // files that need to be changed to dark
+  const files = ['style.scss', 'plugins.scss', 'style.bundle.css', 'plugins.bundle.css',];
+
+  if (files.indexOf(baseName(file, true)) !== -1) {
+    let path = pathOnly(file);
+    if (path) {
+      path += '/';
+    }
+    return path + baseName(file) + '.dark.scss';
+  }
 };
 
 /**
@@ -482,6 +507,29 @@ const bundle = (bundle) => {
       switch (type) {
         case "styles":
           if (bundle.dist.hasOwnProperty(type)) {
+
+            if (args.darkSkin) {
+              // modify file name to dark
+              let toDarkFiles = bundle.src[type].map(changeDarkFileName).filter(function (el) {
+                return el != null;
+              });
+
+              if (typeof toDarkFiles !== 'undefined' && toDarkFiles.length > 0) {
+                const fileName = baseName(bundle.dist[type]).replace('.bundle', '.dark.bundle.css');
+                const darkOutput = pathOnly(bundle.dist[type]) + "/" + fileName;
+                stream = gulp
+                    .src(toDarkFiles, {allowEmpty: true})
+                    .pipe(cssRewriter(bundle.dist)())
+                    .pipe(concat(fileName))
+                    .pipe(cssChannel()());
+                const outputDarkCSS = outputChannel(darkOutput, fileName, type)();
+                if (outputDarkCSS) {
+                  stream.pipe(outputDarkCSS);
+                }
+                streams.push(stream);
+              }
+            }
+
             // rtl css bundle
             if (
               typeof build.config.compile.rtl !== "undefined" &&
@@ -511,21 +559,13 @@ const bundle = (bundle) => {
                 shouldRtl = true;
               }
 
-              const rtlOutput =
-                pathOnly(bundle.dist[type]) +
-                "/" +
-                baseName(bundle.dist[type]) +
-                ".rtl.css";
+              const rtlOutput = pathOnly(bundle.dist[type]) + "/" + baseName(bundle.dist[type]) + ".rtl.css";
               stream = gulp
                 .src(toRtlFiles, { allowEmpty: true })
                 .pipe(cssRewriter(bundle.dist)())
                 .pipe(concat(baseName(bundle.dist[type]) + ".rtl.css"))
                 .pipe(cssChannel(shouldRtl)());
-              const outputRTLCSS = outputChannel(
-                rtlOutput,
-                baseName(bundle.dist[type]) + ".rtl.css",
-                type
-              )();
+              const outputRTLCSS = outputChannel(rtlOutput, baseName(bundle.dist[type]) + ".rtl.css", type)();
               if (outputRTLCSS) {
                 stream.pipe(outputRTLCSS);
               }
@@ -538,11 +578,7 @@ const bundle = (bundle) => {
               .pipe(cssRewriter(bundle.dist)())
               .pipe(concat(outputFile))
               .pipe(cssChannel()());
-            const outputDefaultCSSBundle = outputChannel(
-              bundle.dist[type],
-              outputFile,
-              type
-            )();
+            const outputDefaultCSSBundle = outputChannel(bundle.dist[type], outputFile, type)();
             if (outputDefaultCSSBundle) {
               stream.pipe(outputDefaultCSSBundle);
             }
@@ -557,11 +593,7 @@ const bundle = (bundle) => {
               .pipe(concat(outputFile))
               .pipe(jsChannel()())
               .on("error", console.error.bind(console));
-            const outputScripts = outputChannel(
-              bundle.dist[type],
-              outputFile,
-              type
-            )();
+            const outputScripts = outputChannel(bundle.dist[type], outputFile, type)();
             if (outputScripts) {
               stream.pipe(outputScripts);
             }
@@ -573,11 +605,7 @@ const bundle = (bundle) => {
         case "images":
           if (bundle.dist.hasOwnProperty(type)) {
             stream = gulp.src(bundle.src[type], { allowEmpty: true });
-            const outputImages = outputChannel(
-              bundle.dist[type],
-              undefined,
-              type
-            )();
+            const outputImages = outputChannel(bundle.dist[type], undefined, type)();
             if (outputImages) {
               stream.pipe(outputImages);
             }

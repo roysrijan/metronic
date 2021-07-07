@@ -11,6 +11,10 @@ class BaseLayout extends Component
      */
     public function render()
     {
+        if (theme()->getOption('layout', 'base') === 'docs') {
+            return view('layout.docs.master');
+        }
+
         return theme()->getView('layout.master');
     }
 }

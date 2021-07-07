@@ -20,6 +20,8 @@ return array(
             ),
 
             'layout' => array(
+                'base'    => 'docs', // Set base layout: default|docs
+
                 // Content
                 'content' => array(
                     'width'  => 'fixed', // Set fixed|fluid to change width type
@@ -48,7 +50,7 @@ return array(
             ),
 
             'file-structure' => array(
-                'title'       => 'Build',
+                'title'       => 'File Structure',
                 'description' => '',
                 'view'        => 'documentation/getting-started/file-structure',
             ),
@@ -106,10 +108,20 @@ return array(
         ),
 
         'configuration' => array(
-            'menu' => array(
-                'title'       => 'Menu',
+            'general' => array(
+                'title'       => 'General Configuration',
+                'description' => '',
+                'view'        => 'documentation/configuration/general',
+            ),
+            'menu'    => array(
+                'title'       => 'Menu Configuration',
                 'description' => '',
                 'view'        => 'documentation/configuration/menu',
+            ),
+            'page'    => array(
+                'title'       => 'Page Configuration',
+                'description' => '',
+                'view'        => 'documentation/configuration/page',
             ),
         ),
     ),

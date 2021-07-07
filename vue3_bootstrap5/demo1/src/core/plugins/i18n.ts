@@ -54,7 +54,8 @@ const messages = {
     createAPIKey: "Create API Key",
     twoFactorAuth: "Two Factor Auth",
     createApp: "Create App",
-    createAccount: "Create Account"
+    createAccount: "Create Account",
+    activity: "Activity"
   },
   es: {
     dashboard: "Tablero",
@@ -109,7 +110,8 @@ const messages = {
     createAPIKey: "Crea Clave De Api",
     twoFactorAuth: "Dos Factores",
     createApp: "Crear Aplicacion",
-    createAccount: "Crear Una Cuenta"
+    createAccount: "Crear Una Cuenta",
+    activity: "Actividad"
   },
   de: {
     dashboard: "Instrumententafel",
@@ -164,7 +166,8 @@ const messages = {
     createAPIKey: "Api-Key Erstellen",
     twoFactorAuth: "Zwei Faktor Auth.",
     createApp: "App Erstellen",
-    createAccount: "Benutzerkonto Erstellen"
+    createAccount: "Benutzerkonto Erstellen",
+    activity: "Aktivität"
   },
   ja: {
     dashboard: "ダッシュボード",
@@ -219,7 +222,8 @@ const messages = {
     createAPIKey: "Apiキーを作成します",
     twoFactorAuth: "2つの要因Auth",
     createApp: "アプリを作成します",
-    createAccount: "アカウントを作成する"
+    createAccount: "アカウントを作成する",
+    activity: "アクティビティ"
   },
   fr: {
     dashboard: "Générateur de mise",
@@ -274,7 +278,8 @@ const messages = {
     createAPIKey: "Créer Une Touche Api",
     twoFactorAuth: "Deux Facteurs D'Authentification",
     createApp: "Créer Une Application",
-    createAccount: "Créer Un Compte"
+    createAccount: "Créer Un Compte",
+    activity: "Activité"
   }
 };
 

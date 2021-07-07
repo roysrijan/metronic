@@ -6,7 +6,8 @@ return array(
         'view'        => 'index',
         'layout'      => array(
             'page-title' => array(
-                'breadcrumb' => false // hide breadcrumb
+                'description' => true,
+                'breadcrumb'  => false,
             ),
         ),
         'assets'      => array(

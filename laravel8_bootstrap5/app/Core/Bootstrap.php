@@ -161,11 +161,7 @@ class Bootstrap {
 	}
 
 	private static function initAsideMenu() {
-		if (Theme::getOption('layout', 'aside/menu') === 'documentation') {
-			self::$menu = new Menu( Theme::getOption('menu', 'documentation'), Theme::getPagePath() );
-		} else {
-			self::$menu = new Menu( Theme::getOption('menu', 'main'), Theme::getPagePath() );
-		}
+		self::$menu = new Menu( Theme::getOption('menu', 'main'), Theme::getPagePath() );
 
 		if (Theme::getOption('layout', 'aside/menu-icons-display') === false) {
 			self::$menu->displayIcons(false);
@@ -190,20 +186,22 @@ class Bootstrap {
 
 	// Public Methods
 	public static function run() {
-		// Init layout
-		self::initLayout();
-
 		if ( Theme::getOption('layout', 'main/type') !== 'default') {
 			return;
 		}
 
+		if ( Theme::getOption('layout', 'base') === 'docs') {
+			return;
+		}
+
+		// Init layout
+		self::initLayout();
 		self::initHeader();
 		self::initPageTitle();
 		self::initToolbar();
 		self::initContent();
 		self::initAside();
 		self::initFooter();
-
 		self::initAsideMenu();
 		self::initHorizontalMenu();
 	}
@@ -216,25 +214,10 @@ class Bootstrap {
 		return self::$horizontalMenu;
 	}
 
-	public static function isDocumentationMenu() {
-		return (Theme::getOption('layout', 'aside/menu') === 'documentation');
-	}
-
 	public static function getBreadcrumb() {
 		$options = array(
 			'skip-active' => false
 		);
-
-		if ( Bootstrap::isDocumentationMenu() ) {
-			$path = Theme::getPagePath();
-			$path_parts = explode("/", $path);
-			$title = Util::camelize($path_parts[1], '-');
-
-			$options['home'] = array(
-				'title' => $title,
-				'active' => false
-			);
-		}
 
 		return Bootstrap::getAsideMenu()->getBreadcrumb($options);
 	}

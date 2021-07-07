@@ -20,13 +20,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./resources/assets/demo1/plugins/custom/leaflet/leaflet.js":
-/*!******************************************************************!*\
-  !*** ./resources/assets/demo1/plugins/custom/leaflet/leaflet.js ***!
-  \******************************************************************/
+/***/ "./resources/assets/core/plugins/custom/leaflet/leaflet.js":
+/*!*****************************************************************!*\
+  !*** ./resources/assets/core/plugins/custom/leaflet/leaflet.js ***!
+  \*****************************************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// Leaflet - Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps: https://leafletjs.com/\nwindow.L = __webpack_require__(/*! leaflet/dist/leaflet.js */ \"./node_modules/leaflet/dist/leaflet.js\");\n\n__webpack_require__(/*! esri-leaflet */ \"./node_modules/esri-leaflet/src/EsriLeaflet.js\");\n\nwindow.L.esri = __webpack_require__(/*! esri-leaflet-geocoder */ \"./node_modules/esri-leaflet-geocoder/dist/esri-leaflet-geocoder-debug.js\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvYXNzZXRzL2RlbW8xL3BsdWdpbnMvY3VzdG9tL2xlYWZsZXQvbGVhZmxldC5qcz8zNzIxIl0sIm5hbWVzIjpbIndpbmRvdyIsIkwiLCJyZXF1aXJlIiwiZXNyaSJdLCJtYXBwaW5ncyI6IkFBQUE7QUFFQUEsTUFBTSxDQUFDQyxDQUFQLEdBQVdDLG1CQUFPLENBQUMsdUVBQUQsQ0FBbEI7O0FBQ0FBLG1CQUFPLENBQUMsb0VBQUQsQ0FBUDs7QUFDQUYsTUFBTSxDQUFDQyxDQUFQLENBQVNFLElBQVQsR0FBZ0JELG1CQUFPLENBQUMsdUdBQUQsQ0FBdkIiLCJmaWxlIjoiLi9yZXNvdXJjZXMvYXNzZXRzL2RlbW8xL3BsdWdpbnMvY3VzdG9tL2xlYWZsZXQvbGVhZmxldC5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIExlYWZsZXQgLSBMZWFmbGV0IGlzIHRoZSBsZWFkaW5nIG9wZW4tc291cmNlIEphdmFTY3JpcHQgbGlicmFyeSBmb3IgbW9iaWxlLWZyaWVuZGx5IGludGVyYWN0aXZlIG1hcHM6IGh0dHBzOi8vbGVhZmxldGpzLmNvbS9cblxud2luZG93LkwgPSByZXF1aXJlKCdsZWFmbGV0L2Rpc3QvbGVhZmxldC5qcycpO1xucmVxdWlyZSgnZXNyaS1sZWFmbGV0Jyk7XG53aW5kb3cuTC5lc3JpID0gcmVxdWlyZSgnZXNyaS1sZWFmbGV0LWdlb2NvZGVyJyk7XG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/assets/demo1/plugins/custom/leaflet/leaflet.js\n");
+eval("// Leaflet - Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps: https://leafletjs.com/\nwindow.L = __webpack_require__(/*! leaflet/dist/leaflet.js */ \"./node_modules/leaflet/dist/leaflet.js\");\n\n__webpack_require__(/*! esri-leaflet */ \"./node_modules/esri-leaflet/src/EsriLeaflet.js\");\n\nwindow.L.esri = __webpack_require__(/*! esri-leaflet-geocoder */ \"./node_modules/esri-leaflet-geocoder/dist/esri-leaflet-geocoder-debug.js\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvYXNzZXRzL2NvcmUvcGx1Z2lucy9jdXN0b20vbGVhZmxldC9sZWFmbGV0LmpzP2EyYWIiXSwibmFtZXMiOlsid2luZG93IiwiTCIsInJlcXVpcmUiLCJlc3JpIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUVBQSxNQUFNLENBQUNDLENBQVAsR0FBV0MsbUJBQU8sQ0FBQyx1RUFBRCxDQUFsQjs7QUFDQUEsbUJBQU8sQ0FBQyxvRUFBRCxDQUFQOztBQUNBRixNQUFNLENBQUNDLENBQVAsQ0FBU0UsSUFBVCxHQUFnQkQsbUJBQU8sQ0FBQyx1R0FBRCxDQUF2QiIsImZpbGUiOiIuL3Jlc291cmNlcy9hc3NldHMvY29yZS9wbHVnaW5zL2N1c3RvbS9sZWFmbGV0L2xlYWZsZXQuanMuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBMZWFmbGV0IC0gTGVhZmxldCBpcyB0aGUgbGVhZGluZyBvcGVuLXNvdXJjZSBKYXZhU2NyaXB0IGxpYnJhcnkgZm9yIG1vYmlsZS1mcmllbmRseSBpbnRlcmFjdGl2ZSBtYXBzOiBodHRwczovL2xlYWZsZXRqcy5jb20vXHJcblxyXG53aW5kb3cuTCA9IHJlcXVpcmUoJ2xlYWZsZXQvZGlzdC9sZWFmbGV0LmpzJyk7XHJcbnJlcXVpcmUoJ2VzcmktbGVhZmxldCcpO1xyXG53aW5kb3cuTC5lc3JpID0gcmVxdWlyZSgnZXNyaS1sZWFmbGV0LWdlb2NvZGVyJyk7XHJcbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/assets/core/plugins/custom/leaflet/leaflet.js\n");
 
 /***/ }),
 
@@ -407,7 +407,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval-source-map devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./resources/assets/demo1/plugins/custom/leaflet/leaflet.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./resources/assets/core/plugins/custom/leaflet/leaflet.js");
 /******/ 	
 /******/ })()
 ;

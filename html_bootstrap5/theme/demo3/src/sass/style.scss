@@ -2,6 +2,9 @@
 // Theme style
 //
 
+// Skin
+$skin: dark;
+
 // Initialize
 @import "init";
 
@@ -11,3 +14,4 @@
 
 // Layout
 @import "layout/layout";
+@import "layout/docs/layout";

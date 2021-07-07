@@ -285,7 +285,10 @@ window.addEventListener('resize', function() {
 
         if ( elements && elements.length > 0 ) {
             for (var i = 0, len = elements.length; i < len; i++) {
-                KTScroll.getInstance(elements[i]).update();
+                var scroll = KTScroll.getInstance(elements[i]);
+                if (scroll) {
+                    scroll.update();
+                }
             }
         }
     }, 200);

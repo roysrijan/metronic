@@ -75,16 +75,16 @@ class Theme {
         self::$name = $theme;
         self::$demo = $demo;
 
-        // Get common config
-        $common_config = include $_COMMON_PATH . '/dist/config/general.php';
-        $common_config['pages'] = include $_COMMON_PATH . '/dist/config/pages.php';
-        $common_config['menu'] = include $_COMMON_PATH . '/dist/config/menu.php';
-
         // Get the current theme config
         $theme_config = include $_THEME_PATH . '/dist/config/general.php';
 
         // Init theme general config so some parameters will be available within theme menu and page configs
         self::$config = $theme_config;
+
+        // Get common config
+        $common_config = include $_COMMON_PATH . '/dist/config/general.php';
+        $common_config['pages'] = include $_COMMON_PATH . '/dist/config/pages.php';
+        $common_config['menu'] = include $_COMMON_PATH . '/dist/config/menu.php';
 
         $theme_config['menu'] = include $_THEME_PATH . '/dist/config/menu.php';
         $theme_config['pages'] = include $_THEME_PATH . '/dist/config/pages.php';
@@ -96,8 +96,8 @@ class Theme {
             $demo1_menu_config = include $demo1_actual_path . '/dist/config/menu.php';
             $demo1_pages_config = include $demo1_actual_path . '/dist/config/pages.php';
 
-            $common_config['product'] = $demo1_general_config['product'];
-            $common_config['meta'] = $demo1_general_config['meta'];
+            $common_config['product'] = array_replace_recursive($common_config['product'], $demo1_general_config['product']);
+            $common_config['meta'] = array_replace_recursive($common_config['meta'], $demo1_general_config['meta']);
             $theme_config['menu'] = array_replace_recursive($demo1_menu_config, $theme_config['menu']);
             $theme_config['pages'] = array_replace_recursive($demo1_pages_config, $theme_config['pages']);
         }
@@ -253,11 +253,29 @@ class Theme {
     }
 
     public static function isFreeVersion() {
-        return (isset($_REQUEST['free']) && filter_var($_REQUEST['free'], FILTER_VALIDATE_BOOLEAN) === true) || self::$freeVersion;
+        if (isset($_REQUEST['free'])) {
+            return filter_var($_REQUEST['free'], FILTER_VALIDATE_BOOLEAN);
+        }
+
+        return self::$freeVersion;
     }
 
     public static function setFreeVersion($flag) {
         return self::$freeVersion = $flag;
+    }
+
+    public static function putProVersionTooltip($attr = array()) {
+        $attr['data-bs-toggle'] = 'tooltip';
+        $attr['title'] = "Available in <span class='badge badge-pro badge-light-danger fw-bold fs-9 px-2 py-1 ms-1'>Pro</span> version";
+        $attr['data-bs-html'] = 'true';
+
+        if (empty($attr) || isset($attr['data-bs-placement']) === false) {
+            $attr['data-bs-placement'] = 'bottom';
+        }
+
+        if (Theme::isFreeVersion() === true) {
+            echo Util::putHtmlAttributes($attr);
+        }
     }
 
     public static function getOption($scope, $path = false, $default = null) {
@@ -557,9 +575,47 @@ class Theme {
     public static function rtlCssFilename($path) {
         if (isset($_REQUEST['rtl']) && $_REQUEST['rtl'] == 1) {
             $path = str_replace('.css', '.rtl.css', $path);
+        } elseif (isset($_REQUEST['skin']) && $_REQUEST['skin']) {
+            if (strpos($path, 'css/style.bundle.css') !== false || strpos($path, 'plugins/global/plugins.bundle.css') !== false) {
+                $path = str_replace('.bundle', '.'.$_REQUEST['skin'].'.bundle', $path);
+            }
         }
 
 	    return $path;
+    }
+
+    public static function strposa($haystack, $needle, $offset = 0) {
+        if (!is_array($needle)) {
+            $needle = array($needle);
+        }
+        foreach ($needle as $query) {
+            if (strpos($haystack, $query, $offset) !== false) {
+                return true;
+            } // stop on first true result
+        }
+
+        return false;
+    }
+
+    /**
+     * Check if current theme has dark skin
+     *
+     * @return bool
+     */
+    public static function isDarkSkinEnabled() {
+        return (bool) self::getOption('layout', 'main/dark-skin-enabled');
+    }
+
+    /**
+     * Get current skin
+     *
+     * @return mixed|string
+     */
+    public static function getCurrentSkin() {
+        if (self::isDarkSkinEnabled() && isset($_REQUEST['skin']) && $_REQUEST['skin']) {
+            return $_REQUEST['skin'];
+        }
+        return 'default';
     }
 
     public static function getPageUrl($path, $demo = '') {
@@ -572,8 +628,20 @@ class Theme {
             if (!empty($demo)) {
                 // force add link to other demo in release
                 $path = '../../'.$demo.'/dist/'.$path;
+                // for preview
+                // $path = '../'.$demo.'/'.$path;
             }
-            $url = self::getBaseUrlPath().$path.'.html';
+
+            $params = '';
+            // param keep in url
+            if (isset($_REQUEST['rtl']) && $_REQUEST['rtl']) {
+                $params = 'rtl/';
+            }
+            if (isset($_REQUEST['skin']) && $_REQUEST['skin']) {
+                $params = $_REQUEST['skin'].'/';
+            }
+
+            $url = self::getBaseUrlPath().$params.$path.'.html';
 
             // skip layout builder page for generated html
             if (strpos($path, 'builder') !== false) {
@@ -585,9 +653,12 @@ class Theme {
                 $url = self::getOption('product', 'preview').'/'.$path.'.html';
             }
         } else {
-            $rtl = '';
+            $params = '';
             if (isset($_REQUEST['rtl']) && $_REQUEST['rtl']) {
-                $rtl = '&rtl=1';
+                $params = '&rtl=1';
+            }
+            if (isset($_REQUEST['skin']) && $_REQUEST['skin']) {
+                $params = '&skin=' . $_REQUEST['skin'];
             }
 
             $baseUrl = self::getBaseUrlPath();
@@ -596,7 +667,7 @@ class Theme {
                 $baseUrl .= '../../'.$demo.'/dist/';
             }
 
-            $url = $baseUrl.'?page='.$path.$rtl;
+            $url = $baseUrl.'?page='.$path.$params;
         }
 
         return $url;
@@ -711,7 +782,13 @@ class Theme {
     }
 
     public static function getProductName() {
-        return self::getOption('product', 'name');
+        if (Theme::isFreeVersion() === true && self::getOption('product', 'name-free')) {
+            return self::getOption('product', 'name-free');
+        } else if (self::getOption('product', 'name-pro')) {
+            return self::getOption('product', 'name-pro');
+        } else {
+            return self::getOption('product', 'name');
+        }
     }
 
     public static function getProductNameHtml() {

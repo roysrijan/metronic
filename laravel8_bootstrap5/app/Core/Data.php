@@ -592,7 +592,7 @@ class Data {
         $total = count($users);
 
         if ($index === -1 || isset($users[$index]) === false) {
-            $index = rand(0, $total - 2);
+           $index = rand(0, $total - 2);
         }
 
         return $users[$index];
@@ -610,7 +610,7 @@ class Data {
         $total = count($statuses);
 
         if ($index === -1 || isset($statuses[$index]) === false) {
-            $index = rand(0, $total - 2);
+           $index = rand(0, $total - 2);
         }
 
         return $statuses[$index];

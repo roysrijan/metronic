@@ -1,5 +1,5 @@
 <!--begin::Section-->
-<div class="py-10">
+<div class="pb-10">
     <!--begin::Heading-->
     <h1 class="anchor fw-bolder mb-5" id="laravel-quick-start">
         <a href="#laravel-quick-start"></a>
@@ -9,7 +9,7 @@
 
     <!--begin::List-->
     <ol class="py-5">
-        <li class="pt-0 pb-3">Download the latest theme source from the <a href="<?php echo theme()->getOption('product', 'purchase')?>" class="fw-bold">Marketplace</a>.</li>
+        <li class="pt-0 pb-3">Download the latest theme source from the <a href="{{ theme()->getOption('product', 'purchase') }}" class="fw-bold">Marketplace</a>.</li>
 
         <li class="py-3">Download and install Node.js from <a href="https://nodejs.org/en/download/" class="fw-bold">Nodejs</a>. The suggested version to install is <code>14.16.x LTS</code>.</li>
 

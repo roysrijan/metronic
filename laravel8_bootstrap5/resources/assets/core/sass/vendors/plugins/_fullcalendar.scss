@@ -2,9 +2,15 @@
 // Fullcalendar
 //
 
+body {    
+    --fc-event-border-color: #{$primary};
+    --fc-event-bg-color: #{$primary};
+    --fc-event-text-color: #{$primary-light};
+}
+
 .fc {
     // Border color
-    --fc-border-color: #{$border-color};
+    --fc-border-color: #{$gray-300};
     --fc-page-bg-color: #{$white};
     --fc-small-font-size: 0.95rem;
 
@@ -15,9 +21,6 @@
     --fc-bg-event-opacity: 0.3;
     --fc-neutral-bg-color: #{$light};
     //--fc-event-selected-overlay-color: 
-    --fc-event-border-color: #{$primary};
-    --fc-event-bg-color: #{$primary};
-    --fc-event-text-color: #{$primary-light};
     --fc-today-bg-color: #{$warning-light};
     //--fc-neutral-bg-color:
     //--fc-neutral-text-color:
@@ -28,46 +31,66 @@
 
     // Buttons
     --fc-button-text-color: #{$gray-600};
-    --fc-button-bg-color: #{$light};
-    --fc-button-border-color: #{$light};
+    --fc-button-bg-color: #{$gray-200};
+    --fc-button-border-color: #{$gray-200};
     
-    --fc-button-hover-bg-color:  #{$light};
-    --fc-button-hover-border-color:  #{$light};
+    --fc-button-hover-bg-color:  #{$gray-200};
+    --fc-button-hover-border-color:  #{$gray-200};
 
     --fc-button-active-bg-color: #{$primary};
     --fc-button-active-border-color: #{$primary};
 
+    // Table
+    table {
+        font-size: 1rem;
+    }     
+
     // Button
     .fc-button { 
-        padding: 0.65rem 1rem;
+        padding: 0.75rem 1.25rem;
         box-shadow: none !important;
         border: 0 !important;
         border-radius: $btn-border-radius;
+        vertical-align: middle;
     }
 
     // Primary button
     .fc-button-primary {
+        margin: 0;
+
         // Icon
         .fc-icon {
-            font-size: 1.25rem;
+            font-size: 1.45rem;
         }
 
-        &:not(:disabled):active,
-        &:not(:disabled):focus,        
-        &:not(:disabled):hover {
-            color: $primary;
-
-            .fc-icon {
+        &:not(:disabled):not(.fc-button-active) {
+            &:focus,
+            &:hover,
+            &:active {
                 color: $primary;
+                background-color: $gray-200;
+
+                .fc-icon {
+                    color: $primary;
+                }
             }
         }
         
         &:not(:disabled).fc-button-active {
             color: $primary-inverse;
+            background-color: $primary;
+            border-color: $primary;
 
             .fc-icon {
                 color: $primary-inverse;
             }
+        }
+    }
+
+    // Button group
+    .fc-button-group {
+        .fc-button {
+            margin: 0 !important;
         }
     }
 
@@ -92,6 +115,16 @@
     // Border radius
     .fc-scrollgrid {
         @include border-radius($border-radius);
+
+        thead > tr {
+            td:first-child {
+                @include border-top-start-radius($border-radius);
+            }
+
+            td:last-child {
+                @include border-top-end-radius($border-radius);
+            }
+        }
 
         tbody > tr:last-child {
             td:first-child {
@@ -118,10 +151,19 @@
         }
     }
 
+    // Day number
+    .fc-daygrid-day-number {
+        color: $gray-800;
+    }
+
     // Dot event
     .fc-daygrid-dot-event {
         background-color: $light;
         color: $gray-600;
+
+        .fc-event-title {
+            font-weight: $font-weight-bolder;
+        }
 
         &:hover,
         &.fc-event-mirror {
@@ -191,7 +233,7 @@
     }
 
     .fc-list,
-    .fc-scroller,
+    //.fc-scroller,
     .fc-list-table {
         @include border-radius($border-radius);
     }
@@ -203,11 +245,17 @@
 
     // Week
     .fc-timegrid-axis {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        padding-left: 0rem;
+        padding-right: 0;
     }
 
+    // Main 
     .fc-timegrid-event .fc-event-main {
         padding: 0.25rem 0.25rem;
+    }
+
+    // Indicator arrow
+    .fc-timegrid-now-indicator-arrow {
+        margin-top: -1px;
     }
 }

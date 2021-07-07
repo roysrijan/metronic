@@ -281,7 +281,10 @@ export default defineComponent({
     };
 
     onMounted(() => {
-      if (!messagesRef.value) {
+      if (
+        !messagesRef.value ||
+        !ScrollComponent.getInstance(messagesRef.value)
+      ) {
         return;
       }
 

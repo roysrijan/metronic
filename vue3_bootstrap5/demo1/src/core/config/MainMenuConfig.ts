@@ -48,6 +48,10 @@ const DocMenuConfig: object = [
               {
                 heading: "connections",
                 route: "/crafted/pages/profile/connections"
+              },
+              {
+                heading: "activity",
+                route: "/crafted/pages/profile/activity"
               }
             ]
           },

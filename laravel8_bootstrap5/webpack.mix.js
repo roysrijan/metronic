@@ -33,7 +33,7 @@ mix.autoload({
 del.sync(['public/css/*', 'public/js/*', 'public/media/*', 'public/plugins/*',]);
 
 // Build 3rd party plugins css/js
-mix.sass('resources/assets/' + demo + '/plugins/plugins.scss', 'public/plugins/global/plugins.bundle.css').then(() => {
+mix.sass(`resources/assets/core/plugins/plugins.scss`, 'public/plugins/global/plugins.bundle.css').then(() => {
     // remove unused preprocessed fonts folder
     rimraf(path.resolve('public/fonts'), () => {
     });
@@ -41,27 +41,37 @@ mix.sass('resources/assets/' + demo + '/plugins/plugins.scss', 'public/plugins/g
     });
 }).sourceMaps(!mix.inProduction())
     // .setResourceRoot('./')
-    .options({processCssUrls: false}).js(['resources/assets/' + demo + '/plugins/plugins.js'], 'public/plugins/global/plugins.bundle.js');
+    .options({processCssUrls: false}).js([`resources/assets/core/plugins/plugins.js`], 'public/plugins/global/plugins.bundle.js');
+
+// Build extended plugin styles
+mix.sass(`resources/assets/${demo}/sass/plugins.scss`, 'public/plugins/global/extend.bundle.css');
 
 // Build Metronic css/js
-mix.sass('resources/assets/' + demo + '/sass/style.scss', 'public/css/style.bundle.css', {
-    sassOptions: {includePaths: ['node_modules']},
-})
+mix.sass(`resources/assets/${demo}/sass/style.scss`, 'public/css/style.bundle.css', {sassOptions: {includePaths: ['node_modules']}})
     // .options({processCssUrls: false})
-    .js(['resources/assets/' + demo + '/js/scripts.js', 'resources/assets/extended/button-ajax.js'], 'public/js/scripts.bundle.js');
+    .js([`resources/assets/${demo}/js/scripts.js`, 'resources/assets/extended/button-ajax.js'], 'public/js/scripts.bundle.js');
+
+
+// Dark skin mode css files
+if (args.indexOf('dark_skin') !== -1) {
+    mix.sass(`resources/assets/core/plugins/plugins.dark.scss`, 'public/plugins/global/plugins.dark.bundle.css');
+    mix.sass(`resources/assets/${demo}/sass/plugins.dark.scss`, 'public/plugins/global/extend.dark.bundle.css');
+    mix.sass(`resources/assets/${demo}/sass/style.dark.scss`, 'public/css/style.dark.bundle.css', {sassOptions: {includePaths: ['node_modules']}});
+}
+
 
 // Build custom 3rd party plugins
-(glob.sync('resources/assets/' + demo + '/plugins/custom/**/*.js') || []).forEach(file => {
-    mix.js(file, `public/${file.replace('resources/assets/' + demo + '/', '').replace('.js', '.bundle.js')}`);
+(glob.sync(`resources/assets/core/plugins/custom/**/*.js`) || []).forEach(file => {
+    mix.js(file, `public/${file.replace(`resources/assets/core/`, '').replace('.js', '.bundle.js')}`);
 });
-(glob.sync('resources/assets/' + demo + '/plugins/custom/**/*.scss') || []).forEach(file => {
-    mix.sass(file, `public/${file.replace('resources/assets/' + demo + '/', '').replace('.scss', '.bundle.css')}`);
+(glob.sync(`resources/assets/core/plugins/custom/**/*.scss`) || []).forEach(file => {
+    mix.sass(file, `public/${file.replace(`resources/assets/core/`, '').replace('.scss', '.bundle.css')}`);
 });
 
 // Build Metronic css pages (single page use)
-(glob.sync('resources/assets/' + demo + '/sass/pages/**/!(_)*.scss') || []).forEach(file => {
+(glob.sync(`resources/assets/${demo}/sass/pages/**/!(_)*.scss`) || []).forEach(file => {
     file = file.replace(/[\\\/]+/g, '/');
-    mix.sass(file, file.replace('resources/assets/' + demo + '/sass', 'public/css').replace(/\.scss$/, '.css'));
+    mix.sass(file, file.replace(`resources/assets/${demo}/sass`, 'public/css').replace(/\.scss$/, '.css'));
 });
 
 var extendedFiles = [];
@@ -79,8 +89,8 @@ var extendedFiles = [];
         mix.js(file, output);
     }
 });
-(glob.sync('resources/assets/' + demo + '/js/custom/**/*.js') || []).forEach(file => {
-    var output = `public/${file.replace('resources/assets/' + demo + '/', '')}`;
+(glob.sync(`resources/assets/${demo}/js/custom/**/*.js`) || []).forEach(file => {
+    var output = `public/${file.replace(`resources/assets/${demo}/`, '')}`;
     if (extendedFiles.indexOf(output) === -1) {
         mix.js(file, output);
     }
@@ -88,12 +98,12 @@ var extendedFiles = [];
 
 // Metronic media
 mix.copyDirectory('resources/assets/core/media', 'public/media');
-mix.copyDirectory('resources/assets/' + demo + '/media', 'public/media');
+mix.copyDirectory(`resources/assets/${demo}/media`, 'public/media');
 
 // Metronic theme
-(glob.sync('resources/assets/' + demo + '/sass/themes/**/!(_)*.scss') || []).forEach(file => {
+(glob.sync(`resources/assets/${demo}/sass/themes/**/!(_)*.scss`) || []).forEach(file => {
     file = file.replace(/[\\\/]+/g, '/');
-    mix.sass(file, file.replace('resources/assets/' + demo + '/sass', 'public/css').replace(/\.scss$/, '.css'));
+    mix.sass(file, file.replace(`resources/assets/${demo}/sass`, 'public/css').replace(/\.scss$/, '.css'));
 });
 
 mix.webpackConfig({
@@ -156,7 +166,7 @@ mix.webpackConfig({
 });
 
 // Webpack.mix does not copy fonts, manually copy
-(glob.sync('resources/assets/' + demo + '/plugins/**/*.+(woff|woff2|eot|ttf)') || []).forEach(file => {
+(glob.sync(`resources/assets/${demo}/plugins/**/*.+(woff|woff2|eot|ttf)`) || []).forEach(file => {
     var folder = file.match(/resources\/metronic\/plugins\/(.*?)\//)[1];
     mix.copy(file, `public/plugins/global/fonts/${folder}/${path.basename(file)}`);
 });
@@ -205,7 +215,9 @@ function getDemos(pathDemos) {
 }
 
 function getParameters() {
-    var possibleArgs = [];
+    var possibleArgs = [
+        'dark_skin'
+    ];
     for (var i = 0; i <= 13; i++) {
         possibleArgs.push('demo' + i);
     }

@@ -16,19 +16,19 @@
                 {{ theme()->getView('layout/aside/_base') }}
             @endif
 
-            <!--begin::Wrapper-->
+                <!--begin::Wrapper-->
                 <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
                 {{ theme()->getView('layout/header/_base') }}
 
-                <!--begin::Content-->
-                    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-                    @if(theme()->getOption('layout', 'toolbar/display') === true)
+                    <!--begin::Content-->
+                    <div class="content d-flex flex-column flex-column-fluid {{ theme()->printHtmlClasses('content', false) }}" id="kt_content">
+                    @if (theme()->getOption('layout', 'toolbar/display') === true)
                         {{ theme()->getView('layout/toolbars/_' . theme()->getOption('layout', 'toolbar/layout')) }}
                     @endif
 
-                    <!--begin::Post-->
-                        <div class="post fs-base d-flex flex-column-fluid" id="kt_post">
-                            {{ theme()->getView('layout/content/_' . theme()->getOption('layout', 'content/layout'), compact('slot')) }}
+                        <!--begin::Post-->
+                        <div class="post d-flex flex-column-fluid" id="kt_post">
+                            {{ theme()->getView('layout/_' . theme()->getOption('layout', 'content/layout'), compact('slot')) }}
                         </div>
                         <!--end::Post-->
                     </div>
@@ -44,14 +44,8 @@
 
         <!--begin::Drawers-->
         {{ theme()->getView('layout/topbar/partials/_activity-drawer') }}
-        {{ theme()->getView('layout/_explore-drawer') }}
+        {{ theme()->getView('layout/explore/_main') }}
         <!--end::Drawers-->
-
-        <!--begin::Modals-->
-        {{--{{ theme()->getView('partials/modals/_invite-friends') }}
-        {{ theme()->getView('partials/modals/create-account/_main') }}
-        {{ theme()->getView('partials/modals/_upgrade-plan') }}--}}
-        <!--end::Modals-->
 
         @if(theme()->getOption('layout', 'scrolltop/display') === true)
             {{ theme()->getView('layout/_scrolltop') }}

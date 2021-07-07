@@ -19,13 +19,13 @@ eval("/*!\n * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. Al
 
 /***/ }),
 
-/***/ "./resources/assets/demo1/plugins/custom/ckeditor/ckeditor-inline.js":
-/*!***************************************************************************!*\
-  !*** ./resources/assets/demo1/plugins/custom/ckeditor/ckeditor-inline.js ***!
-  \***************************************************************************/
+/***/ "./resources/assets/core/plugins/custom/ckeditor/ckeditor-inline.js":
+/*!**************************************************************************!*\
+  !*** ./resources/assets/core/plugins/custom/ckeditor/ckeditor-inline.js ***!
+  \**************************************************************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// CKEditor  - Rock-solid, free WYSIWYG editor with collaborative editing, 200+ features, full documentation and support: https://ckeditor.com/\n// CKEditor Inline\nwindow.InlineEditor = __webpack_require__(/*! @ckeditor/ckeditor5-build-inline/build/ckeditor.js */ \"./node_modules/@ckeditor/ckeditor5-build-inline/build/ckeditor.js\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvYXNzZXRzL2RlbW8xL3BsdWdpbnMvY3VzdG9tL2NrZWRpdG9yL2NrZWRpdG9yLWlubGluZS5qcz82ODQ5Il0sIm5hbWVzIjpbIndpbmRvdyIsIklubGluZUVkaXRvciIsInJlcXVpcmUiXSwibWFwcGluZ3MiOiJBQUFBO0FBRUE7QUFDQUEsTUFBTSxDQUFDQyxZQUFQLEdBQXNCQyxtQkFBTyxDQUFDLDZIQUFELENBQTdCIiwiZmlsZSI6Ii4vcmVzb3VyY2VzL2Fzc2V0cy9kZW1vMS9wbHVnaW5zL2N1c3RvbS9ja2VkaXRvci9ja2VkaXRvci1pbmxpbmUuanMuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBDS0VkaXRvciAgLSBSb2NrLXNvbGlkLCBmcmVlIFdZU0lXWUcgZWRpdG9yIHdpdGggY29sbGFib3JhdGl2ZSBlZGl0aW5nLCAyMDArIGZlYXR1cmVzLCBmdWxsIGRvY3VtZW50YXRpb24gYW5kIHN1cHBvcnQ6IGh0dHBzOi8vY2tlZGl0b3IuY29tL1xyXG5cclxuLy8gQ0tFZGl0b3IgSW5saW5lXHJcbndpbmRvdy5JbmxpbmVFZGl0b3IgPSByZXF1aXJlKCdAY2tlZGl0b3IvY2tlZGl0b3I1LWJ1aWxkLWlubGluZS9idWlsZC9ja2VkaXRvci5qcycpO1xyXG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./resources/assets/demo1/plugins/custom/ckeditor/ckeditor-inline.js\n");
+eval("// CKEditor  - Rock-solid, free WYSIWYG editor with collaborative editing, 200+ features, full documentation and support: https://ckeditor.com/\n// CKEditor Inline\nwindow.InlineEditor = __webpack_require__(/*! @ckeditor/ckeditor5-build-inline/build/ckeditor.js */ \"./node_modules/@ckeditor/ckeditor5-build-inline/build/ckeditor.js\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9yZXNvdXJjZXMvYXNzZXRzL2NvcmUvcGx1Z2lucy9jdXN0b20vY2tlZGl0b3IvY2tlZGl0b3ItaW5saW5lLmpzPzZkYzMiXSwibmFtZXMiOlsid2luZG93IiwiSW5saW5lRWRpdG9yIiwicmVxdWlyZSJdLCJtYXBwaW5ncyI6IkFBQUE7QUFFQTtBQUNBQSxNQUFNLENBQUNDLFlBQVAsR0FBc0JDLG1CQUFPLENBQUMsNkhBQUQsQ0FBN0IiLCJmaWxlIjoiLi9yZXNvdXJjZXMvYXNzZXRzL2NvcmUvcGx1Z2lucy9jdXN0b20vY2tlZGl0b3IvY2tlZGl0b3ItaW5saW5lLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gQ0tFZGl0b3IgIC0gUm9jay1zb2xpZCwgZnJlZSBXWVNJV1lHIGVkaXRvciB3aXRoIGNvbGxhYm9yYXRpdmUgZWRpdGluZywgMjAwKyBmZWF0dXJlcywgZnVsbCBkb2N1bWVudGF0aW9uIGFuZCBzdXBwb3J0OiBodHRwczovL2NrZWRpdG9yLmNvbS9cclxuXHJcbi8vIENLRWRpdG9yIElubGluZVxyXG53aW5kb3cuSW5saW5lRWRpdG9yID0gcmVxdWlyZSgnQGNrZWRpdG9yL2NrZWRpdG9yNS1idWlsZC1pbmxpbmUvYnVpbGQvY2tlZGl0b3IuanMnKTtcclxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./resources/assets/core/plugins/custom/ckeditor/ckeditor-inline.js\n");
 
 /***/ })
 
@@ -60,7 +60,7 @@ eval("// CKEditor  - Rock-solid, free WYSIWYG editor with collaborative editing,
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval-source-map devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./resources/assets/demo1/plugins/custom/ckeditor/ckeditor-inline.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./resources/assets/core/plugins/custom/ckeditor/ckeditor-inline.js");
 /******/ 	
 /******/ })()
 ;

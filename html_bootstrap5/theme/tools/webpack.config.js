@@ -43,6 +43,7 @@ const exclude = [];
 
 const js = args.indexOf('js') !== -1;
 const css = args.indexOf('css') !== -1 || args.indexOf('scss') !== -1;
+const darkSkin = args.indexOf('dark_skin') !== -1;
 
 removeExistingAssets();
 
@@ -77,6 +78,7 @@ function additionalSettings() {
 }
 
 function getEntryFiles() {
+
     const entries = {
         // 3rd party plugins css/js
         'plugins/global/plugins.bundle': ['./webpack/plugins/plugins.js', './webpack/plugins/plugins.scss'],
@@ -84,6 +86,11 @@ function getEntryFiles() {
         'css/style.bundle': ['./' + path.relative('./', srcPath) + '/sass/style.scss', './' + path.relative('./', srcPath) + '/sass/plugins.scss'],
         'js/scripts.bundle': './webpack/scripts' + (demo ? '.' + demo : '') + '.js',
     };
+
+    if (darkSkin) {
+        entries['plugins/global/plugins.dark.bundle'] = ['./webpack/plugins/plugins.js', './webpack/plugins/plugins.scss'];
+        entries['css/style.dark.bundle'] = ['./' + path.relative('./', srcPath) + '/sass/style.dark.scss', './' + path.relative('./', srcPath) + '/sass/plugins.dark.scss'];
+    }
 
     // Custom 3rd party plugins
     (glob.sync('./webpack/{plugins,js}/custom/**/*.+(js)') || []).forEach(file => {
@@ -330,7 +337,7 @@ function getParameters() {
     var possibleArgs = [
         
         'js', 'css', 'scss',
-        'alldemos', 'rtl', 'prod', 'production', 'localhost',
+        'alldemos', 'rtl', 'prod', 'production', 'localhost', 'dark_skin',
     ];
     for (var i = 0; i <= 13; i++) {
         possibleArgs.push('demo' + i);
@@ -451,6 +458,46 @@ function removeExistingAssets() {
         del(assetDistPath, {force: true});
     }
 }
+
+const baseName = (str, extension) => {
+    let base = new String(str).substring(str.lastIndexOf("/") + 1);
+    if (!extension && base.lastIndexOf(".") !== -1) {
+        base = base.substring(0, base.lastIndexOf("."));
+    }
+    return base;
+};
+
+/**
+ * Remove file name and get the path
+ */
+const pathOnly = (str) => {
+    const array = str.split("/");
+    if (array.length > 0) {
+        array.pop();
+    }
+
+    return array.join("/");
+};
+
+/**
+ * Change scss file name with suffix dark
+ *
+ * @param file
+ * @returns {string|*}
+ */
+function changeDarkFileName(file) {
+    // files that need to be changed to dark
+    const files = ['style.scss', 'plugins.scss', 'style.bundle.css', 'plugins.bundle.css',];
+
+    if (files.indexOf(baseName(file, true)) !== -1) {
+        let path = pathOnly(file);
+        if (path) {
+            path += '/';
+        }
+        return path + baseName(file) + '.dark.scss';
+    }
+}
+
 
 module.exports = () => {
     return [mainConfig()];

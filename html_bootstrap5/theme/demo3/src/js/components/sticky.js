@@ -268,7 +268,10 @@ window.addEventListener('resize', function() {
 
         if ( elements && elements.length > 0 ) {
             for (var i = 0, len = elements.length; i < len; i++) {
-                KTSticky.getInstance(elements[i]).update();
+                var sticky = KTSticky.getInstance(elements[i]);
+                if (sticky) {
+                    sticky.update();
+                }
             }
         }
     }, 200);

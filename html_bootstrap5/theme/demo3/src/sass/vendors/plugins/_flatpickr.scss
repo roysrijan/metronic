@@ -35,53 +35,6 @@ $flatpickr-time-height: 46px;
     padding: $flatpickr-padding-y $flatpickr-padding-x;
 }
 
-// Number input
-.numInputWrapper {
-    span {
-        border-left: 1px solid $gray-200 !important;
-        border-top: 0 !important;
-        border-bottom: 0 !important;
-        border-right: 0 !important;
-
-        &:hover {
-            background: $gray-100 !important;
-        }
-
-        &:after {
-            top: 50% !important;
-            transform: translateY(-50%);
-        }
-
-        &.arrowUp {
-    
-            &:after {
-                border-bottom-color: $gray-500 !important;
-            }
-    
-            &:hover {
-                &:after {
-                    border-bottom-color: $gray-700 !important;
-                }
-            }
-        }
-    
-        &.arrowDown {    
-            &:after {
-                border-top-color: $gray-500 !important;
-            }
-    
-            &:hover {
-                &:after {
-                    border-top-color: $gray-700 !important;
-                }
-            }
-        }
-    }
-
-    &:hover {
-        background: $gray-100;
-    }
-}
 
 // Day containers
 .flatpickr-days,
@@ -244,7 +197,54 @@ span.flatpickr-weekday {
     .flatpickr-am-pm:hover,
     input:focus,
     .flatpickr-am-pm:focus {
-        background: $gray-100;
+        background: transparent;
+    }
+}
+
+// Number input
+.numInputWrapper {
+    span {
+        border-left: 0 !important;
+        border-top: 0 !important;
+        border-bottom: 0 !important;
+        border-right: 0 !important;
+
+        &:hover {
+            background: transparent !important;
+        }
+
+        &:after {
+            top: 50% !important;
+            transform: translateY(-50%);
+        }
+
+        &.arrowUp {    
+            &:after {
+                border-bottom-color: $gray-500 !important;
+            }
+    
+            &:hover {
+                &:after {
+                    border-bottom-color: $gray-700 !important;
+                }
+            }
+        }
+    
+        &.arrowDown {    
+            &:after {
+                border-top-color: $gray-500 !important;
+            }
+    
+            &:hover {
+                &:after {
+                    border-top-color: $gray-700 !important;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        background: transparent;
     }
 }
 

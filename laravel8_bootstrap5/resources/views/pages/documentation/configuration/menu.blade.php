@@ -1,22 +1,24 @@
 <x-base-layout>
 
     <!--begin::Section-->
-    <div class="py-10">
+    <div class="pb-10">
         <!--begin::Heading-->
-        <h1 class="anchor fw-bolder mb-5" id="rtl-version">
-            <a href="#rtl-version"></a>
-            Menu Configuration
+        <h1 class="anchor fw-bolder mb-5" id="title">
+            <a href="#title"></a>
+            {{ theme()->getPageTitle() }}
         </h1>
         <!--end::Heading-->
 
         <!--begin::Block-->
         <div class="py-5">
-            <p class="mb-0">
-                The Laravel menu configuration is separated into 2 types which are <code>global</code> and <code>demo</code> config.
+            <p class="mb-3">
+                The Laravel menu configuration is separated into 2 types which are <code>global</code> and <code>demo</code> level config. Both configs will be merged.
                 The global menu can be found in the config folder <code>config/global/menu.php</code>. The menu items will be available for all demos in the future updates.
             </p>
 
-            <p>The demo config can be found in the config folder <code>config/demo1/menu.php</code>.</p>
+            <p class="mb-3">
+                The demo config can be found in the config folder <code>config/demo1/menu.php</code>. The menu in this config will be specifically available for current selected demo.
+            </p>
         </div>
         <!--end::Block-->
 

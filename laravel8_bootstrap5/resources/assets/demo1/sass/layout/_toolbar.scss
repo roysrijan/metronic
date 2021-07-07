@@ -7,7 +7,7 @@
     .toolbar {
         display: flex;
         align-items: center;
-
+        
         // Fixed toolbar
         .toolbar-fixed & {
 			height: var(--kt-toolbar-height);
@@ -15,7 +15,7 @@
 			top: 0;
 			right: 0;
 			left: 0;
-			z-index: get($toolbar-config, fixed, z-index);
+			z-index: get($toolbar-config, fixed, z-index);			
 			background-color: get($toolbar-config, fixed, bg-color);
             box-shadow: get($toolbar-config, fixed, box-shadow);
         }
@@ -50,7 +50,7 @@
     .toolbar {
         display: flex;
         align-items: center;
-
+        
         // Fixed toolbar mode
         .toolbar-tablet-and-mobile-fixed & {
 			height: var(--kt-toolbar-height-tablet-and-mobile);
