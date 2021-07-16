@@ -95,7 +95,7 @@ const rtlTask = (cb) => {
     build.build,
     (val, key, userdata) => {
       if (val.hasOwnProperty("src") && val.hasOwnProperty("dist")) {
-        if (["custom", "media", "api"].indexOf(key) !== -1) {
+        if (["custom", "media", "api", "tinymce"].indexOf(key) !== -1) {
           if (userdata.indexOf(key) === -1 && typeof val.styles !== "undefined") {
             // rtl conversion in each plugins
             for (let i in val.styles) {
@@ -138,7 +138,7 @@ const rtlTask = (cb) => {
 const buildBundleTask = (cb) => {
   objectWalkRecursive(build.build, function (val, key) {
     if (val.hasOwnProperty("src") && val.hasOwnProperty("dist")) {
-      if (["custom", "media", "api"].indexOf(key) !== -1) {
+      if (["custom", "media", "api", "misc"].indexOf(key) !== -1) {
         outputFunc(val);
       } else {
         bundle(val);

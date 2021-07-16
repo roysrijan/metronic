@@ -177,7 +177,7 @@ KTToggle.getInstance = function(element) {
 }
 
 // Create instances
-KTToggle.createInstances = function(selector) {
+KTToggle.createInstances = function(selector = '[data-kt-toggle]') {
     var body = document.getElementsByTagName("BODY")[0];
 
     // Get instances
@@ -193,7 +193,7 @@ KTToggle.createInstances = function(selector) {
 
 // Global initialization
 KTToggle.init = function() {
-    KTToggle.createInstances('[data-kt-toggle]');
+    KTToggle.createInstances();
 };
 
 // On document ready

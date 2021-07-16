@@ -7,8 +7,10 @@ $root-font-size:                                    13px; // Root font size for 
 $root-font-size-lg:                             	13px; // Root font size for tablet mode
 $root-font-size-md:                             	12px; // Root font size for mobile mode
 
-// Content background Color
-$content-bg-color: 									$gray-100 !default;
+// Page bg
+$page-bg: 											if(isDarkSkin(), #151521, $gray-100) !default;
+
+// Content border radius
 $content-border-radius:								1.5rem !default;
 
 // Content Spacing
@@ -31,7 +33,7 @@ $header-config: (
 			desktop: 65px,
 			tablet-and-mobile: 55px
 		),
-		bg-color: $white,
+		bg-color: if(isDarkSkin(),#1E1E2D, $white),
 	),
 
 	// Fixed Mode
@@ -41,8 +43,8 @@ $header-config: (
 			tablet-and-mobile: 55px
 		),
 		z-index: 100,
-		bg-color: $white,
-		box-shadow: 0px 10px 30px 0px rgba(82,63,105,0.05)
+		bg-color: if(isDarkSkin(), #1E1E2D, $white),
+		box-shadow: if(isDarkSkin(), none, 0px 10px 30px 0px rgba(82,63,105,0.05))
 	)
 ) !default;
 
@@ -55,8 +57,8 @@ $toolbar-config: (
 			tablet-and-mobile: 60px
 		),
 		z-index: 99,
-		bg-color: $white,
-		box-shadow: 0px 10px 30px 0px rgba(82,63,105,0.05),
+		bg-color: if(isDarkSkin(), #1B1B28, $white),
+		box-shadow: if(isDarkSkin(), none, 0px 10px 30px 0px rgba(82,63,105,0.05)),
 		border-color: $border-color
 	)
 ) !default;
@@ -68,8 +70,16 @@ $aside-config: (
 	padding-x: 25px,
 	menu-indention: 0.75rem,
 	bg-color: #1e1e2d,
+	logo-bg-color: #1B1B28,
+	scrollbar-color: if(isDarkSkin(), $gray-200, #3b3b64),
+	scrollbar-hover-color: if(isDarkSkin(), $gray-300, lighten(#3b3b64, 3%)),
 	width: 265px, // Aside width for desktop mode
 	minimized-width: 75px,  // Aside minimized width for desktop mode
-	box-shadow: 0 0 28px 0 rgba(82,63,105,.05), // Aside box shadow
-	minimized-hover-box-shadow: 5px 0px 10px rgba(70, 78, 95, 0.075) // Monimized hover box shadow
+	box-shadow: if(isDarkSkin(), none, 0 0 28px 0 rgba(82,63,105,.05)), // Aside box shadow
+	minimized-hover-box-shadow: if(isDarkSkin(), none, 5px 0px 10px rgba(70, 78, 95, 0.075)) // Monimized hover box shadow
+) !default;
+
+// Aside
+$footer-config: (
+	bg-color: if(isDarkSkin(), #1B1B28, $white),
 ) !default;

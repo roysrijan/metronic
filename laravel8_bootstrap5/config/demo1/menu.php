@@ -2,118 +2,10 @@
 
 use App\Core\Adapters\Theme;
 
+Theme::$demo = 'demo1';
+
 return array(
-    // Main menu
-    'main'       => array(
-        //// Dashboard
-        array(
-            'title' => 'Dashboard',
-            'path'  => 'index',
-            'icon'  => Theme::getSvgIcon("icons/duotone/Design/PenAndRuller.svg", "svg-icon-2"),
-        ),
-
-        //// Modules
-        array(
-            'classes' => array('content' => 'pt-8 pb-2'),
-            'content' => '<span class="menu-section text-muted text-uppercase fs-8 ls-1">Modules</span>',
-        ),
-
-        // Account
-        array(
-            'title'      => 'Account',
-            'icon'       => array(
-                'svg'  => Theme::getSvgIcon("icons/duotone/General/User.svg", "svg-icon-2"),
-                'font' => '<i class="bi bi-person fs-2"></i>',
-            ),
-            'classes'    => array('item' => 'menu-accordion'),
-            'attributes' => array(
-                "data-kt-menu-trigger" => "click",
-            ),
-            'sub'        => array(
-                'class' => 'menu-sub-accordion menu-active-bg',
-                'items' => array(
-                    array(
-                        'title'  => 'Overview',
-                        'path'   => 'account/overview',
-                        'bullet' => '<span class="bullet bullet-dot"></span>',
-                    ),
-                    array(
-                        'title'  => 'Settings',
-                        'path'   => 'account/settings',
-                        'bullet' => '<span class="bullet bullet-dot"></span>',
-                    ),
-                    array(
-                        'title'      => 'Security',
-                        'path'       => '#',
-                        'bullet'     => '<span class="bullet bullet-dot"></span>',
-                        'attributes' => array(
-                            'link' => array(
-                                "title"             => "Coming soon",
-                                "data-bs-toggle"    => "tooltip",
-                                "data-bs-trigger"   => "hover",
-                                "data-bs-dismiss"   => "click",
-                                "data-bs-placement" => "right",
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-        ),
-
-        // System
-        array(
-            'title'      => 'System',
-            'icon'       => array(
-                'svg'  => Theme::getSvgIcon("icons/duotone/Layout/Layout-4-blocks.svg", "svg-icon-2"),
-                'font' => '<i class="bi bi-layers fs-3"></i>',
-            ),
-            'classes'    => array('item' => 'menu-accordion'),
-            'attributes' => array(
-                "data-kt-menu-trigger" => "click",
-            ),
-            'sub'        => array(
-                'class' => 'menu-sub-accordion menu-active-bg',
-                'items' => array(
-                    array(
-                        'title'      => 'Settings',
-                        'path'       => '#',
-                        'bullet'     => '<span class="bullet bullet-dot"></span>',
-                        'attributes' => array(
-                            'link' => array(
-                                "title"             => "Coming soon",
-                                "data-bs-toggle"    => "tooltip",
-                                "data-bs-trigger"   => "hover",
-                                "data-bs-dismiss"   => "click",
-                                "data-bs-placement" => "right",
-                            ),
-                        ),
-                    ),
-                    array(
-                        'title'  => 'Audit Log',
-                        'path'   => 'log/audit',
-                        'bullet' => '<span class="bullet bullet-dot"></span>',
-                    ),
-                    array(
-                        'title'  => 'System Log',
-                        'path'   => 'log/system',
-                        'bullet' => '<span class="bullet bullet-dot"></span>',
-                    ),
-                ),
-            ),
-        ),
-
-        // Separator
-        array(
-            'content' => '<div class="separator mx-1 my-4"></div>',
-        ),
-
-        // Changelog
-        array(
-            'title' => 'Changelog v'.theme()->getVersion(),
-            'icon'  => Theme::getSvgIcon("icons/duotone/Files/File.svg", "svg-icon-2"),
-            'path'  => 'documentation/getting-started/changelog',
-        ),
-    ),
+    // Refer to config/global/menu.php
 
     // Horizontal menu
     'horizontal' => array(
@@ -139,14 +31,14 @@ return array(
                     // Documentation
                     array(
                         'title' => 'Documentation',
-                        'icon'  => Theme::getSvgIcon("icons/duotone/Home/Library.svg", "svg-icon-2"),
+                        'icon'  => theme()->getSvgIcon("icons/duotone/Home/Library.svg", "svg-icon-2"),
                         'path'  => 'documentation/getting-started/overview',
                     ),
 
                     // Changelog
                     array(
                         'title' => 'Changelog',
-                        'icon'  => Theme::getSvgIcon("icons/duotone/Files/File.svg", "svg-icon-2"),
+                        'icon'  => theme()->getSvgIcon("icons/duotone/Files/File.svg", "svg-icon-2"),
                         'path'  => 'documentation/getting-started/changelog',
                     ),
                 ),

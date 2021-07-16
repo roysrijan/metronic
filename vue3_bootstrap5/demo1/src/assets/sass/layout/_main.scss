@@ -11,6 +11,11 @@
 		padding: 0 get($content-spacing, desktop);
 	}
 
+	// Page title
+	.container .page-title[data-kt-swapper='true'] {
+		display: none !important;
+	}
+
 	// Wrapper
 	.wrapper {
 		transition: padding-left get($aside-config, transition-speed) ease,  margin-right get($aside-config, transition-speed) ease;
@@ -46,6 +51,11 @@
 	.container-fluid {
 		max-width: none;
 		padding: 0 get($content-spacing, tablet-and-mobile);
+	}
+
+	// Page title
+	.container .page-title[data-kt-swapper='true'] {
+		display: flex !important;
 	}
 
 	// Wrapper

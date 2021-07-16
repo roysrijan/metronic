@@ -1,6 +1,30 @@
 <?php
 
 return array(
+    'v8.0.18' => array(
+        'date'      => '16 July, 2021',
+        'changelog' => array(
+            'new' => array(
+                'Added new <code>Demo 2</code> layout. Updated <code>webpack.mix.js</code> to build <code>Demo 2</code> asset files. See <a href="https://preview.keenthemes.com/metronic8/laravel/index?demo=demo2">preview</a>.',
+                'Added <code>Demo 1 Dark Skin</code>. Updated <code>webpack.mix.js</code> to build dark CSS files. See <a href="https://preview.keenthemes.com/metronic8/laravel/index?skin=dark">preview</a>',
+            ),
+
+            'update' => array(
+                'Folder restructure of <code>view</code> and <code>assets</code> to support multi demos.',
+                'Rename helper function <code>assetIfHasRTL()</code> to <code>assetCustom()</code>.',
+                'Moved shared config for demos to global config <code>config/global</code>',
+                'Update <code>package.json</code> plugin packages version.',
+                'Update <code>composer.json</code> plugin packages version.',
+                'Update <code>webpack.mix.js</code> file to rename output CSS file name <code>plugins/global/extend.bundle.css</code> to <code>plugins/global/plugins-custom.bundle.css</code>',
+                'Update <code>datatable</code> plugin in <code>webpack.mix.js</code> file.',
+            ),
+
+            'fix' => array(
+                'Fixed missing breadcrumb in the documentation page.',
+            ),
+        ),
+    ),
+
     'v8.0.17' => array(
         'date'      => '06 July, 2021',
         'changelog' => array(

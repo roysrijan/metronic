@@ -6,7 +6,7 @@
 // Base
 .noUi-target {
     border: 0;
-    background: $gray-100;
+    background: if(isDarkSkin(), $gray-200, $gray-100);
     box-shadow:none;
 
     &.noUi-horizontal {
@@ -15,7 +15,7 @@
         .noUi-handle {
             width: 24px;
             height: 24px;
-            top: -6px;
+            top: -4.5px;
             border-radius: 50%;
             outline: none;
 
@@ -36,7 +36,7 @@
         .noUi-handle {
             width: 24px;
             height: 24px;
-            top: -6px;
+            right: -4.5px;
             border-radius: 50%;
             outline: none;
 
@@ -61,12 +61,12 @@
 
     // Small size
     &.noUi-sm {
-       @include nouislider-size(6px, 20px, 20px, 8px);
+       @include nouislider-size(6px, 20px, 20px, 7px);
     }
 
     // Large size
     &.noUi-lg {
-        @include nouislider-size(18px, 30px, 30px, 9px);
+        @include nouislider-size(18px, 30px, 30px, 6px);
     }
 }
 
@@ -77,5 +77,6 @@
     color: $tooltip-color;
     font-size: $tooltip-font-size;
     border: 0;
+    padding: 0.5rem 0.75rem;
     @include border-radius($tooltip-border-radius);
 }

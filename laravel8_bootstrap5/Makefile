@@ -8,11 +8,9 @@ ensure-permissions:
 	#chmod -R o+w storage
 
 enable-cache:
-	php artisan cache:clear
-	php artisan config:clear
-	composer dump-autoload
-	php artisan view:clear
+	php artisan optimize
 
 build-assets:
 	npm update
-	npm run prod
+	npm run prod --demo1 --dark-skin
+	npm run prod --demo2

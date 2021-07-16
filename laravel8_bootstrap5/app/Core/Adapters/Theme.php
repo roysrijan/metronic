@@ -17,7 +17,21 @@ class Theme extends \App\Core\Theme
 {
     public function __construct()
     {
-        self::$demo = 'demo1';
+    }
+
+    /**
+     * Set demo to initialize
+     *
+     * @param  string  $demo
+     */
+    public static function setDemo($demo = 'demo1')
+    {
+        Theme::$demo = $demo;
+    }
+
+    public static function getDemo()
+    {
+        return self::$demo;
     }
 
     /**
@@ -62,16 +76,41 @@ class Theme extends \App\Core\Theme
      *
      * @return string
      */
-    public static function getPageUrl($path, $demo = '')
+    public static function getPageUrl($path, $demo = '', $skin = null)
     {
+        $params = [];
+        if (isset($_REQUEST['rtl']) && $_REQUEST['rtl']) {
+            $params['rtl'] = 1;
+        }
+        if (isset($_REQUEST['demo']) && $_REQUEST['demo']) {
+            $params['demo'] = $_REQUEST['demo'];
+        }
+
+        if ($skin !== null) {
+            if ($skin) {
+                $params['skin'] = $skin;
+            }
+        } elseif (isset($_REQUEST['skin']) && $_REQUEST['skin']) {
+            $params['skin'] = $_REQUEST['skin'];
+        }
+
+        if (!empty($demo)) {
+            $params['demo'] = $demo;
+        }
+
+        $a = '';
+        if (count($params)) {
+            $a = '?'.http_build_query($params);
+        }
+
         // check if the route exist in the laravel
         $name = str_replace('/', '.', $path);
         if (Route::has($name)) {
-            return route($name);
+            return route($name).$a;
         }
 
         // otherwise return as url
-        return url($path);
+        return url($path).$a;
     }
 
     /**
@@ -119,6 +158,11 @@ class Theme extends \App\Core\Theme
      */
     public static function getView($path, $params = array())
     {
+        // Check if the layout file exist
+        if (view()->exists($path)) {
+            return view($path, $params);
+        }
+
         // Append demo folder for layout view
         if (Str::startsWith($path, 'layout')) {
             $path = str_replace('layout', 'layout/'.self::$demo, $path);
@@ -229,7 +273,7 @@ class Theme extends \App\Core\Theme
      */
     public static function getVersion()
     {
-        return config('demo1.general.product.version');
+        return config('global.general.product.version');
     }
 
     /**
@@ -264,7 +308,7 @@ class Theme extends \App\Core\Theme
      */
     public static function getMediaUrlPath()
     {
-        return 'media/';
+        return theme()->getDemo().'/media/';
     }
 
     /**
@@ -358,6 +402,40 @@ class Theme extends \App\Core\Theme
         parent::putProVersionTooltip($attr);
 
         return ob_get_clean();
+    }
+
+    /**
+     * Check if current theme has dark skin
+     *
+     * @return bool
+     */
+    public static function isDarkSkinEnabled()
+    {
+        return (bool) self::getOption('layout', 'main/dark-skin-enabled');
+    }
+
+    /**
+     * Get current skin
+     *
+     * @return mixed|string
+     */
+    public static function getCurrentSkin()
+    {
+        if (self::isDarkSkinEnabled() && isset($_REQUEST['skin']) && $_REQUEST['skin']) {
+            return $_REQUEST['skin'];
+        }
+
+        return 'default';
+    }
+
+    /**
+     * Check dark skin
+     *
+     * @return mixed|string
+     */
+    public static function isDarkSkin()
+    {
+        return self::getCurrentSkin() === 'dark';
     }
 
 }

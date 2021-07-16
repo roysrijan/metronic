@@ -388,7 +388,7 @@ const getTheme = () => {
  */
 const changeDarkFileName = (file) => {
   // files that need to be changed to dark
-  const files = ['style.scss', 'plugins.scss', 'style.bundle.css', 'plugins.bundle.css',];
+  const files = ['style.scss', 'plugins.scss',];
 
   if (files.indexOf(baseName(file, true)) !== -1) {
     let path = pathOnly(file);
@@ -397,6 +397,7 @@ const changeDarkFileName = (file) => {
     }
     return path + baseName(file) + '.dark.scss';
   }
+  return file;
 };
 
 /**
@@ -509,8 +510,10 @@ const bundle = (bundle) => {
           if (bundle.dist.hasOwnProperty(type)) {
 
             if (args.darkSkin) {
+              const srcFiles = bundle.src[type];
+
               // modify file name to dark
-              let toDarkFiles = bundle.src[type].map(changeDarkFileName).filter(function (el) {
+              let toDarkFiles = srcFiles.map(changeDarkFileName).filter(function (el) {
                 return el != null;
               });
 

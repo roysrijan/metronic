@@ -261,7 +261,7 @@ KTScroll.getInstance = function(element) {
 }
 
 // Create instances
-KTScroll.createInstances = function(selector) {
+KTScroll.createInstances = function(selector = '[data-kt-scroll="true"]') {
     var body = document.getElementsByTagName("BODY")[0];
 
     // Initialize Menus
@@ -296,7 +296,7 @@ window.addEventListener('resize', function() {
 
 // Global initialization
 KTScroll.init = function() {
-    KTScroll.createInstances('[data-kt-scroll="true"]');
+    KTScroll.createInstances();
 };
 
 // On document ready

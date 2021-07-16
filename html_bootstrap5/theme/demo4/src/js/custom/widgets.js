@@ -47,7 +47,7 @@ var KTWidgets = function () {
                 },
                 fill: {
                     type: 'solid',
-                    opacity: 1
+                    opacity: 0.3
                 },
                 stroke: {
                     curve: 'smooth',
@@ -130,12 +130,6 @@ var KTWidgets = function () {
                         }
                     }
                 },
-                fill: {
-                    type: 'gradient',
-                    gradient: {
-                        stops: [0, 100]
-                    }
-                },
                 colors: [baseColor],
                 markers: {
                     colors: [baseColor],
@@ -193,7 +187,7 @@ var KTWidgets = function () {
                 },
                 fill: {
                     type: 'solid',
-                    opacity: 1
+                    opacity: 0.3
                 },
                 stroke: {
                     curve: 'smooth',
@@ -274,12 +268,6 @@ var KTWidgets = function () {
                         formatter: function(val) {
                             return "$" + val + " thousands"
                         }
-                    }
-                },
-                fill: {
-                    type: 'gradient',
-                    gradient: {
-                        stops: [0, 100]
                     }
                 },
                 colors: [baseColor],
@@ -1932,6 +1920,10 @@ var KTWidgets = function () {
                     enabled: false
                 },
                 fill: {
+                    type: 'solid',
+                    opacity: 1
+                },
+                fill1: {
                     type: 'gradient',
                     opacity: 1,
                     gradient: {
@@ -2682,9 +2674,73 @@ var KTWidgets = function () {
         calendar.render();
     }
 
+    // Daterangepicker
+    var initDaterangepicker = function () {
+        if (!document.querySelector('#kt_dashboard_daterangepicker')) {
+            return;
+        }
+
+        var picker = $('#kt_dashboard_daterangepicker');
+        var start = moment();
+        var end = moment();
+
+        function cb(start, end, label) {
+            var title = '';
+            var range = '';
+
+            if ((end - start) < 100 || label == 'Today') {
+                title = 'Today:';
+                range = start.format('MMM D');
+            } else if (label == 'Yesterday') {
+                title = 'Yesterday:';
+                range = start.format('MMM D');
+            } else {
+                range = start.format('MMM D') + ' - ' + end.format('MMM D');
+            }
+
+            $('#kt_dashboard_daterangepicker_date').html(range);
+            $('#kt_dashboard_daterangepicker_title').html(title);
+        }
+
+        picker.daterangepicker({
+            direction: KTUtil.isRTL(),
+            startDate: start,
+            endDate: end,
+            opens: 'left',
+            applyClass: 'btn-primary',
+            cancelClass: 'btn-light-primary',
+            ranges: {
+                'Today': [moment(), moment()],
+                'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+            }
+        }, cb);
+
+        cb(start, end, '');
+    }
+
+    var initSkinToggle = function() {
+        var toggle = document.querySelector('#kt_user_menu_skin_toggle');
+        
+        if (toggle) {
+            toggle.addEventListener('click', function() {
+                window.location.href = this.getAttribute('data-kt-url');
+            });
+        }
+    }
+
     // Public methods
     return {
         init: function () {
+            // Daterangepicker
+            initDaterangepicker();
+            
+            // Skin
+            initSkinToggle();
+
             // Statistics widgets
             initStatisticsWidget3();
             initStatisticsWidget4();            

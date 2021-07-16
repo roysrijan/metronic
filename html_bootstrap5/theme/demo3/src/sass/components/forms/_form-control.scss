@@ -41,16 +41,16 @@
 
 	// White style
 	&.form-control-white {
-		background-color: $white;
-		border-color: $white;
+		background-color: $body-bg;
+		border-color: $body-bg;
 
 		.dropdown.show > &,
 		&:active,
 		&.active,
 		&:focus,
 		&.focus {
-			background-color: $white;
-			border-color: $white;
+			background-color: $body-bg;
+			border-color: $body-bg;
 		}
 	}
 

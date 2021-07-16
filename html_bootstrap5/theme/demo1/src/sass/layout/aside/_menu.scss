@@ -33,7 +33,8 @@
 .aside-dark {
     .hover-scroll-overlay-y {
         --scrollbar-space: 0.4rem;
-        @include scrollbar-color(#3b3b64, lighten(#3b3b64, 3%));
+        
+        @include scrollbar-color(get($aside-config, scrollbar-color), get($aside-config, scrollbar-hover-color));
     }
 
     .menu {

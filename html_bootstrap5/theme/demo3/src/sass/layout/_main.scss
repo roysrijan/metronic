@@ -4,12 +4,12 @@
 
 
 body {
-	background-color: $page-bg-color;
+	background-color: $page-bg;
 }
 
 // Font color from Content background color
-.content-bg-for-font-color {
-	color: $page-bg-color;
+.text-page-bg {
+	color: $page-bg;
 }
 
 // Desktop Mode

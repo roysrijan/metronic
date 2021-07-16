@@ -243,7 +243,7 @@ KTSticky.getInstance = function(element) {
 }
 
 // Create instances
-KTSticky.createInstances = function(selector) {
+KTSticky.createInstances = function(selector = '[data-kt-sticky="true"]') {
     var body = document.getElementsByTagName("BODY")[0];
 
     // Initialize Menus
@@ -268,7 +268,10 @@ window.addEventListener('resize', function() {
 
         if ( elements && elements.length > 0 ) {
             for (var i = 0, len = elements.length; i < len; i++) {
-                KTSticky.getInstance(elements[i]).update();
+                var sticky = KTSticky.getInstance(elements[i]);
+                if (sticky) {
+                    sticky.update();
+                }
             }
         }
     }, 200);
@@ -276,7 +279,7 @@ window.addEventListener('resize', function() {
 
 // Global initialization
 KTSticky.init = function() {
-    KTSticky.createInstances('[data-kt-sticky="true"]');
+    KTSticky.createInstances();
 };
 
 // On document ready

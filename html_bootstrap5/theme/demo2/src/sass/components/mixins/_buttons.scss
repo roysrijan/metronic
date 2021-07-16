@@ -71,7 +71,7 @@
         }
 
         @if ( $bg-color-active != null ) {
-            background-color: $bg-color-active;
+            background-color: $bg-color-active !important;
         }
     }
 }

@@ -28,7 +28,7 @@
 @import "~select2/dist/css/select2.css";
 
 // noUiSlider - is a lightweight range slider with multi-touch support and a ton of features. It supports non-linear ranges, requires no external dependencies: https://refreshless.com/nouislider/
-@import "~nouislider/distribute/nouislider.css";
+@import "~nouislider/dist/nouislider.css";
 
 // DropzoneJS -  is an open source library that provides drag'n'drop file uploads with image previews: https://www.dropzonejs.com/
 @import "~dropzone/dist/dropzone.css";
@@ -37,7 +37,7 @@
 @import "~quill/dist/quill.snow.css";
 
 // Tagify - Transforms an input field or a textarea into a Tags component, in an easy, customizable way, with great performance and small code footprint, exploded with features: https://github.com/yairEO/tagify
-@import "~@yaireo/tagify/src/tagify.scss";
+@import "~@yaireo/tagify/dist/tagify.css";
 
 // Toastr - is a Javascript library for non-blocking notifications. jQuery is required. The goal is to create a simple core library that can be customized and extended: https://github.com/CodeSeven/toastr
 @import "~toastr/build/toastr.css";
@@ -59,6 +59,3 @@
 
 // Tiny slider - for all purposes, inspired by Owl Carousel.
 @import "~tiny-slider/dist/tiny-slider.css";
-
-// Override by custom Metronic style, must be at the end of import
-@import "../sass/plugins.dark";

@@ -121,7 +121,7 @@ KTSwapper.getInstance = function(element) {
 }
 
 // Create instances
-KTSwapper.createInstances = function(selector) {
+KTSwapper.createInstances = function(selector = '[data-kt-swapper="true"]') {
     // Initialize Menus
     var elements = document.querySelectorAll(selector);
     var swapper;
@@ -154,7 +154,7 @@ window.addEventListener('resize', function() {
 
 // Global initialization
 KTSwapper.init = function() {
-    KTSwapper.createInstances('[data-kt-swapper="true"]');
+    KTSwapper.createInstances();
 };
 
 // On document ready

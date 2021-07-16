@@ -12,7 +12,7 @@
         <!--begin::Block-->
         <div class="py-5">
             <p class="mb-0">
-                Right to Left (RTL) version of {{ theme()->getProductNameHtml() }} can be easily setup with special Laravel Mix plugin that depends on
+                Right to Left (RTL) version of {!! theme()->getProductNameHtml() !!} can be easily setup with special Laravel Mix plugin that depends on
                 <a href="https://rtlcss.com/" class="fw-bolder">RTLCSS</a>&nbsp; tools.
             </p>
         </div>

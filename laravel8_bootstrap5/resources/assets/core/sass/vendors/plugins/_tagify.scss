@@ -4,6 +4,7 @@
 
 // Base
 .tagify {
+    --tagify-dd-bg-color        : #{$body-bg};
     --tags-border-color         : #{$input-border-color};
     --tags-hover-border-color   : #{$input-border-color};
     --tags-focus-border-color   : #{$input-focus-border-color};
@@ -34,14 +35,14 @@
         .tagify__tag__removeBtn {
             border-radius: 0;
             content: " ";
-            @include svg-bg-icon(close, $gray-400);
+            @include svg-bg-icon(close, $gray-500);
 
             &:after {
                 display: none;
             }
 
             &:hover {
-                @include svg-bg-icon(close, $gray-700);
+                @include svg-bg-icon(close, $primary);
             }
         }
 
@@ -92,12 +93,18 @@
 // Dropdown
 .tagify__dropdown {
     box-shadow: $dropdown-box-shadow;
-    background: $white;
     border: 0 !important;
     outline: none !important;
     padding: 0.75rem 0;
     z-index: $zindex-dropdown;
+    background-color: $body-bg;
     @include border-radius($border-radius);
+
+    // Wrapper
+    ._wrapper {
+        max-height: none;
+        @include border-radius($border-radius);
+    }
 
     // In modal
     .modal-open & {
@@ -105,6 +112,7 @@
     }
 
     .tagify__dropdown__wrapper {
+        background-color: $body-bg;
         border: 0 !important;
         outline: none !important;
         box-shadow: none;
@@ -126,7 +134,7 @@
     }
 
     // Suggestions
-    &.tagify__inline__suggestions {        
+    &.tagify__inline__suggestions {    
         padding: $input-padding-y $input-padding-x;
 
         .tagify__dropdown__item {

@@ -26,7 +26,9 @@
     </div>
     <!--end::Main-->
 
-    {{--@include('layout/explore/_main')--}}
+    <!--begin::Drawers-->
+    {{--{{ theme()->getView('partials/explore/_main') }}--}}
+    <!--end::Drawers-->
 
     @include('layout/docs/_scrolltop')
 

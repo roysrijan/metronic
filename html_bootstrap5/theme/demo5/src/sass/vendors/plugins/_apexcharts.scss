@@ -24,7 +24,7 @@
 }
 
 .apexcharts-menu {
-	background: $white;
+	background: $body-bg;
 	border: 0 !important;
 	padding: 0.5rem 0 !important;
 	box-shadow: $dropdown-box-shadow;
@@ -48,10 +48,12 @@
 		@include border-radius($border-radius);
 		box-shadow: $dropdown-box-shadow;
 		border: 0 !important;
-		background: $white;
+		background: $body-bg !important;
+		color: $gray-800;
 
 		.apexcharts-tooltip-title {
 			background: $gray-100 !important;
+			color: $gray-800;
 			border: 0 !important;
 		}
 	}
@@ -69,14 +71,15 @@
 		@include border-radius($border-radius !important);
 		box-shadow: $dropdown-box-shadow !important;
 		border: 0 !important;
-		background: $white !important;
+		background: $body-bg !important;
+		color: $gray-800;
 
 		&:before {
 			border-bottom: 0 !important;
 		}
 
 		&:after {
-			border-bottom-color: $white !important;
+			border-bottom-color: $body-bg !important;
 		}
 	}
 }

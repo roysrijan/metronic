@@ -33,15 +33,15 @@
         <!--begin::Team-->
         <div class="d-flex align-items-center">
             <a href="#" class="symbol symbol-35px me-2" data-bs-toggle="tooltip" title="Ana Stone">
-                <img src="{{ asset('media/avatars/150-1.jpg') }}" alt=""/>
+                <img src="{{ asset(theme()->getMediaUrlPath() . 'avatars/150-1.jpg') }}" alt=""/>
             </a>
 
             <a href="#" class="symbol symbol-35px me-2" data-bs-toggle="tooltip" title="Mark Larson">
-                <img src="{{ asset('media/avatars/150-4.jpg') }}" alt=""/>
+                <img src="{{ asset(theme()->getMediaUrlPath() . 'avatars/150-4.jpg') }}" alt=""/>
             </a>
 
             <a href="#" class="symbol symbol-35px me-2" data-bs-toggle="tooltip" title="Sam Harris">
-                <img src="{{ asset('media/avatars/150-8.jpg') }}" alt=""/>
+                <img src="{{ asset(theme()->getMediaUrlPath() . 'avatars/150-8.jpg') }}" alt=""/>
             </a>
         </div>
         <!--end::Team-->

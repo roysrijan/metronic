@@ -56,10 +56,11 @@ require('flatpickr/dist/flatpickr.min.js');
 require('../../core/js/vendors/plugins/flatpickr.init.js');
 
 // Inputmask - is a javascript library which creates an input mask: https://github.com/RobinHerbots/Inputmask
-require('inputmask/dist/jquery.inputmask.min.js');
+require('inputmask/dist/inputmask.js');
+require('inputmask/dist/bindings/inputmask.binding.js');
 
 // noUiSlider - is a lightweight range slider with multi-touch support and a ton of features. It supports non-linear ranges, requires no external dependencies: https://refreshless.com/nouislider/
-window.noUiSlider = require('nouislider/distribute/nouislider.min.js');
+window.noUiSlider = require('nouislider/dist/nouislider.min.js');
 
 // The autosize - function accepts a single textarea element, or an array or array-like object (such as a NodeList or jQuery collection) of textarea elements: https://www.jacklmoore.com/autosize/
 window.autosize = require('autosize/dist/autosize.min.js');
@@ -75,8 +76,8 @@ require('../../core/js/vendors/plugins/dropzone.init.js');
 window.Quill = require('quill/dist/quill.js');
 
 // Tagify - Transforms an input field or a textarea into a Tags component, in an easy, customizable way, with great performance and small code footprint, exploded with features: https://github.com/yairEO/tagify
-require('@yaireo/tagify/dist/tagify.polyfills.min');
-window.Tagify = require('@yaireo/tagify/dist/tagify.min');
+require('@yaireo/tagify/dist/tagify.polyfills.min.js');
+window.Tagify = require('@yaireo/tagify/dist/tagify.min.js');
 
 // Toastr - is a Javascript library for non-blocking notifications. jQuery is required. The goal is to create a simple core library that can be customized and extended: https://github.com/CodeSeven/toastr
 window.toastr = require('toastr/build/toastr.min.js');

@@ -1,27 +1,28 @@
 //
-// Fullcalendar
+// Fullcalendar plugin customization: https://fullcalendar.io/
 //
 
 body {    
     --fc-event-border-color: #{$primary};
     --fc-event-bg-color: #{$primary};
-    --fc-event-text-color: #{$primary-light};
+    --fc-event-text-color: #{$primary-inverse};
 }
 
+// Base
 .fc {
     // Border color
-    --fc-border-color: #{$gray-300};
+    --fc-border-color: #{$gray-200};
     --fc-page-bg-color: #{$white};
     --fc-small-font-size: 0.95rem;
 
     // General
-    --fc-highlight-color: #{$primary-light};
+    --fc-highlight-color: #{$lighten};
     //--fc-non-business-color: 
     //--fc-bg-event-color:
     --fc-bg-event-opacity: 0.3;
     --fc-neutral-bg-color: #{$light};
     //--fc-event-selected-overlay-color: 
-    --fc-today-bg-color: #{$warning-light};
+    --fc-today-bg-color: #{if(isDarkSkin(), $primary-light, $warning-light)};
     //--fc-neutral-bg-color:
     //--fc-neutral-text-color:
     //--fc-more-link-text-color:
@@ -31,14 +32,14 @@ body {
 
     // Buttons
     --fc-button-text-color: #{$gray-600};
-    --fc-button-bg-color: #{$gray-200};
-    --fc-button-border-color: #{$gray-200};
+    --fc-button-bg-color: #{$gray-100};
+    --fc-button-border-color: #{$gray-100};
     
-    --fc-button-hover-bg-color:  #{$gray-200};
-    --fc-button-hover-border-color:  #{$gray-200};
+    --fc-button-hover-bg-color:  #{$gray-100};
+    --fc-button-hover-border-color:  #{$gray-100};
 
-    --fc-button-active-bg-color: #{$primary};
-    --fc-button-active-border-color: #{$primary};
+    --fc-button-active-bg-color: #{$gray-200};
+    --fc-button-active-border-color: #{$gray-200};
 
     // Table
     table {
@@ -52,6 +53,8 @@ body {
         border: 0 !important;
         border-radius: $btn-border-radius;
         vertical-align: middle;
+        font-weight: $font-weight-bold;
+        text-transform: capitalize;
     }
 
     // Primary button
@@ -60,29 +63,27 @@ body {
 
         // Icon
         .fc-icon {
-            font-size: 1.45rem;
+            font-size: 1.35rem;
+            margin-bottom: 0.15rem;
         }
 
         &:not(:disabled):not(.fc-button-active) {
             &:focus,
             &:hover,
             &:active {
-                color: $primary;
-                background-color: $gray-200;
+                color: $gray-900;
 
                 .fc-icon {
-                    color: $primary;
+                    color: $gray-900;
                 }
             }
         }
         
         &:not(:disabled).fc-button-active {
-            color: $primary-inverse;
-            background-color: $primary;
-            border-color: $primary;
+            color: $gray-900;
 
             .fc-icon {
-                color: $primary-inverse;
+                color: $gray-900;
             }
         }
     }
@@ -162,7 +163,7 @@ body {
         color: $gray-600;
 
         .fc-event-title {
-            font-weight: $font-weight-bolder;
+            font-weight: $font-weight-bold;
         }
 
         &:hover,
@@ -180,12 +181,15 @@ body {
 
     // Popover
     .fc-popover {
+        border: 0 !important;
+        background-color: $tooltip-bg;
         box-shadow: $dropdown-box-shadow;
         @include border-radius($dropdown-border-radius);
 
         .fc-popover-header {
             @include border-top-radius($dropdown-border-radius);
             padding: 0.65rem 0.75rem;
+            background-color: $tooltip-bg;
             
             .fc-popover-title {
                 color: $gray-800;
@@ -257,5 +261,37 @@ body {
     // Indicator arrow
     .fc-timegrid-now-indicator-arrow {
         margin-top: -1px;
+    }
+}
+
+// Event
+.fc-h-event {
+    font-weight: $font-weight-normal;
+}
+
+// Mobile mode
+@include media-breakpoint-down(md) {
+    .fc {
+        // Header toolbar
+        .fc-header-toolbar {   
+            flex-direction: column;
+            align-items: flex-start;
+
+            .fc-toolbar-chunk {
+                &:nth-child(1),
+                &:nth-child(3) {
+                    order: 2;
+                }
+
+                &:nth-child(2) {
+                    order: 1;
+                }
+
+                &:nth-child(2),
+                &:nth-child(1) {
+                    margin-bottom: 1rem;
+                } 
+            }            
+        }
     }
 }

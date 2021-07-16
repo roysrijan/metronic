@@ -7,6 +7,12 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	margin: 0;
+
+	&.pagination-circle {
+		.page-link {
+			border-radius: 50%;
+		}
+	}
 }
 
 .page-item {

@@ -170,7 +170,7 @@ class Theme {
         // Override wildcard layout config
         $page_group_options = self::getPageGroupOptions(self::$config['pages'], self::$page);
         if ($page_group_options) {
-            self::$config['page'] = array_merge_recursive(self::$config['page'], $page_group_options);
+            self::$config['page'] = Util::arrayMergeRecursive($page_group_options, self::$config['page']);
         }
 
         // Merge Layout Builder Stored Options
@@ -224,7 +224,7 @@ class Theme {
         // force preview mode on server
         if (isset($_SERVER['SERVER_NAME']) && strpos($_SERVER['SERVER_NAME'], 'keenthemes.com') !== false) {
             self::$mode = 'preview';
-        } elseif (isset($_REQUEST['type']) && $_REQUEST['type'] === 'html') {
+        } elseif (isset($_REQUEST['mode']) && $_REQUEST['mode'] === 'release') {
             self::$mode = 'release';
         } else {
             self::$mode = $value;
@@ -421,6 +421,7 @@ class Theme {
     public static function printHtmlClasses($scope, $full = true) {
         if (isset(self::$htmlClasses[$scope]) && !empty(self::$htmlClasses[$scope])) {
             $classes = implode(' ', self::$htmlClasses[$scope]);
+
             if ($full) {
                 echo  Util::getHtmlClass(self::$htmlClasses[$scope]);
             } else {
@@ -575,8 +576,9 @@ class Theme {
     public static function rtlCssFilename($path) {
         if (isset($_REQUEST['rtl']) && $_REQUEST['rtl'] == 1) {
             $path = str_replace('.css', '.rtl.css', $path);
-        } elseif (isset($_REQUEST['skin']) && $_REQUEST['skin']) {
-            if (strpos($path, 'css/style.bundle.css') !== false || strpos($path, 'plugins/global/plugins.bundle.css') !== false) {
+        } elseif (isset($_REQUEST['skin']) && $_REQUEST['skin'] && $_REQUEST['skin'] !== 'default') {
+            if (self::isDarkSkinEnabled() && (strpos($path, 'plugins.bundle.css') !== false || strpos($path, 'style.bundle.css') !== false)) {
+                // import dark skin css
                 $path = str_replace('.bundle', '.'.$_REQUEST['skin'].'.bundle', $path);
             }
         }
@@ -615,10 +617,20 @@ class Theme {
         if (self::isDarkSkinEnabled() && isset($_REQUEST['skin']) && $_REQUEST['skin']) {
             return $_REQUEST['skin'];
         }
+
         return 'default';
     }
 
-    public static function getPageUrl($path, $demo = '') {
+    /**
+     * Check dark skin
+     *
+     * @return mixed|string
+     */
+    public static function isDarkSkin() {
+        return self::getCurrentSkin() === 'dark';
+    }
+
+    public static function getPageUrl($path, $demo = '', $skin = null) {
         // Disable pro page URL's for the free version
         if (self::isFreeVersion() === true && self::isProPage($path) === true) {
             return "#";
@@ -626,10 +638,13 @@ class Theme {
 
         if (isset($_REQUEST['type']) && $_REQUEST['type'] === 'html') {
             if (!empty($demo)) {
-                // force add link to other demo in release
-                $path = '../../'.$demo.'/dist/'.$path;
-                // for preview
-                // $path = '../'.$demo.'/'.$path;
+                if(self::getMode() === 'release') {
+                    // force add link to other demo in release
+                    $path = '../../'.$demo.'/dist/'.$path;
+                } else {
+                    // for preview
+                    $path = '../'.$demo.'/'.$path;
+                }
             }
 
             $params = '';
@@ -637,14 +652,21 @@ class Theme {
             if (isset($_REQUEST['rtl']) && $_REQUEST['rtl']) {
                 $params = 'rtl/';
             }
-            if (isset($_REQUEST['skin']) && $_REQUEST['skin']) {
-                $params = $_REQUEST['skin'].'/';
+
+            if ($skin !== null) {
+                if ($skin) {
+                    $params = $skin.'/';
+                }
+            } else {
+                if (isset($_REQUEST['skin']) && $_REQUEST['skin']) {
+                    $params = $_REQUEST['skin'].'/';
+                }
             }
 
             $url = self::getBaseUrlPath().$params.$path.'.html';
 
             // skip layout builder page for generated html
-            if (strpos($path, 'builder') !== false) {
+            if (strpos($path, 'builder') !== false && self::getMode() === 'release') {
 
                 if (!empty(self::getDemo())) {
                     $path = self::getDemo().'/'.$path;
@@ -657,8 +679,15 @@ class Theme {
             if (isset($_REQUEST['rtl']) && $_REQUEST['rtl']) {
                 $params = '&rtl=1';
             }
-            if (isset($_REQUEST['skin']) && $_REQUEST['skin']) {
-                $params = '&skin=' . $_REQUEST['skin'];
+
+            if ($skin !== null) {
+                if ($skin) {
+                    $params = '&skin='.$skin;
+                }
+            } else {
+                if (isset($_REQUEST['skin']) && $_REQUEST['skin']) {
+                    $params = '&skin='.$_REQUEST['skin'];
+                }
             }
 
             $baseUrl = self::getBaseUrlPath();
@@ -792,7 +821,7 @@ class Theme {
     }
 
     public static function getProductNameHtml() {
-        return '<strong>' . self::getProductName() . '</strong>&nbsp;';
+        return '<strong class="text-gray-900">' . self::getProductName() . '</strong>&nbsp;';
     }
 
     public static function getProductDescription() {
@@ -973,5 +1002,9 @@ class Theme {
 
     public static function addPageJs($path) {
         self::$config["page"]["assets"]['custom']['js'][] = $path;
+    }
+
+    public static function getCorePath() {
+        return __DIR__.'/../..';
     }
 }

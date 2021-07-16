@@ -134,7 +134,7 @@ KTScrolltop.getInstance = function(element) {
 }
 
 // Create instances
-KTScrolltop.createInstances = function(selector) {
+KTScrolltop.createInstances = function(selector = '[data-kt-scrolltop="true"]') {
     var body = document.getElementsByTagName("BODY")[0];
 
     // Initialize Menus
@@ -150,7 +150,7 @@ KTScrolltop.createInstances = function(selector) {
 
 // Global initialization
 KTScrolltop.init = function() {
-    KTScrolltop.createInstances('[data-kt-scrolltop="true"]');
+    KTScrolltop.createInstances();
 };
 
 // On document ready

@@ -53,7 +53,7 @@
             <div class="d-flex align-items-center {{ util()->putIf(next($listRows), 'mb-7') }}">
                 <!--begin::Avatar-->
                 <div class="symbol symbol-50px me-5">
-                    <img src="{{ asset('media/'.$row['avatar']) }}" class="" alt=""/>
+                    <img src="{{ asset(theme()->getMediaUrlPath() . $row['avatar']) }}" class="" alt=""/>
                 </div>
                 <!--end::Avatar-->
 

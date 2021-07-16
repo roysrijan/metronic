@@ -7,8 +7,8 @@
 	display: flex;
 	flex-direction: column;
 	box-shadow: get($docs-aside-config, box-shadow);
+	background-color: get($docs-aside-config, bg-color);
 	padding: 0;
-	background-color: $white;
 }
 
 // Desktop mode

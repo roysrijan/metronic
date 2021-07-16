@@ -14,8 +14,7 @@ $flatpickr-time-height: 46px;
     border: 0;
 	box-shadow: $dropdown-box-shadow;
     border-radius: $dropdown-border-radius;
-    //padding: $flatpickr-padding-y $flatpickr-padding-x;
-    //width: calc(#{$flatpickr-width} + #{2 * $flatpickr-padding-x});
+    background-color: $body-bg;
 
     // Remow arrows
     &:before,
@@ -112,6 +111,8 @@ $flatpickr-time-height: 46px;
     }
 
     .flatpickr-monthDropdown-months {
+        border: 0 !important;
+        background-color: $body-bg;
         font-size: 1rem;
         color: $gray-700;
         font-weight: $font-weight-bold;
@@ -256,6 +257,7 @@ span.flatpickr-weekday {
     height: $flatpickr-day-height;
     max-width: $flatpickr-day-height;
     line-height: $flatpickr-day-height;
+    color: $gray-600;
 
     &.inRange,
     &.prevMonthDay.inRange,

@@ -2,7 +2,12 @@
 // Prismjs
 //
 
-$base-color: #1e1e3f;
+$base-color: if(isDarkSkin(), #1b1b29, #1e1e3f);
+$scrollbar-color: if(isDarkSkin(), lighten(#1b1b29, 6%), lighten(#1e1e3f, 12%));
+$btn-bg: lighten($base-color, 9%);
+$btn-hover-bg: lighten($base-color, 12%);
+$btn-color: rgba($white, 0.75);
+$btn-hover-color: $primary;
 
 // highlight
 .highlight {
@@ -23,26 +28,21 @@ $base-color: #1e1e3f;
         }
 
         .nav-link {
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 500;
             padding: 0.35rem 1rem;
             border-radius: $border-radius;
-            color: rgba($white, 0.8);
+            color: $btn-color;
             transition: $transition-base;
             background-color: transparent;
 
             &:focus,
             &.active {
                 transition: $transition-base;
-                background-color: rgba(#ffffff, 0.1);
-                olor: $white;
+                background-color: $btn-bg;
+                color: $btn-color;
             }
         }
-    }
-
-    // Tab content
-    .tab-content {
-
     }
 
     .highlight-copy {
@@ -54,14 +54,14 @@ $base-color: #1e1e3f;
         font-weight: 500;
         padding: 0.35rem 1rem !important;
         transition: $transition-base;
-        background-color: rgba(#ffffff, 0.1);
-        color: rgba($white, 0.8);
+        background-color: $btn-bg;
+        color: $btn-color;
 
         &:focus,
         &:hover {
             transition: $transition-base;
-            background-color: rgba(#ffffff, 0.2);
-            color: $white;
+            background-color: $btn-hover-bg;
+            color: $btn-hover-color;
         }
     }
 
@@ -74,18 +74,12 @@ $base-color: #1e1e3f;
     // Code
     .highlight-code {
         pre {
+            background-color: transparent;
             overflow: auto;
             padding: 0;
             margin: 0;
 
-            &::-webkit-scrollbar {
-                width: .5rem;
-                border-radius: .25rem;
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background-color: $gray-100;
-            }
+            @include scrollbar-color($scrollbar-color);
 
             code[class*="language-"] {
                 padding: 0;

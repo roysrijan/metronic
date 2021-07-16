@@ -19,7 +19,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba($black, 0.05);
+        background-color: get($overlay, bg);
         transition: all 0.3s ease;
         opacity: 0;
     }

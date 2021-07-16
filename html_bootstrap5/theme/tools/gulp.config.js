@@ -1,7 +1,7 @@
 const gulpConfig = {
 	name: 'Metronic',
 	desc: "Gulp build config file",
-	version: "8.0.17",
+	version: "8.0.18",
 	config: {
 		debug: false,
 		compile: {
@@ -114,10 +114,8 @@ const gulpConfig = {
 						inputmask: {
 							scripts: [
 								"{$config.path.node_modules}/inputmask/dist/inputmask.js",
-								"{$config.path.node_modules}/inputmask/dist/bindings/inputmask.binding.js",
-								"{$config.path.node_modules}/inputmask/dist/lib/extensions/inputmask.date.extensions.js",
-								"{$config.path.node_modules}/inputmask/dist/lib/extensions/inputmask.numeric.extensions.js",
-							],
+								"{$config.path.node_modules}/inputmask/dist/bindings/inputmask.binding.js"
+							]
 						},
 						"tiny-slider": {
 							styles: [
@@ -129,10 +127,10 @@ const gulpConfig = {
 						},
 						nouislider: {
 							styles: [
-								"{$config.path.node_modules}/nouislider/distribute/nouislider.css",
+								"{$config.path.node_modules}/nouislider/dist/nouislider.css",
 							],
 							scripts: [
-								"{$config.path.node_modules}/nouislider/distribute/nouislider.js",
+								"{$config.path.node_modules}/nouislider/dist/nouislider.js",
 							],
 						},
 						autosize: {
@@ -271,10 +269,14 @@ const gulpConfig = {
 						],
 						scripts: [
 							"{$config.path.node_modules}/prismjs/prism.js",
+							"{$config.path.node_modules}/prismjs/components/prism-markup.js",
+							"{$config.path.node_modules}/prismjs/components/prism-markup-templating.js",
 							"{$config.path.node_modules}/prismjs/components/prism-bash.js",
 							"{$config.path.node_modules}/prismjs/components/prism-javascript.js",
 							"{$config.path.node_modules}/prismjs/components/prism-scss.js",
 							"{$config.path.node_modules}/prismjs/components/prism-css.js",
+							"{$config.path.node_modules}/prismjs/components/prism-php.js",
+							"{$config.path.node_modules}/prismjs/components/prism-php-extras.js",
 							"{$config.path.node_modules}/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js",
 							"{$config.path.common_src}/js/vendors/plugins/prism.init.js",
 						],
@@ -287,52 +289,53 @@ const gulpConfig = {
 				"datatables.net": {
 					src: {
 						styles: [
-							"{$config.path.node_modules}/datatables.net-bs4/css/dataTables.bootstrap4.css",
-							"{$config.path.node_modules}/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css",
-							"{$config.path.node_modules}/datatables.net-autofill-bs4/css/autoFill.bootstrap4.min.css",
-							"{$config.path.node_modules}/datatables.net-colreorder-bs4/css/colReorder.bootstrap4.min.css",
-							"{$config.path.node_modules}/datatables.net-fixedcolumns-bs4/css/fixedColumns.bootstrap4.min.css",
-							"{$config.path.node_modules}/datatables.net-fixedheader-bs4/css/fixedHeader.bootstrap4.min.css",
-							"{$config.path.node_modules}/datatables.net-keytable-bs4/css/keyTable.bootstrap4.min.css",
-							"{$config.path.node_modules}/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css",
-							"{$config.path.node_modules}/datatables.net-rowgroup-bs4/css/rowGroup.bootstrap4.min.css",
-							"{$config.path.node_modules}/datatables.net-rowreorder-bs4/css/rowReorder.bootstrap4.min.css",
-							"{$config.path.node_modules}/datatables.net-scroller-bs4/css/scroller.bootstrap4.min.css",
-							"{$config.path.node_modules}/datatables.net-select-bs4/css/select.bootstrap4.min.css",
+							"{$config.path.node_modules}/datatables.net-bs5/css/dataTables.bootstrap5.css",
+							"{$config.path.node_modules}/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css",
+							"{$config.path.node_modules}/datatables.net-colreorder-bs5/css/colReorder.bootstrap5.min.css",
+							"{$config.path.node_modules}/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css",
+							"{$config.path.node_modules}/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css",
+							"{$config.path.node_modules}/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css",
+							"{$config.path.node_modules}/datatables.net-rowreorder-bs5/css/rowReorder.bootstrap5.min.css",
+							"{$config.path.node_modules}/datatables.net-scroller-bs5/css/scroller.bootstrap5.min.css",
+							"{$config.path.node_modules}/datatables.net-select-bs5/css/select.bootstrap5.min.css",
 							"{$config.path.node_modules}/datatables.net-datetime/dist/dataTables.dateTime.min.css",
 						],
 						scripts: [
 							"{$config.path.node_modules}/datatables.net/js/jquery.dataTables.js",
+							"{$config.path.node_modules}/datatables.net-bs5/js/dataTables.bootstrap5.js",
 							"{$config.path.common_src}/js/vendors/plugins/datatables.init.js",
-							"{$config.path.node_modules}/datatables.net-autofill/js/dataTables.autoFill.min.js",
-							"{$config.path.node_modules}/datatables.net-autofill-bs4/js/autoFill.bootstrap4.min.js",
 							"{$config.path.node_modules}/jszip/dist/jszip.min.js",
 							"{$config.path.node_modules}/pdfmake/build/pdfmake.min.js",
 							"{$config.path.node_modules}/pdfmake/build/vfs_fonts.js",
 							"{$config.path.node_modules}/datatables.net-buttons/js/dataTables.buttons.min.js",
-							"{$config.path.node_modules}/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js",
+							"{$config.path.node_modules}/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js",
 							"{$config.path.node_modules}/datatables.net-buttons/js/buttons.colVis.js",
 							"{$config.path.node_modules}/datatables.net-buttons/js/buttons.flash.js",
 							"{$config.path.node_modules}/datatables.net-buttons/js/buttons.html5.js",
 							"{$config.path.node_modules}/datatables.net-buttons/js/buttons.print.js",
 							"{$config.path.node_modules}/datatables.net-colreorder/js/dataTables.colReorder.min.js",
+							"{$config.path.node_modules}/datatables.net-colreorder-bs5/js/colReorder.bootstrap5.js",
 							"{$config.path.node_modules}/datatables.net-fixedcolumns/js/dataTables.fixedColumns.min.js",
+							"{$config.path.node_modules}/datatables.net-fixedcolumns-bs5/js/fixedColumns.bootstrap5.js",
 							"{$config.path.node_modules}/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js",
-							"{$config.path.node_modules}/datatables.net-keytable/js/dataTables.keyTable.min.js",
+							"{$config.path.node_modules}/datatables.net-fixedheader-bs5/js/fixedHeader.bootstrap5.js",
 							"{$config.path.node_modules}/datatables.net-responsive/js/dataTables.responsive.min.js",
-							"{$config.path.node_modules}/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js",
+							"{$config.path.node_modules}/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js",
 							"{$config.path.node_modules}/datatables.net-rowgroup/js/dataTables.rowGroup.min.js",
+							"{$config.path.node_modules}/datatables.net-rowgroup-bs5/js/rowGroup.bootstrap5.js",
 							"{$config.path.node_modules}/datatables.net-rowreorder/js/dataTables.rowReorder.min.js",
+							"{$config.path.node_modules}/datatables.net-rowreorder-bs5/js/rowReorder.bootstrap5.js",
 							"{$config.path.node_modules}/datatables.net-scroller/js/dataTables.scroller.min.js",
+							"{$config.path.node_modules}/datatables.net-scroller-bs5/js/dataTables.bootstrap5.js",
 							"{$config.path.node_modules}/datatables.net-select/js/dataTables.select.min.js",
+							"{$config.path.node_modules}/datatables.net-select-bs5/js/dataTables.bootstrap5.js",
 							"{$config.path.node_modules}/datatables.net-datetime/dist/dataTables.dateTime.min.js",
-							"{$config.path.node_modules}/datatables.net-editor/js/dataTables.editor.min.js",
-						],
+						]
 					},
 					dist: {
 						styles: "{$config.dist}/plugins/custom/datatables/datatables.bundle.css",
 						scripts: "{$config.dist}/plugins/custom/datatables/datatables.bundle.js",
-					},
+					}
 				},
 				leaflet: {
 					src: {
@@ -349,17 +352,17 @@ const gulpConfig = {
 					dist: {
 						styles: "{$config.dist}/plugins/custom/leaflet/leaflet.bundle.css",
 						scripts: "{$config.dist}/plugins/custom/leaflet/leaflet.bundle.js",
-					},
+					}
 				},
 				fslightbox: {
 					src: {
 						scripts: [
 							"{$config.path.common_src}/plugins/fslightbox/fslightbox.js",
-						],
+						]
 					},
 					dist: {
 						scripts: "{$config.dist}/plugins/custom/fslightbox/fslightbox.bundle.js",
-					},
+					}
 				},
 				typedjs: {
 					src: {
@@ -367,7 +370,7 @@ const gulpConfig = {
 					},
 					dist: {
 						scripts: "{$config.dist}/plugins/custom/typedjs/typedjs.bundle.js",
-					},
+					}
 				},
 				fullcalendar: {
 					src: {
@@ -382,6 +385,70 @@ const gulpConfig = {
 						scripts: "{$config.dist}/plugins/custom/fullcalendar/fullcalendar.bundle.js",
 					},
 				},
+				tinymcejs: {
+					src: {
+						scripts: [
+							"{$config.path.node_modules}/tinymce/tinymce.min.js",
+							"{$config.path.node_modules}/tinymce/themes/silver/theme.js",
+							"{$config.path.node_modules}/tinymce/themes/mobile/theme.js",
+                            "{$config.path.node_modules}/tinymce/icons/default/icons.js",
+                            "{$config.path.node_modules}/tinymce/plugins/**/plugin.js"
+						]
+					},
+					dist: {
+						scripts: "{$config.dist}/plugins/custom/tinymce/tinymce.bundle.js",
+					}
+				},
+				ckeditorclassic: {
+					src: {
+						scripts: [
+							"{$config.path.node_modules}/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"
+						]
+					},
+					dist: {
+						scripts: "{$config.dist}/plugins/custom/ckeditor/ckeditor-classic.bundle.js"
+					}
+				},
+				ckeditorinline: {
+					src: {
+						scripts: [
+							"{$config.path.node_modules}/@ckeditor/ckeditor5-build-inline/build/ckeditor.js"
+						]
+					},
+					dist: {
+						scripts: "{$config.dist}/plugins/custom/ckeditor/ckeditor-inline.bundle.js"
+					}
+				},
+				ckeditorballoon: {
+					src: {
+						scripts: [
+							"{$config.path.node_modules}/@ckeditor/ckeditor5-build-balloon/build/ckeditor.js"
+						]
+					},
+					dist: {
+						scripts: "{$config.dist}/plugins/custom/ckeditor/ckeditor-balloon.bundle.js"
+					}
+				},
+				ckeditorballoonblock: {
+					src: {
+						scripts: [
+							"{$config.path.node_modules}/@ckeditor/ckeditor5-build-balloon-block/build/ckeditor.js"
+						]
+					},
+					dist: {
+						scripts: "{$config.dist}/plugins/custom/ckeditor/ckeditor-balloon-block.bundle.js"
+					}
+				},
+				ckeditordecoupleddocument: {
+					src: {
+						scripts: [
+							"{$config.path.node_modules}/@ckeditor/ckeditor5-build-decoupled-document/build/ckeditor.js"
+						]
+					},
+					dist: {
+						scripts: "{$config.dist}/plugins/custom/ckeditor/ckeditor-document.bundle.js"
+					}
+				}
 			},
 		},
 		custom: {
@@ -411,17 +478,16 @@ const gulpConfig = {
 				media: "{$config.dist}/media/",
 			},
 		},
-		api: {
-			src: {
-				media: [
-					"{$config.path.src}/api/**/*.*",
-					"{$config.path.common_src}/api/**/*.*",
-				],
-			},
-			dist: {
-				media: "{$config.dist}/api/",
-			}
-		}
+        misc: {
+            src: {
+                styles: [
+                    "{$config.path.node_modules}/tinymce/skins/**/*.css"
+                ]
+            },
+            dist: {
+                styles: "{$config.dist}/plugins/custom/tinymce/skins/",
+            }
+        }
 	}
 };
 

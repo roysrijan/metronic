@@ -4,13 +4,13 @@
     <!--begin::Authentication-->
     <div
         class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed"
-        style="background-image: url({{ asset('media/illustrations/progress-hd.png') }})">
+        style="background-image: url({{ asset(theme()->getMediaUrlPath() . 'illustrations/progress-hd.png') }})">
 
         <!--begin::Content-->
         <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
             <!--begin::Logo-->
             <a href="{{ $theme->getPageUrl('index') }}" class="mb-12">
-                <img alt="Logo" src="{{ asset('media/logos/logo-2-dark.svg') }}" class="h-45px"/>
+                <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'logos/logo-2-dark.svg') }}" class="h-45px"/>
             </a>
             <!--end::Logo-->
 

@@ -28,7 +28,7 @@
 
                         <!--begin::Post-->
                         <div class="post d-flex flex-column-fluid" id="kt_post">
-                            {{ theme()->getView('layout/_' . theme()->getOption('layout', 'content/layout'), compact('slot')) }}
+                            {{ theme()->getView('layout/_content', compact('slot')) }}
                         </div>
                         <!--end::Post-->
                     </div>
@@ -43,8 +43,8 @@
         <!--end::Root-->
 
         <!--begin::Drawers-->
-        {{ theme()->getView('layout/topbar/partials/_activity-drawer') }}
-        {{ theme()->getView('layout/explore/_main') }}
+        {{ theme()->getView('partials/topbar/_activity-drawer') }}
+        {{ theme()->getView('partials/explore/_main') }}
         <!--end::Drawers-->
 
         @if(theme()->getOption('layout', 'scrolltop/display') === true)

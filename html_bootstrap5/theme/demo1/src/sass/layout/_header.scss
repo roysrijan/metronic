@@ -21,9 +21,12 @@
 			left: 0;
 			z-index: get($header-config, fixed, z-index);
 			background-color: get($header-config, fixed, bg-color);
-			box-shadow: get($header-config, fixed, box-shadow);
 			height: get($header-config, fixed, height, desktop);
 			padding: 0;
+
+			@if isDefaultSkin() {                
+				box-shadow: get($header-config, fixed, box-shadow);
+            }
 		}
 
 		// Fixed header and fixed toolbar modes
@@ -70,7 +73,10 @@
 			height: get($header-config, fixed, height, tablet-and-mobile);
 			min-height: get($header-config, fixed, height, tablet-and-mobile);
 			background-color: get($header-config, fixed, bg-color);
-			box-shadow: get($header-config, fixed, box-shadow);
+
+			@if isDefaultSkin() {         
+				box-shadow: get($header-config, fixed, box-shadow);
+            }
 		}
 
 		// Fixed header and fixed toolbar modes

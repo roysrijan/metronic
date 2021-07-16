@@ -27,7 +27,7 @@
     <h1 class="d-flex align-items-center text-dark my-1 fs-4">
         {{ __('Documentation') }}
 
-        <a href="{{ theme()->getPageUrl('documentation/getting-started/changelog') }}" class="badge badge-success bg-hover-danger text-hover-white fw-bold fs-9 px-2 ms-2">
+        <a href="{{ theme()->getPageUrl('documentation/getting-started/changelog') }}" class="badge fw-bold fs-9 px-2 ms-2 {{ util()->putIf(theme()->isDarkSkin(), 'badge-light-success text-hover-success', 'badge-white text-hover-primary shadow-sm') }}">
             v{{ theme()->getVersion() }}
         </a>
 
@@ -45,8 +45,8 @@
     </h1>
     <!--end::Title-->
 
-@if ( theme()->getOption('layout', 'page-title/breadcrumb') === true && !empty($breadcrumb))
-    <!--begin::Separator-->
+@if (!empty($breadcrumb))
+        <!--begin::Separator-->
         <span class="d-none d-lg-block bullet h-20px w-1px bg-secondary mx-4"></span>
         <!--end::Separator-->
 

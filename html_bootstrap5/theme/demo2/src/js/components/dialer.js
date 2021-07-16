@@ -215,7 +215,7 @@ KTDialer.getInstance = function(element) {
 }
 
 // Create instances
-KTDialer.createInstances = function(selector) {
+KTDialer.createInstances = function(selector = '[data-kt-dialer="true"]') {
     // Get instances
     var elements = document.body.querySelectorAll(selector);
 
@@ -229,7 +229,7 @@ KTDialer.createInstances = function(selector) {
 
 // Global initialization
 KTDialer.init = function() {
-    KTDialer.createInstances('[data-kt-dialer="true"]');
+    KTDialer.createInstances();
 };
 
 // On document ready

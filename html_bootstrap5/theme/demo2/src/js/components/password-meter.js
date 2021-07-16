@@ -220,7 +220,7 @@ KTPasswordMeter.getInstance = function(element) {
 }
 
 // Create instances
-KTPasswordMeter.createInstances = function(selector) {
+KTPasswordMeter.createInstances = function(selector = '[data-kt-password-meter]') {
     // Get instances
     var elements = document.body.querySelectorAll(selector);
 
@@ -234,7 +234,7 @@ KTPasswordMeter.createInstances = function(selector) {
 
 // Global initialization
 KTPasswordMeter.init = function() {
-    KTPasswordMeter.createInstances('[data-kt-password-meter]');
+    KTPasswordMeter.createInstances();
 };
 
 // On document ready

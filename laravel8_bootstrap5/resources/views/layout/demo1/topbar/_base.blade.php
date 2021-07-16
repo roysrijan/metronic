@@ -9,7 +9,7 @@
 <div class="d-flex align-items-stretch flex-shrink-0">
     {{--begin::Search--}}
     <div class="d-flex align-items-stretch {{ $toolbarButtonMarginClass  }}">
-        {{ theme()->getView('layout/search/_base') }}
+        {{ theme()->getView('partials/search/_base') }}
     </div>
     {{--end::Search--}}
 
@@ -32,7 +32,7 @@
             <span class="bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink">
             </span>
         </div>
-        {{ theme()->getView('layout/topbar/partials/_notifications-menu') }}
+        {{ theme()->getView('partials/topbar/_notifications-menu') }}
         {{--end::Menu--}}
     </div>
     {{--end::Notifications--}}
@@ -43,7 +43,7 @@
         <div class="btn btn-icon btn-active-light-primary {{ $toolbarButtonHeightClass }}" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
             {!! theme()->getSvgIcon("icons/duotone/Layout/Layout-4-blocks.svg", $toolbarButtonIconSizeClass) !!}
         </div>
-        {{ theme()->getView('layout/topbar/partials/_quick-links-menu') }}
+        {{ theme()->getView('partials/topbar/_quick-links-menu') }}
         {{--end::Menu--}}
     </div>
     {{--end::Quick links--}}
@@ -55,7 +55,7 @@
             <div class="cursor-pointer symbol {{ $toolbarUserAvatarHeightClass }}" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
                 <img src="{{ auth()->user()->avatar_url }}" alt="metronic"/>
             </div>
-            {{ theme()->getView('layout/topbar/partials/_user-menu') }}
+            {{ theme()->getView('partials/topbar/_user-menu') }}
             {{--end::Menu--}}
         </div>
     @endif

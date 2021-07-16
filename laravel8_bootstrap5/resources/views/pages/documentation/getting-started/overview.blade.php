@@ -8,7 +8,8 @@
             'description' => 'Install the dependencies using Yarn or NPM and use our custom made Gulp or Webapck build tools to get your project up and running literally in a minutes.',
             'icon' => 'icons/duotone/Interface/Cog.svg',
             'link-text' => 'Install now',
-            'link-path' => 'documentation/getting-started/build/gulp'
+            'link-path' => 'documentation/getting-started/build',
+            'target' => '',
         ],
 
         [
@@ -17,7 +18,8 @@
             'description' => 'Just build your layout, preview it in real time and export the HTML template with it\'s includable partials for your server side integration.',
             'icon' => 'icons/duotone/Tools/Compass.svg',
             'link-text' => 'Preview and export',
-            'link-path' => 'layout-builder'
+            'link-path' => theme()->getOption('product', 'preview') . '/' . theme()->getDemo() . '/layout-builder.html',
+            'target' => '_blank',
         ],
 
         [
@@ -26,7 +28,8 @@
             'description' => 'Build whatever you want without a single line of CSS/SASS code by just using our low-level utility classes and base components.',
             'icon' => 'icons/duotone/Design/Layers.svg',
             'link-text' => 'Learn more',
-            'link-path' => 'documentation/base/utilities'
+            'link-path' => theme()->getOption('product', 'preview') . '/' . theme()->getDemo() . '/documentation/base/utilities.html',
+            'target' => '_blank',
         ],
 
         [
@@ -35,7 +38,8 @@
             'description' => 'Our exclusive components such as KTMenu, KTPasswordMeter, KTDrawer are made to empower your next project with our novel UI/UX vision.',
             'icon' => 'icons/duotone/Design/Select.svg',
             'link-text' => 'Browse components',
-            'link-path' => 'documentation/forms/password-meter'
+            'link-path' => theme()->getOption('product', 'preview') . '/' . theme()->getDemo() . '/documentation/forms/password-meter.html',
+            'target' => '_blank',
         ],
 
         [
@@ -44,7 +48,8 @@
             'description' => 'All popular 3rd-party plugins are deeply customized to meet our design system requirements and look alike with the rest of the in-house components.',
             'icon' => 'icons/duotone/Interface/Grid.svg',
             'link-text' => 'Learn more',
-            'link-path' => 'documentation/forms/flatpickr'
+            'link-path' => theme()->getOption('product', 'preview') . '/' . theme()->getDemo() . '/documentation/forms/flatpickr.html',
+            'target' => '_blank',
         ],
 
         [
@@ -53,7 +58,8 @@
             'description' => 'Fulfill your icon needs with over 5000 available icons from SVG Duotone, Bootstrap Icons, Font Awesome, and Line Awesome sets.',
             'icon' => 'icons/duotone/Home/Library.svg',
             'link-text' => 'Browse icons',
-            'link-path' => 'documentation/general/icons/duotone'
+            'link-path' => theme()->getOption('product', 'preview') . '/' . theme()->getDemo() . '/documentation/general/icons/duotone.html',
+            'target' => '_blank',
         ]
     ];
 @endphp
@@ -80,7 +86,7 @@
 
             <div class="fw-bold fs-2 text-gray-500 mb-10">
                 The most advanced <span class="fw-bolder text-gray-900">Bootstrap 5</span>&nbsp;foundation with a solid design system, <br/>
-                extensive utility classes and custom made<span class="fw-bolder text-gray-900">in-house</span>&nbsp;components.
+                extensive utility classes and custom made <span class="fw-bolder text-gray-900">in-house</span>&nbsp;components.
             </div>
         </div>
         <!--end::Block-->
@@ -102,7 +108,7 @@
                             {{ $item['description'] }}
                         </div>
 
-                        <a href="{{ theme()->getPageUrl($item['link-path']) }}" {{ theme()->putProVersionTooltip() }} class="btn btn-lg btn-flex btn-link btn-color-{{ $item['color'] }}">
+                        <a href="{{ theme()->getPageUrl($item['link-path']) }}" {{ theme()->putProVersionTooltip() }} target="{{ $item['target'] }}" class="btn btn-lg btn-flex btn-link btn-color-{{ $item['color'] }}">
                             {{ $item['link-text'] }}
                             {!! theme()->getSvgIcon("icons/duotone/Navigation/Arrow-right.svg", "ms-2 svg-icon-3") !!}
                         </a>

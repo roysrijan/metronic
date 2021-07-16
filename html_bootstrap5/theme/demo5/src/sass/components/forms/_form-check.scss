@@ -57,15 +57,6 @@
             &:checked {
                 background-color: $form-check-input-checked-bg-color;
             }
-
-            // Radio
-            &[type="radio"] {
-                &,
-                &:active,
-                &:focus {
-                    background-image: escape-svg($form-check-radio-checked-bg-image);
-                }
-            }
         }
     }
 
@@ -121,11 +112,9 @@
         background-image: escape-svg($form-switch-bg-image-solid);
         border-radius: $form-switch-border-radius;
 
-        &:active,
-        &:checked,
-        &:focus {
+        &:checked {
             filter: none;
-            background-image: escape-svg($form-switch-bg-image-solid);
+            background-image: escape-svg($form-switch-checked-bg-image);
         }
     }
 

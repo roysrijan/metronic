@@ -2,12 +2,6 @@
 // Content
 //
 
-// General mode
-.content {
-	background-color: $content-bg-color;
-}
-
-
 // Desktop mode
 @include media-breakpoint-up(lg) {
 	.content {

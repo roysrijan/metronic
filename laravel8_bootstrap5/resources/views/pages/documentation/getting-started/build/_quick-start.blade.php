@@ -1,5 +1,5 @@
 <!--begin::Section-->
-<div class="pb-10">
+<div class="py-10">
     <!--begin::Heading-->
     <h1 class="anchor fw-bolder mb-5" id="laravel-quick-start">
         <a href="#laravel-quick-start"></a>

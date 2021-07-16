@@ -278,7 +278,7 @@ KTDrawer.getInstance = function(element) {
 }
 
 // Create instances
-KTDrawer.createInstances = function(selector) {
+KTDrawer.createInstances = function(selector = '[data-kt-drawer="true"]') {
     var body = document.getElementsByTagName("BODY")[0];
 
     // Initialize Menus
@@ -341,7 +341,7 @@ window.addEventListener('resize', function() {
 
 // Global initialization
 KTDrawer.init = function() {
-    KTDrawer.createInstances('[data-kt-drawer="true"]');
+    KTDrawer.createInstances();
     KTDrawer.handleShow();
     KTDrawer.handleDismiss();
 };

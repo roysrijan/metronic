@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Core\Adapters\Bootstrap;
 use App\Core\Adapters\Theme;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -28,13 +27,24 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $theme = new Theme;
+        $theme = theme();
 
         // Share theme adapter class
         View::share('theme', $theme);
 
+        // Set demo globally
+        $theme->setDemo(request()->input('demo', 'demo1'));
+        // $theme->setDemo('demo2');
+
         $theme->initConfig();
 
-        Bootstrap::run();
+        bootstrap()->run();
+
+        if (isRTL()) {
+            // RTL html attributes
+            Theme::addHtmlAttribute('html', 'dir', 'rtl');
+            Theme::addHtmlAttribute('html', 'direction', 'rtl');
+            Theme::addHtmlAttribute('html', 'style', 'direction:rtl;');
+        }
     }
 }

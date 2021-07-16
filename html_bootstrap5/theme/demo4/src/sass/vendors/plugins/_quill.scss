@@ -89,6 +89,7 @@
                 border: 0;
                 padding: 0.5rem 1rem;
                 box-shadow: $dropdown-box-shadow;
+                background-color: $body-bg;
                 @include border-radius($border-radius);
 
                 .ql-picker-item {

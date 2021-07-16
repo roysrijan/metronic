@@ -56,10 +56,11 @@ require('flatpickr/dist/flatpickr.min.js');
 require('@/src/js/vendors/plugins/flatpickr.init.js');
 
 // Inputmask - is a javascript library which creates an input mask: https://github.com/RobinHerbots/Inputmask
-require('inputmask/dist/jquery.inputmask.min.js');
+require('inputmask/dist/inputmask.js');
+require('inputmask/dist/bindings/inputmask.binding.js');
 
 // noUiSlider - is a lightweight range slider with multi-touch support and a ton of features. It supports non-linear ranges, requires no external dependencies: https://refreshless.com/nouislider/
-window.noUiSlider = require('nouislider/distribute/nouislider.min.js');
+window.noUiSlider = require('nouislider/dist/nouislider.min.js');
 
 // The autosize - function accepts a single textarea element, or an array or array-like object (such as a NodeList or jQuery collection) of textarea elements: https://www.jacklmoore.com/autosize/
 window.autosize = require('autosize/dist/autosize.min.js');

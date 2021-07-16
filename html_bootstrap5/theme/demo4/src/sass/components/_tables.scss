@@ -4,6 +4,8 @@
 
 // Table
 .table {
+	width: 100%;
+	
 	>:not(:last-child)>:last-child>* {
 		border-bottom-color: inherit;
 	}

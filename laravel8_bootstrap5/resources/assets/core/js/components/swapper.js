@@ -121,7 +121,7 @@ KTSwapper.getInstance = function(element) {
 }
 
 // Create instances
-KTSwapper.createInstances = function(selector) {
+KTSwapper.createInstances = function(selector = '[data-kt-swapper="true"]') {
     // Initialize Menus
     var elements = document.querySelectorAll(selector);
     var swapper;
@@ -143,7 +143,10 @@ window.addEventListener('resize', function() {
 
         if ( elements && elements.length > 0 ) {
             for (var i = 0, len = elements.length; i < len; i++) {
-                KTSwapper.getInstance(elements[i]).update();
+                var swapper = KTSwapper.getInstance(elements[i]);
+                if (swapper) {
+                    swapper.update();
+                }                
             }
         }
     }, 200);
@@ -151,7 +154,7 @@ window.addEventListener('resize', function() {
 
 // Global initialization
 KTSwapper.init = function() {
-    KTSwapper.createInstances('[data-kt-swapper="true"]');
+    KTSwapper.createInstances();
 };
 
 // On document ready

@@ -9,6 +9,7 @@
     margin: 0;
     border: 0;
     width: auto;
+    background-color: $body-bg;
     box-shadow: $dropdown-box-shadow;
     font-family: $font-family-sans-serif;
     z-index: $zindex-dropdown;
@@ -19,11 +20,28 @@
         display: none;
     }
 
+    td {
+        &.off,
+        &.off.in-range,
+        &.off.start-date,
+        &.off.end-date {
+            background-color: transparent;
+        }
+    }
+
     .modal-open & {
         z-index: $zindex-modal + 1;
     }
 
+    .calendar-table {
+        background-color: $body-bg;
+        border: 0;
+    }
+
     .ranges {
+        @include border-top-start-radius($border-radius);
+        background-color: $body-bg;
+
         ul {
             padding: 1rem 0;
             width: 175px;
@@ -51,14 +69,19 @@
     }
 
     &.show-calendar {
-        .ranges {
-            border-right: 1px solid $gray-200;
+        .ranges {            
             margin-top: 0;
             height: 297px;
         }
     }
 
     &.show-ranges {
+        &.show-calendar {
+            .ranges  {
+                border-right: 1px solid $gray-200;
+            }
+        }
+
         .drp-calendar.left {
             border-left: 0;
         }

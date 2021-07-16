@@ -171,7 +171,7 @@ KTImageInput.getInstance = function(element) {
 }
 
 // Create instances
-KTImageInput.createInstances = function(selector) {
+KTImageInput.createInstances = function(selector = '[data-kt-image-input]') {
     // Initialize Menus
     var elements = document.querySelectorAll(selector);
 
@@ -184,7 +184,7 @@ KTImageInput.createInstances = function(selector) {
 
 // Global initialization
 KTImageInput.init = function() {
-    KTImageInput.createInstances('[data-kt-image-input]');
+    KTImageInput.createInstances();
 };
 
 // On document ready

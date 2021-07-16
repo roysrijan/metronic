@@ -8,7 +8,7 @@
     border: 0;
 
     // Header
-    > .card-header {
+    .card-header {
         display: flex;
         justify-content: space-between;
         align-items: stretch;
@@ -84,12 +84,12 @@
     }
 
     // Body
-    > .card-body {
-         padding: $card-py $card-px;
+    .card-body {
+        padding: $card-py $card-px;
     }
 
     // Footer
-    > .card-footer {
+    .card-footer {
         padding: $card-py $card-px;
         background-color: transparent;
     }
@@ -139,6 +139,11 @@
         > .card-footer {
             border-top: 0;
         }
+    }
+
+    &.card-shadow {
+        box-shadow: $card-box-shadow;
+        border: 0;
     }
 }
 

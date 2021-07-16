@@ -20,7 +20,7 @@ License: {{ theme()->getOption('product', 'license') }}
     <meta name="keywords" content="{{ theme()->getOption('meta', 'keywords') }}"/>
     <link rel="canonical" href="{{ ucfirst(theme()->getOption('meta', 'canonical')) }}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="shortcut icon" href="{{ asset(theme()->getOption('assets', 'favicon')) }}"/>
+    <link rel="shortcut icon" href="{{ asset(theme()->getDemo() . '/' .theme()->getOption('assets', 'favicon')) }}"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- begin::Fonts --}}
@@ -30,7 +30,7 @@ License: {{ theme()->getOption('product', 'license') }}
     @if (theme()->hasOption('page', 'assets/vendors/css'))
         {{-- begin::Page Vendor Stylesheets(used by this page) --}}
         @foreach (theme()->getOption('page', 'assets/vendors/css') as $file)
-            <link href="{{ assetIfHasRTL($file) }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ assetCustom($file) }}" rel="stylesheet" type="text/css"/>
         @endforeach
         {{-- end::Page Vendor Stylesheets --}}
     @endif
@@ -38,7 +38,7 @@ License: {{ theme()->getOption('product', 'license') }}
     @if (theme()->hasOption('page', 'assets/custom/css'))
         {{-- begin::Page Custom Stylesheets(used by this page) --}}
         @foreach (theme()->getOption('page', 'assets/custom/css') as $file)
-            <link href="{{ assetIfHasRTL($file) }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ assetCustom($file) }}" rel="stylesheet" type="text/css"/>
         @endforeach
         {{-- end::Page Custom Stylesheets --}}
     @endif
@@ -46,7 +46,7 @@ License: {{ theme()->getOption('product', 'license') }}
     @if (theme()->hasOption('assets', 'css'))
         {{-- begin::Global Stylesheets Bundle(used by all pages) --}}
         @foreach (theme()->getOption('assets', 'css') as $file)
-            <link href="{{ assetIfHasRTL($file) }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ assetCustom($file) }}" rel="stylesheet" type="text/css"/>
         @endforeach
         {{-- end::Global Stylesheets Bundle --}}
     @endif
@@ -74,7 +74,7 @@ License: {{ theme()->getOption('product', 'license') }}
 @if (theme()->hasOption('assets', 'js'))
     {{-- begin::Global Javascript Bundle(used by all pages) --}}
     @foreach (theme()->getOption('assets', 'js') as $file)
-        <script src="{{ asset($file) }}"></script>
+        <script src="{{ asset(theme()->getDemo() . '/' .$file) }}"></script>
     @endforeach
     {{-- end::Global Javascript Bundle --}}
 @endif
@@ -82,7 +82,7 @@ License: {{ theme()->getOption('product', 'license') }}
 @if (theme()->hasOption('page', 'assets/vendors/js'))
     {{-- begin::Page Vendors Javascript(used by this page) --}}
     @foreach (theme()->getOption('page', 'assets/vendors/js') as $file)
-        <script src="{{ asset($file) }}"></script>
+        <script src="{{ asset(theme()->getDemo() . '/' .$file) }}"></script>
     @endforeach
     {{-- end::Page Vendors Javascript --}}
 @endif
@@ -90,7 +90,7 @@ License: {{ theme()->getOption('product', 'license') }}
 @if (theme()->hasOption('page', 'assets/custom/js'))
     {{-- begin::Page Custom Javascript(used by this page) --}}
     @foreach (theme()->getOption('page', 'assets/custom/js') as $file)
-        <script src="{{ asset($file) }}"></script>
+        <script src="{{ asset(theme()->getDemo() . '/' .$file) }}"></script>
     @endforeach
     {{-- end::Page Custom Javascript --}}
 @endif

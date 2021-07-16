@@ -1,5 +1,5 @@
 @php
-    $breadcrumb = \App\Core\Bootstrap::getBreadcrumb();
+    $breadcrumb = bootstrap()->getBreadcrumb();
 
     if (theme()->getOption('layout', 'page-title/direction') == 'column') {
         $baseClass = 'flex-column align-items-start me-3';

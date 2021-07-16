@@ -243,7 +243,7 @@ KTSticky.getInstance = function(element) {
 }
 
 // Create instances
-KTSticky.createInstances = function(selector) {
+KTSticky.createInstances = function(selector = '[data-kt-sticky="true"]') {
     var body = document.getElementsByTagName("BODY")[0];
 
     // Initialize Menus
@@ -279,7 +279,7 @@ window.addEventListener('resize', function() {
 
 // Global initialization
 KTSticky.init = function() {
-    KTSticky.createInstances('[data-kt-sticky="true"]');
+    KTSticky.createInstances();
 };
 
 // On document ready

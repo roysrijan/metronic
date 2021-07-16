@@ -14,20 +14,17 @@ body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown):not(.modal-open
 
 // Popup
 .swal2-popup {
+	background-color: $body-bg;
 	padding: 2rem;
 	@include border-radius($border-radius);
-
-	.swal2-icon {
-		margin: 2rem 0 0rem 0;
-	}
 
 	.swal2-title {
 		font-weight: 500;
 		font-size: 1.3rem;
-		margin: 2rem 0 0 0;
 		color: $dark;
 	}
 
+	.swal2-html-container,
 	.swal2-content {
 		font-weight: normal;
 		font-size: 1.1rem;

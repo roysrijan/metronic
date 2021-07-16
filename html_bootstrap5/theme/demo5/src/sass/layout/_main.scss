@@ -2,9 +2,14 @@
 // Main
 //
 
+// Body
+body {
+	background-color: $page-bg;
+}
+
 // Font color from Content background color
-.content-bg-for-font-color {
-	color: $content-bg-color;
+.text-page-bg {
+	color: $page-bg;
 }
 
 // Desktop Mode

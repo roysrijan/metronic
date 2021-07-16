@@ -39,7 +39,7 @@
                     <!--begin::Symbol-->
                     <div class="symbol symbol-50px me-3">
                         <div class="symbol-label bg-light">
-                            <img src="{{ asset('media/svg/brand-logos/plurk.svg') }}" alt="" class="h-50"/>
+                            <img src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/plurk.svg') }}" alt="" class="h-50"/>
                         </div>
                     </div>
                     <!--end::Symbol-->
@@ -66,7 +66,7 @@
                     <!--begin::Symbol-->
                     <div class="symbol symbol-50px me-3">
                         <div class="symbol-label bg-light">
-                            <img src="{{ asset('media/svg/brand-logos/figma-1.svg') }}" alt="" class="h-50"/>
+                            <img src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/figma-1.svg') }}" alt="" class="h-50"/>
                         </div>
                     </div>
                     <!--end::Symbol-->
@@ -93,7 +93,7 @@
                     <!--begin::Symbol-->
                     <div class="symbol symbol-50px me-3">
                         <div class="symbol-label bg-light">
-                            <img src="{{ asset('media/svg/brand-logos/vimeo.svg') }}" alt="" class="h-50"/>
+                            <img src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/vimeo.svg') }}" alt="" class="h-50"/>
                         </div>
                     </div>
                     <!--end::Symbol-->

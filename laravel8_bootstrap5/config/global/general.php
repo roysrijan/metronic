@@ -1,7 +1,105 @@
 <?php
 return array(
+    // Product
+    'product' => array(
+        'name'        => 'Metronic',
+        'description' => 'Metronic - #1 Selling Bootstrap 5 HTML Multi-demo Admin Dashboard Theme',
+        'version'     => '8.0.18',
+        'preview'     => 'https://preview.keenthemes.com/metronic8',
+        'purchase'    => 'https://1.envato.market/EA4JP',
+        'license'     => 'For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.',
+        'tooltips'    => array(
+            "docs-and-components" => '200+ in-house components and 3rd-party plugins',
+            'layout-builder'      => 'Build your layout and export HTML for server side integration',
+        ),
+        'demos'       => array(
+            'demo1' => array(
+                'published' => true,
+                'thumbnail' => 'demos/demo1.png',
+            ),
+
+            'demo2' => array(
+                'published' => true,
+                'thumbnail' => 'demos/demo2.png',
+            ),
+
+            'demo3' => array(
+                'published' => false,
+                'thumbnail' => 'demos/demo3.png',
+            ),
+
+            'demo4' => array(
+                'published' => false,
+                'thumbnail' => 'demos/demo4.png',
+            ),
+
+            'demo5' => array(
+                'published' => false,
+                'thumbnail' => 'demos/demo5.png',
+            ),
+
+            'demo6' => array(
+                'published' => false,
+                'thumbnail' => 'demos/demo6.png',
+            ),
+
+            'demo7' => array(
+                'published' => false,
+                'thumbnail' => 'demos/demo7.png',
+            ),
+
+            'demo8' => array(
+                'published' => false,
+                'thumbnail' => 'demos/demo8.png',
+            ),
+
+            'demo9' => array(
+                'published' => false,
+                'thumbnail' => 'demos/demo9.png',
+            ),
+
+            'demo10' => array(
+                'published' => false,
+                'thumbnail' => 'demos/demo10.png',
+            ),
+
+            'demo11' => array(
+                'published' => false,
+                'thumbnail' => 'demos/demo11.png',
+            ),
+
+            'demo12' => array(
+                'published' => false,
+                'thumbnail' => 'demos/demo12.png',
+            ),
+
+            'demo13' => array(
+                'published' => false,
+                'thumbnail' => 'demos/demo13.png',
+            ),
+
+            'demo14' => array(
+                'published' => false,
+                'thumbnail' => 'demos/demo14.png',
+            ),
+
+            'demo15' => array(
+                'published' => false,
+                'thumbnail' => 'demos/demo15.png',
+            ),
+        ),
+    ),
+
+    // Meta
+    'meta'    => array(
+        'title'       => 'Metronic Bootstrap 5 Theme',
+        'description' => 'Metronic admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets.',
+        'keywords'    => 'Metronic, bootstrap, bootstrap 5, Angular 11, VueJs, React, Laravel, admin themes, web design, figma, web development, ree admin themes, bootstrap admin, bootstrap dashboard',
+        'canonical'   => 'https://preview.keenthemes.com/metronic8',
+    ),
+
     // General
-    'general'    => array(
+    'general' => array(
         'website'             => 'https://keenthemes.com',
         'about'               => 'https://keenthemes.com',
         'contact'             => 'mailto:support@keenthemes.com',
@@ -31,21 +129,4 @@ return array(
         ),
     ),
 
-    // Meta
-    'meta'       => array(
-        'site-key' => env('SITE_KEY'),
-    ),
-
-    // Product
-    'product'    => array(
-        'license'  => 'For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.',
-        'tooltips' => array(
-            "docs-and-components" => '200+ in-house components and 3rd-party plugins',
-            'layout-builder'      => 'Build your layout and export HTML for server side integration',
-        ),
-    ),
-
-    // Pretty URL
-    'pretty-url' => isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME'] === 'preview.keenthemes.com',
-    // 'pretty-url' => true,
 );

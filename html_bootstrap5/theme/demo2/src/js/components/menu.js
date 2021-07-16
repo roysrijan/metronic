@@ -969,7 +969,7 @@ KTMenu.initGlobalHandlers = function() {
 }
 
 // Global instances
-KTMenu.createInstances = function(selector) {
+KTMenu.createInstances = function(selector = '[data-kt-menu="true"]') {
     // Initialize menus
     var elements = document.querySelectorAll(selector);
     if ( elements && elements.length > 0 ) {
@@ -985,7 +985,7 @@ KTMenu.init = function() {
     KTMenu.initGlobalHandlers();
 
     // Lazy Initialization
-    KTMenu.createInstances('[data-kt-menu="true"]');
+    KTMenu.createInstances();
 };
 
 // On document ready

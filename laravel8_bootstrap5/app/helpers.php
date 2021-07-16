@@ -123,7 +123,25 @@ if (!function_exists('util')) {
     }
 }
 
-if (!function_exists('assetIfHasRTL')) {
+if (!function_exists('bootstrap')) {
+    /**
+     * Get the instance of Util class core
+     *
+     * @return \App\Core\Adapters\Util|\Illuminate\Contracts\Foundation\Application|mixed
+     * @throws Throwable
+     */
+    function bootstrap()
+    {
+        $demo      = ucwords(theme()->getDemo());
+        $bootstrap = "\App\Core\Bootstraps\Bootstrap$demo";
+
+        throw_if(!class_exists($bootstrap), 'Demo has not been set or '.$bootstrap.' file is not found.');
+
+        return app($bootstrap);
+    }
+}
+
+if (!function_exists('assetCustom')) {
     /**
      * Get the asset path of RTL if this is an RTL request
      *
@@ -132,13 +150,23 @@ if (!function_exists('assetIfHasRTL')) {
      *
      * @return string
      */
-    function assetIfHasRTL($path, $secure = null)
+    function assetCustom($path)
     {
+        // Include rtl css file
         if (isRTL()) {
-            return asset(dirname($path).'/'.basename($path, '.css').'.rtl.css');
+            return asset(theme()->getDemo().'/'.dirname($path).'/'.basename($path, '.css').'.rtl.css');
         }
 
-        return asset($path, $secure);
+        // Include dark style css file
+        if (theme()->isDarkSkinEnabled() && theme()->getCurrentSkin() !== 'default') {
+            $darkPath = str_replace('.bundle', '.'.theme()->getCurrentSkin().'.bundle', $path);
+            if (file_exists(public_path(theme()->getDemo().'/'.$darkPath))) {
+                return asset(theme()->getDemo().'/'.$darkPath);
+            }
+        }
+
+        // Include default css file
+        return asset(theme()->getDemo().'/'.$path);
     }
 }
 

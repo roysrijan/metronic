@@ -102,7 +102,7 @@
 
 				&:before {
 					border-width: 0 10px 10px 0;
-					border-right-color: $dark !important;
+					border-right-color: if(isDarkMode(), $light, $dark) !important;
 					left: 0;
 				}
 			}
@@ -128,7 +128,7 @@
 
 				&:before {
 					border-width: 0 0 10px 10px;
-					border-left-color: $dark !important;
+					border-left-color: if(isDarkMode(), $light, $dark) !important;
 					right: 0;
 				}
 			}

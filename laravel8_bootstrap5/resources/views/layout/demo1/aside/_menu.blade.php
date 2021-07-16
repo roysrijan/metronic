@@ -1,7 +1,7 @@
 {{--begin::Aside Menu--}}
 @php
-    $menu = \App\Core\Adapters\Bootstrap::getAsideMenu();
-    \App\Core\Adapters\Bootstrap::filterMenuPermissions($menu->items);
+    $menu = bootstrap()->getAsideMenu();
+    \App\Core\Adapters\Menu::filterMenuPermissions($menu->items);
 @endphp
 
 <div
