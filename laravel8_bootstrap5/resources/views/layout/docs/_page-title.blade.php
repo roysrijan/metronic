@@ -27,7 +27,7 @@
     <h1 class="d-flex align-items-center text-dark my-1 fs-4">
         {{ __('Documentation') }}
 
-        <a href="{{ theme()->getPageUrl('documentation/getting-started/changelog') }}" class="badge fw-bold fs-9 px-2 ms-2 {{ util()->putIf(theme()->isDarkSkin(), 'badge-light-success text-hover-success', 'badge-white text-hover-primary shadow-sm') }}">
+        <a href="{{ theme()->getPageUrl('documentation/getting-started/changelog') }}" class="badge fw-bold fs-9 px-2 ms-2 {{ util()->putIf(theme()->isDarkMode(), 'badge-light-success text-hover-success', 'badge-white text-hover-primary shadow-sm') }}">
             v{{ theme()->getVersion() }}
         </a>
 

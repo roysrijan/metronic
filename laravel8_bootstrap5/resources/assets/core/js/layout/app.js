@@ -421,8 +421,8 @@ var KTApp = function() {
             initSmoothScroll();
         },
 
-        isDarkSkin: function() {
-            return document.body.classList.contains('dark-skin');
+        isDarkMode: function() {
+            return document.body.classList.contains('dark-mode');
         }
     };
 }();

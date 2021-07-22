@@ -6,7 +6,7 @@ var KTFormsTinyMCEBasic = function() {
     var exampleBasic = function() {
         var options = {selector: '#kt_docs_tinymce_basic'};
         
-        if (KTApp.isDarkSkin()) {
+        if (KTApp.isDarkMode()) {
             options['skin'] = 'oxide-dark';
             options['content_css'] = 'dark';
         }

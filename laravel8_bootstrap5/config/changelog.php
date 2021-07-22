@@ -1,12 +1,28 @@
 <?php
 
 return array(
+    'v8.0.19' => array(
+        'date'      => '21 July, 2021',
+        'changelog' => array(
+            'new' => array(),
+
+            'update' => array(
+                'Rename <code>dark-skin</code> to <code>dark-mode</code> globally.',
+            ),
+
+            'fix' => array(
+                'Fixed change password using wrong variable name.',
+                'Error handling if <code>Spatie Permission</code> plugin exist.',
+            ),
+        ),
+    ),
+
     'v8.0.18' => array(
         'date'      => '16 July, 2021',
         'changelog' => array(
             'new' => array(
                 'Added new <code>Demo 2</code> layout. Updated <code>webpack.mix.js</code> to build <code>Demo 2</code> asset files. See <a href="https://preview.keenthemes.com/metronic8/laravel/index?demo=demo2">preview</a>.',
-                'Added <code>Demo 1 Dark Skin</code>. Updated <code>webpack.mix.js</code> to build dark CSS files. See <a href="https://preview.keenthemes.com/metronic8/laravel/index?skin=dark">preview</a>',
+                'Added <code>Demo 1 Dark Mode</code>. Updated <code>webpack.mix.js</code> to build dark CSS files. See <a href="https://preview.keenthemes.com/metronic8/laravel/index?skin=dark">preview</a>',
             ),
 
             'update' => array(

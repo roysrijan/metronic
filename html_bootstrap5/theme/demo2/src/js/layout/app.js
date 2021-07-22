@@ -110,19 +110,7 @@ var KTApp = function() {
         var elements = [].slice.call(document.querySelectorAll('[data-bs-spy="scroll"]'));
 
         elements.map(function (element) {
-            var sel = element.getAttribute('data-bs-target');
-            //var offset = element.hasAttribute('data-bs-target-offset') ?  parseInt(element.getAttribute('data-bs-target-offset')) : 0;
-
-            /*
-            KTUtil.on(document.body,  element.getAttribute('data-bs-target') + ' [href]', 'click', function(e) {
-                e.preventDefault();
-
-                var el = document.querySelector(this.getAttribute('href'));
-
-                KTUtil.scrollTo(el, offset);
-            });
-            */
-            
+            var sel = element.getAttribute('data-bs-target');            
             var scrollContent = document.querySelector(element.getAttribute('data-bs-target'));
             var scrollSpy = bootstrap.ScrollSpy.getInstance(scrollContent);
             if (scrollSpy) {
@@ -418,8 +406,8 @@ var KTApp = function() {
             initSmoothScroll();
         },
 
-        isDarkSkin: function() {
-            return document.body.classList.contains('dark-skin');
+        isDarkMode: function() {
+            return document.body.classList.contains('dark-mode');
         }
     };
 }();

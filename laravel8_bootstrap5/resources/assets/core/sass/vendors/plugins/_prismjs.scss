@@ -2,8 +2,8 @@
 // Prismjs
 //
 
-$base-color: if(isDarkSkin(), #1b1b29, #1e1e3f);
-$scrollbar-color: if(isDarkSkin(), lighten(#1b1b29, 6%), lighten(#1e1e3f, 12%));
+$base-color: if(isDarkMode(), #1b1b29, #1e1e3f);
+$scrollbar-color: if(isDarkMode(), lighten(#1b1b29, 6%), lighten(#1e1e3f, 12%));
 $btn-bg: lighten($base-color, 9%);
 $btn-hover-bg: lighten($base-color, 12%);
 $btn-color: rgba($white, 0.75);

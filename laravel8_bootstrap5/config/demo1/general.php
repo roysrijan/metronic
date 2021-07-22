@@ -27,7 +27,7 @@ return array(
         'main'      => array(
             'base'              => 'default', // Set base layout: default|docs
             'type'              => 'default', // Set layout type: default|blank|none
-            'dark-skin-enabled' => true, // Enable optioanl dark skin mode
+            'dark-mode-enabled' => true, // Enable optioanl dark mode mode
             'primary-color'     => '#009EF7',
         ),
 

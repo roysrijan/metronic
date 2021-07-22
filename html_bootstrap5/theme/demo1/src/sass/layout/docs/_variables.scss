@@ -17,6 +17,6 @@ $docs-aside-config: (
 	padding-x: 25px,
 	menu-indention: 0.75rem,
 	width: 265px, // Aside width for desktop mode
-	bg-color: if(isDarkSkin(), #1e1e2d, $white),
+	bg-color: if(isDarkMode(), #1e1e2d, $white),
 	box-shadow: 0 0 28px 0 rgba(82,63,105,.025), // Aside box shadow
 ) !default;

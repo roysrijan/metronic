@@ -158,7 +158,7 @@ if (!function_exists('assetCustom')) {
         }
 
         // Include dark style css file
-        if (theme()->isDarkSkinEnabled() && theme()->getCurrentSkin() !== 'default') {
+        if (theme()->isDarkModeEnabled() && theme()->getCurrentSkin() !== 'default') {
             $darkPath = str_replace('.bundle', '.'.theme()->getCurrentSkin().'.bundle', $path);
             if (file_exists(public_path(theme()->getDemo().'/'.$darkPath))) {
                 return asset(theme()->getDemo().'/'.$darkPath);

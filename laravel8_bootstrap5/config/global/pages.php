@@ -14,6 +14,7 @@ return array(
             'custom' => array(
                 'js' => array(
                     'js/custom/widgets.js',
+                    'js/custom/documentation/forms/flatpickr.js',
                 ),
             ),
         ),
@@ -182,9 +183,9 @@ return array(
                 ),
             ),
 
-            'dark-skin' => array(
-                'title' => 'Dark Skin Version',
-                'view' => 'documentation/getting-started/dark-skin'
+            'dark-mode' => array(
+                'title' => 'Dark Mode Version',
+                'view' => 'documentation/getting-started/dark-mode'
             ),
 
             'rtl' => array(

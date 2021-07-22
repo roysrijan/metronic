@@ -6,7 +6,7 @@
 // Base
 .noUi-target {
     border: 0;
-    background: if(isDarkSkin(), $gray-200, $gray-100);
+    background: if(isDarkMode(), $gray-200, $gray-100);
     box-shadow:none;
 
     &.noUi-horizontal {

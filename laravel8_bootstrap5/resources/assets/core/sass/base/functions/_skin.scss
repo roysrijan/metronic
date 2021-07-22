@@ -10,7 +10,7 @@
     }
 }
 
-@function isDarkSkin() {
+@function isDarkMode() {
     @if (getSkin() == dark) {
         @return true;
     } @else {

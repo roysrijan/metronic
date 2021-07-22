@@ -28,7 +28,7 @@
         // Fixed header & fixed toolbar modes
         .header-fixed.toolbar-fixed & {
             top: get($header-config, fixed, height, desktop);
-            border-top: 1px solid  get($toolbar-config, fixed, border-color);
+            border-top: get($toolbar-config, fixed, border-top);
         }
 
         // Aside default enabled, aside fixed & header sticky modes
@@ -71,7 +71,7 @@
         // Fixed header & fixed toolbar modes
         .header-tablet-and-mobile-fixed.toolbar-tablet-and-mobile-fixed & {
 			top: get($header-config, default, height, tablet-and-mobile);
-            border-top: 1px solid  get($toolbar-config, fixed, border-color);
+            border-top: get($toolbar-config, fixed, border-top);
         }
 
         // Page title

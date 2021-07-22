@@ -210,7 +210,7 @@
     </div>
     <!--end::Menu item-->
 
-    @if (theme()->isDarkSkinEnabled())
+    @if (theme()->isDarkModeEnabled())
         <!--begin::Menu separator-->
         <div class="separator my-2"></div>
         <!--end::Menu separator-->
@@ -219,11 +219,11 @@
         <div class="menu-item px-5">
             <div class="menu-content px-5">
                 <label class="form-check form-switch form-check-custom form-check-solid pulse pulse-success" for="kt_user_menu_skin_toggle">
-                    <input class="form-check-input w-30px h-20px" type="checkbox" value="1" name="skin" id="kt_user_menu_skin_toggle" data-kt-url="{{ theme()->getPageUrl('index', '', theme()->isDarkSkin() ? '' : 'dark') }}"/>
+                    <input class="form-check-input w-30px h-20px" type="checkbox" value="1" name="skin" id="kt_user_menu_skin_toggle" data-kt-url="{{ theme()->getPageUrl('index', '', theme()->isDarkMode() ? '' : 'dark') }}"/>
                     <span class="pulse-ring ms-n1"></span>
 
                     <span class="form-check-label text-gray-600 fs-7">
-                        {{ theme()->isDarkSkin() ? 'Enable Light Skin' : 'Enable Dark Skin' }}
+                        {{ theme()->isDarkMode() ? 'Enable Light Skin' : 'Enable Dark Mode' }}
                     </span>
                 </label>
             </div>

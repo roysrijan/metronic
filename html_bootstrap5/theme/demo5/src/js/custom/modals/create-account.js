@@ -321,6 +321,10 @@ var KTCreateAccount = function () {
 
 			stepper = document.querySelector('#kt_create_account_stepper');
 
+			if (!stepper) {
+				return;
+			}
+
 			form = stepper.querySelector('#kt_create_account_form');
 			formSubmitButton = stepper.querySelector('[data-kt-stepper-action="submit"]');
 

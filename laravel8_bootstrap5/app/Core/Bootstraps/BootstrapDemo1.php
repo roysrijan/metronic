@@ -187,8 +187,8 @@ class BootstrapDemo1 {
 
     // Public Methods
     public static function run() {
-        if (Theme::isDarkSkinEnabled() && Theme::getCurrentSkin() === 'dark') {
-            Theme::addHtmlClass('body', 'dark-skin');
+        if (Theme::isDarkModeEnabled() && Theme::getCurrentSkin() === 'dark') {
+            Theme::addHtmlClass('body', 'dark-mode');
         }
 
         if ( Theme::getOption('layout', 'base') === 'docs') {

@@ -71,8 +71,8 @@ return array(
 
         // Dark skin
         array(
-            'title' => 'Dark Skin Version',
-            'path' => 'documentation/getting-started/dark-skin'
+            'title' => 'Dark Mode Version',
+            'path' => 'documentation/getting-started/dark-mode'
         ),
 
         // RTL

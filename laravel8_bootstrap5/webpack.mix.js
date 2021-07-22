@@ -53,7 +53,7 @@ mix.sass(`resources/assets/${demo}/sass/style.scss`, `public/${demo}/css/style.b
 
 
 // Dark skin mode css files
-if (args.indexOf('dark_skin') !== -1) {
+if (args.indexOf('dark_mode') !== -1) {
     mix.sass(`resources/assets/core/plugins/plugins.dark.scss`, `public/${demo}/plugins/global/plugins.dark.bundle.css`);
     mix.sass(`resources/assets/${demo}/sass/plugins.dark.scss`, `public/${demo}/plugins/global/plugins-custom.dark.bundle.css`);
     mix.sass(`resources/assets/${demo}/sass/style.dark.scss`, `public/${demo}/css/style.dark.bundle.css`, {sassOptions: {includePaths: ['node_modules']}});
@@ -247,7 +247,7 @@ function getDemos(pathDemos) {
 
 function getParameters() {
     var possibleArgs = [
-        'dark_skin'
+        'dark_mode'
     ];
     for (var i = 0; i <= 13; i++) {
         possibleArgs.push('demo' + i);

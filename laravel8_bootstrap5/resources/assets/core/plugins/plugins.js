@@ -52,7 +52,7 @@ require('../../core/plugins/bootstrap-multiselectsplitter/bootstrap-multiselects
 // require('../../core/js/vendors/plugins/select2.init.js');
 
 // Flatpickr - is a lightweight and powerful datetime picker.
-require('flatpickr/dist/flatpickr.min.js');
+require('flatpickr/dist/flatpickr.js');
 require('../../core/js/vendors/plugins/flatpickr.init.js');
 
 // Inputmask - is a javascript library which creates an input mask: https://github.com/RobinHerbots/Inputmask

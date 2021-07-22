@@ -26,7 +26,7 @@ const args = Object.assign(
     sass: false,
     js: false,
     media: false,
-    darkSkin: false,
+    darkMode: false,
   },
   argv
 );
@@ -195,7 +195,7 @@ const outputChannel = (path, outputFile, type) => {
 
     // modify file name to dark
     // piping = piping.pipe(() => {
-    //   return rename({suffix: args.darkSkin ? ".dark" : ""});
+    //   return rename({suffix: args.darkMode ? ".dark" : ""});
     // });
   }
 
@@ -509,7 +509,7 @@ const bundle = (bundle) => {
         case "styles":
           if (bundle.dist.hasOwnProperty(type)) {
 
-            if (args.darkSkin) {
+            if (args.darkMode) {
               const srcFiles = bundle.src[type];
 
               // modify file name to dark

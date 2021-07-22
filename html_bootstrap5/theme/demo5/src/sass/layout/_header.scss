@@ -48,6 +48,7 @@
 			display: flex;
 
 			.menu {
+				$menu-item-hover-bg: get($aside-config, logo-bg-color);
 
 				& >.menu-item {
 					align-items: stretch;
@@ -56,13 +57,13 @@
 					@include menu-link-default-state( $title-color:#888C9F, $icon-color:#4A4B68, $bullet-color:#9899ac, $arrow-color:#494B69, $bg-color: null, $all-links: false);
 
 					// Customize menu link hover state       
-					@include menu-link-hover-state( $title-color:$white, $icon-color:$white, $bullet-color: $white, $arrow-color: $white, $bg-color: #272534, $all-links: false);
+					@include menu-link-hover-state( $title-color:$white, $icon-color:$white, $bullet-color: $white, $arrow-color: $white, $bg-color: $menu-item-hover-bg, $all-links: false);
 
 					// Customize menu link show state       
-					@include menu-link-show-state( $title-color:$white, $icon-color:$white, $bullet-color:$white, $arrow-color:$white, $bg-color: #272534, $all-links: false);
+					@include menu-link-show-state( $title-color:$white, $icon-color:$white, $bullet-color:$white, $arrow-color:$white, $bg-color: $menu-item-hover-bg, $all-links: false);
 
 					// Customize menu link active state       
-					@include menu-link-active-state( $title-color: $white, $icon-color: $danger, $bullet-color: $danger, $arrow-color: $white, $bg-color: #272534, $all-links: false);
+					@include menu-link-active-state( $title-color: $white, $icon-color: $danger, $bullet-color: $danger, $arrow-color: $white, $bg-color: $menu-item-hover-bg, $all-links: false);
 				}
 			}
 		}

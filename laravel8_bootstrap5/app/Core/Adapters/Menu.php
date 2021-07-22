@@ -29,6 +29,11 @@ class Menu extends \App\Core\Menu
     {
         $user = auth()->user();
 
+        // check if the spatie plugin functions exist
+        if (!method_exists($user, 'hasAnyPermission') || !method_exists($user, 'hasAnyRole')) {
+            return;
+        }
+
         foreach ($array as $key => &$value) {
             if (isset($value['permission']) && !$user->hasAnyPermission((array) $value['permission'])) {
                 unset($array[$key]);

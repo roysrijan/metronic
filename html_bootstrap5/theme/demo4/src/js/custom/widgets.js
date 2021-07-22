@@ -2722,8 +2722,8 @@ var KTWidgets = function () {
         cb(start, end, '');
     }
 
-    var initSkinToggle = function() {
-        var toggle = document.querySelector('#kt_user_menu_skin_toggle');
+    var initDarkModeToggle = function() {
+        var toggle = document.querySelector('#kt_user_menu_dark_mode_toggle');
         
         if (toggle) {
             toggle.addEventListener('click', function() {
@@ -2738,8 +2738,8 @@ var KTWidgets = function () {
             // Daterangepicker
             initDaterangepicker();
             
-            // Skin
-            initSkinToggle();
+            // Dark Mode
+            initDarkModeToggle();
 
             // Statistics widgets
             initStatisticsWidget3();

@@ -43,7 +43,7 @@ const exclude = [];
 
 const js = args.indexOf('js') !== -1;
 const css = args.indexOf('css') !== -1 || args.indexOf('scss') !== -1;
-const darkSkin = args.indexOf('dark_skin') !== -1;
+const darkMode = args.indexOf('dark_mode') !== -1;
 
 removeExistingAssets();
 
@@ -87,7 +87,7 @@ function getEntryFiles() {
         'js/scripts.bundle': './webpack/scripts' + (demo ? '.' + demo : '') + '.js',
     };
 
-    if (darkSkin) {
+    if (darkMode) {
         entries['plugins/global/plugins.dark.bundle'] = ['./webpack/plugins/plugins.js', './webpack/plugins/plugins.scss'];
         entries['css/style.dark.bundle'] = ['./' + path.relative('./', srcPath) + '/sass/style.dark.scss', './' + path.relative('./', srcPath) + '/sass/plugins.dark.scss'];
     }
@@ -337,7 +337,7 @@ function getParameters() {
     var possibleArgs = [
         
         'js', 'css', 'scss',
-        'alldemos', 'rtl', 'prod', 'production', 'localhost', 'dark_skin',
+        'alldemos', 'rtl', 'prod', 'production', 'localhost', 'dark_mode',
     ];
     for (var i = 0; i <= 13; i++) {
         possibleArgs.push('demo' + i);
@@ -349,6 +349,10 @@ function getParameters() {
             args.push(key);
         }
     });
+
+    if ('production' === process.env['NODE_ENV']) {
+        args.push('production');
+    }
 
     return args;
 }

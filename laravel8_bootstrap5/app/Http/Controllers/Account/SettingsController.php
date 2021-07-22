@@ -104,6 +104,11 @@ class SettingsController extends Controller
      */
     public function changeEmail(SettingsEmailRequest $request)
     {
+        // prevent change email for demo account
+        if ($request->input('current_email') === 'demo@demo.com') {
+            return redirect()->intended('account/settings');
+        }
+
         auth()->user()->update(['email' => $request->input('email')]);
 
         if ($request->expectsJson()) {
@@ -120,7 +125,12 @@ class SettingsController extends Controller
      */
     public function changePassword(SettingsPasswordRequest $request)
     {
-        auth()->user()->update(['password' => Hash::make($request->input('email'))]);
+        // prevent change password for demo account
+        if ($request->input('current_email') === 'demo@demo.com') {
+            return redirect()->intended('account/settings');
+        }
+
+        auth()->user()->update(['password' => Hash::make($request->input('password'))]);
 
         if ($request->expectsJson()) {
             return response()->json($request->all());

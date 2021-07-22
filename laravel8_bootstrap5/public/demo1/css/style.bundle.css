@@ -47168,7 +47168,7 @@ label.rating-label:hover ~ .rating-label > .svg-icon svg:hover [fill]:not(.perma
 }
 .ribbon.ribbon-clip.ribbon-start .ribbon-label .ribbon-inner:before {
   border-width: 0 10px 10px 0;
-  border-right-color: #F5F8FA !important;
+  border-right-color: #181C32 !important;
   left: 0;
 }
 .ribbon.ribbon-clip.ribbon-end .ribbon-label {
@@ -47187,7 +47187,7 @@ label.rating-label:hover ~ .rating-label > .svg-icon svg:hover [fill]:not(.perma
 }
 .ribbon.ribbon-clip.ribbon-end .ribbon-label .ribbon-inner:before {
   border-width: 0 0 10px 10px;
-  border-left-color: #F5F8FA !important;
+  border-left-color: #181C32 !important;
   right: 0;
 }
 

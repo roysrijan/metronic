@@ -1,5 +1,5 @@
 @php
-    if (theme()->isDarkSkinEnabled()) {
+    if (theme()->isDarkModeEnabled()) {
         if (theme()->getCurrentSkin() === 'dark') {
             $logoPath = theme()->getOption('layout', 'docs/logo-path/dark');
         } else {

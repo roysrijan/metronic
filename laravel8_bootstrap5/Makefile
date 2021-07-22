@@ -12,5 +12,5 @@ enable-cache:
 
 build-assets:
 	npm update
-	npm run prod --demo1 --dark-skin
+	npm run prod --demo1 --dark-mode
 	npm run prod --demo2

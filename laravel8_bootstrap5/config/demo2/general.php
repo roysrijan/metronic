@@ -25,7 +25,7 @@ return array(
         'main'       => array(
             'type'              => 'default', // Set layout type: default|blank|none
             'primary-color'     => '#009EF7',
-            'dark-skin-enabled' => false, // Enable optioanl dark skin mode
+            'dark-mode-enabled' => false, // Enable optioanl dark mode mode
             'body'              => array(
                 'background-image' => 'patterns/header-bg.jpg',
             ),

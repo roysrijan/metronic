@@ -6,15 +6,15 @@
 // Bootstrap base colors
 $white:    											#ffffff !default;
 $black:    											#000000 !default;
-$gray-100: 										    if(isDarkSkin(), #1b1b29, #F5F8FA) !default;
-$gray-200: 										    if(isDarkSkin(), #2B2B40, #EFF2F5) !default;
-$gray-300: 										    if(isDarkSkin(), #323248, #E4E6EF) !default;
-$gray-400: 										    if(isDarkSkin(), #474761, #B5B5C3) !default;
-$gray-500: 										    if(isDarkSkin(), #565674, #A1A5B7) !default;
-$gray-600: 										    if(isDarkSkin(), #6D6D80, #7E8299) !default;
-$gray-700: 										    if(isDarkSkin(), #92929F, #5E6278) !default;
-$gray-800: 										    if(isDarkSkin(), #CDCDDE, #3F4254) !default;
-$gray-900: 										    if(isDarkSkin(), #FFFFFF, #181C32) !default;
+$gray-100: 										    if(isDarkMode(), #1b1b29, #F5F8FA) !default;
+$gray-200: 										    if(isDarkMode(), #2B2B40, #EFF2F5) !default;
+$gray-300: 										    if(isDarkMode(), #323248, #E4E6EF) !default;
+$gray-400: 										    if(isDarkMode(), #474761, #B5B5C3) !default;
+$gray-500: 										    if(isDarkMode(), #565674, #A1A5B7) !default;
+$gray-600: 										    if(isDarkMode(), #6D6D80, #7E8299) !default;
+$gray-700: 										    if(isDarkMode(), #92929F, #5E6278) !default;
+$gray-800: 										    if(isDarkMode(), #CDCDDE, #3F4254) !default;
+$gray-900: 										    if(isDarkMode(), #FFFFFF, #181C32) !default;
 $text-muted:                                        $gray-500 !default;
 
 // Bootstrap gray colors map
@@ -62,14 +62,14 @@ $colors: (
 // Bootstrap contextual colors
 // Dark colors
 $dark:          									$gray-900 !default; // Bootstrap variable
-$dark-active:          								if(isDarkSkin(), darken($gray-900, 9%), darken($gray-900, 3%)) !default;
+$dark-active:          								if(isDarkMode(), darken($gray-900, 9%), darken($gray-900, 3%)) !default;
 $dark-light:          							    $gray-200 !default; // Custom variable
-$dark-inverse:         								if(isDarkSkin(), $gray-100, $white) !default; // Custom variable
+$dark-inverse:         								if(isDarkMode(), $gray-100, $white) !default; // Custom variable
 
 // Primary colors
 $primary:       									#3699FF !default; // Bootstrap variable
 $primary-active:    								#187DE4 !default; // Custom variable
-$primary-light:    								    if(isDarkSkin(), #212E48, #F1FAFF) !default; // Custom variable
+$primary-light:    								    if(isDarkMode(), #212E48, #F1FAFF) !default; // Custom variable
 $primary-inverse:  									$white !default;  // Custom variable
 
 // Secondary colors
@@ -81,31 +81,31 @@ $secondary-inverse:									$gray-800 !default; // Custom variable
 // Light colors
 $light:     									    $gray-100 !default; // Bootstrap variable
 $light-active:  								    $gray-300 !default; // Custom variable
-$light-inverse:									    if(isDarkSkin(),$gray-800, $gray-600) !default; // Custom variable
+$light-inverse:									    if(isDarkMode(),$gray-800, $gray-600) !default; // Custom variable
 $lighten:                                           rgba($light, 0.5); // Custom variable
 
 // Success colors
 $success:       									#1BC5BD !default; // Bootstrap variable
 $success-active:    								#0BB7AF !default; // Custom variable
-$success-light:    									if(isDarkSkin(), #1C3833, #C9F7F5) !default; // Custom variable
+$success-light:    									if(isDarkMode(), #1C3833, #C9F7F5) !default; // Custom variable
 $success-inverse:  									$white !default; // Custom variable
 
 // Inco colors
 $info:         		 								#8950FC !default; // Bootstrap variable
 $info-active:   		 							#7337EE !default; // Custom variable
-$info-light:   		 								if(isDarkSkin(), #2F264F, #EEE5FF) !default; // Custom variable
+$info-light:   		 								if(isDarkMode(), #2F264F, #EEE5FF) !default; // Custom variable
 $info-inverse: 		 								$white !default; // Custom variable
 
 // Warning colors
 $warning:       									#FFA800 !default; // Bootstrap variable
 $warning-active:    								#EE9D01 !default; // Custom variable
-$warning-light:    									if(isDarkSkin(), #392F28, #FFF4DE) !default; // Custom variable
+$warning-light:    									if(isDarkMode(), #392F28, #FFF4DE) !default; // Custom variable
 $warning-inverse:  									$white !default; // Custom variable
 
 // Danger colors
 $danger:        									#F64E60 !default; // Bootstrap variable
 $danger-active:     								#EE2D41 !default; // Custom variable
-$danger-light:     									if(isDarkSkin(), #3A2434, #FFE2E5) !default; // Custom variable
+$danger-light:     									if(isDarkMode(), #3A2434, #FFE2E5) !default; // Custom variable
 $danger-inverse:   									$white !default; // Custom variable
 
 // White colors
@@ -243,7 +243,7 @@ $position-values: (
 // Body
 //
 // Settings for the `<body>` element.
-$body-bg:                                           if(isDarkSkin(), #1E1E2D, $white) !default;
+$body-bg:                                           if(isDarkMode(), #1E1E2D, $white) !default;
 $body-color:                                        $gray-900 !default;
 $body-text-align:                                   null !default;
 
@@ -635,7 +635,7 @@ $form-check-label-disabled-opacity:                 $form-check-input-disabled-o
 $form-check-btn-check-disabled-opacity:             $btn-disabled-opacity !default;
 
 $form-switch-color:                                 rgba(0, 0, 0, .25) !default;
-$form-switch-color-solid:                           if(isDarkSkin(), $gray-500, $white) !default;
+$form-switch-color-solid:                           if(isDarkMode(), $gray-500, $white) !default;
 $form-switch-width:                                 3.25rem !default;
 $form-switch-height:                                2.25rem !default; // Custom variable
 $form-switch-width-sm:                              2.5rem !default; // Custom variable
@@ -671,7 +671,7 @@ $nav-tabs-border-width:                             $border-width !default;
 
 // Card
 $card-bg:                                           $body-bg !default;
-$card-box-shadow: 									if(isDarkSkin(), 0px 0px 30px 0px rgba(0, 0, 0, 0.02), 0px 0px 20px 0px rgba(76,87,125,0.02)) !default; // card custom shadow
+$card-box-shadow: 									if(isDarkMode(), 0px 0px 30px 0px rgba(0, 0, 0, 0.02), 0px 0px 20px 0px rgba(76,87,125,0.02)) !default; // card custom shadow
 $card-border-color:                 				$border-color !default;
 $card-border-dashed-color:                 			$border-dashed-color !default;
 $card-cap-bg:                       				$white !default;
@@ -733,7 +733,7 @@ $modal-content-box-shadow-xs:       				0 .25rem .5rem rgba($black, .1) !default
 $modal-content-box-shadow-sm-up:   					0 .5rem 1rem rgba($black, .1) !default;
 
 $modal-backdrop-bg:                		 			$black !default;
-$modal-backdrop-opacity:            				if(isDarkSkin(), 0.4, 0.2) !default;
+$modal-backdrop-opacity:            				if(isDarkMode(), 0.4, 0.2) !default;
 
 $modal-xl:                         		 			1140px !default;
 $modal-lg:                          				800px !default;
@@ -743,15 +743,15 @@ $modal-sm:                          				300px !default;
 
 // Alerts
 // Define alert colors, border radius, and padding.
-$alert-color-scale:                                 if(isDarkSkin(), 60%, 40%) !default;
-$alert-border-scale:                                if(isDarkSkin(), -60%, -70%) !default;
-$alert-bg-scale:                                    if(isDarkSkin(), -60%, -80%) !default;
+$alert-color-scale:                                 if(isDarkMode(), 60%, 40%) !default;
+$alert-border-scale:                                if(isDarkMode(), -60%, -70%) !default;
+$alert-bg-scale:                                    if(isDarkMode(), -60%, -80%) !default;
 
 
 
 // Dropdowns
 // Dropdown menu container and contents.
-$dropdown-box-shadow:								if(isDarkSkin(), 0px 0px 30px rgba(0, 0, 0, 0.3), 0px 0px 50px 0px rgba(82,63,105, 0.2)) !default;
+$dropdown-box-shadow:								if(isDarkMode(), 0px 0px 30px rgba(0, 0, 0, 0.3), 0px 0px 50px 0px rgba(82,63,105, 0.1)) !default;
 $dropdown-border-radius:                            $border-radius !default;
 $dropdown-border-width:                             0 !default;
 $dropdown-bg:                                       $body-bg !default;
@@ -803,7 +803,7 @@ $pagination-disabled-border-color:                  transparent !default;
 $pagination-transition:                             color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
 // Popovers
-$popover-bg:                                        if(isDarkSkin(), $gray-200, $body-bg) !default;
+$popover-bg:                                        if(isDarkMode(), $gray-200, $body-bg) !default;
 $popover-font-size:                 				$font-size-base !default;
 $popover-border-color:              				$popover-bg !default;
 $popover-border-radius:             				$border-radius !default;
@@ -814,7 +814,7 @@ $popover-header-font-weight:           				500 !default;  // Custom variable
 $popover-header-font-size:             				1rem !default;  // Custom variable
 $popover-header-padding-y:          				1rem !default;
 $popover-header-padding-x:          				1.25rem !default;
-$popover-header-border-color:                       if(isDarkSkin(), $gray-300, $gray-100) !default;  // Custom variable
+$popover-header-border-color:                       if(isDarkMode(), $gray-300, $gray-100) !default;  // Custom variable
 $popover-body-color:                				$gray-800 !default;
 $popover-body-padding-y:                            1.25rem !default;
 $popover-body-padding-x:                            1.25rem !default;
@@ -853,7 +853,7 @@ $badge-size-lg:                                     2rem !default; // Custom var
 
 
 // Code
-$code-bg:                                           if(isDarkSkin(), $gray-200, $gray-100) !default; // Custom variable
+$code-bg:                                           if(isDarkMode(), $gray-200, $gray-100) !default; // Custom variable
 $code-box-shadow:                                   0px 3px 9px rgba(0, 0, 0, 0.08) !default; // Custom variable
 $code-padding:                                      1px 0.4rem !default; // Custom variable
 $code-margin:                                       0 0.5rem !default; // Custom variable
@@ -1087,10 +1087,10 @@ $sticky-toolbar: (
 // Drawer
 $drawer: (
 	z-index: 110, // Drawer's z-index
-	box-shadow: if(isDarkSkin(), 0px 0px 30px rgba(0, 0, 0, 0.1), 0px 1px 9px -3px rgba(0,0,0, 0.05)), // Drawer's box shadow
+	box-shadow: if(isDarkMode(), 0px 0px 30px rgba(0, 0, 0, 0.1), 0px 1px 9px -3px rgba(0,0,0, 0.05)), // Drawer's box shadow
 	bg-color: $body-bg, // Drawer's background color
 	transition-speed: 0.3s,
-	overlay-bg-color: if(isDarkSkin(), rgba($black, 0.4), rgba($black, 0.2)), // Offcanvas overlay background color
+	overlay-bg-color: if(isDarkMode(), rgba($black, 0.4), rgba($black, 0.2)), // Offcanvas overlay background color
 	overlay-animation-speed: 0.3s
 ) !default;
 

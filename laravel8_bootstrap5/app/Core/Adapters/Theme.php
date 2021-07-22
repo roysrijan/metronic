@@ -405,13 +405,13 @@ class Theme extends \App\Core\Theme
     }
 
     /**
-     * Check if current theme has dark skin
+     * Check if current theme has dark mode
      *
      * @return bool
      */
-    public static function isDarkSkinEnabled()
+    public static function isDarkModeEnabled()
     {
-        return (bool) self::getOption('layout', 'main/dark-skin-enabled');
+        return (bool) self::getOption('layout', 'main/dark-mode-enabled');
     }
 
     /**
@@ -421,7 +421,7 @@ class Theme extends \App\Core\Theme
      */
     public static function getCurrentSkin()
     {
-        if (self::isDarkSkinEnabled() && isset($_REQUEST['skin']) && $_REQUEST['skin']) {
+        if (self::isDarkModeEnabled() && isset($_REQUEST['skin']) && $_REQUEST['skin']) {
             return $_REQUEST['skin'];
         }
 
@@ -429,11 +429,11 @@ class Theme extends \App\Core\Theme
     }
 
     /**
-     * Check dark skin
+     * Check dark mode
      *
      * @return mixed|string
      */
-    public static function isDarkSkin()
+    public static function isDarkMode()
     {
         return self::getCurrentSkin() === 'dark';
     }

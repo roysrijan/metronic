@@ -6,33 +6,33 @@
 
 // Theme colors
 // Primary
-$primary:       									if(isDarkSkin(), #3699FF, #009EF7);
-$primary-active:    								if(isDarkSkin(), #187DE4, #0095E8);
-$primary-light:    								    if(isDarkSkin(), #212E48, #F1FAFF);
+$primary:       									if(isDarkMode(), #3699FF, #009EF7);
+$primary-active:    								if(isDarkMode(), #187DE4, #0095E8);
+$primary-light:    								    if(isDarkMode(), #212E48, #F1FAFF);
 $primary-inverse:  									#FFFFFF;
 
 // Success
-$success:       									if(isDarkSkin(), #0BB783, #50CD89);
-$success-active:    								if(isDarkSkin(), #04AA77, #47BE7D);
-$success-light:    									if(isDarkSkin(), #1C3238, #E8FFF3);
+$success:       									if(isDarkMode(), #0BB783, #50CD89);
+$success-active:    								if(isDarkMode(), #04AA77, #47BE7D);
+$success-light:    									if(isDarkMode(), #1C3238, #E8FFF3);
 $success-inverse:  									#FFFFFF;
 
 // Info
-$info:       									    if(isDarkSkin(), #8950FC, #7239EA);
-$info-active:    									if(isDarkSkin(), #7337EE, #5014D0);
-$info-light:    									if(isDarkSkin(), #2F264F, #F8F5FF);
+$info:       									    if(isDarkMode(), #8950FC, #7239EA);
+$info-active:    									if(isDarkMode(), #7337EE, #5014D0);
+$info-light:    									if(isDarkMode(), #2F264F, #F8F5FF);
 $info-inverse:  									#FFFFFF;
 
 // Danger
-$danger:       									    if(isDarkSkin(), #F64E60, #F1416C);
-$danger-active:    									if(isDarkSkin(), #EE2D41, #D9214E);
-$danger-light:    									if(isDarkSkin(), #3A2434, #FFF5F8);
+$danger:       									    if(isDarkMode(), #F64E60, #F1416C);
+$danger-active:    									if(isDarkMode(), #EE2D41, #D9214E);
+$danger-light:    									if(isDarkMode(), #3A2434, #FFF5F8);
 $danger-inverse:  									#FFFFFF;
 
 // Warning
-$warning:       									if(isDarkSkin(), #FFA800, #FFC700);
-$warning-active:    								if(isDarkSkin(), #EE9D01, #F1BC00);
-$warning-light:    									if(isDarkSkin(), #392F28, #FFF8DD);
+$warning:       									if(isDarkMode(), #FFA800, #FFC700);
+$warning-active:    								if(isDarkMode(), #EE9D01, #F1BC00);
+$warning-light:    									if(isDarkMode(), #392F28, #FFF8DD);
 $warning-inverse:  									#FFFFFF;
 
 // Card Box Shadow

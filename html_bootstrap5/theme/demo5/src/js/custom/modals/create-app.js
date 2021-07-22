@@ -271,6 +271,11 @@ var KTCreateApp = function () {
 			modal = new bootstrap.Modal(modalEl);
 
 			stepper = document.querySelector('#kt_modal_create_app_stepper');
+
+			if (!stepper) {
+				return;
+			}
+			
 			form = document.querySelector('#kt_modal_create_app_form');
 			formSubmitButton = document.querySelector('[data-kt-stepper-action="submit"]');
 

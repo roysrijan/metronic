@@ -577,8 +577,8 @@ class Theme {
         if (isset($_REQUEST['rtl']) && $_REQUEST['rtl'] == 1) {
             $path = str_replace('.css', '.rtl.css', $path);
         } elseif (isset($_REQUEST['skin']) && $_REQUEST['skin'] && $_REQUEST['skin'] !== 'default') {
-            if (self::isDarkSkinEnabled() && (strpos($path, 'plugins.bundle.css') !== false || strpos($path, 'style.bundle.css') !== false)) {
-                // import dark skin css
+            if (self::isDarkModeEnabled() && (strpos($path, 'plugins.bundle.css') !== false || strpos($path, 'style.bundle.css') !== false)) {
+                // import dark mode css
                 $path = str_replace('.bundle', '.'.$_REQUEST['skin'].'.bundle', $path);
             }
         }
@@ -600,12 +600,12 @@ class Theme {
     }
 
     /**
-     * Check if current theme has dark skin
+     * Check if current theme has dark mode
      *
      * @return bool
      */
-    public static function isDarkSkinEnabled() {
-        return (bool) self::getOption('layout', 'main/dark-skin-enabled');
+    public static function isDarkModeEnabled() {
+        return (bool) self::getOption('layout', 'main/dark-mode-enabled');
     }
 
     /**
@@ -614,7 +614,7 @@ class Theme {
      * @return mixed|string
      */
     public static function getCurrentSkin() {
-        if (self::isDarkSkinEnabled() && isset($_REQUEST['skin']) && $_REQUEST['skin']) {
+        if (self::isDarkModeEnabled() && isset($_REQUEST['skin']) && $_REQUEST['skin']) {
             return $_REQUEST['skin'];
         }
 
@@ -622,11 +622,11 @@ class Theme {
     }
 
     /**
-     * Check dark skin
+     * Check dark mode
      *
      * @return mixed|string
      */
-    public static function isDarkSkin() {
+    public static function isDarkMode() {
         return self::getCurrentSkin() === 'dark';
     }
 
