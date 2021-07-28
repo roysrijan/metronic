@@ -29,8 +29,17 @@ class Theme extends \App\Core\Theme
         Theme::$demo = $demo;
     }
 
+    /**
+     * Get current demo
+     *
+     * @return string
+     */
     public static function getDemo()
     {
+        if (class_exists('request')) {
+            return request()->input('demo', self::$demo);
+        }
+
         return self::$demo;
     }
 
@@ -76,7 +85,7 @@ class Theme extends \App\Core\Theme
      *
      * @return string
      */
-    public static function getPageUrl($path, $demo = '', $skin = null)
+    public static function getPageUrl($path, $demo = '', $mode = null)
     {
         $params = [];
         if (isset($_REQUEST['rtl']) && $_REQUEST['rtl']) {
@@ -86,12 +95,12 @@ class Theme extends \App\Core\Theme
             $params['demo'] = $_REQUEST['demo'];
         }
 
-        if ($skin !== null) {
-            if ($skin) {
-                $params['skin'] = $skin;
+        if ($mode !== null) {
+            if ($mode) {
+                $params['mode'] = $mode;
             }
-        } elseif (isset($_REQUEST['skin']) && $_REQUEST['skin']) {
-            $params['skin'] = $_REQUEST['skin'];
+        } elseif (isset($_REQUEST['mode']) && $_REQUEST['mode']) {
+            $params['mode'] = $_REQUEST['mode'];
         }
 
         if (!empty($demo)) {
@@ -273,7 +282,12 @@ class Theme extends \App\Core\Theme
      */
     public static function getVersion()
     {
-        return config('global.general.product.version');
+        $versions = array_keys(config('changelog'));
+        if (isset($versions[0])) {
+            return str_replace('v', '', $versions[0]);
+        }
+
+        return null;
     }
 
     /**
@@ -419,10 +433,10 @@ class Theme extends \App\Core\Theme
      *
      * @return mixed|string
      */
-    public static function getCurrentSkin()
+    public static function getCurrentMode()
     {
-        if (self::isDarkModeEnabled() && isset($_REQUEST['skin']) && $_REQUEST['skin']) {
-            return $_REQUEST['skin'];
+        if (self::isDarkModeEnabled() && isset($_REQUEST['mode']) && $_REQUEST['mode']) {
+            return $_REQUEST['mode'];
         }
 
         return 'default';
@@ -435,7 +449,7 @@ class Theme extends \App\Core\Theme
      */
     public static function isDarkMode()
     {
-        return self::getCurrentSkin() === 'dark';
+        return self::getCurrentMode() === 'dark';
     }
 
 }

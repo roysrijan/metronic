@@ -3903,7 +3903,7 @@ textarea.form-control-lg {
   background-clip: padding-box;
   border: 0 solid rgba(0, 0, 0, 0.15);
   border-radius: 0.475rem;
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
 }
 .dropdown-menu[data-bs-popper] {
   top: 100%;
@@ -6098,7 +6098,7 @@ textarea.form-control-lg {
   background-clip: padding-box;
   border: 1px solid #ffffff;
   border-radius: 0.475rem;
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
 }
 .popover .popover-arrow {
   position: absolute;
@@ -34146,7 +34146,7 @@ a:hover {
   display: none;
   border-radius: 0.475rem;
   background-color: #ffffff;
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
   z-index: 105;
 }
 .show.menu-dropdown > .menu-sub-dropdown, .menu-sub-dropdown.menu.show, .menu-sub-dropdown.show[data-popper-placement] {
@@ -34225,7 +34225,7 @@ a:hover {
     display: none;
     border-radius: 0.475rem;
     background-color: #ffffff;
-    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
     z-index: 105;
   }
   .show.menu-dropdown > .menu-sub-sm-dropdown, .menu-sub-sm-dropdown.menu.show, .menu-sub-sm-dropdown.show[data-popper-placement] {
@@ -34304,7 +34304,7 @@ a:hover {
     display: none;
     border-radius: 0.475rem;
     background-color: #ffffff;
-    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
     z-index: 105;
   }
   .show.menu-dropdown > .menu-sub-md-dropdown, .menu-sub-md-dropdown.menu.show, .menu-sub-md-dropdown.show[data-popper-placement] {
@@ -34383,7 +34383,7 @@ a:hover {
     display: none;
     border-radius: 0.475rem;
     background-color: #ffffff;
-    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
     z-index: 105;
   }
   .show.menu-dropdown > .menu-sub-lg-dropdown, .menu-sub-lg-dropdown.menu.show, .menu-sub-lg-dropdown.show[data-popper-placement] {
@@ -34462,7 +34462,7 @@ a:hover {
     display: none;
     border-radius: 0.475rem;
     background-color: #ffffff;
-    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
     z-index: 105;
   }
   .show.menu-dropdown > .menu-sub-xl-dropdown, .menu-sub-xl-dropdown.menu.show, .menu-sub-xl-dropdown.show[data-popper-placement] {
@@ -34541,7 +34541,7 @@ a:hover {
     display: none;
     border-radius: 0.475rem;
     background-color: #ffffff;
-    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
     z-index: 105;
   }
   .show.menu-dropdown > .menu-sub-xxl-dropdown, .menu-sub-xxl-dropdown.menu.show, .menu-sub-xxl-dropdown.show[data-popper-placement] {
@@ -34620,7 +34620,7 @@ a:hover {
     display: none;
     border-radius: 0.475rem;
     background-color: #ffffff;
-    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
     z-index: 105;
   }
   .show.menu-dropdown > .menu-sub-sm-down-dropdown, .menu-sub-sm-down-dropdown.menu.show, .menu-sub-sm-down-dropdown.show[data-popper-placement] {
@@ -34699,7 +34699,7 @@ a:hover {
     display: none;
     border-radius: 0.475rem;
     background-color: #ffffff;
-    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
     z-index: 105;
   }
   .show.menu-dropdown > .menu-sub-md-down-dropdown, .menu-sub-md-down-dropdown.menu.show, .menu-sub-md-down-dropdown.show[data-popper-placement] {
@@ -34778,7 +34778,7 @@ a:hover {
     display: none;
     border-radius: 0.475rem;
     background-color: #ffffff;
-    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
     z-index: 105;
   }
   .show.menu-dropdown > .menu-sub-lg-down-dropdown, .menu-sub-lg-down-dropdown.menu.show, .menu-sub-lg-down-dropdown.show[data-popper-placement] {
@@ -34857,7 +34857,7 @@ a:hover {
     display: none;
     border-radius: 0.475rem;
     background-color: #ffffff;
-    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
     z-index: 105;
   }
   .show.menu-dropdown > .menu-sub-xl-down-dropdown, .menu-sub-xl-down-dropdown.menu.show, .menu-sub-xl-down-dropdown.show[data-popper-placement] {
@@ -34936,7 +34936,7 @@ a:hover {
     display: none;
     border-radius: 0.475rem;
     background-color: #ffffff;
-    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+    box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
     z-index: 105;
   }
   .show.menu-dropdown > .menu-sub-xxl-down-dropdown, .menu-sub-xxl-down-dropdown.menu.show, .menu-sub-xxl-down-dropdown.show[data-popper-placement] {
@@ -42207,7 +42207,7 @@ code:not([class*=language-]) {
 }
 
 .tooltip .tooltip-inner {
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
 }
 .tooltip.tooltop-auto-width .tooltip-inner {
   white-space: nowrap;
@@ -42286,7 +42286,7 @@ code:not([class*=language-]) {
   margin: 0 auto;
   position: fixed;
   z-index: 1000;
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
   background-color: #ffffff;
   border-radius: 0.475rem;
   padding: 1rem 1.25rem;

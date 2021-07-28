@@ -28,7 +28,7 @@
 
     <!--begin::Menu item-->
     <div class="menu-item px-5">
-        <a href="{{ route('settings.index') }}" class="menu-link px-5">
+        <a href="{{ theme()->getPageUrl('settings.index') }}" class="menu-link px-5">
             {{ __('My Profile') }}
         </a>
     </div>
@@ -196,7 +196,7 @@
 
     <!--begin::Menu item-->
     <div class="menu-item px-5 my-1">
-        <a href="{{ route('settings.index') }}" class="menu-link px-5">
+        <a href="{{ theme()->getPageUrl('settings.index') }}" class="menu-link px-5">
             {{ __('Account Settings') }}
         </a>
     </div>
@@ -204,7 +204,7 @@
 
     <!--begin::Menu item-->
     <div class="menu-item px-5">
-        <a href="#" data-action="{{ route('logout') }}" data-method="post" data-csrf="{{ csrf_token() }}" data-reload="true" class="button-ajax menu-link px-5">
+        <a href="#" data-action="{{ theme()->getPageUrl('logout') }}" data-method="post" data-csrf="{{ csrf_token() }}" data-reload="true" class="button-ajax menu-link px-5">
             {{ __('Sign Out') }}
         </a>
     </div>
@@ -223,7 +223,7 @@
                     <span class="pulse-ring ms-n1"></span>
 
                     <span class="form-check-label text-gray-600 fs-7">
-                        {{ theme()->isDarkMode() ? 'Enable Light Skin' : 'Enable Dark Mode' }}
+                        {{ theme()->isDarkMode() ? 'Enable Light Mode' : 'Enable Dark Mode' }}
                     </span>
                 </label>
             </div>

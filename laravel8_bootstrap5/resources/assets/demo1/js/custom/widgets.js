@@ -3,13 +3,13 @@
 // Class definition
 var KTWidgets = function () {
     // Statistics widgets
-    var initStatisticsWidget3 = function() {
+    var initStatisticsWidget3 = function () {
         var charts = document.querySelectorAll('.statistics-widget-3-chart');
 
-        [].slice.call(charts).map(function(element) {
+        [].slice.call(charts).map(function (element) {
             var height = parseInt(KTUtil.css(element, 'height'));
 
-            if ( !element ) {
+            if (!element) {
                 return;
             }
 
@@ -17,7 +17,7 @@ var KTWidgets = function () {
 
             var labelColor = KTUtil.getCssVariableValue('--bs-' + 'gray-800');
             var baseColor = KTUtil.getCssVariableValue('--bs-' + color);
-            var lightColor = KTUtil.getCssVariableValue('--bs-light-' + color );
+            var lightColor = KTUtil.getCssVariableValue('--bs-light-' + color);
 
             var options = {
                 series: [{
@@ -125,7 +125,7 @@ var KTWidgets = function () {
                         fontSize: '12px'
                     },
                     y: {
-                        formatter: function(val) {
+                        formatter: function (val) {
                             return "$" + val + " thousands"
                         }
                     }
@@ -143,13 +143,13 @@ var KTWidgets = function () {
         });
     }
 
-    var initStatisticsWidget4 = function() {
+    var initStatisticsWidget4 = function () {
         var charts = document.querySelectorAll('.statistics-widget-4-chart');
 
-        [].slice.call(charts).map(function(element) {
+        [].slice.call(charts).map(function (element) {
             var height = parseInt(KTUtil.css(element, 'height'));
 
-            if ( !element ) {
+            if (!element) {
                 return;
             }
 
@@ -157,7 +157,7 @@ var KTWidgets = function () {
 
             var labelColor = KTUtil.getCssVariableValue('--bs-' + 'gray-800');
             var baseColor = KTUtil.getCssVariableValue('--bs-' + color);
-            var lightColor = KTUtil.getCssVariableValue('--bs-light-' + color );
+            var lightColor = KTUtil.getCssVariableValue('--bs-light-' + color);
 
             var options = {
                 series: [{
@@ -265,7 +265,7 @@ var KTWidgets = function () {
                         fontSize: '12px'
                     },
                     y: {
-                        formatter: function(val) {
+                        formatter: function (val) {
                             return "$" + val + " thousands"
                         }
                     }
@@ -284,7 +284,7 @@ var KTWidgets = function () {
     }
 
     // Charts widgets
-    var initChartsWidget1 = function() {
+    var initChartsWidget1 = function () {
         var element = document.getElementById("kt_charts_widget_1_chart");
 
         var height = parseInt(KTUtil.css(element, 'height'));
@@ -404,7 +404,7 @@ var KTWidgets = function () {
         chart.render();
     }
 
-    var initChartsWidget2 = function() {
+    var initChartsWidget2 = function () {
         var element = document.getElementById("kt_charts_widget_2_chart");
 
         var height = parseInt(KTUtil.css(element, 'height'));
@@ -524,7 +524,7 @@ var KTWidgets = function () {
         chart.render();
     }
 
-    var initChartsWidget3 = function() {
+    var initChartsWidget3 = function () {
         var element = document.getElementById("kt_charts_widget_3_chart");
 
         var height = parseInt(KTUtil.css(element, 'height'));
@@ -550,9 +550,7 @@ var KTWidgets = function () {
                     show: false
                 }
             },
-            plotOptions: {
-
-            },
+            plotOptions: {},
             legend: {
                 show: false
             },
@@ -659,7 +657,7 @@ var KTWidgets = function () {
         chart.render();
     }
 
-    var initChartsWidget4 = function() {
+    var initChartsWidget4 = function () {
         var element = document.getElementById("kt_charts_widget_4_chart");
 
         var height = parseInt(KTUtil.css(element, 'height'));
@@ -796,7 +794,7 @@ var KTWidgets = function () {
         chart.render();
     }
 
-    var initChartsWidget5 = function() {
+    var initChartsWidget5 = function () {
         var element = document.getElementById("kt_charts_widget_5_chart");
 
         var height = parseInt(KTUtil.css(element, 'height'));
@@ -920,7 +918,7 @@ var KTWidgets = function () {
         chart.render();
     }
 
-    var initChartsWidget6 = function() {
+    var initChartsWidget6 = function () {
         var element = document.getElementById("kt_charts_widget_6_chart");
 
         var height = parseInt(KTUtil.css(element, 'height'));
@@ -1059,7 +1057,7 @@ var KTWidgets = function () {
         chart.render();
     }
 
-    var initChartsWidget7 = function() {
+    var initChartsWidget7 = function () {
         var element = document.getElementById("kt_charts_widget_7_chart");
 
         var height = parseInt(KTUtil.css(element, 'height'));
@@ -1217,7 +1215,7 @@ var KTWidgets = function () {
         chart.render();
     }
 
-    var initChartsWidget8 = function() {
+    var initChartsWidget8 = function () {
         var element = document.getElementById("kt_charts_widget_8_chart");
 
         var height = parseInt(KTUtil.css(element, 'height'));
@@ -1392,7 +1390,7 @@ var KTWidgets = function () {
     }
 
     // Mixed widgets
-    var initMixedWidget2 = function() {
+    var initMixedWidget2 = function () {
         var charts = document.querySelectorAll('.mixed-widget-2-chart');
 
         var color;
@@ -1403,7 +1401,7 @@ var KTWidgets = function () {
         var options;
         var chart;
 
-        [].slice.call(charts).map(function(element) {
+        [].slice.call(charts).map(function (element) {
             height = parseInt(KTUtil.css(element, 'height'));
             color = KTUtil.getCssVariableValue('--bs-' + element.getAttribute("data-kt-color"));
             strokeColor = KTUtil.colorDarken(color, 15);
@@ -1536,7 +1534,7 @@ var KTWidgets = function () {
         });
     }
 
-    var initMixedWidget12 = function() {
+    var initMixedWidget12 = function () {
         var charts = document.querySelectorAll('.mixed-widget-12-chart');
 
         var color;
@@ -1547,7 +1545,7 @@ var KTWidgets = function () {
         var options;
         var chart;
 
-        [].slice.call(charts).map(function(element) {
+        [].slice.call(charts).map(function (element) {
             height = parseInt(KTUtil.css(element, 'height'));
 
             var options = {
@@ -1671,13 +1669,13 @@ var KTWidgets = function () {
         });
     }
 
-    var initMixedWidget3 = function() {
+    var initMixedWidget3 = function () {
         var charts = document.querySelectorAll('.mixed-widget-3-chart');
 
-        [].slice.call(charts).map(function(element) {
+        [].slice.call(charts).map(function (element) {
             var height = parseInt(KTUtil.css(element, 'height'));
 
-            if ( !element ) {
+            if (!element) {
                 return;
             }
 
@@ -1686,7 +1684,7 @@ var KTWidgets = function () {
             var labelColor = KTUtil.getCssVariableValue('--bs-' + 'gray-800');
             var strokeColor = KTUtil.getCssVariableValue('--bs-' + 'gray-300');
             var baseColor = KTUtil.getCssVariableValue('--bs-' + color);
-            var lightColor = KTUtil.getCssVariableValue('--bs-light-' + color );
+            var lightColor = KTUtil.getCssVariableValue('--bs-light-' + color);
 
             var options = {
                 series: [{
@@ -1812,20 +1810,20 @@ var KTWidgets = function () {
         });
     }
 
-    var initMixedWidget4 = function() {
+    var initMixedWidget4 = function () {
         var charts = document.querySelectorAll('.mixed-widget-4-chart');
 
-        [].slice.call(charts).map(function(element) {
+        [].slice.call(charts).map(function (element) {
             var height = parseInt(KTUtil.css(element, 'height'));
 
-            if ( !element ) {
+            if (!element) {
                 return;
             }
 
             var color = element.getAttribute('data-kt-chart-color');
 
             var baseColor = KTUtil.getCssVariableValue('--bs-' + color);
-            var lightColor = KTUtil.getCssVariableValue('--bs-light-' + color );
+            var lightColor = KTUtil.getCssVariableValue('--bs-light-' + color);
             var labelColor = KTUtil.getCssVariableValue('--bs-' + 'gray-700');
 
             var options = {
@@ -1876,13 +1874,13 @@ var KTWidgets = function () {
         });
     }
 
-    var initMixedWidget5 = function() {
+    var initMixedWidget5 = function () {
         var charts = document.querySelectorAll('.mixed-widget-5-chart');
 
-        [].slice.call(charts).map(function(element) {
+        [].slice.call(charts).map(function (element) {
             var height = parseInt(KTUtil.css(element, 'height'));
 
-            if ( !element ) {
+            if (!element) {
                 return;
             }
 
@@ -1891,7 +1889,7 @@ var KTWidgets = function () {
             var labelColor = KTUtil.getCssVariableValue('--bs-' + 'gray-800');
             var strokeColor = KTUtil.getCssVariableValue('--bs-' + 'gray-300');
             var baseColor = KTUtil.getCssVariableValue('--bs-' + color);
-            var lightColor = KTUtil.getCssVariableValue('--bs-light-' + color );
+            var lightColor = KTUtil.getCssVariableValue('--bs-light-' + color);
 
             var options = {
                 series: [{
@@ -2031,13 +2029,13 @@ var KTWidgets = function () {
         });
     }
 
-    var initMixedWidget6 = function() {
+    var initMixedWidget6 = function () {
         var charts = document.querySelectorAll('.mixed-widget-6-chart');
 
-        [].slice.call(charts).map(function(element) {
+        [].slice.call(charts).map(function (element) {
             var height = parseInt(KTUtil.css(element, 'height'));
 
-            if ( !element ) {
+            if (!element) {
                 return;
             }
 
@@ -2046,7 +2044,7 @@ var KTWidgets = function () {
             var labelColor = KTUtil.getCssVariableValue('--bs-' + 'gray-800');
             var strokeColor = KTUtil.getCssVariableValue('--bs-' + 'gray-300');
             var baseColor = KTUtil.getCssVariableValue('--bs-' + color);
-            var lightColor = KTUtil.getCssVariableValue('--bs-light-' + color );
+            var lightColor = KTUtil.getCssVariableValue('--bs-light-' + color);
 
             var options = {
                 series: [{
@@ -2172,13 +2170,13 @@ var KTWidgets = function () {
         });
     }
 
-    var initMixedWidget7 = function() {
+    var initMixedWidget7 = function () {
         var charts = document.querySelectorAll('.mixed-widget-7-chart');
 
-        [].slice.call(charts).map(function(element) {
+        [].slice.call(charts).map(function (element) {
             var height = parseInt(KTUtil.css(element, 'height'));
 
-            if ( !element ) {
+            if (!element) {
                 return;
             }
 
@@ -2187,7 +2185,7 @@ var KTWidgets = function () {
             var labelColor = KTUtil.getCssVariableValue('--bs-' + 'gray-800');
             var strokeColor = KTUtil.getCssVariableValue('--bs-' + 'gray-300');
             var baseColor = KTUtil.getCssVariableValue('--bs-' + color);
-            var lightColor = KTUtil.getCssVariableValue('--bs-light-' + color );
+            var lightColor = KTUtil.getCssVariableValue('--bs-light-' + color);
 
             var options = {
                 series: [{
@@ -2313,7 +2311,7 @@ var KTWidgets = function () {
         });
     }
 
-    var initMixedWidget10 = function() {
+    var initMixedWidget10 = function () {
         var charts = document.querySelectorAll('.mixed-widget-10-chart');
 
         var color;
@@ -2326,7 +2324,7 @@ var KTWidgets = function () {
         var options;
         var chart;
 
-        [].slice.call(charts).map(function(element) {
+        [].slice.call(charts).map(function (element) {
             color = element.getAttribute("data-kt-color");
             height = parseInt(KTUtil.css(element, 'height'));
             baseColor = KTUtil.getCssVariableValue('--bs-' + color);
@@ -2446,11 +2444,11 @@ var KTWidgets = function () {
     }
 
     // Feeds Widgets
-    var initFeedWidget1 = function() {
+    var initFeedWidget1 = function () {
         var formEl = document.querySelector("#kt_forms_widget_1_form");
         var editorId = 'kt_forms_widget_1_editor';
 
-        if ( !formEl ) {
+        if (!formEl) {
             return;
         }
 
@@ -2473,16 +2471,16 @@ var KTWidgets = function () {
         var editorObj = new Quill('#' + editorId, options);
     }
 
-    var initFeedsWidget4 = function() {
+    var initFeedsWidget4 = function () {
         var btn = document.querySelector('#kt_widget_5_load_more_btn');
         var widget5 = document.querySelector('#kt_widget_5');
 
         if (btn) {
-            btn.addEventListener('click', function(e){
+            btn.addEventListener('click', function (e) {
                 e.preventDefault();
                 btn.setAttribute('data-kt-indicator', 'on');
 
-                setTimeout(function() {
+                setTimeout(function () {
                     btn.removeAttribute('data-kt-indicator');
                     widget5.classList.remove('d-none');
                     btn.classList.add('d-none');
@@ -2494,11 +2492,11 @@ var KTWidgets = function () {
     }
 
     // Follow button
-    var initUserFollowButton = function() {
+    var initUserFollowButton = function () {
         var follow = document.querySelector('#kt_user_follow_button');
 
         if (follow) {
-            follow.addEventListener('click', function(e){
+            follow.addEventListener('click', function (e) {
                 // Prevent default action
                 e.preventDefault();
 
@@ -2506,20 +2504,20 @@ var KTWidgets = function () {
                 follow.setAttribute('data-kt-indicator', 'on');
 
                 // Disable button to avoid multiple click
-				follow.disabled = true;
+                follow.disabled = true;
 
                 // Check button state
                 if (follow.classList.contains("btn-success")) {
-                     setTimeout(function() {
+                    setTimeout(function () {
                         follow.removeAttribute('data-kt-indicator');
                         follow.classList.remove("btn-success");
                         follow.classList.add("btn-light");
                         follow.querySelector(".svg-icon").classList.add("d-none");
                         follow.querySelector(".indicator-label").innerHTML = 'Follow';
-				        follow.disabled = false;
+                        follow.disabled = false;
                     }, 1500);
                 } else {
-                     setTimeout(function() {
+                    setTimeout(function () {
                         follow.removeAttribute('data-kt-indicator');
                         follow.classList.add("btn-success");
                         follow.classList.remove("btn-light");
@@ -2533,7 +2531,7 @@ var KTWidgets = function () {
     }
 
     // Calendar
-    var initCalendarWidget1 = function() {
+    var initCalendarWidget1 = function () {
         if (typeof FullCalendar === 'undefined' || !document.querySelector('#kt_calendar_widget_1')) {
             return;
         }
@@ -2560,9 +2558,9 @@ var KTWidgets = function () {
             now: TODAY + 'T09:25:00', // just for demo
 
             views: {
-                dayGridMonth: { buttonText: 'month' },
-                timeGridWeek: { buttonText: 'week' },
-                timeGridDay: { buttonText: 'day' }
+                dayGridMonth: {buttonText: 'month'},
+                timeGridWeek: {buttonText: 'week'},
+                timeGridDay: {buttonText: 'day'}
             },
 
             initialView: 'dayGridMonth',
@@ -2722,11 +2720,11 @@ var KTWidgets = function () {
         cb(start, end, '');
     }
 
-    var initSkinToggle = function() {
-        var toggle = document.querySelector('#kt_user_menu_skin_toggle');
+    var initDarkModeToggle = function () {
+        var toggle = document.querySelector('#kt_user_menu_dark_mode_toggle');
 
         if (toggle) {
-            toggle.addEventListener('click', function() {
+            toggle.addEventListener('click', function () {
                 window.location.href = this.getAttribute('data-kt-url');
             });
         }
@@ -2738,8 +2736,8 @@ var KTWidgets = function () {
             // Daterangepicker
             initDaterangepicker();
 
-            // Skin
-            initSkinToggle();
+            // Dark Mode
+            initDarkModeToggle();
 
             // Statistics widgets
             initStatisticsWidget3();
@@ -2784,6 +2782,6 @@ if (typeof module !== 'undefined') {
 }
 
 // On document ready
-KTUtil.onDOMContentLoaded(function() {
+KTUtil.onDOMContentLoaded(function () {
     KTWidgets.init();
 });

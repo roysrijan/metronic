@@ -5,6 +5,7 @@ const ReplaceInFileWebpackPlugin = require('replace-in-file-webpack-plugin');
 const rimraf = require('rimraf');
 const WebpackRTLPlugin = require('webpack-rtl-plugin');
 const del = require('del');
+const fs = require('fs');
 
 /*
  |--------------------------------------------------------------------------
@@ -175,60 +176,12 @@ mix.webpackConfig({
     mix.copy(file, `public/${demo}/plugins/global/fonts/${folder}/${path.basename(file)}`);
 });
 
-// Optional: Output datatables.net
-mix.scripts([
-    "node_modules/datatables.net/js/jquery.dataTables.js",
-    "node_modules/datatables.net-bs5/js/dataTables.bootstrap5.js",
-    "../src/js/vendors/plugins/datatables.init.js",
-    "node_modules/jszip/dist/jszip.min.js",
-    "node_modules/pdfmake/build/pdfmake.min.js",
-    "node_modules/pdfmake/build/vfs_fonts.js",
-    "node_modules/datatables.net-buttons/js/dataTables.buttons.min.js",
-    "node_modules/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js",
-    "node_modules/datatables.net-buttons/js/buttons.colVis.js",
-    "node_modules/datatables.net-buttons/js/buttons.flash.js",
-    "node_modules/datatables.net-buttons/js/buttons.html5.js",
-    "node_modules/datatables.net-buttons/js/buttons.print.js",
-    "node_modules/datatables.net-colreorder/js/dataTables.colReorder.min.js",
-    "node_modules/datatables.net-colreorder-bs5/js/colReorder.bootstrap5.js",
-    "node_modules/datatables.net-fixedcolumns/js/dataTables.fixedColumns.min.js",
-    "node_modules/datatables.net-fixedcolumns-bs5/js/fixedColumns.bootstrap5.js",
-    "node_modules/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js",
-    "node_modules/datatables.net-fixedheader-bs5/js/fixedHeader.bootstrap5.js",
-    "node_modules/datatables.net-responsive/js/dataTables.responsive.min.js",
-    "node_modules/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js",
-    "node_modules/datatables.net-rowgroup/js/dataTables.rowGroup.min.js",
-    "node_modules/datatables.net-rowgroup-bs5/js/rowGroup.bootstrap5.js",
-    "node_modules/datatables.net-rowreorder/js/dataTables.rowReorder.min.js",
-    "node_modules/datatables.net-rowreorder-bs5/js/rowReorder.bootstrap5.js",
-    "node_modules/datatables.net-scroller/js/dataTables.scroller.min.js",
-    "node_modules/datatables.net-scroller-bs5/js/dataTables.bootstrap5.js",
-    "node_modules/datatables.net-select/js/dataTables.select.min.js",
-    "node_modules/datatables.net-select-bs5/js/dataTables.bootstrap5.js",
-    "node_modules/datatables.net-datetime/dist/dataTables.dateTime.min.js",
-    'resources/assets/core/js/vendors/plugins/datatables.init.js'
-], `public/${demo}/plugins/custom/datatables/datatables.bundle.js`);
-mix.styles([
-    "node_modules/datatables.net-bs5/css/dataTables.bootstrap5.css",
-    "node_modules/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css",
-    "node_modules/datatables.net-colreorder-bs5/css/colReorder.bootstrap5.min.css",
-    "node_modules/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css",
-    "node_modules/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css",
-    "node_modules/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css",
-    "node_modules/datatables.net-rowreorder-bs5/css/rowReorder.bootstrap5.min.css",
-    "node_modules/datatables.net-scroller-bs5/css/scroller.bootstrap5.min.css",
-    "node_modules/datatables.net-select-bs5/css/select.bootstrap5.min.css",
-    "node_modules/datatables.net-datetime/dist/dataTables.dateTime.min.css",
-], `public/${demo}/plugins/custom/datatables/datatables.bundle.css`);
-
-// Optional: Output fullcalendar
-// mix.scripts([
-//     'node_modules/fullcalendar/main.js',
-//     'node_modules/fullcalendar/locales-all.min.js',
-// ], `public/${demo}/plugins/custom/fullcalendar/fullcalendar.bundle.js`);
-// mix.styles([
-//     'node_modules/fullcalendar/main.min.css',
-// ], `public/${demo}/plugins/custom/fullcalendar/fullcalendar.bundle.css`);
+// Raw plugins
+(glob.sync(`resources/assets/core/plugins/custom/**/*.js.json`) || []).forEach(file => {
+    let filePaths = JSON.parse(fs.readFileSync(file, 'utf-8'));
+    const fileName = path.basename(file).replace('.js.json', '');
+    mix.scripts(filePaths, `public/${demo}/plugins/custom/${fileName}/${fileName}.bundle.js`);
+});
 
 function getDemos(pathDemos) {
     // get possible demo from parameter command

@@ -1,7 +1,7 @@
 <x-auth-layout>
 
     <!--begin::Signin Form-->
-    <form method="POST" action="{{ route('login') }}" class="form w-100" novalidate="novalidate" id="kt_sign_in_form">
+    <form method="POST" action="{{ theme()->getPageUrl('login') }}" class="form w-100" novalidate="novalidate" id="kt_sign_in_form">
     @csrf
 
     <!--begin::Heading-->
@@ -16,7 +16,7 @@
             <div class="text-gray-400 fw-bold fs-4">
                 {{ __('New Here?') }}
 
-                <a href="{{ route('register') }}" class="link-primary fw-bolder">
+                <a href="{{ theme()->getPageUrl('register') }}" class="link-primary fw-bolder">
                     {{ __('Create an Account') }}
                 </a>
             </div>
@@ -48,7 +48,7 @@
 
                 <!--begin::Link-->
                 @if (Route::has('password.request'))
-                    <a href="{{ route('password.request') }}" class="link-primary fs-6 fw-bolder">
+                    <a href="{{ theme()->getPageUrl('password.request') }}" class="link-primary fs-6 fw-bolder">
                         {{ __('Forgot Password ?') }}
                     </a>
             @endif

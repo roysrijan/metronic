@@ -11,8 +11,8 @@
 
         <!--begin::Block-->
         <div class="py-5">
-            <p>For the preview purpose, we use URL query <code>?skin=dark</code> to enable the other demos preview without modifying the Laravel routes.
-                See the example preview URL <a href="{{ url()->current() . '?skin=dark' }}">{{ url()->current() . '?skin=dark' }}</a>.</p>
+            <p>For the preview purpose, we use URL query <code>?mode=dark</code> to enable the other demos preview without modifying the Laravel routes.
+                See the example preview URL <a href="{{ url()->current() . '?mode=dark' }}">{{ url()->current() . '?mode=dark' }}</a>.</p>
 
             <p>Dark Mode mode of <?php echo theme()->getProductName()?> can be easily setup.</p>
         </div>

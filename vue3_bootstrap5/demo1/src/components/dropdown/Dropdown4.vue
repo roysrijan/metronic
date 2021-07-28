@@ -118,8 +118,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue";
-import { MenuComponent } from "@/assets/ts/components/MenuComponent";
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "dropdown-5",

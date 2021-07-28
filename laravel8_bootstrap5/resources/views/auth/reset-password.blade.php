@@ -1,11 +1,11 @@
 <x-auth-layout>
 
     <!--begin::Reset Password Form-->
-    <form method="POST" action="{{ route('password.update') }}" class="form w-100" novalidate="novalidate" id="kt_new_password_form">
+    <form method="POST" action="{{ theme()->getPageUrl('password.update') }}" class="form w-100" novalidate="novalidate" id="kt_new_password_form">
     @csrf
 
     <!-- Password Reset Token -->
-        <input type="hidden" name="token" value="{{ $request->route('token') }}">
+        <input type="hidden" name="token" value="{{ $request->theme()->getPageUrl('token') }}">
 
         <!--begin::Heading-->
         <div class="text-center mb-10">
@@ -83,7 +83,7 @@
                 @include('partials.general._button-indicator')
             </button>
 
-            <a href="{{ route('login') }}" class="btn btn-lg btn-light-primary fw-bolder">{{ __('Cancel') }}</a>
+            <a href="{{ theme()->getPageUrl('login') }}" class="btn btn-lg btn-light-primary fw-bolder">{{ __('Cancel') }}</a>
         </div>
         <!--end::Actions-->
     </form>

@@ -39,7 +39,7 @@ class BootstrapDemo1 {
             Theme::addPageJs('js/custom/modals/create-app.js');
             Theme::addPageJs('js/custom/modals/upgrade-plan.js');
 
-            if (Theme::getMode() !== 'release') {
+            if (Theme::getViewMode() !== 'release') {
                 Theme::addPageJs('js/custom/intro.js');
             }
         }
@@ -106,6 +106,10 @@ class BootstrapDemo1 {
             Theme::addHtmlClass('page-title', 'flex-column align-items-start me-3');
         } else {
             Theme::addHtmlClass('page-title', 'align-items-center flex-wrap me-3');
+        }
+
+        if (Theme::getOption('layout', 'header/left') === 'page-title') {
+            Theme::setOption('layout', 'page-title/responsive-target', '#kt_header_nav');
         }
 
         if (Theme::getOption('layout', 'page-title/responsive') === true) {
@@ -187,7 +191,7 @@ class BootstrapDemo1 {
 
     // Public Methods
     public static function run() {
-        if (Theme::isDarkModeEnabled() && Theme::getCurrentSkin() === 'dark') {
+        if (Theme::isDarkModeEnabled() && Theme::getCurrentMode() === 'dark') {
             Theme::addHtmlClass('body', 'dark-mode');
         }
 

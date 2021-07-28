@@ -33,7 +33,7 @@ require("es6-shim/es6-shim.min.js");
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-// Apexcharts - mBdern charting library that helps developers to create beautiful and interactive visualizations for web pages: https://apexcharts.com/
+// Apexcharts - modern charting library that helps developers to create beautiful and interactive visualizations for web pages: https://apexcharts.com/
 window.ApexCharts = require('apexcharts/dist/apexcharts.min.js');
 
 // FormValidation - Best premium validation library for JavaScript. Zero dependencies. Learn more: https://formvalidation.io/
@@ -52,8 +52,8 @@ require('../../core/plugins/bootstrap-multiselectsplitter/bootstrap-multiselects
 // require('../../core/js/vendors/plugins/select2.init.js');
 
 // Flatpickr - is a lightweight and powerful datetime picker.
-require('flatpickr/dist/flatpickr.js');
-require('../../core/js/vendors/plugins/flatpickr.init.js');
+// require('flatpickr/dist/flatpickr.js');
+// require('../../core/js/vendors/plugins/flatpickr.init.js');
 
 // Inputmask - is a javascript library which creates an input mask: https://github.com/RobinHerbots/Inputmask
 require('inputmask/dist/inputmask.js');

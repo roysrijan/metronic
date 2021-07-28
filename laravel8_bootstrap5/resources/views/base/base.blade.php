@@ -51,7 +51,7 @@ License: {{ theme()->getOption('product', 'license') }}
         {{-- end::Global Stylesheets Bundle --}}
     @endif
 
-    @if (theme()->getMode() === 'preview')
+    @if (theme()->getViewMode() === 'preview')
         {{ theme()->getView('partials/trackers/_ga-general') }}
         {{ theme()->getView('partials/trackers/_ga-tag-manager-for-head') }}
     @endif
@@ -96,7 +96,7 @@ License: {{ theme()->getOption('product', 'license') }}
 @endif
 {{-- end::Javascript --}}
 
-@if (theme()->getMode() === 'preview')
+@if (theme()->getViewMode() === 'preview')
     {{ theme()->getView('partials/trackers/_ga-tag-manager-for-body') }}
 @endif
 

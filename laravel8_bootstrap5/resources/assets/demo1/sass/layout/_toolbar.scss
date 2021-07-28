@@ -17,10 +17,7 @@
 			left: 0;
 			z-index: get($toolbar-config, fixed, z-index);			
 			background-color: get($toolbar-config, fixed, bg-color);
-
-            @if isDefaultSkin() {                
-                box-shadow: get($toolbar-config, fixed, box-shadow);
-            }
+            box-shadow: get($toolbar-config, fixed, box-shadow);
         }
 
 		// toolbar enabled & toolbar not fixed modes
@@ -31,10 +28,7 @@
         // Fixed header & fixed toolbar modes
         .header-fixed.toolbar-fixed & {
             top: get($header-config, fixed, height, desktop);
-
-            @if isDefaultSkin() {
-                border-top: 1px solid  get($toolbar-config, fixed, border-color);
-            }            
+            border-top: get($toolbar-config, fixed, border-top);
         }
 
         // Aside default enabled, aside fixed & header sticky modes
@@ -66,10 +60,7 @@
             left: 0;
             z-index: get($toolbar-config, fixed, z-index);
             background-color: get($toolbar-config, fixed, bg-color);
-
-            @if isDefaultSkin() {
-                box-shadow: get($toolbar-config, fixed, box-shadow);
-            }           
+            box-shadow: get($toolbar-config, fixed, box-shadow);
         }
 
         // Toolbar enabled & toolbar not fixed modes
@@ -80,10 +71,7 @@
         // Fixed header & fixed toolbar modes
         .header-tablet-and-mobile-fixed.toolbar-tablet-and-mobile-fixed & {
 			top: get($header-config, default, height, tablet-and-mobile);
-            
-            @if isDefaultSkin() {
-                border-top: 1px solid  get($toolbar-config, fixed, border-color);
-            }            
+            border-top: get($toolbar-config, fixed, border-top);
         }
 
         // Page title

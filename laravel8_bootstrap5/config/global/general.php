@@ -4,7 +4,6 @@ return array(
     'product' => array(
         'name'        => 'Metronic',
         'description' => 'Metronic - #1 Selling Bootstrap 5 HTML Multi-demo Admin Dashboard Theme',
-        'version'     => '8.0.18',
         'preview'     => 'https://preview.keenthemes.com/metronic8',
         'purchase'    => 'https://1.envato.market/EA4JP',
         'license'     => 'For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.',

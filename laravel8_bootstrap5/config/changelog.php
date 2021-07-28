@@ -1,6 +1,22 @@
 <?php
 
 return array(
+    'v8.0.20' => array(
+        'date'      => '26 July, 2021',
+        'changelog' => array(
+            'new' => array(),
+
+            'update' => array(
+                'Webpack mix enhancement for <code>Datatable</code> plugin.',
+                'Rename function name <code>skin</code> to <code>mode</code> globally.',
+            ),
+
+            'fix' => array(
+                'Fixed redirect <code>demo2</code> after login for preview.',
+            ),
+        ),
+    ),
+
     'v8.0.19' => array(
         'date'      => '21 July, 2021',
         'changelog' => array(
@@ -22,7 +38,7 @@ return array(
         'changelog' => array(
             'new' => array(
                 'Added new <code>Demo 2</code> layout. Updated <code>webpack.mix.js</code> to build <code>Demo 2</code> asset files. See <a href="https://preview.keenthemes.com/metronic8/laravel/index?demo=demo2">preview</a>.',
-                'Added <code>Demo 1 Dark Mode</code>. Updated <code>webpack.mix.js</code> to build dark CSS files. See <a href="https://preview.keenthemes.com/metronic8/laravel/index?skin=dark">preview</a>',
+                'Added <code>Demo 1 Dark Mode</code>. Updated <code>webpack.mix.js</code> to build dark CSS files. See <a href="https://preview.keenthemes.com/metronic8/laravel/index?mode=dark">preview</a>',
             ),
 
             'update' => array(

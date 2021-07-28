@@ -38,7 +38,7 @@ class BootstrapDemo2 {
             Theme::addPageJs('js/custom/modals/create-app.js');
             Theme::addPageJs('js/custom/modals/upgrade-plan.js');
 
-            if (Theme::getMode() !== 'release') {
+            if (Theme::getViewMode() !== 'release') {
                 Theme::addPageJs('js/custom/intro.js');
             }
         }
@@ -164,6 +164,6 @@ class BootstrapDemo2 {
             'skip-active' => false
         );
 
-        return self::getAsideMenu()->getBreadcrumb($options);
+        return self::getHorizontalMenu()->getBreadcrumb($options);
     }
 }

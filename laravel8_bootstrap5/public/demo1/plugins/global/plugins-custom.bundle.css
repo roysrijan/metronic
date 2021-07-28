@@ -255,7 +255,7 @@
 }
 .select2-container--bootstrap5 .select2-dropdown {
   border: 0;
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
   border-radius: 0.475rem;
   padding: 1rem 0;
   background-color: #ffffff;
@@ -359,7 +359,7 @@
   border: 0;
   width: auto;
   background-color: #ffffff;
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
   font-family: Poppins, Helvetica, "sans-serif";
   z-index: 1000;
   border-radius: 0.475rem;
@@ -576,7 +576,7 @@
 .flatpickr-calendar {
   font-family: inherit;
   border: 0;
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
   border-radius: 0.475rem;
   background-color: #ffffff;
 }
@@ -964,7 +964,7 @@ span.flatpickr-weekday {
 }
 
 .tagify__dropdown {
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
   border: 0 !important;
   outline: none !important;
   padding: 0.75rem 0;
@@ -1145,7 +1145,7 @@ div.dataTables_wrapper .table-responsive {
 }
 div.dataTables_wrapper div.dataTables_processing {
   border-radius: 0.475rem;
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
   background-color: #ffffff;
   color: #7E8299;
   font-weight: 500;
@@ -1388,7 +1388,7 @@ div.dataTables_wrapper div.dataTables_processing {
 }
 
 .noUi-tooltip {
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
   background: #ffffff;
   color: #3F4254;
   font-size: 0.925rem;
@@ -1476,7 +1476,7 @@ div.dataTables_wrapper div.dataTables_processing {
 .ql-snow .ql-picker.ql-expanded .ql-picker-options {
   border: 0;
   padding: 0.5rem 1rem;
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
   background-color: #ffffff;
   border-radius: 0.475rem;
 }
@@ -1490,7 +1490,7 @@ div.dataTables_wrapper div.dataTables_processing {
 .ql-snow .ql-tooltip {
   border: 0;
   padding: 0.5rem 1rem;
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
   border-radius: 0.475rem;
 }
 .ql-snow .ql-tooltip input[type=text] {
@@ -1583,7 +1583,6 @@ body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown):not(.modal-open
 .swal2-popup .swal2-title {
   font-weight: 500;
   font-size: 1.3rem;
-  margin: 2rem 0 0 0;
   color: #181C32;
 }
 .swal2-popup .swal2-html-container,
@@ -1660,7 +1659,7 @@ body.swal2-height-auto {
 .toast {
   transition: all 0.2s ease;
   background-position: 1.5rem center /*rtl:calc(100% - 1.5rem) center*/ !important;
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2) !important;
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1) !important;
   border-radius: 0.475rem !important;
   border: 0 !important;
   background-color: #F5F8FA;
@@ -1780,7 +1779,7 @@ body.swal2-height-auto {
   background: #ffffff;
   border: 0 !important;
   padding: 0.5rem 0 !important;
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
   border-radius: 0.475rem !important;
   overflow: hidden;
   min-width: 10rem !important;
@@ -1795,7 +1794,7 @@ body.swal2-height-auto {
 
 .apexcharts-tooltip.apexcharts-theme-light {
   border-radius: 0.475rem;
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
   border: 0 !important;
   background: #ffffff !important;
   color: #3F4254;
@@ -1810,7 +1809,7 @@ body.swal2-height-auto {
 }
 .apexcharts-xaxistooltip.apexcharts-theme-light {
   border-radius: 0.475rem !important;
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2) !important;
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1) !important;
   border: 0 !important;
   background: #ffffff !important;
   color: #3F4254;
@@ -2093,7 +2092,7 @@ body {
 .fc .fc-popover {
   border: 0 !important;
   background-color: #ffffff;
-  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.2);
+  box-shadow: 0px 0px 50px 0px rgba(82, 63, 105, 0.1);
   border-radius: 0.475rem;
 }
 .fc .fc-popover .fc-popover-header {

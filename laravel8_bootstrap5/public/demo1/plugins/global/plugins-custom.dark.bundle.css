@@ -1583,7 +1583,6 @@ body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown):not(.modal-open
 .swal2-popup .swal2-title {
   font-weight: 500;
   font-size: 1.3rem;
-  margin: 2rem 0 0 0;
   color: #FFFFFF;
 }
 .swal2-popup .swal2-html-container,

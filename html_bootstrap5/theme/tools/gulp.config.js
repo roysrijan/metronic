@@ -1,7 +1,7 @@
 const gulpConfig = {
 	name: 'Metronic',
 	desc: "Gulp build config file",
-	version: "8.0.19",
+	version: "8.0.20",
 	config: {
 		debug: false,
 		compile: {
@@ -448,7 +448,35 @@ const gulpConfig = {
 					dist: {
 						scripts: "{$config.dist}/plugins/custom/ckeditor/ckeditor-document.bundle.js"
 					}
-				}
+				},
+				cropperjs: {
+                    src: {
+                        styles: [
+                            "{$config.path.node_modules}/cropperjs/dist/cropper.css"
+                        ],
+                        scripts: [
+                            "{$config.path.node_modules}/cropperjs/dist/cropper.js"
+                        ]
+                    },
+                    dist: {
+                        styles: "{$config.dist}/plugins/custom/cropper/cropper.bundle.css",
+                        scripts: "{$config.dist}/plugins/custom/cropper/cropper.bundle.js"
+                    }
+                },
+				jkanban: {
+                    src: {
+                        styles: [
+                            "{$config.path.node_modules}/jkanban/dist/jkanban.min.css"
+                        ],
+                        scripts: [
+                            "{$config.path.node_modules}/jkanban/dist/jkanban.min.js"
+                        ]
+                    },
+                    dist: {
+                        styles: "{$config.dist}/plugins/custom/jkanban/jkanban.bundle.css",
+                        scripts: "{$config.dist}/plugins/custom/jkanban/jkanban.bundle.js"
+                    }
+                },
 			},
 		},
 		custom: {

@@ -509,6 +509,7 @@ const bundle = (bundle) => {
         case "styles":
           if (bundle.dist.hasOwnProperty(type)) {
 
+            // dark mode
             if (args.darkMode) {
               const srcFiles = bundle.src[type];
 
@@ -532,6 +533,7 @@ const bundle = (bundle) => {
                 streams.push(stream);
               }
             }
+            // dark mode
 
             // rtl css bundle
             if (
@@ -573,6 +575,31 @@ const bundle = (bundle) => {
                 stream.pipe(outputRTLCSS);
               }
               streams.push(stream);
+
+              // dark mode RTL
+              if (args.darkMode) {
+                // modify file name to dark
+                let toDarkFiles = toRtlFiles.map(changeDarkFileName).filter(function (el) {
+                  return el != null;
+                });
+
+                if (typeof toDarkFiles !== 'undefined' && toDarkFiles.length > 0) {
+                  const fileName = baseName(bundle.dist[type]).replace('.bundle', '.dark.bundle.rtl.css');
+                  const darkOutput = pathOnly(bundle.dist[type]) + "/" + fileName;
+                  stream = gulp
+                      .src(toDarkFiles, {allowEmpty: true})
+                      .pipe(cssRewriter(bundle.dist)())
+                      .pipe(concat(fileName))
+                      .pipe(cssChannel(shouldRtl)());
+                  const outputDarkCSS = outputChannel(darkOutput, fileName, type)();
+                  if (outputDarkCSS) {
+                    stream.pipe(outputDarkCSS);
+                  }
+                  streams.push(stream);
+                }
+              }
+              // dark mode RTL
+
             }
 
             // default css bundle

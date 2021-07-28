@@ -22,7 +22,7 @@ class Theme {
      *
      * @var string
     */
-    public static $mode;
+    public static $viewMode;
 
     /**
      * Theme name
@@ -220,19 +220,19 @@ class Theme {
      *
      * @param string $value the theme's mode(preview, release).
     */
-    public static function setMode($value) {
+    public static function setViewMode($value) {
         // force preview mode on server
         if (isset($_SERVER['SERVER_NAME']) && strpos($_SERVER['SERVER_NAME'], 'keenthemes.com') !== false) {
-            self::$mode = 'preview';
-        } elseif (isset($_REQUEST['mode']) && $_REQUEST['mode'] === 'release') {
-            self::$mode = 'release';
+            self::$viewMode = 'preview';
+        } elseif (isset($_REQUEST['viewMode']) && $_REQUEST['viewMode'] === 'release') {
+            self::$viewMode = 'release';
         } else {
-            self::$mode = $value;
+            self::$viewMode = $value;
         }
     }
 
-    public static function getMode() {
-        return self::$mode;
+    public static function getViewMode() {
+        return self::$viewMode;
     }
 
     public static function getName() {
@@ -442,7 +442,7 @@ class Theme {
 
     public static function appendVersionToUrl($path) {
         // only at preview version
-        if (self::$mode == 'preview') {
+        if (self::$viewMode == 'preview') {
             $path .= '?v=' . self::getOption('theme/version');
         }
 
@@ -576,10 +576,10 @@ class Theme {
     public static function rtlCssFilename($path) {
         if (isset($_REQUEST['rtl']) && $_REQUEST['rtl'] == 1) {
             $path = str_replace('.css', '.rtl.css', $path);
-        } elseif (isset($_REQUEST['skin']) && $_REQUEST['skin'] && $_REQUEST['skin'] !== 'default') {
+        } elseif (isset($_REQUEST['mode']) && $_REQUEST['mode'] && $_REQUEST['mode'] !== 'default') {
             if (self::isDarkModeEnabled() && (strpos($path, 'plugins.bundle.css') !== false || strpos($path, 'style.bundle.css') !== false)) {
                 // import dark mode css
-                $path = str_replace('.bundle', '.'.$_REQUEST['skin'].'.bundle', $path);
+                $path = str_replace('.bundle', '.'.$_REQUEST['mode'].'.bundle', $path);
             }
         }
 
@@ -609,13 +609,13 @@ class Theme {
     }
 
     /**
-     * Get current skin
+     * Get current mode
      *
      * @return mixed|string
      */
-    public static function getCurrentSkin() {
-        if (self::isDarkModeEnabled() && isset($_REQUEST['skin']) && $_REQUEST['skin']) {
-            return $_REQUEST['skin'];
+    public static function getCurrentMode() {
+        if (self::isDarkModeEnabled() && isset($_REQUEST['mode']) && $_REQUEST['mode']) {
+            return $_REQUEST['mode'];
         }
 
         return 'default';
@@ -627,46 +627,56 @@ class Theme {
      * @return mixed|string
      */
     public static function isDarkMode() {
-        return self::getCurrentSkin() === 'dark';
+        return self::getCurrentMode() === 'dark';
     }
 
-    public static function getPageUrl($path, $demo = '', $skin = null) {
+    public static function getPageUrl($path, $demo = '', $mode = null) {
         // Disable pro page URL's for the free version
         if (self::isFreeVersion() === true && self::isProPage($path) === true) {
             return "#";
         }
 
-        if (isset($_REQUEST['type']) && $_REQUEST['type'] === 'html') {
-            if (!empty($demo)) {
-                if(self::getMode() === 'release') {
-                    // force add link to other demo in release
-                    $path = '../../'.$demo.'/dist/'.$path;
-                } else {
-                    // for preview
-                    $path = '../'.$demo.'/'.$path;
-                }
-            }
+        $baseUrl = self::getBaseUrlPath();
 
-            $params = '';
+        $params = '';
+        if (isset($_REQUEST['type']) && $_REQUEST['type'] === 'html') {
             // param keep in url
             if (isset($_REQUEST['rtl']) && $_REQUEST['rtl']) {
                 $params = 'rtl/';
             }
 
-            if ($skin !== null) {
-                if ($skin) {
-                    $params = $skin.'/';
+            if ($mode !== null) {
+                if ($mode) {
+                    $params = $mode.'/';
                 }
             } else {
-                if (isset($_REQUEST['skin']) && $_REQUEST['skin']) {
-                    $params = $_REQUEST['skin'].'/';
+                if (isset($_REQUEST['mode']) && $_REQUEST['mode']) {
+                    $params = $_REQUEST['mode'].'/';
                 }
             }
 
-            $url = self::getBaseUrlPath().$params.$path.'.html';
+            if (!empty($demo)) {
+                if (self::getViewMode() === 'release') {
+                    // force add link to other demo in release
+                    $baseUrl .= '../../'.$demo.'/dist/';
+                } else {
+                    // for preview
+                    $baseUrl .= '../'.$demo.'/'.$params;
+                }
+            } else {
+                if (self::getViewMode() === 'release') {
+                    // force add link to other demo in release
+                    $baseUrl .= '../../'.self::getDemo().'/dist/';
+                } else {
+                    // for preview
+                    $baseUrl .= '../'.self::getDemo().'/'.$params;
+                }
+            }
+
+            $url = $baseUrl.$path.'.html';
 
             // skip layout builder page for generated html
-            if (strpos($path, 'builder') !== false && self::getMode() === 'release') {
+            if (strpos($path, 'builder') !== false && self::getViewMode() === 'release') {
 
                 if (!empty(self::getDemo())) {
                     $path = self::getDemo().'/'.$path;
@@ -675,22 +685,20 @@ class Theme {
                 $url = self::getOption('product', 'preview').'/'.$path.'.html';
             }
         } else {
-            $params = '';
             if (isset($_REQUEST['rtl']) && $_REQUEST['rtl']) {
                 $params = '&rtl=1';
             }
 
-            if ($skin !== null) {
-                if ($skin) {
-                    $params = '&skin='.$skin;
+            if ($mode !== null) {
+                if ($mode) {
+                    $params = '&mode='.$mode;
                 }
             } else {
-                if (isset($_REQUEST['skin']) && $_REQUEST['skin']) {
-                    $params = '&skin='.$_REQUEST['skin'];
+                if (isset($_REQUEST['mode']) && $_REQUEST['mode']) {
+                    $params = '&mode='.$_REQUEST['mode'];
                 }
             }
 
-            $baseUrl = self::getBaseUrlPath();
             if (!empty($demo)) {
                 // force add link to other demo
                 $baseUrl .= '../../'.$demo.'/dist/';
