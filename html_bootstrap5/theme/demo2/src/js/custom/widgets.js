@@ -2351,7 +2351,8 @@ var KTWidgets = function () {
                     bar: {
                         horizontal: false,
                         columnWidth: ['50%'],
-                        endingShape: 'rounded'
+                        endingShape: 'rounded',
+                        borderRadius: 4
                     },
                 },
                 legend: {

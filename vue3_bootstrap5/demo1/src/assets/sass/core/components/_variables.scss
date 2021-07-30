@@ -5,16 +5,16 @@
 
 // Bootstrap base colors
 $white:    											#ffffff !default;
-$gray-100: 											#F5F8FA !default;
-$gray-200: 											#EFF2F5 !default;
-$gray-300: 											#E4E6EF !default;
-$gray-400: 											#B5B5C3 !default;
-$gray-500: 											#A1A5B7 !default;
-$gray-600: 											#7E8299 !default;
-$gray-700: 											#5E6278 !default;
-$gray-800: 											#3F4254 !default;
-$gray-900: 											#181C32 !default;
 $black:    											#000000 !default;
+$gray-100: 										    if(isDarkMode(), #1b1b29, #F5F8FA) !default;
+$gray-200: 										    if(isDarkMode(), #2B2B40, #EFF2F5) !default;
+$gray-300: 										    if(isDarkMode(), #323248, #E4E6EF) !default;
+$gray-400: 										    if(isDarkMode(), #474761, #B5B5C3) !default;
+$gray-500: 										    if(isDarkMode(), #565674, #A1A5B7) !default;
+$gray-600: 										    if(isDarkMode(), #6D6D80, #7E8299) !default;
+$gray-700: 										    if(isDarkMode(), #92929F, #5E6278) !default;
+$gray-800: 										    if(isDarkMode(), #CDCDDE, #3F4254) !default;
+$gray-900: 										    if(isDarkMode(), #FFFFFF, #181C32) !default;
 $text-muted:                                        $gray-500 !default;
 
 // Bootstrap gray colors map
@@ -31,7 +31,7 @@ $grays: (
 ) !default; // Custom variable
 
 // Bootstrap custom colors
-$blue:                                             #0d6efd !default;
+$blue:                                             #009ef6 !default;
 $indigo:                                           #6610f2 !default;
 $purple:                                           #6f42c1 !default;
 $pink:                                             #d63384 !default;
@@ -62,14 +62,14 @@ $colors: (
 // Bootstrap contextual colors
 // Dark colors
 $dark:          									$gray-900 !default; // Bootstrap variable
-$dark-active:          								darken($dark, 3%) !default; // Custom variable
+$dark-active:          								if(isDarkMode(), darken($gray-900, 9%), darken($gray-900, 3%)) !default;
 $dark-light:          							    $gray-200 !default; // Custom variable
-$dark-inverse:         								$white !default; // Custom variable
+$dark-inverse:         								if(isDarkMode(), $gray-100, $white) !default; // Custom variable
 
 // Primary colors
 $primary:       									#3699FF !default; // Bootstrap variable
 $primary-active:    								#187DE4 !default; // Custom variable
-$primary-light:    								    #F1FAFF !default; // Custom variable
+$primary-light:    								    if(isDarkMode(), #212E48, #F1FAFF) !default; // Custom variable
 $primary-inverse:  									$white !default;  // Custom variable
 
 // Secondary colors
@@ -81,31 +81,31 @@ $secondary-inverse:									$gray-800 !default; // Custom variable
 // Light colors
 $light:     									    $gray-100 !default; // Bootstrap variable
 $light-active:  								    $gray-300 !default; // Custom variable
-$light-inverse:									    $gray-600 !default; // Custom variable
+$light-inverse:									    if(isDarkMode(),$gray-800, $gray-600) !default; // Custom variable
 $lighten:                                           rgba($light, 0.5); // Custom variable
 
 // Success colors
 $success:       									#1BC5BD !default; // Bootstrap variable
 $success-active:    								#0BB7AF !default; // Custom variable
-$success-light:    									#C9F7F5 !default; // Custom variable
+$success-light:    									if(isDarkMode(), #1C3833, #C9F7F5) !default; // Custom variable
 $success-inverse:  									$white !default; // Custom variable
 
 // Inco colors
 $info:         		 								#8950FC !default; // Bootstrap variable
 $info-active:   		 							#7337EE !default; // Custom variable
-$info-light:   		 								#EEE5FF !default; // Custom variable
+$info-light:   		 								if(isDarkMode(), #2F264F, #EEE5FF) !default; // Custom variable
 $info-inverse: 		 								$white !default; // Custom variable
 
 // Warning colors
 $warning:       									#FFA800 !default; // Bootstrap variable
 $warning-active:    								#EE9D01 !default; // Custom variable
-$warning-light:    									#FFF4DE !default; // Custom variable
+$warning-light:    									if(isDarkMode(), #392F28, #FFF4DE) !default; // Custom variable
 $warning-inverse:  									$white !default; // Custom variable
 
 // Danger colors
 $danger:        									#F64E60 !default; // Bootstrap variable
 $danger-active:     								#EE2D41 !default; // Custom variable
-$danger-light:     									#FFE2E5 !default; // Custom variable
+$danger-light:     									if(isDarkMode(), #3A2434, #FFE2E5) !default; // Custom variable
 $danger-inverse:   									$white !default; // Custom variable
 
 // White colors
@@ -243,10 +243,9 @@ $position-values: (
 // Body
 //
 // Settings for the `<body>` element.
-$body-bg:                                           $white !default;
+$body-bg:                                           if(isDarkMode(), #1E1E2D, $white) !default;
 $body-color:                                        $gray-900 !default;
 $body-text-align:                                   null !default;
-
 
 
 // Links
@@ -354,7 +353,7 @@ $border-radius-lg:            						.775rem !default;
 $border-radius-xl:                                  1rem !default; // Custom variable
 
 // Box shadow
-$box-shadow-xs:                                     0px 0px 30px rgba(25, 53, 80, 0.055) !default; // Custom variable
+$box-shadow-xs:                                     0 .1rem 0.75rem 0.25rem rgba($black, 0.05) !default; // Custom variable
 $box-shadow-sm:               						0 .1rem 1rem 0.25rem rgba($black, .05) !default;
 $box-shadow:                  						0 .5rem 1.5rem 0.5rem rgba($black, .075) !default;
 $box-shadow-lg:               						0 1rem 2rem 1rem rgba($black, .1) !default;
@@ -375,7 +374,7 @@ $grid-gutter-width:                                 1.5rem !default;
 $grid-row-columns:                                  6 !default;
 
 $gutters: (
-    0: 0,
+    0: 0rem,
     1: ($spacer * .25),  	// 3.5px
     2: ($spacer * .5),   	// 7px;
     3: ($spacer * .75),  	// 10.5px
@@ -467,12 +466,12 @@ $font-sizes: (
     5tx: $font-size-base * 5.75     // 74.75px
 ) !default;
 
-$headings-margin-bottom:                            $spacer / 2 !default;
+$headings-margin-bottom:                            $spacer * 0.5 !default;
 $headings-font-family:                              null !default;
 $headings-font-style:                               null !default;
 $headings-font-weight:                              $font-weight-bolder !default;
 $headings-line-height:                              1.2 !default;
-$headings-color:                                    null !default;
+$headings-color:                                    $gray-900 !default;
 
 $display-font-sizes: (
     1: 5rem,
@@ -564,7 +563,7 @@ $btn-extended-variants:                             true !default; // Custom var
 $form-label-margin-bottom:                          .5rem !default;
 $form-label-font-size:                              1.05rem !default;
 $form-label-font-weight:                            500 !default;
-$form-label-color:                                  null !default;
+$form-label-color:                                  $gray-800 !default;
 
 $form-text-margin-top:                              .5rem !default;
 $form-text-font-size:                               $font-size-sm !default;
@@ -582,7 +581,7 @@ $input-solid-bg-focus:                              darken($gray-100, 2%) !defau
 $input-solid-placeholder-color:                     $input-placeholder-color !default;  // Custom variable
 $input-solid-color:                              	$gray-700 !default; // Custom variable
 
-$input-bg:                                          $white !default;
+$input-bg:                                          $body-bg !default;
 $input-disabled-bg:                                 $gray-200 !default;
 $input-readonly-bg:                                 $input-bg !default;  // Custom variable
 $input-disabled-border-color:                       null !default;
@@ -636,6 +635,7 @@ $form-check-label-disabled-opacity:                 $form-check-input-disabled-o
 $form-check-btn-check-disabled-opacity:             $btn-disabled-opacity !default;
 
 $form-switch-color:                                 rgba(0, 0, 0, .25) !default;
+$form-switch-color-solid:                           if(isDarkMode(), $gray-500, $white) !default;
 $form-switch-width:                                 3.25rem !default;
 $form-switch-height:                                2.25rem !default; // Custom variable
 $form-switch-width-sm:                              2.5rem !default; // Custom variable
@@ -646,7 +646,7 @@ $form-switch-height-lg:                             2.75rem !default; // Custom 
 $form-switch-padding-start:                         $form-switch-width + .5rem !default;
 $form-switch-padding-left:                          $form-switch-width + .5rem !default;
 $form-switch-bg-image:                              url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color}'/></svg>") !default;
-$form-switch-bg-image-solid:                        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$white}'/></svg>") !default;
+$form-switch-bg-image-solid:                        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color-solid}'/></svg>") !default;
 $form-switch-border-radius:                         $form-switch-width !default;
 
 $form-switch-focus-color:                           $input-focus-border-color !default;
@@ -670,7 +670,8 @@ $nav-tabs-border-width:                             $border-width !default;
 
 
 // Card
-$card-box-shadow: 									0px 0px 30px 0px rgba(82,63,105,0.05) !default; // card custom shadow
+$card-bg:                                           $body-bg !default;
+$card-box-shadow: 									if(isDarkMode(), 0px 0px 30px 0px rgba(0, 0, 0, 0.02), 0px 0px 20px 0px rgba(76,87,125,0.02)) !default; // card custom shadow
 $card-border-color:                 				$border-color !default;
 $card-border-dashed-color:                 			$border-dashed-color !default;
 $card-cap-bg:                       				$white !default;
@@ -681,8 +682,8 @@ $card-border-radius:                				$border-radius !default;
 $card-header-py:                                    0.5rem !default; // Custom variable
 $card-header-height: 								70px !default; // Custom variable
 
-
 // Accordion
+$accordion-color:                                   $body-color !default;
 $accordion-padding-y:                               1.5rem !default;
 $accordion-padding-x:                               1.5rem !default;
 $accordion-border-color:                            $border-color !default;
@@ -721,7 +722,7 @@ $modal-header-border-width:                         1px !default;
 $modal-footer-border-width:                         1px !default;
 
 $modal-content-color:               				null !default;
-$modal-content-bg:                  				$white !default;
+$modal-content-bg:                  				$body-bg !default;
 $modal-content-border-color:        				null !default;
 $modal-content-border-width:        				0 !default;
 $modal-content-border-radius:       				$border-radius !default;
@@ -732,7 +733,7 @@ $modal-content-box-shadow-xs:       				0 .25rem .5rem rgba($black, .1) !default
 $modal-content-box-shadow-sm-up:   					0 .5rem 1rem rgba($black, .1) !default;
 
 $modal-backdrop-bg:                		 			$black !default;
-$modal-backdrop-opacity:            				.2 !default;
+$modal-backdrop-opacity:            				if(isDarkMode(), 0.4, 0.3) !default;
 
 $modal-xl:                         		 			1140px !default;
 $modal-lg:                          				800px !default;
@@ -740,19 +741,29 @@ $modal-md:                          				500px !default;
 $modal-sm:                          				300px !default;
 
 
+// Alerts
+// Define alert colors, border radius, and padding.
+$alert-color-scale:                                 if(isDarkMode(), 60%, 40%) !default;
+$alert-border-scale:                                if(isDarkMode(), -60%, -70%) !default;
+$alert-bg-scale:                                    if(isDarkMode(), -60%, -80%) !default;
+
+
 
 // Dropdowns
 // Dropdown menu container and contents.
-$dropdown-box-shadow:								0px 0px 50px 0px rgba(82,63,105, 0.15) !default;
+$dropdown-box-shadow:								if(isDarkMode(), 0px 0px 30px rgba(0, 0, 0, 0.3), 0px 0px 50px 0px rgba(82,63,105, 0.1)) !default;
 $dropdown-border-radius:                            $border-radius !default;
 $dropdown-border-width:                             0 !default;
+$dropdown-bg:                                       $body-bg !default;
+
 
 
 // Pagination
 
 $pagination-item-height:                             2.5rem !default; // Custom variable
-$pagination-item-bg:                                 $white !default; // Custom variable
+$pagination-item-bg:                                 $body-bg !default; // Custom variable
 $pagination-item-space:                              0.5rem !default; // Custom variable
+$pagination-item-space-tablet-and-mobile:            0.25rem !default; // Custom variable
 $pagination-font-weight:                             $font-weight-bold !default; // Custom variable
 $pagination-font-size:                               $font-size-lg !default; // Custom variable
 $pagination-icon-font-size:                          0.85rem !default; // Custom variable
@@ -791,21 +802,20 @@ $pagination-disabled-border-color:                  transparent !default;
 
 $pagination-transition:                             color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
-
-
 // Popovers
+$popover-bg:                                        if(isDarkMode(), $gray-200, $body-bg) !default;
 $popover-font-size:                 				$font-size-base !default;
-$popover-border-color:              				$white !default;
+$popover-border-color:              				$popover-bg !default;
 $popover-border-radius:             				$border-radius !default;
-$popover-box-shadow:                				0px 0px 20px 0px rgba(0,0,0,0.15) !default;
-$popover-header-bg:                 				$white !default;
-$popover-header-color:              				$dark !default;
+$popover-box-shadow:                				$dropdown-box-shadow !default;
+$popover-header-bg:                 				$popover-bg !default;
+$popover-header-color:              				$gray-800 !default;
 $popover-header-font-weight:           				500 !default;  // Custom variable
 $popover-header-font-size:             				1rem !default;  // Custom variable
 $popover-header-padding-y:          				1rem !default;
 $popover-header-padding-x:          				1.25rem !default;
-$popover-header-border-color:                       $gray-100 !default;  // Custom variable
-$popover-body-color:                				$body-color !default;
+$popover-header-border-color:                       if(isDarkMode(), $gray-300, $gray-100) !default;  // Custom variable
+$popover-body-color:                				$gray-800 !default;
 $popover-body-padding-y:                            1.25rem !default;
 $popover-body-padding-x:                            1.25rem !default;
 
@@ -817,8 +827,8 @@ $popover-dissmis-btn-end:                           0.85rem !default;  // Custom
 $tooltip-font-size:                 				$font-size-sm !default;
 $tooltip-max-width:                 				200px !default;
 $tooltip-color:                     				$gray-800 !default;
-$tooltip-bg:                        				$white !default;
-$tooltip-border-radius:             				3px !default;
+$tooltip-bg:                        				$popover-bg !default;
+$tooltip-border-radius:             				$btn-border-radius !default;
 $tooltip-opacity:                   				1 !default;
 $tooltip-box-shadow:                				$popover-box-shadow !default; // Custom variable
 $tooltip-padding-y:                 				.75rem !default;
@@ -832,7 +842,7 @@ $badge-font-size:                                   .85rem !default;
 $badge-font-size-sm:                                .85rem !default;
 $badge-font-size-lg:                                1rem !default;
 $badge-font-weight:                                 $font-weight-bolder !default;
-$badge-color:                                       $white !default;
+$badge-color:                                       $body-bg !default;
 $badge-padding-y:                                   .5em !default;
 $badge-padding-x:                                   .85em !default;
 $badge-border-radius:                               $border-radius !default;
@@ -843,9 +853,9 @@ $badge-size-lg:                                     2rem !default; // Custom var
 
 
 // Code
-$code-bg:                                           $gray-100 !default; // Custom variable
+$code-bg:                                           if(isDarkMode(), $gray-200, #F1F3F8) !default; // Custom variable
 $code-box-shadow:                                   0px 3px 9px rgba(0, 0, 0, 0.08) !default; // Custom variable
-$code-padding:                                      1px 0.4rem !default; // Custom variable
+$code-padding:                                      0.1rem 0.4rem !default; // Custom variable
 $code-margin:                                       0 0.5rem !default; // Custom variable
 $code-font-weight:                                  400 !default; // Custom variable
 $code-border-radius:                                0.3rem !default;  // Custom variable
@@ -1077,10 +1087,10 @@ $sticky-toolbar: (
 // Drawer
 $drawer: (
 	z-index: 110, // Drawer's z-index
-	box-shadow: 0px 1px 9px -3px rgba(0,0,0, 0.05), // Drawer's box shadow
-	bg-color: #ffffff, // Drawer's background color
+	box-shadow: if(isDarkMode(), 0px 0px 30px rgba(0, 0, 0, 0.1), 0px 1px 9px -3px rgba(0,0,0, 0.05)), // Drawer's box shadow
+	bg-color: $body-bg, // Drawer's background color
 	transition-speed: 0.3s,
-	overlay-bg-color: rgba(#000000, 0.1), // Offcanvas overlay background color
+	overlay-bg-color: if(isDarkMode(), rgba($black, 0.4), rgba($black, 0.2)), // Offcanvas overlay background color
 	overlay-animation-speed: 0.3s
 ) !default;
 
@@ -1091,7 +1101,7 @@ $menu: (
 	dropdown: (
 		box-shadow: $dropdown-box-shadow,
 		z-index: 105,
-		background-color: $white,
+		background-color: $body-bg,
         border-radius: $border-radius,
         animation: true,
         animation-speed: 0.3s,
@@ -1150,7 +1160,7 @@ $feedback: (
 	popup: (
 		z-index: 1000,
 		box-shadow: $dropdown-box-shadow,
-		background-color: $white,
+		background-color: $body-bg,
 		border-radius: $border-radius,
 		transition-speed: 0.6s,
 		padding: 1rem 1.25rem
@@ -1166,6 +1176,20 @@ $scrollbar: (
     height: 0.4rem,
     color: $gray-200,
     hover-color: darken($gray-200, 2%)
+) !default;
+
+
+
+// Overlay
+$overlay: (
+    bg: rgba($black, 0.05)
+) !default;
+
+
+
+// BlockUI
+$blockui: (
+    overlay-bg: rgba($black, 0.05)
 ) !default;
 
 

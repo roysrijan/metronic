@@ -21,6 +21,7 @@ export function AsideMenuDocs() {
       {/* <AsideMenuItem to="/docs/rtl" title="RTL Version" /> */}
       {/* <AsideMenuItem to="/docs/skeleton" title="Skeleton" /> */}
       {/* <AsideMenuItem to='/builder' title='Layout Builder' /> */}
+        <AsideMenuItem to='/docs/dark-mode' title='Dark Mode' />
       <AsideMenuItem to='/docs/updates' title='Updates' />
       <AsideMenuItem to='/docs/changelog' title='Changelog' />
       <AsideMenuItem to='/docs/references' title='References' />
@@ -70,7 +71,7 @@ export function AsideMenuDocs() {
         <AsideMenuItem to='/docs/cards' title='Cards' />
         <AsideMenuItem to='/docs/carousel' title='Carousel' />
         <AsideMenuItem to='/docs/indicator' title='Indicator' />
-        {/*<AsideMenuItem to='/docs/modal' title='Modal' />*/}
+        <AsideMenuItem to='/docs/modal' title='Modal' />
         <AsideMenuItem to='/docs/overlay' title='Overlay' />
         <AsideMenuItem to='/docs/pagination' title='Pagination' />
         <AsideMenuItem to='/docs/pulse' title='Pulse' />

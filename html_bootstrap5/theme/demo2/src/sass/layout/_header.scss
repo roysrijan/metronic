@@ -12,7 +12,7 @@
 		z-index: 2;
 		height: get($header-config, desktop, default, height);
 		transition: left get($aside-config, transition-speed) ease;
-		border-bottom: 1px solid rgba($white, 0.1);
+		border-bottom: get($header-config, desktop, default, border);
 
 		// Header Logo
 		.header-logo {
@@ -45,6 +45,7 @@
 			background-color: get($header-config, desktop, fixed, bg-color);
 			box-shadow: get($header-config, desktop, fixed, box-shadow);
 			height: get($header-config, desktop, fixed, height);
+			border-bottom: get($header-config, desktop, fixed, border);
 			padding: 0;
 
 			// Header Logo
@@ -94,7 +95,7 @@
 		height: get($header-config, tablet-and-mobile, default, height);
 		position: relative;
 		z-index: 3;
-		border-bottom: 1px solid rgba($white, 0.1);
+		border-bottom: get($header-config, tablet-and-mobile, default, border);
 
 		// Header Logo
 		.header-logo {
@@ -119,6 +120,7 @@
 			min-height: get($header-config, tablet-and-mobile, fixed, height);
 			background-color: get($header-config, tablet-and-mobile, fixed, bg-color);
 			box-shadow: get($header-config, tablet-and-mobile, fixed, box-shadow);
+			border-bottom: get($header-config, tablet-and-mobile, fixed, border);
 
 			// Header Logo
 			.header-logo {

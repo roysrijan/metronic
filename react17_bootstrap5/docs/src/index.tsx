@@ -5,6 +5,7 @@ import {Chart, registerables} from 'chart.js'
 // Apps
 import {App} from './app/App'
 import './_metronic/assets/sass/style.scss'
+import 'bootstrap'
 /**
  * Base URL of the website.
  *

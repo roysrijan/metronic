@@ -1,8 +1,5 @@
 "use strict";
 
-require('select2');
-require('../vendors/plugins/select2.init.js');
-
 // Class definition
 var KTApp = function() {
     var initPageLoader =  function() {
@@ -29,7 +26,7 @@ var KTApp = function() {
         // Check dismiss options
         if (el.hasAttribute('data-bs-dismiss') && el.getAttribute('data-bs-dismiss') == 'click') {
             options['dismiss'] = 'click';
-        }
+        }            
 
         // Initialize popover
         var tp = new bootstrap.Tooltip(el, options);
@@ -113,19 +110,7 @@ var KTApp = function() {
         var elements = [].slice.call(document.querySelectorAll('[data-bs-spy="scroll"]'));
 
         elements.map(function (element) {
-            var sel = element.getAttribute('data-bs-target');
-            //var offset = element.hasAttribute('data-bs-target-offset') ?  parseInt(element.getAttribute('data-bs-target-offset')) : 0;
-
-            /*
-            KTUtil.on(document.body,  element.getAttribute('data-bs-target') + ' [href]', 'click', function(e) {
-                e.preventDefault();
-
-                var el = document.querySelector(this.getAttribute('href'));
-
-                KTUtil.scrollTo(el, offset);
-            });
-            */
-
+            var sel = element.getAttribute('data-bs-target');            
             var scrollContent = document.querySelector(element.getAttribute('data-bs-target'));
             var scrollSpy = bootstrap.ScrollSpy.getInstance(scrollContent);
             if (scrollSpy) {
@@ -151,7 +136,7 @@ var KTApp = function() {
                 this.classList.add('active');
             });
         });
-    }
+    }   
 
     var initCheck = function() {
         // Toggle Handler
@@ -164,14 +149,14 @@ var KTApp = function() {
                     target.checked = check.checked;
                 } else {
                     target.classList.toggle('active');
-                }
+                }                
             });
         });
     }
 
     var initSelect2 = function() {
         var elements = [].slice.call(document.querySelectorAll('[data-control="select2"], [data-kt-select2="true"]'));
-
+       
         elements.map(function (element) {
             var options = {
                 dir: document.body.getAttribute('direction')
@@ -180,14 +165,14 @@ var KTApp = function() {
             if ( element.getAttribute('data-hide-search') == 'true') {
                 options.minimumResultsForSearch = Infinity;
             }
-
+            
             $(element).select2(options);
         });
     }
 
     var initAutosize = function() {
         var inputs = [].slice.call(document.querySelectorAll('[data-kt-autosize="true"]'));
-
+       
         inputs.map(function (input) {
             autosize(input);
         });
@@ -226,9 +211,9 @@ var KTApp = function() {
                 var count = new countUp.CountUp(element, value, options);
 
                 count.start();
-
+                
                 element.classList.add('counted');
-            }
+            }                
         });
     }
 
@@ -243,7 +228,7 @@ var KTApp = function() {
         var tabs = [].slice.call(document.querySelectorAll('[data-kt-countup-tabs="true"][data-bs-toggle="tab"]'));
         tabs.map(function (tab) {
             tab.addEventListener('shown.bs.tab', initCountUp);
-        });
+        });        
     }
 
     var initTinySliders = function() {
@@ -273,7 +258,7 @@ var KTApp = function() {
                     let optionName = attrName.replace('data-tns-', '').toLowerCase().replace(/(?:[\s-])\w/g, function(match) {
                         return match.replace('-', '').toUpperCase();
                     });
-
+                    
                     if (attrName === 'data-tns-responsive') {
                         // fix string with a valid json
                         const jsonStr = el.getAttribute(attrName).replace(/(\w+:)|(\w+ :)/g, function(matched) {
@@ -335,7 +320,7 @@ var KTApp = function() {
                     }
                 }
             });
-        }
+        }        
     }
 
     return {
@@ -343,17 +328,17 @@ var KTApp = function() {
             this.initPageLoader();
 
             this.initBootstrapTooltips();
-
+            
             this.initBootstrapPopovers();
-
+            
             this.initScrollSpy();
-
+            
             this.initButtons();
-
+            
             this.initCheck();
-
+            
             this.initSelect2();
-
+            
             this.initCountUp();
 
             this.initCountUpTabs();

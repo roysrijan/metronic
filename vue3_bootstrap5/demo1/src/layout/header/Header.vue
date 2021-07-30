@@ -38,34 +38,10 @@
         class="d-flex align-items-stretch justify-content-between flex-lg-grow-1"
       >
         <!--begin::Navbar-->
-        <div
-          v-if="!isDocPage"
-          class="d-flex align-items-stretch"
-          id="kt_header_menu_nav"
-        >
+        <div class="d-flex align-items-stretch" id="kt_header_menu_nav">
           <KTMenu></KTMenu>
         </div>
         <!--end::Navbar-->
-
-        <template v-if="isDocPage">
-          <div class="page-title d-flex align-items-center mb-5 mb-lg-0">
-            <h1 class="d-flex align-items-center text-dark my-1 fs-4">
-              Documentation
-              <router-link
-                to="/documentation/changelog"
-                class="badge badge-light-danger bg-hover-danger text-hover-white fw-bold fs-9 px-2 ms-2"
-                >v{{ version }}</router-link
-              >
-            </h1>
-
-            <span class="h-20px border-gray-200 border-start mx-4"></span>
-            <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-6 my-1">
-              <li class="breadcrumb-item text-muted">
-                {{ title }}
-              </li>
-            </ul>
-          </div>
-        </template>
 
         <!--begin::Topbar-->
         <div class="d-flex align-items-stretch flex-shrink-0">
@@ -84,8 +60,6 @@
 import { defineComponent } from "vue";
 import KTTopbar from "@/layout/header/Topbar.vue";
 import KTMenu from "@/layout/header/Menu.vue";
-import { version } from "@/core/helpers/documentation";
-import { isDocPage } from "@/core/helpers/documentation";
 
 import {
   headerWidthFluid,
@@ -104,11 +78,9 @@ export default defineComponent({
   },
   setup() {
     return {
-      isDocPage,
       headerWidthFluid,
       headerLeft,
-      asideDisplay,
-      version
+      asideDisplay
     };
   }
 });

@@ -1,6 +1,21 @@
 <?php
 
 return array(
+    'v8.0.21' => array(
+        'date'      => '30 July, 2021',
+        'changelog' => array(
+            'new' => array(
+                'Added new <code>Demo 3</code> layout. See <a href="https://preview.keenthemes.com/metronic8/laravel/index?demo=demo3">preview</a>.',
+            ),
+
+            'update' => array(
+                'Avatar image URL path with <code>subdir</code> option',
+            ),
+
+            'fix' => array(),
+        ),
+    ),
+
     'v8.0.20' => array(
         'date'      => '26 July, 2021',
         'changelog' => array(

@@ -76,7 +76,7 @@
 
 <script lang="ts">
 import { defineComponent, onMounted } from "vue";
-import { DrawerComponent } from "@/assets/ts/components/_DrawerOptions";
+import { DrawerComponent } from "@/assets/ts/components/_DrawerComponent";
 import Item1 from "@/layout/header/partials/activity-timeline/Item1.vue";
 import Item2 from "@/layout/header/partials/activity-timeline/Item2.vue";
 import Item3 from "@/layout/header/partials/activity-timeline/Item3.vue";

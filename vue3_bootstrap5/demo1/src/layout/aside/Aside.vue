@@ -4,8 +4,8 @@
     id="kt_aside"
     class="aside aside-hoverable"
     :class="[
-      (asideTheme === 'light' || isDocPage) && 'aside-light',
-      asideTheme === 'dark' && !isDocPage && 'aside-dark'
+      asideTheme === 'light' && 'aside-light',
+      asideTheme === 'dark' && 'aside-dark'
     ]"
     data-kt-drawer="true"
     data-kt-drawer-name="aside"
@@ -18,10 +18,10 @@
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
       <!--begin::Logo-->
-      <a href="#" v-if="asideTheme === 'dark' && !isDocPage">
+      <a href="#" v-if="asideTheme === 'dark'">
         <img alt="Logo" :src="darkLogo" class="h-15px logo" />
       </a>
-      <a href="#" v-if="asideTheme === 'light' || isDocPage">
+      <a href="#" v-if="asideTheme === 'light'">
         <img alt="Logo" :src="lightLogo" class="h-15px logo" />
       </a>
       <!--end::Logo-->
@@ -34,7 +34,6 @@
         data-kt-toggle-state="active"
         data-kt-toggle-target="body"
         data-kt-toggle-name="aside-minimize"
-        v-if="!isDocPage"
       >
         <span class="svg-icon svg-icon-1 rotate-180">
           <inline-svg
@@ -57,15 +56,8 @@
       class="aside-footer flex-column-auto pt-5 pb-7 px-5"
       id="kt_aside_footer"
     >
-      <router-link
-        v-if="isDocPage"
-        to="/dashboard"
-        class="btn btn-primary w-100"
-        >Preview Metronic</router-link
-      >
-      <router-link
-        v-else
-        to="/documentation/doc-overview"
+      <a
+        href="https://preview.keenthemes.com/metronic8/vue/docs/#/doc-overview"
         class="btn btn-custom btn-primary w-100"
         data-bs-toggle="tooltip"
         data-bs-trigger="hover"
@@ -78,7 +70,7 @@
         <span class="svg-icon btn-icon svg-icon-2">
           <inline-svg src="media/icons/duotone/General/Clipboard.svg" />
         </span>
-      </router-link>
+      </a>
     </div>
     <!--end::Footer-->
   </div>
@@ -88,10 +80,9 @@
 <script lang="ts">
 import { defineComponent, onMounted, onUpdated } from "vue";
 import { useI18n } from "vue-i18n";
-import { DrawerComponent } from "@/assets/ts/components/_DrawerOptions";
+import { DrawerComponent } from "@/assets/ts/components/_DrawerComponent";
 import { ToggleComponent } from "@/assets/ts/components/_ToggleComponent";
 import KTMenu from "@/layout/aside/Menu.vue";
-import { isDocPage } from "@/core/helpers/documentation";
 import { asideTheme } from "@/core/helpers/config";
 
 export default defineComponent({
@@ -116,7 +107,6 @@ export default defineComponent({
     });
 
     return {
-      isDocPage,
       asideTheme,
       t
     };

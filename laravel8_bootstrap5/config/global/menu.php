@@ -72,7 +72,7 @@ return array(
         // Dark skin
         array(
             'title' => 'Dark Mode Version',
-            'path' => 'documentation/getting-started/dark-mode'
+            'path'  => 'documentation/getting-started/dark-mode',
         ),
 
         // RTL
@@ -284,7 +284,7 @@ return array(
 
         // Changelog
         array(
-            'title' => 'Changelog',
+            'title' => 'Changelog v'.theme()->getVersion(),
             'icon'  => theme()->getSvgIcon("icons/duotone/Files/File.svg", "svg-icon-2"),
             'path'  => 'documentation/getting-started/changelog',
         ),
@@ -320,7 +320,7 @@ return array(
 
                     // Changelog
                     array(
-                        'title' => 'Changelog',
+                        'title' => 'Changelog v'.theme()->getVersion(),
                         'icon'  => theme()->getSvgIcon("icons/duotone/Files/File.svg", "svg-icon-2"),
                         'path'  => 'documentation/getting-started/changelog',
                     ),

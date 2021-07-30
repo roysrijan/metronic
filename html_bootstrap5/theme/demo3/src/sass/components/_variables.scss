@@ -733,7 +733,7 @@ $modal-content-box-shadow-xs:       				0 .25rem .5rem rgba($black, .1) !default
 $modal-content-box-shadow-sm-up:   					0 .5rem 1rem rgba($black, .1) !default;
 
 $modal-backdrop-bg:                		 			$black !default;
-$modal-backdrop-opacity:            				if(isDarkMode(), 0.4, 0.2) !default;
+$modal-backdrop-opacity:            				if(isDarkMode(), 0.4, 0.3) !default;
 
 $modal-xl:                         		 			1140px !default;
 $modal-lg:                          				800px !default;
@@ -859,7 +859,7 @@ $code-padding:                                      0.1rem 0.4rem !default; // C
 $code-margin:                                       0 0.5rem !default; // Custom variable
 $code-font-weight:                                  400 !default; // Custom variable
 $code-border-radius:                                0.3rem !default;  // Custom variable
-$code-color:                                        #FF490F !default;  // Custom variable
+$code-color:                                        #b93993 !default;  // Custom variable
 $code-space:                                        0.25rem !default;  // Custom variable
 
 
@@ -1183,6 +1183,13 @@ $scrollbar: (
 // Overlay
 $overlay: (
     bg: rgba($black, 0.05)
+) !default;
+
+
+
+// BlockUI
+$blockui: (
+    overlay-bg: rgba($black, 0.05)
 ) !default;
 
 

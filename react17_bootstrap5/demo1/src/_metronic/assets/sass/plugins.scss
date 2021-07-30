@@ -6,8 +6,11 @@
 ///////////// DO NOT MODIFY BELOW INCLUDE ORDER ////////////////
 ////////////////////////////////////////////////////////////////
 
+// Mode
+$mode: default;
+
 // Initialize
-@import 'init';
+@import "init";
 
 // Plugins
-@import './core/vendors/plugins/plugins';
+@import "./core/vendors/plugins/plugins";

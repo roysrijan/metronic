@@ -376,7 +376,7 @@ var KTUtil = function() {
                 el = el.parentNode;
             }
 
-            return null;
+            return 1;
         },
 
         /**

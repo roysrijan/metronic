@@ -43,7 +43,7 @@
 
         <!--begin::Breadcrumb-->
         <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
-            <?php foreach ($breadcrumb as $item):?>
+            @foreach ($breadcrumb as $item)
                 <!--begin::Item-->
                 @if ( $item['active'] === true )
                     <li class="breadcrumb-item text-white opacity-75">
@@ -68,7 +68,7 @@
                     </li>
                     <!--end::Item-->
                 @endif
-            <?php endforeach?>
+            @endforeach
         </ul>
         <!--end::Breadcrumb-->
     @endif

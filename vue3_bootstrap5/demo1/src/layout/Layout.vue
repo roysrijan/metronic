@@ -18,7 +18,7 @@
       <div id="kt_content" class="content d-flex flex-column flex-column-fluid">
         <!-- begin:: Content Head -->
         <KTToolbar
-          v-if="subheaderDisplay && !isDocPage"
+          v-if="subheaderDisplay"
           :breadcrumbs="breadcrumbs"
           :title="pageTitle"
         />
@@ -33,7 +33,7 @@
             }"
           >
             <KTMobilePageTitle
-              v-if="subheaderDisplay && !isDocPage"
+              v-if="subheaderDisplay"
               :breadcrumbs="breadcrumbs"
               :title="pageTitle"
             />
@@ -71,7 +71,7 @@ import KTCreateApp from "@/components/modals/wizards/CreateAppModal.vue";
 import KTExplore from "@/layout/extras/Explore.vue";
 import KTDrawerMessenger from "@/layout/extras/DrawerMessenger.vue";
 import { Actions } from "@/store/enums/StoreEnums";
-import { MenuComponent } from "@/assets/ts/components/index";
+import { MenuComponent, DrawerComponent } from "@/assets/ts/components/index";
 import { removeModalBackdrop } from "@/core/helpers/dom";
 import {
   toolbarDisplay,
@@ -83,7 +83,6 @@ import {
   themeLightLogo,
   themeDarkLogo
 } from "@/core/helpers/config";
-import { isDocPage } from "@/core/helpers/documentation";
 
 export default defineComponent({
   name: "Layout",
@@ -137,6 +136,8 @@ export default defineComponent({
       () => {
         MenuComponent.hideDropdowns(undefined);
 
+        DrawerComponent.hideAll();
+
         // // check if current user is authenticated
         if (store.getters.isAuthenticated) {
           router.push({ name: "sign-in" });
@@ -155,7 +156,6 @@ export default defineComponent({
       subheaderDisplay,
       pageTitle,
       breadcrumbs,
-      isDocPage,
       themeLightLogo,
       themeDarkLogo
     };

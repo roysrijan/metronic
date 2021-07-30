@@ -6,31 +6,31 @@
 
 // Theme colors
 // Primary
-$primary: if(isDarkSkin(), #3699ff, #009ef7);
-$primary-active: if(isDarkSkin(), #187de4, #0095e8);
-$primary-light: if(isDarkSkin(), #212e48, #f1faff);
-$primary-inverse: #ffffff;
+$primary:       									if(isDarkMode(), #3699FF, #009EF7);
+$primary-active:    								if(isDarkMode(), #187DE4, #0095E8);
+$primary-light:    								    if(isDarkMode(), #212E48, #F1FAFF);
+$primary-inverse:  									#FFFFFF;
 
 // Success
-$success: if(isDarkSkin(), #0bb783, #50cd89);
-$success-active: if(isDarkSkin(), #04aa77, #47be7d);
-$success-light: if(isDarkSkin(), #1c3238, #e8fff3);
-$success-inverse: #ffffff;
+$success:       									if(isDarkMode(), #0BB783, #50CD89);
+$success-active:    								if(isDarkMode(), #04AA77, #47BE7D);
+$success-light:    									if(isDarkMode(), #1C3238, #E8FFF3);
+$success-inverse:  									#FFFFFF;
 
 // Info
-$info: if(isDarkSkin(), #8950fc, #7239ea);
-$info-active: if(isDarkSkin(), #7337ee, #5014d0);
-$info-light: if(isDarkSkin(), #2f264f, #f8f5ff);
-$info-inverse: #ffffff;
+$info:       									    if(isDarkMode(), #8950FC, #7239EA);
+$info-active:    									if(isDarkMode(), #7337EE, #5014D0);
+$info-light:    									if(isDarkMode(), #2F264F, #F8F5FF);
+$info-inverse:  									#FFFFFF;
 
 // Danger
-$danger: if(isDarkSkin(), #f64e60, #f1416c);
-$danger-active: if(isDarkSkin(), #ee2d41, #d9214e);
-$danger-light: if(isDarkSkin(), #3a2434, #fff5f8);
-$danger-inverse: #ffffff;
+$danger:       									    if(isDarkMode(), #F64E60, #F1416C);
+$danger-active:    									if(isDarkMode(), #EE2D41, #D9214E);
+$danger-light:    									if(isDarkMode(), #3A2434, #FFF5F8);
+$danger-inverse:  									#FFFFFF;
 
 // Warning
-$warning: if(isDarkSkin(), #ffa800, #ffc700);
-$warning-active: if(isDarkSkin(), #ee9d01, #f1bc00);
-$warning-light: if(isDarkSkin(), #392f28, #fff8dd);
-$warning-inverse: #ffffff;
+$warning:       									if(isDarkMode(), #FFA800, #FFC700);
+$warning-active:    								if(isDarkMode(), #EE9D01, #F1BC00);
+$warning-light:    									if(isDarkMode(), #392F28, #FFF8DD);
+$warning-inverse:  									#FFFFFF;

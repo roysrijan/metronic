@@ -18,7 +18,7 @@
 			<!--begin::Aside toggle-->
 			<div class="d-flex align-items-center d-lg-none me-3" title="Show aside menu">
 				<div class="btn btn-icon btn-flex btn-active-color-primary" id="kt_docs_aside_toggle">
-					{{ theme()->getSvgIcon("icons/duotone/Text/Menu.svg", "svg-icon-2tx mt-1") }}
+					{!! theme()->getSvgIcon("icons/duotone/Text/Menu.svg", "svg-icon-2tx mt-1") !!}
 				</div>
 			</div>
 			<!--end::Aside toggle-->
@@ -41,7 +41,7 @@
 
 				<!--begin::Toolbar-->
 				<div class="d-flex align-items-center">
-					<?php if(theme()->isFreeVersion() === true):?>
+					@if(theme()->isFreeVersion() === true)
 						<a class="btn btn-bg-white btn-color-gray-700 btn-active-primary fw-bolder me-4" href="{{ theme()->getOption('product', 'preview') }}" target="_blank">
 							Preview
 						</a>
@@ -49,7 +49,7 @@
 						<a class="btn btn-primary fw-bolder" href="{{ theme()->getOption('product', 'purchase') }}" target="_blank">
 							Upgrade to Pro
 						</a>
-					<?php else:?>
+					@else
 						<a class="btn btn-bg-white btn-color-gray-700 btn-active-primary fw-bolder me-4" href="{{ theme()->getOption('product', 'preview') }}" target="_blank">
 							Preview
 						</a>
@@ -57,7 +57,7 @@
 						<a class="btn btn-primary fw-bolder" href="{{ theme()->getOption('product', 'purchase') }}" target="_blank">
 							Purchase
 						</a>
-					<?php endif?>
+					@endif
 				</div>
 				<!--end::Toolbar-->
 			</div>

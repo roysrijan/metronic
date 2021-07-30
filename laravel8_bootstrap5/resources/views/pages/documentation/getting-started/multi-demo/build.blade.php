@@ -13,9 +13,9 @@
         <div class="py-5">
 
             <p>For the preview purpose, we use URL query <code>?demo=demo2</code> to enable the other demos preview without modifying the Laravel routes.
-                See the example preview URL <a href="{{ theme()->getPageUrl('index') . '?demo=demo2' }}">{{ theme()->getPageUrl('index') . '?demo=demo2' }}</a>.</p>
+                See the example preview URL <a href="{{ url()->current() . '?demo=demo2' }}">{{ url()->current() . '?demo=demo2' }}</a>.</p>
 
-            <p>The default build command will build the assets for <code>demo1</code> as below.</p>
+            <p>The default build command will build the assets for <code>demo1</code>.</p>
 
             <div class="py-5">
                 <?php util()->highlight('
@@ -41,7 +41,7 @@
             <ul class="py-5">
                 @foreach(theme()->getOption('product', 'demos') ?? [] as $id => $demo)
                     @if($demo['published'])
-                        <li>{{ $id }}</li>
+                        <li><code>{{ $id }}</code></li>
                     @endif
                 @endforeach
             </ul>

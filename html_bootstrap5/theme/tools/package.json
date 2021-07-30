@@ -1,6 +1,6 @@
 {
     "name": "metronic",
-    "version": "8.0.20",
+    "version": "8.0.21",
     "description": "Metronic - Bootstrap 5 HTML, VueJS, React, Angular & Laravel Admin Dashboard Theme",
     "main": "gulpfile.js",
     "type": "module",
@@ -58,6 +58,7 @@
         "esri-leaflet": "^3.0.2",
         "esri-leaflet-geocoder": "^3.0.0",
         "flatpickr": "^4.6.9",
+        "flot": "^4.2.2",
         "fslightbox": "^3.3.0-2",
         "fullcalendar": "^5.8.0",
         "inputmask": "^5.0.6",

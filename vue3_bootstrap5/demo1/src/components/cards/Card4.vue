@@ -77,7 +77,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { DrawerComponent } from "@/assets/ts/components/_DrawerOptions";
+import { DrawerComponent } from "@/assets/ts/components/_DrawerComponent";
 
 export default defineComponent({
   name: "card-4",

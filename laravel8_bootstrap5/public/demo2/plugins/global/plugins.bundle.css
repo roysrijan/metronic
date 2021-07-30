@@ -4187,12 +4187,14 @@ button.toast-close-button {
   display: none;
   position: relative;
   box-sizing: border-box;
+  grid-template-columns: minmax(0, 100%);
   width: 32em;
   max-width: 100%;
   padding: 0 0 1.25em;
   border: none;
   border-radius: 5px;
   background: #fff;
+  color: #545454;
   font-family: inherit;
   font-size: 1rem;
 }
@@ -4375,8 +4377,9 @@ button.toast-close-button {
 .swal2-html-container {
   z-index: 1;
   justify-content: center;
-  margin: 0;
-  padding: 1em 1.6em 0.3em;
+  margin: 1em 1.6em 0.3em;
+  padding: 0;
+  overflow: auto;
   color: #545454;
   font-size: 1.125em;
   font-weight: normal;

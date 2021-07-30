@@ -43,6 +43,7 @@ import {References} from './gettings-started/References'
 import {RTL} from './gettings-started/RTL'
 import {SASSCustomization} from './gettings-started/SASSCustomization'
 import {Skeleton} from './gettings-started/Skeleton'
+import {DarkMode} from './gettings-started/DarkMode'
 import {Updates} from './gettings-started/Updates'
 import {QuickStart} from './gettings-started/QuickStart'
 import {LineAwesomeIcons} from './icons/LineAwesomeIcons'
@@ -133,6 +134,10 @@ const DocsPage: FC = () => (
       <PageTitle breadcrumbs={gettingStartedBC}>References</PageTitle>
       <References />
     </Route>
+      <Route path='/docs/dark-mode'>
+          <PageTitle breadcrumbs={gettingStartedBC}>Dark Mode</PageTitle>
+          <DarkMode />
+      </Route>
     <Route path='/docs/updates'>
       <PageTitle breadcrumbs={gettingStartedBC}>Updates</PageTitle>
       <Updates />

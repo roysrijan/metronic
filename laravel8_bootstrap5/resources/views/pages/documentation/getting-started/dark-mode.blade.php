@@ -11,6 +11,21 @@
 
         <!--begin::Block-->
         <div class="py-5">
+            At the moment, the available demos that has a dark mode version:
+
+            <ul class="py-5">
+                @foreach(theme()->getOption('product', 'demos') ?? [] as $id => $demo)
+                    @if(config($id.'.general.layout.main.dark-mode-enabled'))
+                        <li><code>{{ $id }}</code></li>
+                    @endif
+                @endforeach
+            </ul>
+
+        </div>
+        <!--end::Block-->
+
+        <!--begin::Block-->
+        <div class="py-5">
             <p>For the preview purpose, we use URL query <code>?mode=dark</code> to enable the other demos preview without modifying the Laravel routes.
                 See the example preview URL <a href="{{ url()->current() . '?mode=dark' }}">{{ url()->current() . '?mode=dark' }}</a>.</p>
 

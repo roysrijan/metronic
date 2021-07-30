@@ -1,7 +1,7 @@
 const gulpConfig = {
 	name: 'Metronic',
 	desc: "Gulp build config file",
-	version: "8.0.20",
+	version: "8.0.21",
 	config: {
 		debug: false,
 		compile: {
@@ -475,6 +475,22 @@ const gulpConfig = {
                     dist: {
                         styles: "{$config.dist}/plugins/custom/jkanban/jkanban.bundle.css",
                         scripts: "{$config.dist}/plugins/custom/jkanban/jkanban.bundle.js"
+                    }
+                },
+				flot: {
+                    src: {
+                        scripts: [
+                            "{$config.path.node_modules}/flot/dist/es5/jquery.flot.js",
+                            "{$config.path.node_modules}/flot/source/jquery.flot.resize.js",
+                            "{$config.path.node_modules}/flot/source/jquery.flot.categories.js",
+                            "{$config.path.node_modules}/flot/source/jquery.flot.pie.js",
+                            "{$config.path.node_modules}/flot/source/jquery.flot.stack.js",
+                            "{$config.path.node_modules}/flot/source/jquery.flot.crosshair.js",
+                            "{$config.path.node_modules}/flot/source/jquery.flot.axislabels.js"
+                        ]
+                    },
+                    dist: {
+                        scripts: "{$config.dist}/plugins/custom/flotcharts/flotcharts.bundle.js"
                     }
                 },
 			},

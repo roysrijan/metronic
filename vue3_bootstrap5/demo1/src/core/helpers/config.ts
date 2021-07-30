@@ -126,7 +126,7 @@ export const asideMenuIcons = computed(() => {
  * @returns {string}
  */
 export const themeLightLogo = computed(() => {
-  return process.env.BASE_URL + store.getters.layoutConfig("main.logo.light");
+  return store.getters.layoutConfig("main.logo.light");
 });
 
 /**
@@ -134,7 +134,7 @@ export const themeLightLogo = computed(() => {
  * @returns {string}
  */
 export const themeDarkLogo = computed(() => {
-  return process.env.BASE_URL + store.getters.layoutConfig("main.logo.dark");
+  return store.getters.layoutConfig("main.logo.dark");
 });
 
 /**

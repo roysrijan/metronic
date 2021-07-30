@@ -9,6 +9,10 @@
 
 /public/demo1
 /public/demo2
+/public/demo3
+/public/demo4
+/public/demo5
+/public/demo6
 
 /storage/*.key
 /vendor

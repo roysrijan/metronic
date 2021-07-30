@@ -21,6 +21,10 @@
 // Main demo style scss
 @import "assets/sass/plugins";
 @import "assets/sass/style";
+
+// Dark mode demo style scss
+//@import "assets/sass/plugins.dark";
+//@import "assets/sass/style.dark";
 </style>
 
 <script lang="ts">

@@ -7,6 +7,7 @@ return array(
         'preview'     => 'https://preview.keenthemes.com/metronic8',
         'purchase'    => 'https://1.envato.market/EA4JP',
         'license'     => 'For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.',
+        'subdir'      => isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'keenthemes.com') !== false ? '/metronic8/laravel' : '',
         'tooltips'    => array(
             "docs-and-components" => '200+ in-house components and 3rd-party plugins',
             'layout-builder'      => 'Build your layout and export HTML for server side integration',
@@ -23,7 +24,7 @@ return array(
             ),
 
             'demo3' => array(
-                'published' => false,
+                'published' => true,
                 'thumbnail' => 'demos/demo3.png',
             ),
 

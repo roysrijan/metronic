@@ -2,7 +2,9 @@
 <div class="toolbar" id="kt_toolbar">
     <!--begin::Container-->
     <div id="kt_toolbar_container" class="{{ theme()->printHtmlClasses('toolbar-container', false) }} d-flex flex-stack">
-        {{ theme()->getView('layout/page-title/_default') }}
+        @if (theme()->getOption('layout', 'page-title/display') && theme()->getOption('layout', 'header/left') !== 'page-title')
+            {{ theme()->getView('layout/page-title/_default') }}
+        @endif
 
 		<!--begin::Actions-->
         <div class="d-flex align-items-center py-1">
