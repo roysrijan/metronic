@@ -1,6 +1,27 @@
 <?php
 
 return array(
+    'v8.0.22' => array(
+        'date'      => '06 August, 2021',
+        'changelog' => array(
+            'new' => array(
+                'Added new <code>Demo 4</code> layout. See <a href="https://preview.keenthemes.com/metronic8/laravel/index?demo=demo4">preview</a>.',
+            ),
+
+            'update' => array(
+                'Enable dark mode for <code>Demo 2</code>. See <a href="https://preview.keenthemes.com/metronic8/laravel/index?demo=demo2&mode=dark">preview</a>.',
+                'Move <code>Demo 3</code> to <code>Demo 7</code>.',
+            ),
+
+            'fix' => array(
+                'Fixed menu icon path in demo1 was imported from different demo assets.',
+                'Use Laravel helper function <code>asset()</code> for images.',
+                'Use Laravel helper function <code>@php ... @endphp</code> for additional PHP code in the blade file.',
+                'Show 404 page for non-exist demo.',
+            ),
+        ),
+    ),
+
     'v8.0.21' => array(
         'date'      => '30 July, 2021',
         'changelog' => array(

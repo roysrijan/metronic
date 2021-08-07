@@ -102,6 +102,21 @@ var KTCreateApp = function () {
 		});
 	}
 
+	// Init form inputs
+	var initForm = function() {
+		// Expiry month. For more info, plase visit the official plugin site: https://select2.org/
+        $(form.querySelector('[name="card_expiry_month"]')).on('change', function() {
+            // Revalidate the field when an option is chosen
+            validations[3].revalidateField('card_expiry_month');
+        });
+
+		// Expiry year. For more info, plase visit the official plugin site: https://select2.org/
+        $(form.querySelector('[name="card_expiry_year"]')).on('change', function() {
+            // Revalidate the field when an option is chosen
+            validations[3].revalidateField('card_expiry_year');
+        });
+	}
+
 	var initValidation = function () {
 		// Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
 		// Step 1
@@ -280,6 +295,7 @@ var KTCreateApp = function () {
 			formSubmitButton = document.querySelector('[data-kt-stepper-action="submit"]');
 
 			initStepper();
+			initForm();
 			initValidation();
 		}
 	};

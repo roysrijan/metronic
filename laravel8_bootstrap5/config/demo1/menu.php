@@ -2,8 +2,6 @@
 
 use App\Core\Adapters\Theme;
 
-Theme::$demo = 'demo1';
-
 return array(
     // Refer to config/global/menu.php
 
@@ -31,14 +29,14 @@ return array(
                     // Documentation
                     array(
                         'title' => 'Documentation',
-                        'icon'  => theme()->getSvgIcon("icons/duotone/Home/Library.svg", "svg-icon-2"),
+                        'icon'  => theme()->getSvgIcon("demo1/media/icons/duotone/Home/Library.svg", "svg-icon-2"),
                         'path'  => 'documentation/getting-started/overview',
                     ),
 
                     // Changelog
                     array(
                         'title' => 'Changelog',
-                        'icon'  => theme()->getSvgIcon("icons/duotone/Files/File.svg", "svg-icon-2"),
+                        'icon'  => theme()->getSvgIcon("demo1/media/icons/duotone/Files/File.svg", "svg-icon-2"),
                         'path'  => 'documentation/getting-started/changelog',
                     ),
                 ),

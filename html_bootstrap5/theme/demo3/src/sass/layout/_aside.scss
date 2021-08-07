@@ -1,35 +1,66 @@
 //
-// Aside extended
+// Aside
 //
 
 // General mode(all devices)
 .aside {
 	display: flex;
-	box-shadow: get($aside-config, box-shadow);
-	
-	// Aside primary panel
-	.aside-primary {
-		flex-shrink: 0;
+	flex-direction: column;
+	background-color: get($aside-config, bg-color);
+	padding: 0;
 
-		// Aside secondary enabled  mode
-		.aside-secondary-enabled & {
-			border-right: 1px solid transparent;
-		}
+	// Aside menu
+	.aside-menu {
+		display: flex;
+		align-items: center;
+		width: 100%;
 
-		// Aside secondary enabled and aside minimized modes disabled mode
-		.aside-secondary-enabled:not([data-kt-aside-minimize="on"]) & {
-			border-right-color: $border-color;
-		}
-	}
+		.menu {			
+			// Menu item
+			> .menu-item {
+				> .menu-link {
+					.menu-title {
+						font-size: 1.1rem;
+					}
+				}
+			
+				&.menu-accordion {
+					&.show,
+					&.showing {
+						> .menu-link {
+							> .menu-icon {
+								.svg-icon {
+									@include menu-link-arrow-rotate(90deg, -90deg);
+								}						
+							}
+						}
+					}
 
-	// Aside secondary panel
-	.aside-secondary {
-		overflow: hidden;
-		
-		// Workspace
-		.aside-workspace {
-			width: get($aside-config, width, desktop) - get($aside-config, primary-width, desktop);
-			flex-shrink: 0;
+					&.hiding {
+						> .menu-link {
+							> .menu-icon {
+								.svg-icon {
+									@include menu-link-arrow-rotate(0, 0);
+								}						
+							}
+						}
+					}	
+				}			
+			}
+
+			// Link colors
+			.menu-item {
+				@include menu-link-default-state( $title-color: $gray-700, $icon-color: $gray-600, $bullet-color: $gray-400, $arrow-color: $gray-400, $bg-color: transparent );
+				@include menu-link-hover-state( $title-color: $gray-900, $icon-color: null, $bullet-color: null, $arrow-color: null, $bg-color: transparent );
+				@include menu-link-show-state( $title-color: $gray-900, $icon-color: $gray-900, $bullet-color: $gray-900, $arrow-color: null, $bg-color: transparent );
+				@include menu-link-active-state( $title-color: $gray-900, $icon-color: $gray-900, $bullet-color: $gray-900, $arrow-color: null, $bg-color: transparent );
+
+				> .menu-link.active {
+					.menu-title {
+						font-weight: $font-weight-bolder;
+					}
+				}
+			}
 		}
 	}
 }
@@ -37,55 +68,20 @@
 // Desktop mode
 @include media-breakpoint-up(lg) {
 	.aside {
-		transition: width get($aside-config, transition-speed) ease;
+		position: fixed;
+		top: get($content-spacing, desktop);
+		bottom: get($content-spacing, desktop);
+		left: get($content-spacing, desktop);
+		z-index: get($aside-config, z-index);
+		overflow: hidden;
+		width: get($aside-config, width);
+		@include border-radius(get($aside-config, border-radius));
 
-		// Aside primary
-		.aside-primary {
-			width: get($aside-config, primary-width, desktop);
-		}
-
-		// Aside secondary panel
-		.aside-secondary {			
-			// Workspace
-			.aside-workspace {
-				width: get($aside-config, width, desktop) - get($aside-config, primary-width, desktop);
-				flex-shrink: 0;
-			}
-		}
-
-		// Fixed aside mode
-		.aside-fixed & {
-			position: fixed;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			z-index: get($aside-config, z-index);
-		}
-
-		// Static aside mode
-		.aside-static & {
-			position: relative;
-			z-index: 1;
-		}
-
-		// Aside secondary enabled
-		.aside-secondary-enabled & {
-			width: get($aside-config, width, desktop);
-		}
-
-		// Aside secondary disabled
-		.aside-secondary-disabled & {
-			width: get($aside-config, primary-width, desktop);
-
-			.aside-primary {
-				border-right: 0;
-			}
-		}
-
-		// Minimized aside mode
-		[data-kt-aside-minimize="on"] & {
-			width: get($aside-config, primary-width, desktop);
-			transition: width get($aside-config, transition-speed) ease;
+		// Logo
+		.aside-logo {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 		}
 	}
 }
@@ -94,34 +90,10 @@
 @include media-breakpoint-down(lg) {
 	.aside {
 		display: none;
-		width: get($aside-config, width, tablet-and-mobile);
 
-		// Aside primary
-		.aside-primary {
-			width: get($aside-config, primary-width, tablet-and-mobile);
-		}
-
-		// Aside secondary
-		.aside-secondary {			
-			// Workspace
-			.aside-workspace {
-				width: get($aside-config, width, tablet-and-mobile) - get($aside-config, primary-width, tablet-and-mobile);
-				flex-shrink: 0;
-			}
-		}
-
-		// Aside secondary enabled
-		.aside-secondary-enabled & {
-			width: get($aside-config, width, tablet-and-mobile);
-		}
-
-		// Aside secondary disabled
-		.aside-secondary-disabled & {
-			width: get($aside-config, primary-width, tablet-and-mobile);
-
-			.aside-primary {
-				border-right: 0;
-			}
+		// Logo
+		.aside-logo {
+			display: none;
 		}
 	}
 }

@@ -1,7 +1,7 @@
 @php
     $path = theme()->getPagePath();
     $path_parts = explode("/", $path);
-    $title = \App\Core\Adapters\Util::camelize($path_parts[1], '-');
+    $title = util()->camelize($path_parts[1], '-');
 
     $options = array(
         'skip-active' => false,
@@ -69,7 +69,7 @@
                                 {{ $item['title'] }}
                             </a>
                         @else
-                            {{ $item['title']  }}
+                            {{ $item['title'] }}
                         @endif
                     </li>
                 @endif

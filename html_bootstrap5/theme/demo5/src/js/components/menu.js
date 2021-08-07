@@ -90,13 +90,12 @@ var KTMenu = function(element, options) {
         var item = _getItemElement(element);
         var items = _getItemChildElements(item);
 
-        //if ( item !== null && _getItemOption(item, 'trigger') === 'click' &&  _getItemSubType(item) === 'dropdown' ) {
         if ( item !== null && _getItemSubType(item) === 'dropdown') {
             _hide(item); // hide items dropdown
             // Hide all child elements as well
+            
             if ( items.length > 0 ) {
                 for (var i = 0, len = items.length; i < len; i++) {
-                    //if ( _getItemOption(item, 'trigger') === 'click' &&  _getItemSubType(item) === 'dropdown' ) {
                     if ( items[i] !== null &&  _getItemSubType(items[i]) === 'dropdown') {
                         _hide(tems[i]);
                     }
@@ -150,8 +149,8 @@ var KTMenu = function(element, options) {
 
     // Toggle item sub
     var _toggle = function(item) {
-        if ( item === null ) {
-            return;
+        if ( !item ) {
+            item = the.triggerElement;
         }
 
         if ( _isItemSubShown(item) === true ) {
@@ -163,8 +162,8 @@ var KTMenu = function(element, options) {
 
     // Show item sub
     var _show = function(item) {
-        if ( item === null ) {
-            return;
+        if ( !item ) {
+            item = the.triggerElement;
         }
 
         if ( _isItemSubShown(item) === true ) {
@@ -183,8 +182,8 @@ var KTMenu = function(element, options) {
 
     // Hide item sub
     var _hide = function(item) {
-        if ( item === null ) {
-            return;
+        if ( !item ) {
+            item = the.triggerElement;
         }
 
         if ( _isItemSubShown(item) === false ) {
@@ -199,7 +198,7 @@ var KTMenu = function(element, options) {
     }
 
     // Reset item state classes if item sub type changed
-    var _reset = function(item) {
+    var _reset = function(item) {        
         if ( _hasItemSub(item) === false ) {
             return;
         }
@@ -594,14 +593,11 @@ var KTMenu = function(element, options) {
             }, {
                 name: 'preventOverflow',
                 options: {
-                    //altBoundary: true,
-                    //altAxis: true,
                     rootBoundary: 'clippingParents'
                 }
             }, {
                 name: 'flip', 
                 options: {
-                    altBoundary: true,
                     fallbackPlacements: flip
                 }
             }]
@@ -695,6 +691,10 @@ var KTMenu = function(element, options) {
         return value;
     }
 
+    var _destroy = function() {
+        KTUtil.data(the.element).remove('menu');
+    }
+
     // Construct Class
     _construct();
 
@@ -782,6 +782,10 @@ var KTMenu = function(element, options) {
 
     the.isItemDropdownPermanent = function(item) {
         return _isItemDropdownPermanent(item);
+    }
+
+    the.destroy = function() {
+        return _destroy();
     }
 
     // Accordion Mode Methods

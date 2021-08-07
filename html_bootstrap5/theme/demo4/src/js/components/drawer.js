@@ -218,6 +218,10 @@ var KTDrawer = function(element, options) {
         return width;
     }
 
+    var _destroy = function() {
+        KTUtil.data(the.element).remove('drawer');
+    }
+
     // Construct class
     _construct();
 
@@ -248,6 +252,10 @@ var KTDrawer = function(element, options) {
 
     the.goElement = function() {
         return the.element;
+    }
+
+    the.destroy = function() {
+        return _destroy();
     }
 
     // Event API

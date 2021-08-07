@@ -198,6 +198,10 @@ var KTSticky = function(element, options) {
         }
     }
 
+    var _destroy = function() {
+        KTUtil.data(the.element).remove('sticky');
+    }
+
     // Construct Class
     _construct();
 
@@ -213,6 +217,10 @@ var KTSticky = function(element, options) {
             _enable(true);
             body.setAttribute(the.attributeName, 'on');
         }
+    }
+
+    the.destroy = function() {
+        return _destroy();
     }
 
     // Event API

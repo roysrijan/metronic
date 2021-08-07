@@ -24,12 +24,12 @@ return array(
             ),
 
             'demo3' => array(
-                'published' => true,
+                'published' => false,
                 'thumbnail' => 'demos/demo3.png',
             ),
 
             'demo4' => array(
-                'published' => false,
+                'published' => true,
                 'thumbnail' => 'demos/demo4.png',
             ),
 
@@ -44,7 +44,7 @@ return array(
             ),
 
             'demo7' => array(
-                'published' => false,
+                'published' => true,
                 'thumbnail' => 'demos/demo7.png',
             ),
 

@@ -671,7 +671,7 @@ $nav-tabs-border-width:                             $border-width !default;
 
 // Card
 $card-bg:                                           $body-bg !default;
-$card-box-shadow: 									if(isDarkMode(), 0px 0px 30px 0px rgba(0, 0, 0, 0.02), 0px 0px 20px 0px rgba(76,87,125,0.02)) !default; // card custom shadow
+$card-box-shadow: 									if(isDarkMode(), none, 0px 0px 20px 0px rgba(76,87,125,0.02)) !default; // card custom shadow
 $card-border-color:                 				$border-color !default;
 $card-border-dashed-color:                 			$border-dashed-color !default;
 $card-cap-bg:                       				$white !default;

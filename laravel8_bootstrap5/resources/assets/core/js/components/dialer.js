@@ -167,6 +167,10 @@ var KTDialer = function(element, options) {
         }
     }
 
+    var _destroy = function() {
+        KTUtil.data(the.element).remove('dialer');
+    }
+
     // Construct class
     _construct();
 
@@ -185,6 +189,10 @@ var KTDialer = function(element, options) {
 
     the.getElement = function() {
         return the.element;
+    }
+
+    the.destroy = function() {
+        return _destroy();
     }
 
     // Event API

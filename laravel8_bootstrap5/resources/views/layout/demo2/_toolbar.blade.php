@@ -1,8 +1,8 @@
-<?php
+@php
     $primaryButtonLabel = theme()->getOption("layout", "toolbar/primary-button-label", "Create");
     $primaryButtonUrl = theme()->getOption("layout", "toolbar/primary-button-url");
     $primaryButtonModalTarget = theme()->getOption("layout", "toolbar/primary-button-modal-target", "#kt_modal_create_app");
-?>
+@endphp
 
 <!--begin::Toolbar-->
 <div class="toolbar py-5 py-lg-15" id="kt_toolbar">

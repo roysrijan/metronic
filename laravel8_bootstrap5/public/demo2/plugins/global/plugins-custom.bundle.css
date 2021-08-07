@@ -261,7 +261,7 @@
   background-color: #ffffff;
 }
 .modal-open .select2-container--bootstrap5 .select2-dropdown {
-  z-index: 1061;
+  z-index: 1056;
 }
 .select2-container--bootstrap5 .select2-dropdown .select2-search {
   padding: 0.5rem 1.25rem;
@@ -290,7 +290,7 @@
   margin: 0 0;
 }
 .select2-container--bootstrap5 .select2-dropdown .select2-results__option.select2-results__option--highlighted {
-  background-color: #ECF8FF;
+  background-color: #F1FAFF;
   color: #009EF7;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
@@ -371,7 +371,7 @@
   background-color: transparent;
 }
 .modal-open .daterangepicker {
-  z-index: 1061;
+  z-index: 1056;
 }
 .daterangepicker .calendar-table {
   background-color: #ffffff;
@@ -393,7 +393,7 @@
   transition: color 0.2s ease, background-color 0.2s ease;
 }
 .daterangepicker .ranges li:hover {
-  background-color: #ECF8FF;
+  background-color: #F1FAFF;
   color: #009EF7;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
@@ -476,7 +476,7 @@
 .daterangepicker .drp-calendar th.available:hover,
 .daterangepicker .drp-calendar td.available:hover {
   border-radius: 0.475rem;
-  background-color: #ECF8FF;
+  background-color: #F1FAFF;
   color: #009EF7;
 }
 .daterangepicker .drp-calendar th {
@@ -523,16 +523,16 @@
   border-radius: 0.475rem;
 }
 .daterangepicker .drp-calendar td.today, .daterangepicker .drp-calendar td.today.active {
-  background: #ECF8FF !important;
+  background: #F1FAFF !important;
   color: #009EF7 !important;
   border-radius: 0.475rem;
 }
 .daterangepicker .drp-calendar td.in-range.available:not(.active):not(.off):not(.today) {
-  background-color: #ECF8FF;
+  background-color: #F1FAFF;
   color: #009EF7;
 }
 .daterangepicker .drp-calendar td:hover {
-  background-color: #ECF8FF;
+  background-color: #F1FAFF;
   color: #009EF7;
 }
 .daterangepicker select.ampmselect,
@@ -773,7 +773,7 @@ span.flatpickr-weekday {
 .flatpickr-day.inRange, .flatpickr-day.prevMonthDay.inRange, .flatpickr-day.nextMonthDay.inRange, .flatpickr-day.today.inRange, .flatpickr-day.prevMonthDay.today.inRange, .flatpickr-day.nextMonthDay.today.inRange, .flatpickr-day:hover, .flatpickr-day.prevMonthDay:hover, .flatpickr-day.nextMonthDay:hover, .flatpickr-day:focus, .flatpickr-day.prevMonthDay:focus, .flatpickr-day.nextMonthDay:focus {
   cursor: pointer;
   outline: 0;
-  background: #ECF8FF;
+  background: #F1FAFF;
   color: #009EF7;
   border-color: transparent;
 }
@@ -795,7 +795,7 @@ span.flatpickr-weekday {
 .flatpickr-day.inRange, .flatpickr-day.prevMonthDay.inRange, .flatpickr-day.nextMonthDay.inRange, .flatpickr-day.today.inRange, .flatpickr-day.prevMonthDay.today.inRange, .flatpickr-day.nextMonthDay.today.inRange, .flatpickr-day:hover, .flatpickr-day.prevMonthDay:hover, .flatpickr-day.nextMonthDay:hover, .flatpickr-day:focus, .flatpickr-day.prevMonthDay:focus, .flatpickr-day.nextMonthDay:focus {
   cursor: pointer;
   outline: 0;
-  background: #ECF8FF;
+  background: #F1FAFF;
   color: #009EF7;
   border-color: transparent;
 }
@@ -977,7 +977,7 @@ span.flatpickr-weekday {
   border-radius: 0.475rem;
 }
 .modal-open .tagify__dropdown {
-  z-index: 1061;
+  z-index: 1056;
 }
 .tagify__dropdown .tagify__dropdown__wrapper {
   background-color: #ffffff;
@@ -994,7 +994,7 @@ span.flatpickr-weekday {
   font-weight: 500;
 }
 .tagify__dropdown .tagify__dropdown__item:hover, .tagify__dropdown .tagify__dropdown__item.tagify__dropdown__item--active {
-  background-color: #ECF8FF;
+  background-color: #F1FAFF;
   color: #009EF7;
 }
 .tagify__dropdown.tagify__inline__suggestions {
@@ -1010,7 +1010,7 @@ span.flatpickr-weekday {
   border-radius: 0.475rem;
 }
 .tagify__dropdown.tagify__inline__suggestions .tagify__dropdown__item:hover, .tagify__dropdown.tagify__inline__suggestions .tagify__dropdown__item.tagify__dropdown__item--active {
-  background-color: #ECF8FF;
+  background-color: #F1FAFF;
   color: #009EF7;
 }
 
@@ -1161,7 +1161,7 @@ div.dataTables_wrapper div.dataTables_processing {
   text-align: center;
   cursor: pointer;
   border: 1px dashed #009EF7;
-  background-color: #ECF8FF;
+  background-color: #F1FAFF;
   border-radius: 0.475rem !important;
 }
 .dropzone .dz-message {

@@ -62,7 +62,7 @@
 		}
 
 		// Fixed header & NON sticky header modes
-		.header-fixed:not([data-kt-sticky-header="on"]) & {
+		body:not([data-kt-sticky-header="on"]) & {
 			// Header menu
 			.header-menu {
 				.menu {

@@ -127,6 +127,10 @@ var KTImageInput = function(element, options) {
         KTEventHandler.trigger(the.element, 'kt.imageinput.removed', the);
     }
 
+    var _destroy = function() {
+        KTUtil.data(the.element).remove('image-input');
+    }
+
     // Construct Class
     _construct();
 
@@ -141,6 +145,10 @@ var KTImageInput = function(element, options) {
 
     the.goElement = function() {
         return the.element;
+    }
+    
+    the.destroy = function() {
+        return _destroy();
     }
 
     // Event API

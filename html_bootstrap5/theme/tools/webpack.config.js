@@ -159,6 +159,7 @@ function mainConfig() {
                 jquery: path.join(__dirname, 'node_modules/jquery/src/jquery'),
                 $: path.join(__dirname, 'node_modules/jquery/src/jquery'),
                 '@': [demoPath, corePath],
+                'handlebars': 'handlebars/dist/handlebars.js',
             },
             extensions: ['.js', '.scss'],
             fallback: {
@@ -321,6 +322,15 @@ function copyFolders() {
             to: assetDistPath + '/plugins/custom/tinymce/plugins',
         },
     ];
+
+    if (fs.existsSync(coreSrcPath + '/media/plugins/jstree')) {
+        options.push({
+            // copy jstree image
+            from: coreSrcPath + '/media/plugins/jstree',
+            to: assetDistPath + '/plugins/custom/jstree',
+            force: true
+        });
+    }
 
     if (dev) {
         options.push({

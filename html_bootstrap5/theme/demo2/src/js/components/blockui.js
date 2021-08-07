@@ -116,6 +116,10 @@ var KTBlockUI = function(element, options) {
         return the.blocked;
     }
 
+    var _destroy = function() {
+        KTUtil.data(the.element).remove('blockui');
+    }
+
     // Construct class
     _construct();
 
@@ -134,6 +138,10 @@ var KTBlockUI = function(element, options) {
 
     the.isBlocked = function() {
         return _isBlocked();
+    }
+
+    the.destroy = function() {
+        return _destroy();
     }
 
     // Event API

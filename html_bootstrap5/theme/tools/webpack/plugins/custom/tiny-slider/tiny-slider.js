@@ -1,3 +1,3 @@
+// Tiny slider - for all purposes, inspired by Owl Carousel.
 
-import {tns} from 'tiny-slider/src/tiny-slider';
-import 'tiny-slider/src/tiny-slider.scss';
+window.tns = require('tiny-slider/src/tiny-slider.js').tns;

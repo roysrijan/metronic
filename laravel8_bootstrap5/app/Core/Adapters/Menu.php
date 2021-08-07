@@ -27,6 +27,10 @@ class Menu extends \App\Core\Menu
      */
     public static function filterMenuPermissions(&$array)
     {
+        if (!is_array($array)) {
+            return;
+        }
+
         $user = auth()->user();
 
         // check if the spatie plugin functions exist

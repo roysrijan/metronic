@@ -1,7 +1,7 @@
 const gulpConfig = {
 	name: 'Metronic',
 	desc: "Gulp build config file",
-	version: "8.0.21",
+	version: "8.0.22",
 	config: {
 		debug: false,
 		compile: {
@@ -491,6 +491,40 @@ const gulpConfig = {
                     },
                     dist: {
                         scripts: "{$config.dist}/plugins/custom/flotcharts/flotcharts.bundle.js"
+                    }
+                },
+				vistimeline: {
+					src: {
+						styles: [
+							"{$config.path.node_modules}/vis-timeline/dist/vis-timeline-graph2d.css",
+						],
+						scripts: [
+							"{$config.path.node_modules}/vis-timeline/standalone/umd/vis-timeline-graph2d.min.js",
+							"{$config.path.node_modules}/handlebars/dist/handlebars.min.js",
+						],
+					},
+					dist: {
+						styles: "{$config.dist}/plugins/custom/vis-timeline/vis-timeline.bundle.css",
+						scripts: "{$config.dist}/plugins/custom/vis-timeline/vis-timeline.bundle.js"
+					},
+				},
+				jstree: {
+                    src: {
+                        styles: [
+                            "{$config.path.node_modules}/jstree/dist/themes/default/style.css"
+                        ],
+                        scripts: [
+                            "{$config.path.node_modules}/jstree/dist/jstree.js"
+                        ],
+                        images: [
+                            "{$config.path.common_src}/media/plugins/jstree/32px.png",
+                            "{$config.path.node_modules}/jstree/dist/themes/default/throbber.gif"
+                        ]
+                    },
+                    dist: {
+                        styles: "{$config.dist}/plugins/custom/jstree/jstree.bundle.css",
+                        scripts: "{$config.dist}/plugins/custom/jstree/jstree.bundle.js",
+                        images: "{$config.dist}/plugins/custom/jstree"
                     }
                 },
 			},

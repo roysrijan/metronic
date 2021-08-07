@@ -18,6 +18,7 @@ return array(
         'js'      => array(
             'plugins/global/plugins.bundle.js',
             'js/scripts.bundle.js',
+            'js/custom/widgets.js',
         ),
     ),
 
@@ -28,7 +29,7 @@ return array(
             'base'              => 'default', // Set base layout: default|docs
             'type'              => 'default', // Set layout type: default|blank|none
             'dark-mode-enabled' => true, // Enable optioanl dark mode mode
-            'primary-color'     => '#009EF7',
+            'primary-color'     => '#009EF7',  // Primary color used in email templates
         ),
 
         // Docs

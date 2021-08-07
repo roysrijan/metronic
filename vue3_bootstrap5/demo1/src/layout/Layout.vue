@@ -119,8 +119,8 @@ export default defineComponent({
     });
 
     onMounted(() => {
-      // // check if current user is authenticated
-      if (store.getters.isAuthenticated) {
+      //check if current user is authenticated
+      if (!store.getters.isUserAuthenticated) {
         router.push({ name: "sign-in" });
       }
 
@@ -138,8 +138,8 @@ export default defineComponent({
 
         DrawerComponent.hideAll();
 
-        // // check if current user is authenticated
-        if (store.getters.isAuthenticated) {
+        // check if current user is authenticated
+        if (!store.getters.isUserAuthenticated) {
           router.push({ name: "sign-in" });
         }
 

@@ -8,15 +8,15 @@
 {{--begin::Toolbar wrapper--}}
 <div class="d-flex align-items-stretch flex-shrink-0">
     {{--begin::Search--}}
-    <div class="d-flex align-items-stretch {{ $toolbarButtonMarginClass  }}">
+    <div class="d-flex align-items-stretch {{ $toolbarButtonMarginClass }}">
         {{ theme()->getView('partials/search/_base') }}
     </div>
     {{--end::Search--}}
 
     {{--begin::Activities--}}
-    <div class="d-flex align-items-center {{ $toolbarButtonMarginClass  }}">
+    <div class="d-flex align-items-center {{ $toolbarButtonMarginClass }}">
         {{--begin::drawer toggle--}}
-        <div class="btn btn-icon btn-active-light-primary {{ $toolbarButtonHeightClass  }}" id="kt_activities_toggle">
+        <div class="btn btn-icon btn-active-light-primary {{ $toolbarButtonHeightClass }}" id="kt_activities_toggle">
             {!! theme()->getSvgIcon("icons/duotone/Media/Equalizer.svg", $toolbarButtonIconSizeClass) !!}
         </div>
         {{--end::drawer toggle--}}
@@ -26,7 +26,7 @@
     {{--begin::Notifications--}}
     <div class="d-flex align-items-center {{ $toolbarButtonMarginClass }}">
         {{--begin::Menu--}}
-        <div class="btn btn-icon btn-active-light-primary position-relative {{ $toolbarButtonHeightClass  }}" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
+        <div class="btn btn-icon btn-active-light-primary position-relative {{ $toolbarButtonHeightClass }}" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end" data-kt-menu-flip="bottom">
             {!! theme()->getSvgIcon("icons/duotone/Communication/Group-chat.svg", $toolbarButtonIconSizeClass) !!}
 
             <span class="bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink">

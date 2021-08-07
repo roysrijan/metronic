@@ -108,7 +108,7 @@ class Theme extends \App\Core\Theme
         }
 
         $a = '';
-        if (count($params)) {
+        if (count($params) && $path !== '#') {
             $a = '?'.http_build_query($params);
         }
 
@@ -225,8 +225,10 @@ class Theme extends \App\Core\Theme
      */
     public static function getOption($scope, $path = false, $default = null)
     {
+        $demo = self::getDemo() ?? 'demo1';
+
         // Map the config path
-        if (array_key_exists($scope, config(self::$demo.'.general'))) {
+        if (array_key_exists($scope, config($demo.'.general'))) {
             $scope = 'general.'.$scope;
         }
 
@@ -245,7 +247,7 @@ class Theme extends \App\Core\Theme
         }
 
         // Demo config
-        $demoConfig = config(self::$demo.'.'.$scope.$deepPath, $default);
+        $demoConfig = config($demo.'.'.$scope.$deepPath, $default);
 
         // check if it is a callback
         if (is_callable($demoConfig) && !is_string($demoConfig)) {
@@ -397,6 +399,10 @@ class Theme extends \App\Core\Theme
      */
     private function iterateMenu($menus, &$output)
     {
+        if (!is_array($menus)) {
+            return;
+        }
+
         if (isset($menus['path'])) {
             $output[] = $menus;
         }

@@ -14,3 +14,4 @@ build-assets:
 	npm update
 	npm run prod --demo1 --dark-mode
 	npm run prod --demo2
+	npm run prod --demo3

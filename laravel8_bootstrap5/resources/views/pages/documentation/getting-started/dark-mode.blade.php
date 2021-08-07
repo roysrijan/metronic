@@ -11,7 +11,7 @@
 
         <!--begin::Block-->
         <div class="py-5">
-            At the moment, the available demos that has a dark mode version:
+            At the moment, these are the available demos that have dark mode version:
 
             <ul class="py-5">
                 @foreach(theme()->getOption('product', 'demos') ?? [] as $id => $demo)

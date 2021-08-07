@@ -1,5 +1,6 @@
 // Keenthemes' plugins
 window.KTUtil = require('@/src/js/components/util.js');
+window.KTBlockUI = require('@/src/js/components/blockui.js');
 window.KTCookie = require('@/src/js/components/cookie.js');
 window.KTDialer = require('@/src/js/components/dialer.js');
 window.KTDrawer = require('@/src/js/components/drawer.js');

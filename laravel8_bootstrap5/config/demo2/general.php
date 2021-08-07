@@ -16,6 +16,7 @@ return array(
         'js'      => array(
             'plugins/global/plugins.bundle.js',
             'js/scripts.bundle.js',
+            'js/custom/widgets.js',
         ),
     ),
 
@@ -25,15 +26,18 @@ return array(
         'main'       => array(
             'type'              => 'default', // Set layout type: default|blank|none
             'primary-color'     => '#009EF7',
-            'dark-mode-enabled' => false, // Enable optioanl dark mode mode
+            'dark-mode-enabled' => true, // Enable optioanl dark mode mode
             'body'              => array(
-                'background-image' => 'patterns/header-bg.jpg',
+                'background-image' => 'patterns/'.(theme()->isDarkMode() ? 'header-bg-dark.png' : 'header-bg.jpg'),
             ),
         ),
 
         // Docs
         'docs'       => array(
-            'logo-path'  => 'logos/logo-1-dark.svg',
+            'logo-path'  => array(
+                'default' => 'logos/logo-1-dark.svg',
+                'dark'    => 'logos/logo-1.svg',
+            ),
             'logo-class' => 'h-15px',
         ),
 

@@ -140,7 +140,7 @@ var KTWidgets = function () {
 
             var chart = new ApexCharts(element, options);
             chart.render();
-        });        
+        });
     }
 
     var initStatisticsWidget4 = function() {
@@ -280,7 +280,7 @@ var KTWidgets = function () {
 
             var chart = new ApexCharts(element, options);
             chart.render();
-        });        
+        });
     }
 
     // Charts widgets
@@ -317,7 +317,7 @@ var KTWidgets = function () {
                 bar: {
                     horizontal: false,
                     columnWidth: ['30%'],
-                    endingShape: 'rounded'
+                    borderRadius: 4
                 },
             },
             legend: {
@@ -401,7 +401,7 @@ var KTWidgets = function () {
         };
 
         var chart = new ApexCharts(element, options);
-        chart.render();      
+        chart.render();
     }
 
     var initChartsWidget2 = function() {
@@ -437,7 +437,7 @@ var KTWidgets = function () {
                 bar: {
                     horizontal: false,
                     columnWidth: ['30%'],
-                    endingShape: 'rounded'
+                    borderRadius: 4
                 },
             },
             legend: {
@@ -521,7 +521,7 @@ var KTWidgets = function () {
         };
 
         var chart = new ApexCharts(element, options);
-        chart.render();   
+        chart.render();
     }
 
     var initChartsWidget3 = function() {
@@ -656,7 +656,7 @@ var KTWidgets = function () {
         };
 
         var chart = new ApexCharts(element, options);
-        chart.render();   
+        chart.render();
     }
 
     var initChartsWidget4 = function() {
@@ -793,7 +793,7 @@ var KTWidgets = function () {
         };
 
         var chart = new ApexCharts(element, options);
-        chart.render();   
+        chart.render();
     }
 
     var initChartsWidget5 = function() {
@@ -831,7 +831,7 @@ var KTWidgets = function () {
                 bar: {
                     horizontal: false,
                     columnWidth: ['12%'],
-                    endingShape: 'rounded'
+                    borderRadius: 4
                 },
             },
             legend: {
@@ -917,7 +917,7 @@ var KTWidgets = function () {
         };
 
         var chart = new ApexCharts(element, options);
-        chart.render();   
+        chart.render();
     }
 
     var initChartsWidget6 = function() {
@@ -929,7 +929,7 @@ var KTWidgets = function () {
 
         var baseColor = KTUtil.getCssVariableValue('--bs-primary');
         var baseLightColor = KTUtil.getCssVariableValue('--bs-light-primary');
-        var secondaryColor = KTUtil.getCssVariableValue('--bs-info');        
+        var secondaryColor = KTUtil.getCssVariableValue('--bs-info');
 
         if (!element) {
             return;
@@ -1056,7 +1056,7 @@ var KTWidgets = function () {
         };
 
         var chart = new ApexCharts(element, options);
-        chart.render();   
+        chart.render();
     }
 
     var initChartsWidget7 = function() {
@@ -1074,8 +1074,8 @@ var KTWidgets = function () {
         var color2 = KTUtil.getCssVariableValue('--bs-success');
         var color2Light = KTUtil.getCssVariableValue('--bs-light-success');
 
-        var color3 = KTUtil.getCssVariableValue('--bs-primary');  
-        var color3Light = KTUtil.getCssVariableValue('--bs-light-primary');  
+        var color3 = KTUtil.getCssVariableValue('--bs-primary');
+        var color3Light = KTUtil.getCssVariableValue('--bs-light-primary');
 
         if (!element) {
             return;
@@ -1214,7 +1214,7 @@ var KTWidgets = function () {
         };
 
         var chart = new ApexCharts(element, options);
-        chart.render();   
+        chart.render();
     }
 
     var initChartsWidget8 = function() {
@@ -1232,8 +1232,8 @@ var KTWidgets = function () {
         var color2 = KTUtil.getCssVariableValue('--bs-success');
         var color2Light = KTUtil.getCssVariableValue('--bs-light-success');
 
-        var color3 = KTUtil.getCssVariableValue('--bs-primary');  
-        var color3Light = KTUtil.getCssVariableValue('--bs-light-primary');  
+        var color3 = KTUtil.getCssVariableValue('--bs-primary');
+        var color3Light = KTUtil.getCssVariableValue('--bs-light-primary');
 
         if (!element) {
             return;
@@ -1388,7 +1388,7 @@ var KTWidgets = function () {
         };
 
         var chart = new ApexCharts(element, options);
-        chart.render();   
+        chart.render();
     }
 
     // Mixed widgets
@@ -1532,8 +1532,8 @@ var KTWidgets = function () {
             };
 
             chart = new ApexCharts(element, options);
-            chart.render();  
-        });        
+            chart.render();
+        });
     }
 
     var initMixedWidget12 = function() {
@@ -1547,7 +1547,7 @@ var KTWidgets = function () {
         var options;
         var chart;
 
-        [].slice.call(charts).map(function(element) {            
+        [].slice.call(charts).map(function(element) {
             height = parseInt(KTUtil.css(element, 'height'));
 
             var options = {
@@ -1668,7 +1668,7 @@ var KTWidgets = function () {
 
             var chart = new ApexCharts(element, options);
             chart.render()
-        });        
+        });
     }
 
     var initMixedWidget3 = function() {
@@ -1809,7 +1809,7 @@ var KTWidgets = function () {
 
             var chart = new ApexCharts(element, options);
             chart.render();
-        });        
+        });
     }
 
     var initMixedWidget4 = function() {
@@ -1873,7 +1873,7 @@ var KTWidgets = function () {
 
             var chart = new ApexCharts(element, options);
             chart.render();
-        });        
+        });
     }
 
     var initMixedWidget5 = function() {
@@ -2028,7 +2028,7 @@ var KTWidgets = function () {
 
             var chart = new ApexCharts(element, options);
             chart.render();
-        });        
+        });
     }
 
     var initMixedWidget6 = function() {
@@ -2169,7 +2169,7 @@ var KTWidgets = function () {
 
             var chart = new ApexCharts(element, options);
             chart.render();
-        });        
+        });
     }
 
     var initMixedWidget7 = function() {
@@ -2310,7 +2310,7 @@ var KTWidgets = function () {
 
             var chart = new ApexCharts(element, options);
             chart.render();
-        });        
+        });
     }
 
     var initMixedWidget10 = function() {
@@ -2442,9 +2442,9 @@ var KTWidgets = function () {
             };
 
             chart = new ApexCharts(element, options);
-            chart.render();      
-        });        
-    } 
+            chart.render();
+        });
+    }
 
     // Feeds Widgets
     var initFeedWidget1 = function() {
@@ -2485,14 +2485,14 @@ var KTWidgets = function () {
 
                 setTimeout(function() {
                     btn.removeAttribute('data-kt-indicator');
-                    widget5.classList.remove('d-none');         
-                    btn.classList.add('d-none');         
-                    
+                    widget5.classList.remove('d-none');
+                    btn.classList.add('d-none');
+
                     KTUtil.scrollTo(widget5, 200);
-                }, 2000);                
+                }, 2000);
             });
-        }                 
-    }  
+        }
+    }
 
     // Follow button
     var initUserFollowButton = function() {
@@ -2500,13 +2500,13 @@ var KTWidgets = function () {
 
         if (follow) {
             follow.addEventListener('click', function(e){
-                // Prevent default action 
+                // Prevent default action
                 e.preventDefault();
-                
+
                 // Show indicator
                 follow.setAttribute('data-kt-indicator', 'on');
-                
-                // Disable button to avoid multiple click 
+
+                // Disable button to avoid multiple click
 				follow.disabled = true;
 
                 // Check button state
@@ -2518,7 +2518,7 @@ var KTWidgets = function () {
                         follow.querySelector(".svg-icon").classList.add("d-none");
                         follow.querySelector(".indicator-label").innerHTML = 'Follow';
 				        follow.disabled = false;
-                    }, 1500);   
+                    }, 1500);
                 } else {
                      setTimeout(function() {
                         follow.removeAttribute('data-kt-indicator');
@@ -2527,10 +2527,10 @@ var KTWidgets = function () {
                         follow.querySelector(".svg-icon").classList.remove("d-none");
                         follow.querySelector(".indicator-label").innerHTML = 'Following';
                         follow.disabled = false;
-                    }, 1000);   
-                }        
+                    }, 1000);
+                }
             });
-        }                 
+        }
     }
 
     // Calendar
@@ -2723,9 +2723,10 @@ var KTWidgets = function () {
         cb(start, end, '');
     }
 
+    // Dark mode toggler
     var initDarkModeToggle = function() {
         var toggle = document.querySelector('#kt_user_menu_dark_mode_toggle');
-        
+
         if (toggle) {
             toggle.addEventListener('click', function() {
                 window.location.href = this.getAttribute('data-kt-url');
@@ -2738,13 +2739,13 @@ var KTWidgets = function () {
         init: function () {
             // Daterangepicker
             initDaterangepicker();
-            
+
             // Dark Mode
             initDarkModeToggle();
 
             // Statistics widgets
             initStatisticsWidget3();
-            initStatisticsWidget4();            
+            initStatisticsWidget4();
 
             // Charts widgets
             initChartsWidget1();
@@ -2763,8 +2764,8 @@ var KTWidgets = function () {
             initMixedWidget5();
             initMixedWidget6();
             initMixedWidget7();
-            initMixedWidget10();          
-            initMixedWidget12(); 
+            initMixedWidget10();
+            initMixedWidget12();
 
             // Feeds
             initFeedWidget1();
@@ -2775,7 +2776,7 @@ var KTWidgets = function () {
 
             // Calendar
             initCalendarWidget1();
-        }   
+        }
     }
 }();
 

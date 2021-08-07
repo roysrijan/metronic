@@ -1,5 +1,5 @@
 
-<?php
+@php
     $breadcrumb = bootstrap()->getBreadcrumb();
 
     if (theme()->getOption('layout', 'page-title/direction') == 'column') {
@@ -12,7 +12,7 @@
     if (theme()->getOption('layout', 'page-title/responsive') === true) {
         $baseClass .= " flex-wrap mb-5 mb-lg-0 lh-1";
     }
-?>
+@endphp
 
 <!--begin::Page title-->
 <div {{ theme()->printHtmlAttributes("page-title") }} class="page-title d-flex flex-column {{ $baseClass }}">

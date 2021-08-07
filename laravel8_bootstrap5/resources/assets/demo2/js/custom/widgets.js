@@ -317,7 +317,7 @@ var KTWidgets = function () {
                 bar: {
                     horizontal: false,
                     columnWidth: ['30%'],
-                    endingShape: 'rounded'
+                    borderRadius: 4
                 },
             },
             legend: {
@@ -437,7 +437,7 @@ var KTWidgets = function () {
                 bar: {
                     horizontal: false,
                     columnWidth: ['30%'],
-                    endingShape: 'rounded'
+                    borderRadius: 4
                 },
             },
             legend: {
@@ -831,7 +831,7 @@ var KTWidgets = function () {
                 bar: {
                     horizontal: false,
                     columnWidth: ['12%'],
-                    endingShape: 'rounded'
+                    borderRadius: 4
                 },
             },
             legend: {
@@ -963,7 +963,7 @@ var KTWidgets = function () {
                 bar: {
                     stacked: true,
                     horizontal: false,
-                    endingShape: 'rounded',
+                    borderRadius: 4,
                     columnWidth: ['12%']
                 },
             },
@@ -1536,141 +1536,6 @@ var KTWidgets = function () {
         });        
     }
 
-    var initMixedWidget12 = function() {
-        var charts = document.querySelectorAll('.mixed-widget-12-chart');
-
-        var color;
-        var strokeColor;
-        var height;
-        var labelColor = KTUtil.getCssVariableValue('--bs-gray-500');
-        var borderColor = KTUtil.getCssVariableValue('--bs-gray-200');
-        var options;
-        var chart;
-
-        [].slice.call(charts).map(function(element) {            
-            height = parseInt(KTUtil.css(element, 'height'));
-
-            var options = {
-                series: [{
-                    name: 'Net Profit',
-                    data: [35, 65, 75, 55, 45, 60, 55]
-                }, {
-                    name: 'Revenue',
-                    data: [40, 70, 80, 60, 50, 65, 60]
-                }],
-                chart: {
-                    fontFamily: 'inherit',
-                    type: 'bar',
-                    height: height,
-                    toolbar: {
-                        show: false
-                    },
-                    sparkline: {
-                        enabled: true
-                    },
-                },
-                plotOptions: {
-                    bar: {
-                        horizontal: false,
-                        columnWidth: ['30%'],
-                        endingShape: 'rounded'
-                    },
-                },
-                legend: {
-                    show: false
-                },
-                dataLabels: {
-                    enabled: false
-                },
-                stroke: {
-                    show: true,
-                    width: 1,
-                    colors: ['transparent']
-                },
-                xaxis: {
-                    categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
-                    axisBorder: {
-                        show: false,
-                    },
-                    axisTicks: {
-                        show: false
-                    },
-                    labels: {
-                        style: {
-                            colors: labelColor,
-                            fontSize: '12px'
-                        }
-                    }
-                },
-                yaxis: {
-                    min: 0,
-                    max: 100,
-                    labels: {
-                        style: {
-                            colors: labelColor,
-                            fontSize: '12px'
-                        }
-                    }
-                },
-                fill: {
-                    type: ['solid', 'solid'],
-                    opacity: [0.25, 1]
-                },
-                states: {
-                    normal: {
-                        filter: {
-                            type: 'none',
-                            value: 0
-                        }
-                    },
-                    hover: {
-                        filter: {
-                            type: 'none',
-                            value: 0
-                        }
-                    },
-                    active: {
-                        allowMultipleDataPointsSelection: false,
-                        filter: {
-                            type: 'none',
-                            value: 0
-                        }
-                    }
-                },
-                tooltip: {
-                    style: {
-                        fontSize: '12px'
-                    },
-                    y: {
-                        formatter: function (val) {
-                            return "$" + val + " thousands"
-                        }
-                    },
-                    marker: {
-                        show: false
-                    }
-                },
-                colors: ['#ffffff', '#ffffff'],
-                grid: {
-                    borderColor: borderColor,
-                    strokeDashArray: 4,
-                    yaxis: {
-                        lines: {
-                            show: true
-                        }
-                    },
-                    padding: {
-                        left: 20,
-                        right: 20
-                    }
-                }
-            };
-
-            var chart = new ApexCharts(element, options);
-            chart.render()
-        });        
-    }
-
     var initMixedWidget3 = function() {
         var charts = document.querySelectorAll('.mixed-widget-3-chart');
 
@@ -2187,7 +2052,7 @@ var KTWidgets = function () {
             var labelColor = KTUtil.getCssVariableValue('--bs-' + 'gray-800');
             var strokeColor = KTUtil.getCssVariableValue('--bs-' + 'gray-300');
             var baseColor = KTUtil.getCssVariableValue('--bs-' + color);
-            var lightColor = KTUtil.getCssVariableValue('--bs-light-' + color );
+            var lightColor = KTUtil.getCssVariableValue('--bs-light-' + color);
 
             var options = {
                 series: [{
@@ -2351,7 +2216,7 @@ var KTWidgets = function () {
                     bar: {
                         horizontal: false,
                         columnWidth: ['50%'],
-                        endingShape: 'rounded'
+                        borderRadius: 4
                     },
                 },
                 legend: {
@@ -2443,7 +2308,388 @@ var KTWidgets = function () {
             chart = new ApexCharts(element, options);
             chart.render();      
         });        
+    }
+
+    var initMixedWidget12 = function() {
+        var charts = document.querySelectorAll('.mixed-widget-12-chart');
+
+        var color;
+        var strokeColor;
+        var height;
+        var labelColor = KTUtil.getCssVariableValue('--bs-gray-500');
+        var borderColor = KTUtil.getCssVariableValue('--bs-gray-200');
+        var options;
+        var chart;
+
+        [].slice.call(charts).map(function(element) {            
+            height = parseInt(KTUtil.css(element, 'height'));
+
+            var options = {
+                series: [{
+                    name: 'Net Profit',
+                    data: [35, 65, 75, 55, 45, 60, 55]
+                }, {
+                    name: 'Revenue',
+                    data: [40, 70, 80, 60, 50, 65, 60]
+                }],
+                chart: {
+                    fontFamily: 'inherit',
+                    type: 'bar',
+                    height: height,
+                    toolbar: {
+                        show: false
+                    },
+                    sparkline: {
+                        enabled: true
+                    },
+                },
+                plotOptions: {
+                    bar: {
+                        horizontal: false,
+                        columnWidth: ['30%'],
+                        borderRadius: 2
+                    }
+                },
+                legend: {
+                    show: false
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                stroke: {
+                    show: true,
+                    width: 1,
+                    colors: ['transparent']
+                },
+                xaxis: {
+                    categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                    axisBorder: {
+                        show: false,
+                    },
+                    axisTicks: {
+                        show: false
+                    },
+                    labels: {
+                        style: {
+                            colors: labelColor,
+                            fontSize: '12px'
+                        }
+                    }
+                },
+                yaxis: {
+                    min: 0,
+                    max: 100,
+                    labels: {
+                        style: {
+                            colors: labelColor,
+                            fontSize: '12px'
+                        }
+                    }
+                },
+                fill: {
+                    type: ['solid', 'solid'],
+                    opacity: [0.25, 1]
+                },
+                states: {
+                    normal: {
+                        filter: {
+                            type: 'none',
+                            value: 0
+                        }
+                    },
+                    hover: {
+                        filter: {
+                            type: 'none',
+                            value: 0
+                        }
+                    },
+                    active: {
+                        allowMultipleDataPointsSelection: false,
+                        filter: {
+                            type: 'none',
+                            value: 0
+                        }
+                    }
+                },
+                tooltip: {
+                    style: {
+                        fontSize: '12px'
+                    },
+                    y: {
+                        formatter: function (val) {
+                            return "$" + val + " thousands"
+                        }
+                    },
+                    marker: {
+                        show: false
+                    }
+                },
+                colors: ['#ffffff', '#ffffff'],
+                grid: {
+                    borderColor: borderColor,
+                    strokeDashArray: 4,
+                    yaxis: {
+                        lines: {
+                            show: true
+                        }
+                    },
+                    padding: {
+                        left: 20,
+                        right: 20
+                    }
+                }
+            };
+
+            var chart = new ApexCharts(element, options);
+            chart.render()
+        });        
     } 
+
+    var initMixedWidget13 = function() {
+        var height;
+        var charts = document.querySelectorAll('.mixed-widget-13-chart');
+
+        [].slice.call(charts).map(function(element) {
+            height = parseInt(KTUtil.css(element, 'height'));
+
+            if ( !element ) {
+                return;
+            }
+                   
+            var labelColor = KTUtil.getCssVariableValue('--bs-' + 'gray-800');
+            var strokeColor = KTUtil.getCssVariableValue('--bs-' + 'gray-300');
+
+            var options = {
+                series: [{
+                    name: 'Net Profit',
+                    data: [15, 25, 15, 40, 20, 50]
+                }],
+                grid: {
+                    show: false,
+                    padding: {
+                        top: 0,
+                        bottom: 0,
+                        left: 0,
+                        right: 0
+                    }
+                },
+                chart: {
+                    fontFamily: 'inherit',
+                    type: 'area',
+                    height: height,
+                    toolbar: {
+                        show: false
+                    },
+                    zoom: {
+                        enabled: false
+                    },
+                    sparkline: {
+                        enabled: true
+                    }
+                },
+                plotOptions: {},
+                legend: {
+                    show: false
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                fill: {
+                    type: 'gradient',
+                    gradient: {                        
+                        opacityFrom: 0.4,
+                        opacityTo: 0,
+                        stops: [20, 120, 120, 120]
+                    }
+                },
+                stroke: {
+                    curve: 'smooth',
+                    show: true,
+                    width: 3,
+                    colors: ['#FFFFFF']
+                },
+                xaxis: {
+                    categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                    axisBorder: {
+                        show: false,
+                    },
+                    axisTicks: {
+                        show: false
+                    },
+                    labels: {
+                        show: false,
+                        style: {
+                            colors: labelColor,
+                            fontSize: '12px'
+                        }
+                    },
+                    crosshairs: {
+                        show: false,
+                        position: 'front',
+                        stroke: {
+                            color: strokeColor,
+                            width: 1,
+                            dashArray: 3
+                        }
+                    },
+                    tooltip: {
+                        enabled: true,
+                        formatter: undefined,
+                        offsetY: 0,
+                        style: {
+                            fontSize: '12px'
+                        }
+                    }
+                },
+                yaxis: {
+                    min: 0,
+                    max: 60,
+                    labels: {
+                        show: false,
+                        style: {
+                            colors: labelColor,
+                            fontSize: '12px'
+                        }
+                    }
+                },
+                states: {
+                    normal: {
+                        filter: {
+                            type: 'none',
+                            value: 0
+                        }
+                    },
+                    hover: {
+                        filter: {
+                            type: 'none',
+                            value: 0
+                        }
+                    },
+                    active: {
+                        allowMultipleDataPointsSelection: false,
+                        filter: {
+                            type: 'none',
+                            value: 0
+                        }
+                    }
+                },
+                tooltip: {
+                    style: {
+                        fontSize: '12px'
+                    },
+                    y: {
+                        formatter: function (val) {
+                            return "$" + val + " thousands"
+                        }
+                    }
+                },
+                colors: ['#ffffff'],
+                markers: {
+                    colors: [labelColor],
+                    strokeColor: [strokeColor],
+                    strokeWidth: 3
+                }
+            };
+
+            var chart = new ApexCharts(element, options);
+            chart.render();
+        });        
+    }
+
+    var initMixedWidget14 = function() {   		
+		var charts = document.querySelectorAll('.mixed-widget-14-chart');  
+        var options;
+        var chart;
+        var height;
+
+        [].slice.call(charts).map(function(element) {
+            height = parseInt(KTUtil.css(element, 'height'));      
+            var labelColor = KTUtil.getCssVariableValue('--bs-' + 'gray-800');      
+
+            options = {
+                series: [{
+                    name: 'Inflation',
+                    data: [1, 2.1, 1, 2.1, 4.1, 6.1, 4.1, 4.1, 2.1, 4.1, 2.1, 3.1, 1, 1, 2.1]
+                }],
+                chart: {
+                    fontFamily: 'inherit',
+                    height: height,
+                    type: 'bar',
+                    toolbar: {
+                        show: false
+                    }                             
+                },
+                grid: {
+                    show: false,
+                    padding: {
+                        top: 0,
+                        bottom: 0,
+                        left: 0,
+                        right: 0
+                    }
+                },                
+                colors: ['#ffffff'],         
+                plotOptions: {
+                    bar: {                    
+                        borderRadius: 2.5,
+                        dataLabels: {
+                            position: 'top', // top, center, bottom
+                        },
+                        columnWidth: '20%'                             
+                    }
+                },            
+                dataLabels: {
+                    enabled: false,
+                    formatter: function(val) {
+                        return val + "%";
+                    },
+                    offsetY: -20,
+                    style: {
+                        fontSize: '12px',
+                        colors: ["#304758"]
+                    }
+                },          
+                xaxis: {
+                    labels: {
+                        show: false,
+                    },
+                    categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar"],
+                    position: 'top',
+                    axisBorder: {
+                        show: false
+                    },
+                    axisTicks: {
+                        show: false
+                    },
+                    crosshairs: {
+                        show: false
+                    },
+                    tooltip: {
+                        enabled: false
+                    }
+                },
+                yaxis: {
+                    show: false,
+                    axisBorder: {
+                        show: false
+                    },
+                    axisTicks: {
+                        show: false,
+                        background: labelColor
+                    },
+                    labels: {
+                        show: false,
+                        formatter: function(val) {
+                            return val + "%";
+                        }
+                    }                
+                }		
+            };
+
+            chart = new ApexCharts(element, options);
+            chart.render(); 
+        }); 
+	}
 
     // Feeds Widgets
     var initFeedWidget1 = function() {
@@ -2475,7 +2721,7 @@ var KTWidgets = function () {
 
     var initFeedsWidget4 = function() {
         var btn = document.querySelector('#kt_widget_5_load_more_btn');
-        var widget5 = document.querySelector('#kt_widget_5');
+        var widget5 = document.querySelector('#kt_widget_5');        
 
         if (btn) {
             btn.addEventListener('click', function(e){
@@ -2720,8 +2966,9 @@ var KTWidgets = function () {
         }, cb);
 
         cb(start, end, '');
-    }
+    }    
 
+    // Dark mode toggler
     var initDarkModeToggle = function() {
         var toggle = document.querySelector('#kt_user_menu_dark_mode_toggle');
         
@@ -2762,8 +3009,10 @@ var KTWidgets = function () {
             initMixedWidget5();
             initMixedWidget6();
             initMixedWidget7();
-            initMixedWidget10();          
-            initMixedWidget12(); 
+            initMixedWidget10();            
+            initMixedWidget12();
+            initMixedWidget13(); 
+            initMixedWidget14();
 
             // Feeds
             initFeedWidget1();
@@ -2773,7 +3022,7 @@ var KTWidgets = function () {
             initUserFollowButton();
 
             // Calendar
-            initCalendarWidget1();
+            initCalendarWidget1();           
         }   
     }
 }();

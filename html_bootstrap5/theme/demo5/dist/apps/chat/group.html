@@ -87,11 +87,11 @@ License: For each use you must have a valid license purchased only from above li
 									</a>
 								</div>
 								<div class="menu-item">
-									<a class="menu-link" href="../../demo5/dist/dashboards/header.html">
+									<a class="menu-link" href="../../demo5/dist/dashboards/only-header.html">
 										<span class="menu-icon">
 											<i class="bi bi-window fs-3"></i>
 										</span>
-										<span class="menu-title">Header</span>
+										<span class="menu-title">Only Header</span>
 									</a>
 								</div>
 								<div class="menu-item">
@@ -99,7 +99,7 @@ License: For each use you must have a valid license purchased only from above li
 										<span class="menu-icon">
 											<i class="bi bi-app-indicator fs-3"></i>
 										</span>
-										<span class="menu-title">Landing</span>
+										<span class="menu-title">Landing Page</span>
 									</a>
 								</div>
 								<div class="menu-item">
@@ -1434,7 +1434,7 @@ License: For each use you must have a valid license purchased only from above li
 										<span class="menu-icon">
 											<i class="bi bi-card-text fs-3"></i>
 										</span>
-										<span class="menu-title">Changelog v8.0.21</span>
+										<span class="menu-title">Changelog v8.0.22</span>
 									</a>
 								</div>
 							</div>
@@ -2850,7 +2850,7 @@ License: For each use you must have a valid license purchased only from above li
 															<span class="menu-icon">
 																<i class="bi bi-card-text fs-3"></i>
 															</span>
-															<span class="menu-title">Changelog v8.0.21</span>
+															<span class="menu-title">Changelog v8.0.22</span>
 														</a>
 													</div>
 												</div>
@@ -4494,7 +4494,7 @@ License: For each use you must have a valid license purchased only from above li
 												</div>
 												<!--end::Menu item-->
 												<!--begin::Menu item-->
-												<div class="menu-item px-5" data-kt-menu-trigger="hover" data-kt-menu-placement="left-start" data-kt-menu-flip="bottom">
+												<div class="menu-item px-5" data-kt-menu-trigger="hover" data-kt-menu-placement="left-start" data-kt-menu-flip="bottom, top">
 													<a href="#" class="menu-link px-5">
 														<span class="menu-title">My Subscription</span>
 														<span class="menu-arrow"></span>
@@ -4548,7 +4548,7 @@ License: For each use you must have a valid license purchased only from above li
 												<div class="separator my-2"></div>
 												<!--end::Menu separator-->
 												<!--begin::Menu item-->
-												<div class="menu-item px-5" data-kt-menu-trigger="hover" data-kt-menu-placement="left-start" data-kt-menu-flip="bottom">
+												<div class="menu-item px-5" data-kt-menu-trigger="hover" data-kt-menu-placement="left-start" data-kt-menu-flip="bottom, top">
 													<a href="#" class="menu-link px-5">
 														<span class="menu-title position-relative">Language
 														<span class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">English
@@ -4617,7 +4617,7 @@ License: For each use you must have a valid license purchased only from above li
 												<div class="menu-item px-5">
 													<div class="menu-content px-5">
 														<label class="form-check form-switch form-check-custom form-check-solid pulse pulse-success" for="kt_user_menu_dark_mode_toggle">
-															<input class="form-check-input w-30px h-20px" type="checkbox" value="1" name="skin" id="kt_user_menu_dark_mode_toggle" data-kt-url="../../demo5/dist/index.html" />
+															<input class="form-check-input w-30px h-20px" type="checkbox" value="1" name="mode" id="kt_user_menu_dark_mode_toggle" data-kt-url="../../demo5/dist/index.html" />
 															<span class="pulse-ring ms-n1"></span>
 															<span class="form-check-label text-gray-600 fs-7">Dark Mode</span>
 														</label>
@@ -4704,7 +4704,7 @@ License: For each use you must have a valid license purchased only from above li
 										</span>
 										<!--end::Svg Icon-->Filter</a>
 										<!--begin::Menu 1-->
-										<div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true">
+										<div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_610d4dec2bbb8">
 											<!--begin::Header-->
 											<div class="px-7 py-5">
 												<div class="fs-5 text-dark fw-bolder">Filter Options</div>
@@ -4722,7 +4722,7 @@ License: For each use you must have a valid license purchased only from above li
 													<!--end::Label-->
 													<!--begin::Input-->
 													<div>
-														<select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true">
+														<select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Select option" data-dropdown-parent="#kt_menu_610d4dec2bbb8" data-allow-clear="true">
 															<option></option>
 															<option value="1">Approved</option>
 															<option value="2">Pending</option>
@@ -4836,6 +4836,7 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Avatar-->
 															<div class="symbol symbol-45px symbol-circle">
 																<span class="symbol-label bg-light-danger text-danger fs-6 fw-bolder">M</span>
+																<div class="symbol-badge bg-success start-100 top-100 border-4 h-15px w-15px ms-n2 mt-n2"></div>
 															</div>
 															<!--end::Avatar-->
 															<!--begin::Details-->
@@ -4848,7 +4849,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Details-->
 														<!--begin::Lat seen-->
 														<div class="d-flex flex-column align-items-end ms-2">
-															<span class="text-muted fs-7 mb-1">3 hrs</span>
+															<span class="text-muted fs-7 mb-1">5 hrs</span>
 														</div>
 														<!--end::Lat seen-->
 													</div>
@@ -4862,8 +4863,7 @@ License: For each use you must have a valid license purchased only from above li
 														<div class="d-flex align-items-center">
 															<!--begin::Avatar-->
 															<div class="symbol symbol-45px symbol-circle">
-																<img alt="Pic" src="assets/media/avatars/150-2.jpg" />
-																<div class="symbol-badge bg-success start-100 top-100 border-4 h-15px w-15px ms-n2 mt-n2"></div>
+																<img alt="Pic" src="assets/media/avatars/150-26.jpg" />
 															</div>
 															<!--end::Avatar-->
 															<!--begin::Details-->
@@ -4903,7 +4903,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Details-->
 														<!--begin::Lat seen-->
 														<div class="d-flex flex-column align-items-end ms-2">
-															<span class="text-muted fs-7 mb-1">5 hrs</span>
+															<span class="text-muted fs-7 mb-1">1 week</span>
 															<span class="badge badge-sm badge-circle badge-light-warning">9</span>
 														</div>
 														<!--end::Lat seen-->
@@ -4919,7 +4919,6 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Avatar-->
 															<div class="symbol symbol-45px symbol-circle">
 																<img alt="Pic" src="assets/media/avatars/150-15.jpg" />
-																<div class="symbol-badge bg-success start-100 top-100 border-4 h-15px w-15px ms-n2 mt-n2"></div>
 															</div>
 															<!--end::Avatar-->
 															<!--begin::Details-->
@@ -4932,7 +4931,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Details-->
 														<!--begin::Lat seen-->
 														<div class="d-flex flex-column align-items-end ms-2">
-															<span class="text-muted fs-7 mb-1">20 hrs</span>
+															<span class="text-muted fs-7 mb-1">1 day</span>
 														</div>
 														<!--end::Lat seen-->
 													</div>
@@ -4947,7 +4946,6 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Avatar-->
 															<div class="symbol symbol-45px symbol-circle">
 																<span class="symbol-label bg-light-warning text-warning fs-6 fw-bolder">M</span>
-																<div class="symbol-badge bg-success start-100 top-100 border-4 h-15px w-15px ms-n2 mt-n2"></div>
 															</div>
 															<!--end::Avatar-->
 															<!--begin::Details-->
@@ -4960,8 +4958,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Details-->
 														<!--begin::Lat seen-->
 														<div class="d-flex flex-column align-items-end ms-2">
-															<span class="text-muted fs-7 mb-1">1 week</span>
-															<span class="badge badge-sm badge-circle badge-light-success">2</span>
+															<span class="text-muted fs-7 mb-1">3 hrs</span>
 														</div>
 														<!--end::Lat seen-->
 													</div>
@@ -4989,8 +4986,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Details-->
 														<!--begin::Lat seen-->
 														<div class="d-flex flex-column align-items-end ms-2">
-															<span class="text-muted fs-7 mb-1">20 hrs</span>
-															<span class="badge badge-sm badge-circle badge-light-danger">5</span>
+															<span class="text-muted fs-7 mb-1">3 hrs</span>
 														</div>
 														<!--end::Lat seen-->
 													</div>
@@ -5005,7 +5001,6 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Avatar-->
 															<div class="symbol symbol-45px symbol-circle">
 																<span class="symbol-label bg-light-danger text-danger fs-6 fw-bolder">O</span>
-																<div class="symbol-badge bg-success start-100 top-100 border-4 h-15px w-15px ms-n2 mt-n2"></div>
 															</div>
 															<!--end::Avatar-->
 															<!--begin::Details-->
@@ -5018,8 +5013,8 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Details-->
 														<!--begin::Lat seen-->
 														<div class="d-flex flex-column align-items-end ms-2">
-															<span class="text-muted fs-7 mb-1">3 hrs</span>
-															<span class="badge badge-sm badge-circle badge-light-success">6</span>
+															<span class="text-muted fs-7 mb-1">20 hrs</span>
+															<span class="badge badge-sm badge-circle badge-light-warning">9</span>
 														</div>
 														<!--end::Lat seen-->
 													</div>
@@ -5034,7 +5029,6 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Avatar-->
 															<div class="symbol symbol-45px symbol-circle">
 																<span class="symbol-label bg-light-primary text-primary fs-6 fw-bolder">N</span>
-																<div class="symbol-badge bg-success start-100 top-100 border-4 h-15px w-15px ms-n2 mt-n2"></div>
 															</div>
 															<!--end::Avatar-->
 															<!--begin::Details-->
@@ -5047,7 +5041,8 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Details-->
 														<!--begin::Lat seen-->
 														<div class="d-flex flex-column align-items-end ms-2">
-															<span class="text-muted fs-7 mb-1">1 week</span>
+															<span class="text-muted fs-7 mb-1">5 hrs</span>
+															<span class="badge badge-sm badge-circle badge-light-success">6</span>
 														</div>
 														<!--end::Lat seen-->
 													</div>
@@ -5062,6 +5057,7 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Avatar-->
 															<div class="symbol symbol-45px symbol-circle">
 																<img alt="Pic" src="assets/media/avatars/150-6.jpg" />
+																<div class="symbol-badge bg-success start-100 top-100 border-4 h-15px w-15px ms-n2 mt-n2"></div>
 															</div>
 															<!--end::Avatar-->
 															<!--begin::Details-->
@@ -5074,7 +5070,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Details-->
 														<!--begin::Lat seen-->
 														<div class="d-flex flex-column align-items-end ms-2">
-															<span class="text-muted fs-7 mb-1">1 week</span>
+															<span class="text-muted fs-7 mb-1">20 hrs</span>
 														</div>
 														<!--end::Lat seen-->
 													</div>
@@ -5089,7 +5085,6 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Avatar-->
 															<div class="symbol symbol-45px symbol-circle">
 																<span class="symbol-label bg-light-danger text-danger fs-6 fw-bolder">E</span>
-																<div class="symbol-badge bg-success start-100 top-100 border-4 h-15px w-15px ms-n2 mt-n2"></div>
 															</div>
 															<!--end::Avatar-->
 															<!--begin::Details-->
@@ -5102,7 +5097,8 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Details-->
 														<!--begin::Lat seen-->
 														<div class="d-flex flex-column align-items-end ms-2">
-															<span class="text-muted fs-7 mb-1">3 hrs</span>
+															<span class="text-muted fs-7 mb-1">5 hrs</span>
+															<span class="badge badge-sm badge-circle badge-light-success">6</span>
 														</div>
 														<!--end::Lat seen-->
 													</div>
@@ -5278,7 +5274,7 @@ License: For each use you must have a valid license purchased only from above li
 																<!--end::Details-->
 																<!--begin::Avatar-->
 																<div class="symbol symbol-35px symbol-circle">
-																	<img alt="Pic" src="assets/media/avatars/150-2.jpg" />
+																	<img alt="Pic" src="assets/media/avatars/150-26.jpg" />
 																</div>
 																<!--end::Avatar-->
 															</div>
@@ -5330,7 +5326,7 @@ License: For each use you must have a valid license purchased only from above li
 																<!--end::Details-->
 																<!--begin::Avatar-->
 																<div class="symbol symbol-35px symbol-circle">
-																	<img alt="Pic" src="assets/media/avatars/150-2.jpg" />
+																	<img alt="Pic" src="assets/media/avatars/150-26.jpg" />
 																</div>
 																<!--end::Avatar-->
 															</div>
@@ -5383,7 +5379,7 @@ License: For each use you must have a valid license purchased only from above li
 																<!--end::Details-->
 																<!--begin::Avatar-->
 																<div class="symbol symbol-35px symbol-circle">
-																	<img alt="Pic" src="assets/media/avatars/150-2.jpg" />
+																	<img alt="Pic" src="assets/media/avatars/150-26.jpg" />
 																</div>
 																<!--end::Avatar-->
 															</div>
@@ -5435,7 +5431,7 @@ License: For each use you must have a valid license purchased only from above li
 																<!--end::Details-->
 																<!--begin::Avatar-->
 																<div class="symbol symbol-35px symbol-circle">
-																	<img alt="Pic" src="assets/media/avatars/150-2.jpg" />
+																	<img alt="Pic" src="assets/media/avatars/150-26.jpg" />
 																</div>
 																<!--end::Avatar-->
 															</div>
@@ -5623,7 +5619,7 @@ License: For each use you must have a valid license purchased only from above li
 															<div class="d-flex align-items-center">
 																<!--begin::Avatar-->
 																<div class="symbol symbol-35px symbol-circle">
-																	<img alt="Pic" src="assets/media/avatars/150-2.jpg" />
+																	<img alt="Pic" src="assets/media/avatars/150-26.jpg" />
 																</div>
 																<!--end::Avatar-->
 																<!--begin::Details-->
@@ -6138,7 +6134,7 @@ License: For each use you must have a valid license purchased only from above li
 																<a href="#" class="d-flex align-items-center p-3 rounded bg-state-light bg-state-opacity-50 mb-1">
 																	<!--begin::Avatar-->
 																	<div class="symbol symbol-35px symbol-circle me-5">
-																		<img alt="Pic" src="assets/media/avatars/150-2.jpg" />
+																		<img alt="Pic" src="assets/media/avatars/150-26.jpg" />
 																	</div>
 																	<!--end::Avatar-->
 																	<!--begin::Info-->
@@ -6270,7 +6266,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<!--end::Checkbox-->
 																		<!--begin::Avatar-->
 																		<div class="symbol symbol-35px symbol-circle">
-																			<img alt="Pic" src="assets/media/avatars/150-2.jpg" />
+																			<img alt="Pic" src="assets/media/avatars/150-26.jpg" />
 																		</div>
 																		<!--end::Avatar-->
 																		<!--begin::Details-->
@@ -6774,13 +6770,13 @@ License: For each use you must have a valid license purchased only from above li
 																		<!--end::Checkbox-->
 																		<!--begin::Avatar-->
 																		<div class="symbol symbol-35px symbol-circle">
-																			<span class="symbol-label bg-light-danger text-danger fw-bold">E</span>
+																			<img alt="Pic" src="assets/media/avatars/150-8.jpg" />
 																		</div>
 																		<!--end::Avatar-->
 																		<!--begin::Details-->
 																		<div class="ms-5">
-																			<a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Emma Bold</a>
-																			<div class="fw-bold text-muted">emma@intenso.com</div>
+																			<a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Francis Mitcham</a>
+																			<div class="fw-bold text-muted">f.mitcham@kpmg.com.au</div>
 																		</div>
 																		<!--end::Details-->
 																	</div>
@@ -7656,7 +7652,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--end::Details-->
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="assets/media/avatars/150-2.jpg" />
+										<img alt="Pic" src="assets/media/avatars/150-26.jpg" />
 									</div>
 									<!--end::Avatar-->
 								</div>
@@ -7708,7 +7704,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--end::Details-->
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="assets/media/avatars/150-2.jpg" />
+										<img alt="Pic" src="assets/media/avatars/150-26.jpg" />
 									</div>
 									<!--end::Avatar-->
 								</div>
@@ -7761,7 +7757,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--end::Details-->
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="assets/media/avatars/150-2.jpg" />
+										<img alt="Pic" src="assets/media/avatars/150-26.jpg" />
 									</div>
 									<!--end::Avatar-->
 								</div>
@@ -7813,7 +7809,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--end::Details-->
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
-										<img alt="Pic" src="assets/media/avatars/150-2.jpg" />
+										<img alt="Pic" src="assets/media/avatars/150-26.jpg" />
 									</div>
 									<!--end::Avatar-->
 								</div>
@@ -7884,7 +7880,7 @@ License: For each use you must have a valid license purchased only from above li
 		</div>
 		<!--end::Chat drawer-->
 		<!--begin::Exolore drawer toggle-->
-		<button id="kt_explore_toggle" class="btn btn-sm bg-body btn-color-gray-700 btn-active-primary shadow-sm position-fixed px-5 fw-bolder zindex-2 top-50 mt-10 end-0 transform-90 fs-6 rounded-top-0" title="Explore Metronic" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover">
+		<button id="kt_explore_toggle" class="explore-toggle btn btn-sm bg-body btn-color-gray-700 btn-active-primary shadow-sm position-fixed px-5 fw-bolder zindex-2 top-50 mt-10 end-0 transform-90 fs-6 rounded-top-0" title="Explore Metronic" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover">
 			<span id="kt_explore_toggle_label">Explore</span>
 		</button>
 		<!--end::Exolore drawer toggle-->
@@ -8071,10 +8067,10 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Demo-->
 										<div class="overlay overflow-hidden position-relative rounded">
 											<div class="overlay-wrapper">
-												<img src="assets/media/demos/demo7.png" alt="demo" class="w-100 opacity-75" />
+												<img src="assets/media/demos/demo7.png" alt="demo" class="w-100" />
 											</div>
 											<div class="overlay-layer bg-dark bg-opacity-10">
-												<div class="badge badge-white px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
+												<a href="https://preview.keenthemes.com/metronic8/demo7" class="btn btn-sm btn-success shadow">Demo 7</a>
 											</div>
 										</div>
 										<!--end::Demo-->
@@ -8184,6 +8180,20 @@ License: For each use you must have a valid license purchased only from above li
 										<div class="overlay overflow-hidden position-relative rounded">
 											<div class="overlay-wrapper">
 												<img src="assets/media/demos/demo15.png" alt="demo" class="w-100 opacity-75" />
+											</div>
+											<div class="overlay-layer bg-dark bg-opacity-10">
+												<div class="badge badge-white px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
+											</div>
+										</div>
+										<!--end::Demo-->
+									</div>
+									<!--end::Col-->
+									<!--begin::Col-->
+									<div class="col-6">
+										<!--begin::Demo-->
+										<div class="overlay overflow-hidden position-relative rounded">
+											<div class="overlay-wrapper">
+												<img src="assets/media/demos/demo16.png" alt="demo" class="w-100 opacity-75" />
 											</div>
 											<div class="overlay-layer bg-dark bg-opacity-10">
 												<div class="badge badge-white px-6 py-4 fw-bold fs-base shadow">Coming soon</div>
@@ -8326,7 +8336,7 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<img alt="Pic" src="assets/media/avatars/150-2.jpg" />
+											<img alt="Pic" src="assets/media/avatars/150-26.jpg" />
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
@@ -8718,13 +8728,13 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex align-items-center">
 										<!--begin::Avatar-->
 										<div class="symbol symbol-35px symbol-circle">
-											<span class="symbol-label bg-light-success text-success fw-bold">L</span>
+											<span class="symbol-label bg-light-warning text-warning fw-bold">M</span>
 										</div>
 										<!--end::Avatar-->
 										<!--begin::Details-->
 										<div class="ms-5">
-											<a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Lucy Kunic</a>
-											<div class="fw-bold text-muted">lucy.m@fentech.com</div>
+											<a href="#" class="fs-5 fw-bolder text-gray-900 text-hover-primary mb-2">Mikaela Collins</a>
+											<div class="fw-bold text-muted">mikaela@pexcom.com</div>
 										</div>
 										<!--end::Details-->
 									</div>

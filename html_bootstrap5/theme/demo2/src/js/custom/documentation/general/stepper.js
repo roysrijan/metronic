@@ -39,11 +39,25 @@ var KTGeneralStepperDemos = function() {
 		});
     }
 
+    var _exampleClickable = function() {
+        // Stepper lement
+        var element = document.querySelector("#kt_stepper_example_clickable");
+
+        // Initialize Stepper
+		var stepper = new KTStepper(element);
+
+        // Handle navigation click
+		stepper.on("kt.stepper.click", function (stepper) {
+			stepper.goTo(stepper.getClickedStepIndex()); // go to clicked step
+		});
+    }
+
     return {
         // Public Functions
         init: function() {
             _exampleBasic();
             _exampleVertical();
+            _exampleClickable();
         }
     };
 }();

@@ -14,6 +14,56 @@
           <div
             class="accordion-header py-3 d-flex"
             data-bs-toggle="collapse"
+            data-bs-target="#kt_accordion_2_item_12"
+          >
+            <span class="accordion-icon">
+              <span class="svg-icon svg-icon-3">
+                <inline-svg src="media/icons/duotone/Navigation/Right-2.svg" />
+              </span>
+            </span>
+            <h3 class="fs-4 text-gray-800 fw-bold mb-0 ms-4">
+              {{ themeName }} v8.0.22 - 6 August, 2021
+            </h3>
+          </div>
+          <!--end::Header-->
+
+          <!--begin::Body-->
+          <div
+            id="kt_accordion_2_item_12"
+            class="fs-6 collapse show ps-10"
+            data-bs-parent="#kt_accordion_2"
+          >
+            <h3 class="fs-6 fw-bolder show mb-1">New:</h3>
+            <ul class="py-2">
+              <li class="py-2">
+                Added demo 2 vue version.
+                <a
+                  href="https://preview.keenthemes.com/metronic8/vue/demo2/#/dashboard"
+                  >Preview</a
+                >
+              </li>
+              <li class="py-2">
+                Added demo 7 vue version.
+                <a
+                  href="https://preview.keenthemes.com/metronic8/vue/demo3/#/dashboard"
+                  >Preview</a
+                >
+              </li>
+              <li class="py-2">
+                Added RTL version webpack script.
+              </li>
+            </ul>
+          </div>
+          <!--end::Body-->
+        </div>
+        <!--end::Item-->
+
+        <!--begin::Item-->
+        <div class="mb-5">
+          <!--begin::Header-->
+          <div
+            class="accordion-header py-3 d-flex collapsed"
+            data-bs-toggle="collapse"
             data-bs-target="#kt_accordion_2_item_11"
           >
             <span class="accordion-icon">
@@ -30,7 +80,7 @@
           <!--begin::Body-->
           <div
             id="kt_accordion_2_item_11"
-            class="fs-6 collapse show ps-10"
+            class="fs-6 collapse ps-10"
             data-bs-parent="#kt_accordion_2"
           >
             <h3 class="fs-6 fw-bolder show mb-1">New:</h3>
@@ -38,21 +88,21 @@
               <li class="py-2">
                 Dark-mode setup doc.
                 <a
-                  href="https://preview.keenthemes.com/metronic8/vue/demo1-docs/#/dark-mode"
+                  href="https://preview.keenthemes.com/metronic8/vue/docs/#/dark-mode"
                   >Preview</a
                 >
               </li>
               <li class="py-2">
                 Internationalization (i18n) setup doc.
                 <a
-                  href="https://preview.keenthemes.com/metronic8/vue/demo1-docs/#/internationalization"
+                  href="https://preview.keenthemes.com/metronic8/vue/docs/#/internationalization"
                   >Preview</a
                 >
               </li>
               <li class="py-2">
                 Vue + Laravel integration doc.
                 <a
-                  href="https://preview.keenthemes.com/metronic8/vue/demo1-docs/#/vue-laravel-integration"
+                  href="https://preview.keenthemes.com/metronic8/vue/docs/#/vue-laravel-integration"
                   >Preview</a
                 >
               </li>
@@ -61,8 +111,7 @@
             <ul class="py-2">
               <li class="py-2">
                 Split demo and docs pages into two separate apps.
-                <a
-                  href="https://preview.keenthemes.com/metronic8/vue/demo1-docs/#/"
+                <a href="https://preview.keenthemes.com/metronic8/vue/docs/#/"
                   >Preview</a
                 >
               </li>

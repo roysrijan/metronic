@@ -13,7 +13,6 @@ return array(
         'assets'      => array(
             'custom' => array(
                 'js' => array(
-                    'js/custom/widgets.js',
                 ),
             ),
         ),

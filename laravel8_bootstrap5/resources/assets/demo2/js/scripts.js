@@ -1,5 +1,6 @@
 // Keenthemes' plugins
 window.KTUtil = require('./../../core/js/components/util.js');
+window.KTBlockUI = require('./../../core/js/components/blockui.js');
 window.KTCookie = require('./../../core/js/components/cookie.js');
 window.KTDialer = require('./../../core/js/components/dialer.js');
 window.KTDrawer = require('./../../core/js/components/drawer.js');
@@ -17,7 +18,7 @@ window.KTSwapper = require('./../../core/js/components/swapper.js');
 window.KTToggle = require('./../../core/js/components/toggle.js');
 
 // Layout base js
-window.KTApp = require('./../../core/js/layout/app.js');
+window.KTApp = require('./../../extended/js/layout/app.js');
 window.KTLayoutAside = require('./layout/aside.js');
 window.KTLayoutExplore = require('./layout/explore.js');
 window.KTLayoutSearch = require('./layout/search.js');

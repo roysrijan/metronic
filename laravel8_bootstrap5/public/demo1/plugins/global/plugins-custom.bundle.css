@@ -261,7 +261,7 @@
   background-color: #ffffff;
 }
 .modal-open .select2-container--bootstrap5 .select2-dropdown {
-  z-index: 1061;
+  z-index: 1056;
 }
 .select2-container--bootstrap5 .select2-dropdown .select2-search {
   padding: 0.5rem 1.25rem;
@@ -371,7 +371,7 @@
   background-color: transparent;
 }
 .modal-open .daterangepicker {
-  z-index: 1061;
+  z-index: 1056;
 }
 .daterangepicker .calendar-table {
   background-color: #ffffff;
@@ -977,7 +977,7 @@ span.flatpickr-weekday {
   border-radius: 0.475rem;
 }
 .modal-open .tagify__dropdown {
-  z-index: 1061;
+  z-index: 1056;
 }
 .tagify__dropdown .tagify__dropdown__wrapper {
   background-color: #ffffff;

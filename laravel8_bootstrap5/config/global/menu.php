@@ -184,7 +184,7 @@ return array(
         array(
             'title' => 'Dashboard',
             'path'  => 'index',
-            'icon'  => theme()->getSvgIcon("icons/duotone/Design/PenAndRuller.svg", "svg-icon-2"),
+            'icon'  => theme()->getSvgIcon("demo1/media/icons/duotone/Design/PenAndRuller.svg", "svg-icon-2"),
         ),
 
         //// Modules
@@ -197,7 +197,7 @@ return array(
         array(
             'title'      => 'Account',
             'icon'       => array(
-                'svg'  => theme()->getSvgIcon("icons/duotone/General/User.svg", "svg-icon-2"),
+                'svg'  => theme()->getSvgIcon("demo1/media/icons/duotone/General/User.svg", "svg-icon-2"),
                 'font' => '<i class="bi bi-person fs-2"></i>',
             ),
             'classes'    => array('item' => 'menu-accordion'),
@@ -239,7 +239,7 @@ return array(
         array(
             'title'      => 'System',
             'icon'       => array(
-                'svg'  => theme()->getSvgIcon("icons/duotone/Layout/Layout-4-blocks.svg", "svg-icon-2"),
+                'svg'  => theme()->getSvgIcon("demo1/media/icons/duotone/Layout/Layout-4-blocks.svg", "svg-icon-2"),
                 'font' => '<i class="bi bi-layers fs-3"></i>',
             ),
             'classes'    => array('item' => 'menu-accordion'),
@@ -285,7 +285,7 @@ return array(
         // Changelog
         array(
             'title' => 'Changelog v'.theme()->getVersion(),
-            'icon'  => theme()->getSvgIcon("icons/duotone/Files/File.svg", "svg-icon-2"),
+            'icon'  => theme()->getSvgIcon("demo1/media/icons/duotone/Files/File.svg", "svg-icon-2"),
             'path'  => 'documentation/getting-started/changelog',
         ),
     ),
@@ -310,19 +310,96 @@ return array(
             'sub'        => array(
                 'class' => 'menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px',
                 'items' => array(
-
                     // Documentation
                     array(
                         'title' => 'Documentation',
-                        'icon'  => theme()->getSvgIcon("icons/duotone/Home/Library.svg", "svg-icon-2"),
+                        'icon'  => theme()->getSvgIcon("demo1/media/icons/duotone/Home/Library.svg", "svg-icon-2"),
                         'path'  => 'documentation/getting-started/overview',
                     ),
 
                     // Changelog
                     array(
                         'title' => 'Changelog v'.theme()->getVersion(),
-                        'icon'  => theme()->getSvgIcon("icons/duotone/Files/File.svg", "svg-icon-2"),
+                        'icon'  => theme()->getSvgIcon("demo1/media/icons/duotone/Files/File.svg", "svg-icon-2"),
                         'path'  => 'documentation/getting-started/changelog',
+                    ),
+                ),
+            ),
+        ),
+
+        // Account
+        array(
+            'title'      => 'Account',
+            'classes'    => array('item' => 'menu-lg-down-accordion me-lg-1', 'arrow' => 'd-lg-none'),
+            'attributes' => array(
+                'data-kt-menu-trigger'   => "click",
+                'data-kt-menu-placement' => "bottom-start",
+            ),
+            'sub'        => array(
+                'class' => 'menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px',
+                'items' => array(
+                    array(
+                        'title'  => 'Overview',
+                        'path'   => 'account/overview',
+                        'bullet' => '<span class="bullet bullet-dot"></span>',
+                    ),
+                    array(
+                        'title'  => 'Settings',
+                        'path'   => 'account/settings',
+                        'bullet' => '<span class="bullet bullet-dot"></span>',
+                    ),
+                    array(
+                        'title'      => 'Security',
+                        'path'       => '#',
+                        'bullet'     => '<span class="bullet bullet-dot"></span>',
+                        'attributes' => array(
+                            'link' => array(
+                                "title"             => "Coming soon",
+                                "data-bs-toggle"    => "tooltip",
+                                "data-bs-trigger"   => "hover",
+                                "data-bs-dismiss"   => "click",
+                                "data-bs-placement" => "right",
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+        ),
+
+        // System
+        array(
+            'title'      => 'System',
+            'classes'    => array('item' => 'menu-lg-down-accordion me-lg-1', 'arrow' => 'd-lg-none'),
+            'attributes' => array(
+                'data-kt-menu-trigger'   => "click",
+                'data-kt-menu-placement' => "bottom-start",
+            ),
+            'sub'        => array(
+                'class' => 'menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px',
+                'items' => array(
+                    array(
+                        'title'      => 'Settings',
+                        'path'       => '#',
+                        'bullet'     => '<span class="bullet bullet-dot"></span>',
+                        'attributes' => array(
+                            'link' => array(
+                                "title"             => "Coming soon",
+                                "data-bs-toggle"    => "tooltip",
+                                "data-bs-trigger"   => "hover",
+                                "data-bs-dismiss"   => "click",
+                                "data-bs-placement" => "right",
+                            ),
+                        ),
+                    ),
+                    array(
+                        'title'  => 'Audit Log',
+                        'path'   => 'log/audit',
+                        'bullet' => '<span class="bullet bullet-dot"></span>',
+                    ),
+                    array(
+                        'title'  => 'System Log',
+                        'path'   => 'log/system',
+                        'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
                 ),
             ),

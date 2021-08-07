@@ -86,14 +86,14 @@
 
             <!--begin::Google link-->
             <a href="{{ url('/auth/redirect/google') }}?redirect_uri={{ url()->previous() }}" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
-                <img alt="Logo" src="{{ theme()->getMediaUrlPath() . 'svg/brand-logos/google-icon.svg' }}" class="h-20px me-3"/>
+                <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/google-icon.svg') }}" class="h-20px me-3"/>
                 {{ __('Continue with Google') }}
             </a>
             <!--end::Google link-->
 
             <!--begin::Facebook link-->
             <a href="{{ url('/auth/redirect/facebook') }}?redirect_uri={{ url()->previous() }}" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
-                <img alt="Logo" src="{{ theme()->getMediaUrlPath() . 'svg/brand-logos/facebook-4.svg' }}" class="h-20px me-3"/>
+                <img alt="Logo" src="{{ asset(theme()->getMediaUrlPath() . 'svg/brand-logos/facebook-4.svg') }}" class="h-20px me-3"/>
                 {{ __('Continue with Facebook') }}
             </a>
             <!--end::Facebook link-->
